@@ -15,11 +15,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#0B0A08;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:#0E2745;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 *{box-sizing:border-box}
 a{color:#E3C878;text-decoration:none}
 a:hover{color:#F2E2A8}
-::selection{background:#E3C878;color:#17140E}
+::selection{background:#E3C878;color:#0E2745}
 input,textarea,button{font:inherit;color:inherit}
 :focus-visible{outline:1px solid #E3C878;outline-offset:3px}
 @keyframes riseIn{from{transform:translateY(118%)}to{transform:translateY(0)}}
@@ -28,11 +28,11 @@ input,textarea,button{font:inherit;color:inherit}
 @keyframes drawIn{from{stroke-dashoffset:1px}to{stroke-dashoffset:0px}}
 @keyframes driftY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-@media (min-width:900px){body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:#0B0A08}body::-webkit-scrollbar-thumb{background:#8C6A24;border:3px solid #0B0A08;border-radius:6px}}
+@media (min-width:900px){body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:#0E2745}body::-webkit-scrollbar-thumb{background:#8C6A24;border:3px solid #0E2745;border-radius:6px}}
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="background:#0B0A08;color:#F5F0E6;font-family:Inter,system-ui,sans-serif;position:relative;overflow-x:clip">
+<div ref="{{ rootRef }}" style="background:#0E2745;color:#F5F0E6;font-family:Inter,system-ui,sans-serif;position:relative;overflow-x:clip">
 
 <header style="position:fixed;top:0;left:0;right:0;z-index:80;background:{{ navBg }};border-bottom:1px solid {{ navLine }};backdrop-filter:blur(6px);transition:background .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1)">
 <nav style="max-width:1520px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:{{ navH }};display:flex;align-items:center;gap:28px;transition:height .45s cubic-bezier(.22,1,.36,1)">
@@ -55,7 +55,7 @@ input,textarea,button{font:inherit;color:inherit}
 </nav>
 </header>
 
-<div style="position:fixed;inset:0;z-index:95;background:#0B0A08;display:{{ menuShow }};flex-direction:column;padding:26px clamp(22px,7vw,60px) 60px;animation:fadeIn .35s ease both">
+<div style="position:fixed;inset:0;z-index:95;background:#0E2745;display:{{ menuShow }};flex-direction:column;padding:26px clamp(22px,7vw,60px) 60px;animation:fadeIn .35s ease both">
 <div style="display:flex;align-items:center">
 <img src="assets/logo-mark-champagne.png" alt="BS Finance emblem" style="height:32px;width:auto">
 <span style="flex:1"></span>
@@ -70,7 +70,7 @@ input,textarea,button{font:inherit;color:inherit}
 <a href="#contact" onClick="{{ closeMenu }}" style="text-align:center;padding:17px 24px;border:1px solid rgba(201,162,75,.55);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Schedule a Consultation</a>
 </div>
 
-<section id="top" data-screen-label="Hero" style="position:relative;min-height:100svh;background:#0B0A08;display:flex;flex-direction:column;overflow:hidden;padding:clamp(104px,13vh,146px) clamp(22px,5vw,72px) clamp(32px,5vh,54px)">
+<section id="top" data-screen-label="Hero" style="position:relative;min-height:100svh;background:#0E2745;display:flex;flex-direction:column;overflow:hidden;padding:clamp(104px,13vh,146px) clamp(22px,5vw,72px) clamp(32px,5vh,54px)">
 <canvas ref="{{ canvasRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:{{ globeOpacity }};pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 62% 64% at 50% 44%,#000 28%,transparent 78%);mask-image:radial-gradient(ellipse 62% 64% at 50% 44%,#000 28%,transparent 78%)"></canvas>
 <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;max-width:1520px;margin:0 auto">
 <div style="display:flex;align-items:center;gap:14px;margin-bottom:clamp(20px,3vh,32px);animation:fadeIn .9s ease .15s both">
@@ -81,9 +81,19 @@ input,textarea,button{font:inherit;color:inherit}
 <h1 style="margin:0;overflow:hidden;padding:.16em 0 .14em;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:{{ heroType }};line-height:1;letter-spacing:-.028em;color:#F5F0E6;white-space:{{ heroWrap }}">
 <span style="display:block;animation:riseIn .9s cubic-bezier(.22,1,.36,1) .32s both">Invest. <span data-metal="1" style="font-style:italic;padding:.16em .12em;margin:-.16em -.12em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Protect.</span> Grow.</span>
 </h1>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:clamp(26px,4vh,44px);animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .78s both">
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><path d="M50 10 85 23V50C85 71 70 84 50 90C30 84 15 71 15 50V23Z"/><path d="M32 51H43L48 40L56 63L60 51H70"/></svg>Health</a>
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><path d="M22 48 31 14H69L78 48"/><path d="M9 48H91V74C91 80 86 85 80 85H20C14 85 9 80 9 74V48Z"/><path d="M18 63H30"/><path d="M70 63H82"/></svg>Motor · 4-Wheeler</a>
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><circle cx="20" cy="70" r="16"/><circle cx="80" cy="70" r="16"/><path d="M20 70 38 42H62L80 70"/><path d="M40 42 34 26H24"/><path d="M62 42H76"/></svg>Motor · 2-Wheeler</a>
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/></svg>Life</a>
+</div>
 </div>
 <div style="position:relative;z-index:2;width:100%;max-width:1520px;margin:0 auto;border-top:1px solid rgba(201,162,75,.34);padding-top:clamp(22px,3vh,32px);display:grid;grid-template-columns:{{ heroCols }};gap:clamp(22px,4vw,56px);align-items:start;animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .9s both">
-<p style="margin:0;font:400 clamp(15.5px,1.1vw,17px)/1.72 Inter,sans-serif;color:rgba(245,240,230,.72);text-wrap:pretty">Vadodara's trusted partner for disciplined SIPs, seamless Demat investing, and robust insurance — under one roof. Backed by 6 years of proven expertise.</p>
+<p style="margin:0;font:400 clamp(15.5px,1.1vw,17px)/1.72 Inter,sans-serif;color:rgba(245,240,230,.72);text-wrap:pretty">Vadodara's trusted insurance partner — health, motor and life cover from 16 leading insurers, with disciplined SIPs and Demat investing under the same roof. Backed by 6 years of proven expertise.</p>
 <p style="margin:0;display:{{ heroP2 }};font:400 clamp(15.5px,1.1vw,17px)/1.72 Inter,sans-serif;color:rgba(245,240,230,.5);text-wrap:pretty">We host SIP seminars in the city and manage tailored portfolios. Mutual funds, equity and insurance read as one balance sheet — that is the whole point of a unified approach.</p>
 <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
 <a href="#contact" style="font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878;white-space:nowrap;border-bottom:1px solid rgba(201,162,75,.5);padding-bottom:8px;transition:border-color .25s,color .25s" style-hover="color:#F2E2A8;border-color:#E3C878">Start your journey</a>
@@ -92,7 +102,7 @@ input,textarea,button{font:inherit;color:inherit}
 </div>
 </section>
 
-<section id="about" data-screen-label="About the firm" style="position:relative;background:#F5F0E6;color:#17140E;padding:clamp(92px,11vw,168px) clamp(22px,6vw,110px) clamp(70px,8vw,120px);overflow:hidden">
+<section id="about" data-screen-label="About the firm" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(92px,11vw,168px) clamp(22px,6vw,110px) clamp(70px,8vw,120px);overflow:hidden">
 <svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;right:-70px;top:40px;width:min(520px,52vw);height:auto;opacity:.055;pointer-events:none">
 <path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/><path d="M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z"/><path d="M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z"/>
 </svg>
@@ -102,12 +112,12 @@ input,textarea,button{font:inherit;color:inherit}
 <div style="display:flex;align-items:center;gap:12px;margin-bottom:26px">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E">About BS Finance</span>
 </div>
-<h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.6vw,4.4rem);line-height:1.02;letter-spacing:-.018em;color:#17140E;text-wrap:balance">Over half a decade of empowering <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">investors.</span></h2>
+<h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.6vw,4.4rem);line-height:1.02;letter-spacing:-.018em;color:#0E2745;text-wrap:balance">Over half a decade of empowering <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">investors.</span></h2>
 </div>
 <div data-reveal="1" data-delay="120" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding-top:{{ aboutPad }}">
-<p style="margin:0 0 22px;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(23,20,14,.78);max-width:62ch;text-wrap:pretty">Financial freedom is built on smart investing and secure planning. For six years, BS Finance has guided clients across Vadodara through multiple market cycles — steady through the corrections, disciplined through the rallies.</p>
-<p style="margin:0 0 22px;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(23,20,14,.78);max-width:62ch;text-wrap:pretty">We host in-depth SIP seminars in the city, and we actively manage tailored mutual fund portfolios rather than handing over a product list. Wealth management works when the person holding the plan understands it.</p>
-<p style="margin:0;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(23,20,14,.78);max-width:62ch;text-wrap:pretty">Mutual funds, equity, and insurance sit under one roof, read as one balance sheet. That is the whole point of a unified approach.</p>
+<p style="margin:0 0 22px;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(14,39,69,.78);max-width:62ch;text-wrap:pretty">Financial freedom is built on smart investing and secure planning. For six years, BS Finance has guided clients across Vadodara through multiple market cycles — steady through the corrections, disciplined through the rallies.</p>
+<p style="margin:0 0 22px;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(14,39,69,.78);max-width:62ch;text-wrap:pretty">We host in-depth SIP seminars in the city, and we actively manage tailored mutual fund portfolios rather than handing over a product list. Wealth management works when the person holding the plan understands it.</p>
+<p style="margin:0;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(14,39,69,.78);max-width:62ch;text-wrap:pretty">Mutual funds, equity, and insurance sit under one roof, read as one balance sheet. That is the whole point of a unified approach.</p>
 </div>
 </div>
 
@@ -116,65 +126,65 @@ input,textarea,button{font:inherit;color:inherit}
 <svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <path d="M6 88H94"/><path d="M22 88V66"/><path d="M40 88V54"/><path d="M58 88V60"/><path d="M14 74 38 48 54 62 86 26"/><path d="M86 26H68"/><path d="M86 26V44"/>
 </svg>
-<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#17140E">6 Years of Market Experience</h3>
-<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(23,20,14,.7);max-width:38ch">Strategies tested and refined across market cycles, not written for one.</p>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#0E2745">6 Years of Market Experience</h3>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(14,39,69,.7);max-width:38ch">Strategies tested and refined across market cycles, not written for one.</p>
 </div>
 <div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:38px 0 8px">
 <svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <path d="M14 92 56 50"/><path d="M20 86 26 92"/><path d="M50 44 62 56"/><circle cx="72" cy="34" r="17"/><ellipse cx="72" cy="34" rx="7" ry="17"/><path d="M55 34H89"/><path d="M79 25 94 10 89 26"/>
 </svg>
-<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#17140E">Local Expertise, Global Standards</h3>
-<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(23,20,14,.7);max-width:38ch">Proudly serving Vadodara with transparent, professional wealth management service.</p>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#0E2745">Local Expertise, Global Standards</h3>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(14,39,69,.7);max-width:38ch">Proudly serving Vadodara with transparent, professional wealth management service.</p>
 </div>
 <div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:38px 0 8px">
 <svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/><path d="M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z"/><path d="M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z"/>
 </svg>
-<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#17140E">Education-First Approach</h3>
-<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(23,20,14,.7);max-width:38ch">We don't just invest for you; we empower you. Continuous client education and dedicated SIP seminars.</p>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#0E2745">Education-First Approach</h3>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(14,39,69,.7);max-width:38ch">We don't just invest for you; we empower you. Continuous client education and dedicated SIP seminars.</p>
 </div>
 </div>
 </div>
 </section>
 
 
-<section id="services" data-screen-label="Services index" ref="{{ indexRef }}" style="position:relative;background:#F5F0E6;color:#17140E;padding:clamp(70px,8vw,120px) clamp(22px,6vw,110px) clamp(90px,10vw,150px)">
+<section id="services" data-screen-label="Services index" ref="{{ indexRef }}" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(70px,8vw,120px) clamp(22px,6vw,110px) clamp(90px,10vw,150px)">
 <div style="max-width:1380px;margin:0 auto">
 <div style="display:flex;align-items:center;gap:12px;margin-bottom:clamp(34px,5vw,64px)">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E">What we do — three services, one roof</span>
 </div>
 
-<a href="#mutual-funds" onMouseEnter="{{ enter0 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);padding:{{ pad0 }};opacity:{{ dim0 }};color:#17140E;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
+<a href="#mutual-funds" onMouseEnter="{{ enter0 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);padding:{{ pad0 }};opacity:{{ dim0 }};color:#0E2745;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
 <span style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;color:#7A5C1E;flex:none;font-variant-numeric:tabular-nums">01</span>
-<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#17140E,#17140E);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Mutual Funds &amp; SIPs</span>
+<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Mutual Funds &amp; SIPs</span>
 <span style="flex:0 0 100%;display:flex;align-items:center;gap:13px;margin-top:12px">
 <svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="2.4" style="width:22px;height:22px;flex:none;opacity:{{ pv0 }};transition:opacity .35s ease" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"></path><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"></path><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"></path></svg>
-<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(23,20,14,.72)">Disciplined SIPs and curated funds, mapped to real goals.</span>
+<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(14,39,69,.72)">Disciplined SIPs and curated funds, mapped to real goals.</span>
 </span>
 </a>
 
-<a href="#demat" onMouseEnter="{{ enter1 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);padding:{{ pad1 }};opacity:{{ dim1 }};color:#17140E;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
+<a href="#demat" onMouseEnter="{{ enter1 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);padding:{{ pad1 }};opacity:{{ dim1 }};color:#0E2745;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
 <span style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;color:#7A5C1E;flex:none;font-variant-numeric:tabular-nums">02</span>
-<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#17140E,#17140E);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Demat &amp; Equity Trading</span>
+<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Demat &amp; Equity Trading</span>
 <span style="flex:0 0 100%;display:flex;align-items:center;gap:13px;margin-top:12px">
 <svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="2.4" style="width:22px;height:22px;flex:none;opacity:{{ pv1 }};transition:opacity .35s ease" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 88H94"></path><path d="M22 88V66"></path><path d="M40 88V54"></path><path d="M14 74 38 48 54 62 86 26"></path><path d="M86 26H68"></path><path d="M86 26V44"></path></svg>
-<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(23,20,14,.72)">A free Demat account, quality stock curation, one secure vault.</span>
+<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(14,39,69,.72)">A free Demat account, quality stock curation, one secure vault.</span>
 </span>
 </a>
 
-<a href="#insurance" onMouseEnter="{{ enter2 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);border-bottom:1px solid rgba(201,162,75,.38);padding:{{ pad2 }};opacity:{{ dim2 }};color:#17140E;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
+<a href="#insurance" onMouseEnter="{{ enter2 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);border-bottom:1px solid rgba(201,162,75,.38);padding:{{ pad2 }};opacity:{{ dim2 }};color:#0E2745;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
 <span style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;color:#7A5C1E;flex:none;font-variant-numeric:tabular-nums">03</span>
-<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#17140E,#17140E);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Comprehensive Insurance</span>
+<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Comprehensive Insurance</span>
 <span style="flex:0 0 100%;display:flex;align-items:center;gap:13px;margin-top:12px">
 <svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="2.4" style="width:22px;height:22px;flex:none;opacity:{{ pv2 }};transition:opacity .35s ease" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 92 56 50"></path><path d="M50 44 62 56"></path><circle cx="72" cy="34" r="17"></circle><ellipse cx="72" cy="34" rx="7" ry="17"></ellipse><path d="M55 34H89"></path></svg>
-<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(23,20,14,.72)">Cover sized to your liabilities — term life and family health.</span>
+<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(14,39,69,.72)">Cover sized to your liabilities — term life and family health.</span>
 </span>
 </a>
 </div>
 <div ref="{{ dotRef }}" aria-hidden="true" style="position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:#E3C878;pointer-events:none;opacity:0;z-index:60;transition:opacity .3s ease;will-change:transform"></div>
 </section>
 
-<section id="mutual-funds" data-screen-label="Service — Mutual Funds &amp; SIPs" style="position:relative;background:#F5F0E6;color:#17140E;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden;border-top:1px solid rgba(201,162,75,.25)">
+<section id="mutual-funds" data-screen-label="Service — Mutual Funds &amp; SIPs" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden;border-top:1px solid rgba(201,162,75,.25)">
 <svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;left:-90px;bottom:-80px;width:min(600px,58vw);height:auto;opacity:.05;pointer-events:none">
 <path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/><path d="M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z"/><path d="M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z"/>
 </svg>
@@ -182,26 +192,26 @@ input,textarea,button{font:inherit;color:inherit}
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;font-variant-numeric:tabular-nums">01 — Grow</span>
 <h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em">Mutual Funds &amp; SIPs</h2>
-<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:40ch;text-wrap:pretty">Patient compounding, run properly. Start a SIP online with an advisor who reviews it with you every year.</p>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">Patient compounding, run properly. Start a SIP online with an advisor who reviews it with you every year.</p>
 </div>
 <div style="display:grid;gap:0">
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Systematic Investment Plans</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Disciplined regular investing that harnesses the power of compounding — and removes the stress of market timing entirely.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Disciplined regular investing that harnesses the power of compounding — and removes the stress of market timing entirely.</p>
 </div>
 <div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Curated Fund Selection</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Flexi-cap, large &amp; mid-cap, arbitrage and tax-saving ELSS funds, matched to your risk profile and horizon rather than to a league table.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Flexi-cap, large &amp; mid-cap, arbitrage and tax-saving ELSS funds, matched to your risk profile and horizon rather than to a league table.</p>
 </div>
 <div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0;display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Goal-Based Planning</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Retirement, a child's education, a major purchase. Every investment is mapped to a target with a date on it.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Retirement, a child's education, a major purchase. Every investment is mapped to a target with a date on it.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section id="demat" data-screen-label="Service — Demat &amp; Equity" style="position:relative;background:#EAE2D2;color:#17140E;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden">
+<section id="demat" data-screen-label="Service — Demat &amp; Equity" style="position:relative;background:#EAE2D2;color:#0E2745;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden">
 <svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;right:-70px;top:-60px;width:min(560px,54vw);height:auto;opacity:.06;pointer-events:none">
 <path d="M6 88H94"/><path d="M22 88V66"/><path d="M40 88V54"/><path d="M58 88V60"/><path d="M14 74 38 48 54 62 86 26"/><path d="M86 26H68"/><path d="M86 26V44"/>
 </svg>
@@ -209,26 +219,26 @@ input,textarea,button{font:inherit;color:inherit}
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;font-variant-numeric:tabular-nums">02 — Invest</span>
 <h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em">Demat &amp; Equity Trading</h2>
-<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:40ch;text-wrap:pretty">Open a free Demat account online and hold long-term stock investments in one place — built for beginners, useful for everyone.</p>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">Open a free Demat account online and hold long-term stock investments in one place — built for beginners, useful for everyone.</p>
 </div>
 <div style="display:grid;gap:0">
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Quality Stock Curation</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Fundamentally strong companies held for long-term wealth. We read balance sheets, not short-term noise.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Fundamentally strong companies held for long-term wealth. We read balance sheets, not short-term noise.</p>
 </div>
 <div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Frictionless Platform</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Fast execution, real-time market data, an interface that stays out of the way.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Fast execution, real-time market data, an interface that stays out of the way.</p>
 </div>
 <div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0;display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Portfolio Consolidation</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Equities, bonds and government securities held together in one secure digital vault.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Equities, bonds and government securities held together in one secure digital vault.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section id="insurance" data-screen-label="Service — Insurance" style="position:relative;background:#F5F0E6;color:#17140E;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden">
+<section id="insurance" data-screen-label="Service — Insurance" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden">
 <svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;left:-80px;top:-40px;width:min(560px,54vw);height:auto;opacity:.055;pointer-events:none">
 <path d="M14 92 56 50"/><path d="M20 86 26 92"/><path d="M50 44 62 56"/><circle cx="72" cy="34" r="17"/><ellipse cx="72" cy="34" rx="7" ry="17"/><path d="M55 34H89"/><path d="M79 25 94 10 89 26"/>
 </svg>
@@ -236,38 +246,38 @@ input,textarea,button{font:inherit;color:inherit}
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;font-variant-numeric:tabular-nums">03 — Protect</span>
 <h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em">Comprehensive Insurance</h2>
-<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:40ch;text-wrap:pretty">A term life insurance plan and family health insurance, sized by a health insurance advisor in Vadodara who knows your balance sheet.</p>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">A term life insurance plan and family health insurance, sized by a health insurance advisor in Vadodara who knows your balance sheet.</p>
 <a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7A5C1E;border-bottom:1px solid rgba(140,106,36,.5);padding-bottom:6px">Insurance portals<span style="display:block;width:22px;height:1px;background:currentColor"></span></a>
 </div>
 <div style="display:grid;gap:0">
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Risk Assessment</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Coverage sized against liabilities, income and assets. Neither over-insured nor under-insured.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Coverage sized against liabilities, income and assets. Neither over-insured nor under-insured.</p>
 </div>
 <div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Term Life Plans</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">High-cover, cost-effective protection that holds a family's standard of living steady.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">High-cover, cost-effective protection that holds a family's standard of living steady.</p>
 </div>
 <div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0;display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
 <h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Health Insurance</h3>
-<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:56ch;text-wrap:pretty">Family coverage that keeps pace with rising medical costs.</p>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Family coverage that keeps pace with rising medical costs.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section id="insurance-products" data-screen-label="Insurance products" style="position:relative;background:#0B0A08;color:#F5F0E6;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<section id="insurance-products" data-screen-label="Insurance products" style="position:relative;background:#0E2745;color:#F5F0E6;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
 <div style="max-width:1380px;margin:0 auto;position:relative">
 <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:30px 48px;margin-bottom:clamp(40px,5vw,68px)">
 <div style="flex:1 1 480px">
 <span style="display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878;margin-bottom:24px">Insurance products — five lines of cover</span>
 <h2 style="margin:0;max-width:17ch;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.4vw,4.1rem);line-height:1.03;letter-spacing:-.02em;text-wrap:balance">Cover for every part of your <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">life.</span></h2>
 </div>
-<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="flex:none;padding:19px 32px;border-radius:999px;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#17140E;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">View Insurance Quotes</a>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="flex:none;padding:19px 32px;border-radius:999px;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">View Insurance Quotes</a>
 </div>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:0;border-top:1px solid rgba(201,162,75,.28);border-left:1px solid rgba(201,162,75,.28)">
-<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd0 }}" data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0B0A08;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#131009">
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd0 }}" data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
 <svg data-prod="0" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <path pathLength="1" stroke-dasharray="1" d="M50 10 85 23V50C85 71 70 84 50 90C30 84 15 71 15 50V23Z"/>
 <path pathLength="1" stroke-dasharray="1" d="M22 52H36L43 38L53 66L59 52H78"/>
@@ -276,7 +286,7 @@ input,textarea,button{font:inherit;color:inherit}
 <p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Individual and family floater cover, cashless hospital networks, and top-ups when the base sum insured stops being enough.</p>
 <span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
 </a>
-<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd1 }}" data-reveal="1" data-delay="70" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0B0A08;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#131009">
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd1 }}" data-reveal="1" data-delay="70" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
 <svg data-prod="1" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <circle pathLength="1" stroke-dasharray="1" cx="50" cy="50" r="40"/>
 <circle pathLength="1" stroke-dasharray="1" cx="50" cy="50" r="12"/>
@@ -288,7 +298,7 @@ input,textarea,button{font:inherit;color:inherit}
 <p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Private and commercial vehicles — comprehensive, third-party and own-damage cover, renewed before it lapses.</p>
 <span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
 </a>
-<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd2 }}" data-reveal="1" data-delay="140" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0B0A08;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#131009">
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd2 }}" data-reveal="1" data-delay="140" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
 <svg data-prod="2" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <g transform="translate(50 50) scale(1.48) translate(-50 -57)" stroke-width="1.62">
 <path pathLength="1" stroke-dasharray="1" d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/>
@@ -300,7 +310,7 @@ input,textarea,button{font:inherit;color:inherit}
 <p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Term plans, endowment and child education plans. Cover sized against income, liabilities and the years still ahead.</p>
 <span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
 </a>
-<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd3 }}" data-reveal="1" data-delay="210" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0B0A08;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#131009">
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd3 }}" data-reveal="1" data-delay="210" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
 <svg data-prod="3" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <path pathLength="1" stroke-dasharray="1" d="M50 10C74 10 88 28 88 52V72C88 81 81 88 72 88H50C26 88 11 71 11 48C11 26 27 10 50 10Z"/>
 <path pathLength="1" stroke-dasharray="1" d="M28 40C36 31 50 27 63 27C70 27 76 28 80 30V55C75 58 68 60 59 60C43 60 32 54 28 47C25 43 25 43 28 40Z"/>
@@ -310,7 +320,7 @@ input,textarea,button{font:inherit;color:inherit}
 <p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Bikes and scooters, covered against theft, damage and third-party liability — with instant renewals online.</p>
 <span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
 </a>
-<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd4 }}" data-reveal="1" data-delay="280" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0B0A08;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#131009">
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd4 }}" data-reveal="1" data-delay="280" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
 <svg data-prod="4" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
 <path pathLength="1" stroke-dasharray="1" d="M22 48 31 14H69L78 48"/>
 <path pathLength="1" stroke-dasharray="1" d="M9 48H91V74C91 80 86 85 80 85H20C14 85 9 80 9 74V48Z"/>
@@ -328,7 +338,42 @@ input,textarea,button{font:inherit;color:inherit}
 </div>
 </section>
 
-<section data-screen-label="Numbers" style="background:#0B0A08;color:#F5F0E6;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);border-top:1px solid rgba(201,162,75,.22)">
+<section id="insurer-partners" data-screen-label="Insurer partners" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<div style="max-width:1380px;margin:0 auto;position:relative">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:26px 48px;margin-bottom:clamp(34px,4vw,52px)">
+<div style="flex:1 1 460px">
+<span style="display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;margin-bottom:24px">Insurer partners</span>
+<h2 style="margin:0;max-width:18ch;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.4vw,4.1rem);line-height:1.03;letter-spacing:-.02em;text-wrap:balance">Sixteen insurers, one <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">desk.</span></h2>
+</div>
+<p style="flex:0 1 400px;margin:0;font:400 clamp(15.5px,1.05vw,17px)/1.7 Inter,sans-serif;color:rgba(14,39,69,.7);text-wrap:pretty">We place cover with India's leading general, health and life insurers. Filter by the line you need to see who writes it and which plans are available.</p>
+</div>
+
+<div role="group" aria-label="Filter insurers by product line" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(28px,3.2vw,42px)">
+<sc-for list="{{ partnerTabs }}" as="tab" hint-placeholder-count="7">
+<button type="button" onClick="{{ tab.on }}" aria-pressed="{{ tab.active }}" style="padding:11px 19px;border-radius:999px;border:1px solid {{ tab.bd }};background:{{ tab.bg }};color:{{ tab.fg }};font:500 11px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s,border-color .25s">{{ tab.label }}</button>
+</sc-for>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:clamp(13px,1.3vw,18px)">
+<sc-for list="{{ partnerList }}" as="ins" hint-placeholder-count="8">
+<div style="background:#FFFFFF;border:1px solid rgba(201,162,75,.34);padding:clamp(20px,2vw,26px);display:flex;flex-direction:column;gap:15px">
+<div style="height:58px;display:flex;align-items:center">
+<img src="{{ ins.logo }}" alt="{{ ins.name }}" loading="lazy" style="max-height:48px;max-width:100%;width:auto;height:auto;object-fit:contain;display:block">
+</div>
+<span aria-hidden="true" style="display:block;height:1px;background:rgba(201,162,75,.34)"></span>
+<p style="margin:0;font:400 13.5px/1.6 Inter,sans-serif;color:rgba(14,39,69,.66);text-wrap:pretty">{{ ins.plans }}</p>
+</div>
+</sc-for>
+</div>
+
+<div style="margin-top:clamp(30px,3.4vw,46px);padding-top:24px;border-top:1px solid rgba(201,162,75,.34);display:flex;flex-wrap:wrap;gap:16px 48px">
+<p style="margin:0;flex:1 1 420px;font:400 13.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.62);text-wrap:pretty"><strong style="font-weight:600;color:#0E2745">Supported motor policy types:</strong> Bundle · 3 &amp; 5 Year TP · 1 Year OD + TP · Rollover · Comprehensive · SAOD · TP Only.</p>
+<p style="margin:0;flex:1 1 320px;font:400 13.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.62);text-wrap:pretty">Plan availability varies by city, age and vehicle. Ask us for a comparison before you buy.</p>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Numbers" style="background:#0E2745;color:#F5F0E6;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);border-top:1px solid rgba(201,162,75,.22)">
 <div style="max-width:1380px;margin:0 auto;display:grid;grid-template-columns:{{ numCols }};gap:clamp(34px,4vw,60px)">
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
 <div data-metal="1" data-count="6" data-suffix="+" style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(64px,9vw,10rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent"></div>
@@ -345,11 +390,11 @@ input,textarea,button{font:inherit;color:inherit}
 </div>
 </section>
 
-<section data-screen-label="Midas statement" ref="{{ statementRef }}" style="background:#F5F0E6;color:#17140E;min-height:100svh;display:flex;align-items:center;padding:clamp(70px,10vh,120px) clamp(22px,6vw,110px)">
-<p data-midas="1" style="max-width:22ch;margin:0 auto;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.1rem,7vw,7.4rem);line-height:1.03;letter-spacing:-.022em;text-wrap:balance;padding:.1em .04em;background-image:linear-gradient(#17140E,#17140E);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Financial freedom is built on smart investing and secure planning.</p>
+<section data-screen-label="Midas statement" ref="{{ statementRef }}" style="background:#F5F0E6;color:#0E2745;min-height:100svh;display:flex;align-items:center;padding:clamp(70px,10vh,120px) clamp(22px,6vw,110px)">
+<p data-midas="1" style="max-width:22ch;margin:0 auto;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.1rem,7vw,7.4rem);line-height:1.03;letter-spacing:-.022em;text-wrap:balance;padding:.1em .04em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Financial freedom is built on smart investing and secure planning.</p>
 </section>
 
-<section data-screen-label="Invest Protect Grow" style="background:#0B0A08;color:#F5F0E6;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px)">
+<section data-screen-label="Invest Protect Grow" style="background:#0E2745;color:#F5F0E6;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px)">
 <div style="max-width:1380px;margin:0 auto">
 <div style="display:flex;align-items:center;gap:12px;margin-bottom:clamp(38px,5vw,70px)">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878">The discipline, in three words</span>
@@ -395,72 +440,72 @@ input,textarea,button{font:inherit;color:inherit}
 </div>
 </section>
 
-<section id="raise-a-claim" data-screen-label="Raise a claim" style="position:relative;background:#F5F0E6;color:#17140E;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<section id="raise-a-claim" data-screen-label="Raise a claim" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
 <div style="max-width:1380px;margin:0 auto;position:relative;display:grid;grid-template-columns:{{ svcCols }};gap:clamp(34px,5vw,80px);align-items:start">
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E">Raise a claim</span>
 <h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em;text-wrap:balance">The moment cover matters most.</h2>
-<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:38ch;text-wrap:pretty">Answer six questions and we take it from there — documentation, insurer follow-up and settlement tracking. You deal with us, not a call centre.</p>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:38ch;text-wrap:pretty">Answer six questions and we take it from there — documentation, insurer follow-up and settlement tracking. You deal with us, not a call centre.</p>
 </div>
 
 <form onSubmit="{{ claimSubmit }}" style="display:{{ claimFormShow }};flex-direction:column;gap:clamp(30px,3.4vw,44px);max-width:680px">
 <div>
 <div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">01 — What type of claim is this?</div>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
-<button type="button" onClick="{{ ct0 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ ctB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Health</button>
-<button type="button" onClick="{{ ct1 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ ctB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Motor</button>
-<button type="button" onClick="{{ ct2 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ ctB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Life</button>
-<button type="button" onClick="{{ ct3 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ ctB3 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Two-wheeler</button>
-<button type="button" onClick="{{ ct4 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ ctB4 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Four-wheeler</button>
-<button type="button" onClick="{{ ct5 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ ctB5 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Other</button>
+<button type="button" onClick="{{ ct0 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Health</button>
+<button type="button" onClick="{{ ct1 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Motor</button>
+<button type="button" onClick="{{ ct2 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Life</button>
+<button type="button" onClick="{{ ct3 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB3 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Two-wheeler</button>
+<button type="button" onClick="{{ ct4 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB4 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Four-wheeler</button>
+<button type="button" onClick="{{ ct5 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB5 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Other</button>
 </div>
 </div>
 
 <div style="display:grid;grid-template-columns:{{ pairCols }};gap:clamp(24px,3vw,40px)">
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">02 — Policy number</span>
-<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">03 — Insurer</span>
-<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">04 — Date of incident</span>
-<input type="date" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="date" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Mobile number</span>
-<input type="tel" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="tel" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 </div>
 
 <div>
 <div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">05 — Have you informed the insurer yet?</div>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
-<button type="button" onClick="{{ cr0 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ crB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Yes</button>
-<button type="button" onClick="{{ cr1 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ crB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">No</button>
-<button type="button" onClick="{{ cr2 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ crB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Not sure</button>
+<button type="button" onClick="{{ cr0 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ crB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Yes</button>
+<button type="button" onClick="{{ cr1 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ crB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">No</button>
+<button type="button" onClick="{{ cr2 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ crB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Not sure</button>
 </div>
 </div>
 
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">06 — What happened?</span>
-<textarea rows="3" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.55 Inter,sans-serif;color:#17140E;outline:none;resize:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24"></textarea>
+<textarea rows="3" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.55 Inter,sans-serif;color:#0E2745;outline:none;resize:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24"></textarea>
 </label>
 
 <div><p style="display:{{ claimErrShow }};margin:14px 0 0;font:400 14px/1.5 Inter,sans-serif;color:#8C6A24">Please choose an option above before submitting.</p>
-<button type="submit" style="margin-top:22px;padding:18px 32px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#17140E;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">Submit claim request</button>
+<button type="submit" style="margin-top:22px;padding:18px 32px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">Submit claim request</button>
 </div>
 </form>
 <div style="display:{{ claimSentShow }};align-items:flex-start;gap:14px;max-width:520px;padding:26px 0 0;border-top:1px solid rgba(140,106,36,.4)">
 <span style="display:block;width:26px;height:1px;background:#8C6A24;margin-top:12px;flex:none"></span>
-<p style="margin:0;font:400 17px/1.7 Inter,sans-serif;color:rgba(23,20,14,.78)">Your claim request has been logged. A BS Finance advisor will call you to collect documents and open the file with your insurer.</p>
+<p style="margin:0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.78)">Your claim request has been logged. A BS Finance advisor will call you to collect documents and open the file with your insurer.</p>
 </div>
 </div>
 </section>
 
-<section id="become-a-posp" data-screen-label="Become a POSP" style="position:relative;background:#EAE2D2;color:#17140E;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<section id="become-a-posp" data-screen-label="Become a POSP" style="position:relative;background:#EAE2D2;color:#0E2745;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
 <svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;right:-80px;bottom:-70px;width:min(520px,52vw);height:auto;opacity:.06;pointer-events:none">
 <path d="M6 88H94"/><path d="M22 88V66"/><path d="M40 88V54"/><path d="M58 88V60"/><path d="M14 74 38 48 54 62 86 26"/><path d="M86 26H68"/><path d="M86 26V44"/>
 </svg>
@@ -468,11 +513,11 @@ input,textarea,button{font:inherit;color:inherit}
 <div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E">Become a POSP</span>
 <h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em;text-wrap:balance">Sell insurance alongside your own work.</h2>
-<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(23,20,14,.72);max-width:40ch;text-wrap:pretty">A Point of Salesperson is IRDAI-certified to sell specified insurance products. We handle your onboarding, training and product access — you build a book at your own pace.</p>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">A Point of Salesperson is IRDAI-certified to sell specified insurance products. We handle your onboarding, training and product access — you build a book at your own pace.</p>
 <div style="margin-top:34px;display:flex;flex-direction:column;gap:14px;max-width:34ch">
-<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(23,20,14,.72)">18 years or older, 10th standard minimum</span></div>
-<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(23,20,14,.72)">PAN and Aadhaar for KYC</span></div>
-<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(23,20,14,.72)">15 hours of IRDAI-prescribed training, then the exam</span></div>
+<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(14,39,69,.72)">18 years or older, 10th standard minimum</span></div>
+<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(14,39,69,.72)">PAN and Aadhaar for KYC</span></div>
+<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(14,39,69,.72)">15 hours of IRDAI-prescribed training, then the exam</span></div>
 </div>
 </div>
 
@@ -480,52 +525,52 @@ input,textarea,button{font:inherit;color:inherit}
 <div style="display:grid;grid-template-columns:{{ pairCols }};gap:clamp(24px,3vw,40px)">
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Full name</span>
-<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Mobile number</span>
-<input type="tel" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="tel" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Email</span>
-<input type="email" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="email" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 <label style="display:block">
 <span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">City</span>
-<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#17140E;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
 </label>
 </div>
 
 <div>
 <div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">Highest qualification</div>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
-<button type="button" onClick="{{ pq0 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ pqB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">10th pass</button>
-<button type="button" onClick="{{ pq1 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ pqB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">12th pass</button>
-<button type="button" onClick="{{ pq2 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ pqB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Graduate</button>
-<button type="button" onClick="{{ pq3 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ pqB3 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Postgraduate</button>
+<button type="button" onClick="{{ pq0 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">10th pass</button>
+<button type="button" onClick="{{ pq1 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">12th pass</button>
+<button type="button" onClick="{{ pq2 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Graduate</button>
+<button type="button" onClick="{{ pq3 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB3 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Postgraduate</button>
 </div>
 </div>
 
 <div>
 <div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">Any prior insurance experience?</div>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
-<button type="button" onClick="{{ pe0 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ peB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Yes</button>
-<button type="button" onClick="{{ pe1 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#17140E;cursor:pointer;background-color:{{ peB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">No</button>
+<button type="button" onClick="{{ pe0 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ peB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Yes</button>
+<button type="button" onClick="{{ pe1 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ peB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">No</button>
 </div>
 </div>
 
 <div><p style="display:{{ pospErrShow }};margin:14px 0 0;font:400 14px/1.5 Inter,sans-serif;color:#8C6A24">Please choose an option above before submitting.</p>
-<button type="submit" style="margin-top:22px;padding:18px 32px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#17140E;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">Apply as a POSP</button>
+<button type="submit" style="margin-top:22px;padding:18px 32px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">Apply as a POSP</button>
 </div>
 </form>
 <div style="display:{{ pospSentShow }};align-items:flex-start;gap:14px;max-width:520px;padding:26px 0 0;border-top:1px solid rgba(140,106,36,.45)">
 <span style="display:block;width:26px;height:1px;background:#8C6A24;margin-top:12px;flex:none"></span>
-<p style="margin:0;font:400 17px/1.7 Inter,sans-serif;color:rgba(23,20,14,.78)">Application received. We will call you to verify your documents and schedule the IRDAI training module.</p>
+<p style="margin:0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.78)">Application received. We will call you to verify your documents and schedule the IRDAI training module.</p>
 </div>
 </div>
 </section>
 
-<section id="contact" data-screen-label="Closing CTA" style="background:#0B0A08;color:#F5F0E6;padding:clamp(90px,11vw,180px) clamp(22px,6vw,110px) clamp(70px,8vw,120px);border-top:1px solid rgba(201,162,75,.22)">
+<section id="contact" data-screen-label="Closing CTA" style="background:#0E2745;color:#F5F0E6;padding:clamp(90px,11vw,180px) clamp(22px,6vw,110px) clamp(70px,8vw,120px);border-top:1px solid rgba(201,162,75,.22)">
 <div style="max-width:1380px;margin:0 auto">
 <h2 data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);margin:0;max-width:16ch;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.4rem,7vw,7rem);line-height:1.01;letter-spacing:-.024em;text-wrap:balance">Ready to build your <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">wealth?</span></h2>
 <p data-reveal="1" data-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);margin:26px 0 0;font:400 clamp(16px,1.1vw,18px)/1.7 Inter,sans-serif;color:rgba(245,240,230,.66)">Invest smartly. Protect fiercely. Grow consistently.</p>
@@ -569,7 +614,7 @@ input,textarea,button{font:inherit;color:inherit}
 <span style="position:absolute;left:0;top:{{ lTop3 }};font-size:{{ lFs3 }};color:{{ lCol3 }};letter-spacing:.1em;text-transform:uppercase;pointer-events:none;transition:top .28s cubic-bezier(.22,1,.36,1),font-size .28s cubic-bezier(.22,1,.36,1),color .28s ease">What are you planning for?</span>
 <textarea rows="2" value="{{ v3 }}" onChange="{{ c3 }}" onFocus="{{ f3 }}" onBlur="{{ blur }}" style="width:100%;background:none;border:0;border-bottom:1px solid {{ lBor3 }};padding:8px 0 10px;font:400 16px/1.5 Inter,sans-serif;color:#F5F0E6;outline:none;resize:none;transition:border-color .3s ease,box-shadow .3s ease;box-shadow:{{ lGlow3 }}"></textarea>
 </label>
-<button type="submit" style="align-self:flex-start;margin-top:6px;padding:17px 30px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#17140E;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%)">Send Request</button>
+<button type="submit" style="align-self:flex-start;margin-top:6px;padding:17px 30px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%)">Send Request</button>
 </form>
 <div style="display:{{ sentShow }};align-items:flex-start;gap:14px;max-width:420px;padding:22px 0 0;border-top:1px solid rgba(201,162,75,.35)">
 <span style="display:block;width:26px;height:1px;background:#E3C878;margin-top:11px;flex:none"></span>
@@ -580,7 +625,7 @@ input,textarea,button{font:inherit;color:inherit}
 </div>
 </section>
 
-<footer data-screen-label="Footer" style="position:relative;background:#0B0A08;color:#F5F0E6;padding:clamp(70px,8vw,120px) clamp(22px,6vw,110px) 40px;overflow:hidden">
+<footer data-screen-label="Footer" style="position:relative;background:#0E2745;color:#F5F0E6;padding:clamp(70px,8vw,120px) clamp(22px,6vw,110px) 40px;overflow:hidden">
 <img src="assets/logo-word-champagne.png" alt="" aria-hidden="true" style="position:absolute;left:50%;bottom:14px;transform:translateX(-50%);width:min(1500px,96%);max-width:none;opacity:.08;pointer-events:none">
 <div style="position:relative;max-width:1380px;margin:0 auto">
 <div style="display:grid;grid-template-columns:{{ footCols }};gap:clamp(36px,5vw,90px);align-items:start">
@@ -617,7 +662,7 @@ input,textarea,button{font:inherit;color:inherit}
 </div>
 </footer>
 
-<div aria-hidden="true" style="position:fixed;left:0;right:0;top:0;height:100%;z-index:120;background:#0B0A08;transform:{{ wipeT }};transition:transform .6s cubic-bezier(.22,1,.36,1);pointer-events:none;border-bottom:1px solid #C9A24B"></div>
+<div aria-hidden="true" style="position:fixed;left:0;right:0;top:0;height:100%;z-index:120;background:#0E2745;transform:{{ wipeT }};transition:transform .6s cubic-bezier(.22,1,.36,1);pointer-events:none;border-bottom:1px solid #C9A24B"></div>
 
 </div>
 </x-dc>
@@ -646,6 +691,33 @@ class Component extends DCLogic {
     this.auto = { t: 0, on: false };
     this.hb = { rx: 0, ry: 0 };
     this._h = {};
+    this.pTabs = [
+      { k: 'all', label: 'All' },
+      { k: 'health', label: 'Health' },
+      { k: 'm4', label: 'Motor \u00b7 4 Wheeler' },
+      { k: 'm2', label: 'Motor \u00b7 2 Wheeler' },
+      { k: 'topup', label: 'Top-up Health' },
+      { k: 'travel', label: 'Travel' },
+      { k: 'gcv', label: 'GCV & PCV' },
+    ];
+    this.insurers = [
+      { name: 'Bajaj Allianz General', logo: 'assets/insurers/bajaj.png', c: ['m4', 'm2'], plans: 'Motor \u2014 4 Wheeler and 2 Wheeler, with add-ons.' },
+      { name: 'Care Health Insurance', logo: 'assets/insurers/care.png', c: ['health', 'travel'], plans: 'Care Supreme \u00b7 Care Classic \u00b7 Care Senior \u00b7 Care Advantage \u00b7 New Explore (travel) \u00b7 portability.' },
+      { name: 'Digit', logo: 'assets/insurers/digit.png', c: ['health', 'm4', 'm2', 'gcv'], plans: 'Double Wallet \u00b7 Infinity Wallet \u00b7 Worldwide Treatment \u00b7 Motor 4W, 2W, GCV and PCV.' },
+      { name: 'Generali Central', logo: 'assets/insurers/generali.png', c: ['health', 'm4'], plans: 'Health Total \u2014 Vital \u00b7 Motor 4 Wheeler.' },
+      { name: 'HDFC ERGO', logo: 'assets/insurers/hdfc-ergo.png', c: ['m4'], plans: 'Motor \u2014 4 Wheeler.' },
+      { name: 'ICICI Lombard', logo: 'assets/insurers/icici.png', c: ['health', 'm4', 'm2'], plans: 'Elevate Health Insurance \u00b7 Motor 4 Wheeler and 2 Wheeler.' },
+      { name: 'IFFCO-Tokio', logo: 'assets/insurers/iffco-tokio.png', c: ['health'], plans: 'Family Health Protector.' },
+      { name: 'IndusInd General Insurance', logo: 'assets/insurers/indusind.png', c: ['health', 'topup', 'm4', 'm2'], plans: 'Health Infinity \u00b7 Health Gain 3.0 \u00b7 Top-up Plan A and Plan B \u00b7 Motor 4W and 2W.' },
+      { name: 'ManipalCigna', logo: 'assets/insurers/manipalcigna.png', c: ['health'], plans: 'Sarvah \u00b7 Lifetime Health \u00b7 Prime Senior \u00b7 ProHealth Prime.' },
+      { name: 'National Insurance', logo: 'assets/insurers/national.png', c: ['m4', 'm2'], plans: 'Motor \u2014 4 Wheeler and 2 Wheeler.' },
+      { name: 'Niva Bupa', logo: 'assets/insurers/niva-bupa.png', c: ['health'], plans: 'ReAssure 2.0 \u2014 Titanium+, Platinum+ and Bronze+.' },
+      { name: 'Raheja QBE', logo: 'assets/insurers/raheja-qbe.png', c: ['health'], plans: 'Health QuBE \u00b7 Arogya Sanjeevani Policy.' },
+      { name: 'TATA AIG', logo: 'assets/insurers/tata-aig.png', c: ['m4', 'm2'], plans: 'Motor \u2014 4 Wheeler and 2 Wheeler.' },
+      { name: 'Universal Sompo', logo: 'assets/insurers/sompo.png', c: ['health', 'm4'], plans: 'Complete Healthcare \u00b7 A Plus Health Insurance \u00b7 Motor 4 Wheeler.' },
+      { name: 'Zuno', logo: 'assets/insurers/zuno.png', c: ['health', 'topup', 'm4', 'm2'], plans: 'Gold \u00b7 Silver \u00b7 Platinum \u00b7 Health Super Top Up \u00b7 Motor 4W and 2W.' },
+      { name: 'Zurich Kotak', logo: 'assets/insurers/zurich-kotak.png', c: ['health', 'm4'], plans: 'Health 360 \u2014 Gold, Silver and Platinum \u00b7 Motor 4 Wheeler.' },
+    ];
   }
 
   /* ---------- lifecycle ---------- */
@@ -931,7 +1003,7 @@ class Component extends DCLogic {
     this.l2.y += (this.mouse.y - this.l2.y) * 0.045;
     const R = (this.props.midasRadius ?? 480) / 2;
     const vh = window.innerHeight;
-    const INK = 'linear-gradient(#17140E,#17140E)';
+    const INK = 'linear-gradient(#0E2745,#0E2745)';
     const MET = 'linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%)';
     const lit = this.props.metalSheen !== false;
     const paint = this.paintEls || (this.paintEls = []);
@@ -1047,7 +1119,7 @@ class Component extends DCLogic {
       rootRef: this.rootRef, canvasRef: this.canvasRef, indexRef: this.indexRef,
       statementRef: this.statementRef, dotRef: this.dotRef, shimmerRef: this.shimmerRef,
 
-      navBg: st.scrolled ? '#0B0A08' : 'transparent',
+      navBg: st.scrolled ? '#0E2745' : 'transparent',
       navLine: st.scrolled ? 'rgba(201,162,75,.4)' : 'transparent',
       navH: st.scrolled ? '68px' : '86px',
       navLinks: mid ? 'none' : 'flex',
@@ -1062,6 +1134,18 @@ class Component extends DCLogic {
         setTimeout(() => { window.location.href = 'BS%20Finance%20Portals.dc.html'; }, 620);
       }),
       wipeT: st.wipe ? 'translateY(0)' : 'translateY(-101%)',
+
+      partnerTabs: this.pTabs.map((t) => {
+        const on = (st.pTab || 'all') === t.k;
+        return {
+          label: t.label, active: on ? 'true' : 'false',
+          bg: on ? '#0E2745' : 'transparent',
+          fg: on ? '#E3C878' : 'rgba(14,39,69,.72)',
+          bd: on ? '#0E2745' : 'rgba(201,162,75,.5)',
+          on: this.h('pt' + t.k, () => this.setState({ pTab: t.k })),
+        };
+      }),
+      partnerList: this.insurers.filter((i) => !st.pTab || st.pTab === 'all' || i.c.indexOf(st.pTab) > -1),
 
       globeOpacity: mob ? 0.3 : 0.5,
       heroCols: mid ? '1fr' : narrow ? '1fr 200px' : '1fr 1fr 200px',

@@ -12,14 +12,14 @@
 <title>BS Finance Insurance Portals — Customer &amp; Advisor Login</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#0B0A08;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#0E2745;-webkit-font-smoothing:antialiased}
 *{box-sizing:border-box}
 a{color:#E3C878;text-decoration:none}
 a:hover{color:#F2E2A8}
-::selection{background:#E3C878;color:#17140E}
+::selection{background:#E3C878;color:#0E2745}
 button{font:inherit;color:inherit}
 :focus-visible{outline:1px solid #E3C878;outline-offset:3px}
 @keyframes sheen{to{background-position:260% 0}}
@@ -27,13 +27,13 @@ button{font:inherit;color:inherit}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-@media (min-width:900px){body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:#0B0A08}body::-webkit-scrollbar-thumb{background:#8C6A24;border:3px solid #0B0A08;border-radius:6px}}
+@media (min-width:900px){body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:#0E2745}body::-webkit-scrollbar-thumb{background:#8C6A24;border:3px solid #0E2745;border-radius:6px}}
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="background:#0B0A08;color:#F5F0E6;font-family:Inter,system-ui,sans-serif;position:relative;overflow-x:clip;min-height:100svh;display:flex;flex-direction:column">
+<div ref="{{ rootRef }}" style="background:#0E2745;color:#F5F0E6;font-family:Inter,system-ui,sans-serif;position:relative;overflow-x:clip;min-height:100svh;display:flex;flex-direction:column">
 
-<header style="position:sticky;top:0;z-index:80;background:#0B0A08;border-bottom:1px solid rgba(201,162,75,.4)">
+<header style="position:sticky;top:0;z-index:80;background:#0E2745;border-bottom:1px solid rgba(201,162,75,.4)">
 <nav style="max-width:1520px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:68px;display:flex;align-items:center;gap:28px">
 <a href="BS%20Finance%20Home.dc.html" onClick="{{ goHome }}" style="display:flex;align-items:center;gap:12px;flex:none">
 <img src="assets/logo-mark-champagne.png" alt="BS Finance emblem — rising chart arrow, gada and lotus" style="height:32px;width:auto;display:block">
@@ -52,7 +52,7 @@ button{font:inherit;color:inherit}
 <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878">Secure access</span>
 </div>
 <h1 style="margin:26px 0 0;max-width:16ch;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.3rem,5.6vw,5.2rem);line-height:1.02;letter-spacing:-.022em;color:#F5F0E6;text-wrap:balance">
-<span style="display:block;overflow:hidden;padding-bottom:.16em"><span style="display:block;animation:riseIn .85s cubic-bezier(.22,1,.36,1) .15s both">BS Finance Insurance Portals</span></span>
+<span style="display:block;overflow:hidden;padding-bottom:.16em"><span style="display:block;animation:riseIn .85s cubic-bezier(.22,1,.36,1) .15s both">BS Finance Insurance <span data-metal="1" style="font-style:italic;padding:.16em .12em;margin:-.16em -.12em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Portals</span></span></span>
 </h1>
 <p style="margin:28px 0 0;max-width:58ch;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(245,240,230,.66);text-wrap:pretty;animation:fadeUp .8s cubic-bezier(.22,1,.36,1) .5s both">Select your secure portal to manage policies, track renewals, or access your advisory dashboard.</p>
 
@@ -131,14 +131,14 @@ button{font:inherit;color:inherit}
 </div>
 </main>
 
-<footer style="background:#0B0A08;color:#F5F0E6;padding:40px clamp(22px,6vw,110px);border-top:1px solid rgba(201,162,75,.28)">
+<footer style="background:#0E2745;color:#F5F0E6;padding:40px clamp(22px,6vw,110px);border-top:1px solid rgba(201,162,75,.28)">
 <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 40px;align-items:baseline">
 <p style="margin:0;flex:1 1 320px;font:400 12px/1.7 Inter,sans-serif;color:rgba(245,240,230,.62);max-width:70ch">Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
-<a href="BS%20Finance%20Home.dc.html" onClick="{{ goHome }}" style="font:400 12px/1.7 Inter,sans-serif;color:rgba(245,240,230,.55);letter-spacing:.06em">BS Finance · Vadodara, Gujarat</a>
+<a href="BS%20Finance%20Home.dc.html" onClick="{{ goHome }}" style="font:400 12px/1.7 Inter,sans-serif;color:rgba(245,240,230,.55);letter-spacing:.06em">&#169; 2026 BS Finance &#183; Vadodara, Gujarat</a>
 </div>
 </footer>
 
-<div aria-hidden="true" style="position:fixed;left:0;right:0;top:0;height:100%;z-index:120;background:#0B0A08;transform:{{ wipeT }};transition:transform .6s cubic-bezier(.22,1,.36,1);pointer-events:none;border-bottom:1px solid #C9A24B"></div>
+<div aria-hidden="true" style="position:fixed;left:0;right:0;top:0;height:100%;z-index:120;background:#0E2745;transform:{{ wipeT }};transition:transform .6s cubic-bezier(.22,1,.36,1);pointer-events:none;border-bottom:1px solid #C9A24B"></div>
 
 </div>
 </x-dc>
