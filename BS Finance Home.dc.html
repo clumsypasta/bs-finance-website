@@ -42,11 +42,14 @@ input,textarea,button{font:inherit;color:inherit}
 </a>
 <span style="flex:1"></span>
 <div style="display:{{ navLinks }};align-items:center;gap:clamp(18px,2.4vw,40px)">
-<a href="#about" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">About</a>
-<a href="#services" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Services</a>
-<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Portals</a>
-<a href="#contact" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Contact</a>
-<a href="#contact" style="display:{{ navCta }};padding:12px 24px;border:1px solid rgba(201,162,75,.55);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#E3C878;transition:border-color .25s,color .25s,background .25s" style-hover="border-color:#E3C878;color:#F2E2A8;background:rgba(227,200,120,.07)">Schedule a Consultation</a>
+<a href="#about" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">About</a>
+<a href="#services" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Services</a>
+<a href="#become-a-posp" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Become a POSP</a>
+<a href="#contact" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Contact</a>
+<span style="display:{{ navCta }};width:1px;height:20px;background:rgba(201,162,75,.3)"></span>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="display:flex;align-items:center;gap:8px;padding:11px 20px;border:1px solid rgba(201,162,75,.5);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;transition:border-color .25s,color .25s,background .25s" style-hover="border-color:#E3C878;color:#E3C878;background:rgba(227,200,120,.06)">
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;flex:none"><path d="M62 22H78C84 22 88 26 88 32V68C88 74 84 78 78 78H62"/><path d="M20 50H64"/><path d="M48 34 64 50 48 66"/></svg>Login</a>
+<a href="#insurance-products" style="padding:12px 24px;border-radius:999px;background:#E3C878;border:1px solid #E3C878;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#0E2745;white-space:nowrap;transition:background .25s,box-shadow .25s" style-hover="background:#F2E2A8;box-shadow:0 6px 22px rgba(227,200,120,.24)">Get a Quote</a>
 </div>
 <button type="button" aria-label="Open menu" onClick="{{ openMenu }}" style="display:{{ burger }};flex-direction:column;gap:5px;background:none;border:0;padding:10px;cursor:pointer">
 <span style="display:block;width:22px;height:1px;background:#E3C878"></span>
@@ -64,10 +67,14 @@ input,textarea,button{font:inherit;color:inherit}
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px">
 <a href="#about" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .05s both">About</a>
 <a href="#services" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .13s both">Services</a>
-<a href="BS%20Finance%20Portals.dc.html" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .21s both">Portals</a>
+<a href="#become-a-posp" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .21s both">Become a POSP</a>
 <a href="#contact" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .29s both">Contact</a>
 </div>
-<a href="#contact" onClick="{{ closeMenu }}" style="text-align:center;padding:17px 24px;border:1px solid rgba(201,162,75,.55);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Schedule a Consultation</a>
+<div style="display:flex;flex-direction:column;gap:12px">
+<a href="#insurance-products" onClick="{{ closeMenu }}" style="text-align:center;padding:18px 24px;border-radius:999px;background:#E3C878;font:600 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745">Get a Quote</a>
+<a href="BS%20Finance%20Portals.dc.html" style="display:flex;align-items:center;justify-content:center;gap:9px;padding:17px 24px;border:1px solid rgba(201,162,75,.55);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:15px;height:15px;flex:none"><path d="M62 22H78C84 22 88 26 88 32V68C88 74 84 78 78 78H62"/><path d="M20 50H64"/><path d="M48 34 64 50 48 66"/></svg>Login</a>
+</div>
 </div>
 
 <section id="top" data-screen-label="Hero" style="position:relative;min-height:100svh;background:#0E2745;display:flex;flex-direction:column;overflow:hidden;padding:clamp(104px,13vh,146px) clamp(22px,5vw,72px) clamp(32px,5vh,54px)">
@@ -1122,9 +1129,9 @@ class Component extends DCLogic {
       navBg: st.scrolled ? '#0E2745' : 'transparent',
       navLine: st.scrolled ? 'rgba(201,162,75,.4)' : 'transparent',
       navH: st.scrolled ? '68px' : '86px',
-      navLinks: mid ? 'none' : 'flex',
-      navCta: w < 1180 ? 'none' : 'inline-block',
-      burger: mid ? 'flex' : 'none',
+      navLinks: w < 1240 ? 'none' : 'flex',
+      navCta: 'block',
+      burger: w < 1240 ? 'flex' : 'none',
       menuShow: st.menu ? 'flex' : 'none',
       openMenu: this.h('om', () => this.setState({ menu: true })),
       closeMenu: this.h('cm', () => this.setState({ menu: false })),
