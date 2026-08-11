@@ -27,6 +27,7 @@ input,textarea,button{font:inherit;color:inherit}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes drawIn{from{stroke-dashoffset:1px}to{stroke-dashoffset:0px}}
 @keyframes driftY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes insScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 @media (min-width:900px){body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:#0E2745}body::-webkit-scrollbar-thumb{background:#8C6A24;border:3px solid #0E2745;border-radius:6px}}
 </style>
@@ -43,7 +44,21 @@ input,textarea,button{font:inherit;color:inherit}
 <span style="flex:1"></span>
 <div style="display:{{ navLinks }};align-items:center;gap:clamp(18px,2.4vw,40px)">
 <a href="#about" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">About</a>
-<a href="#services" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Services</a>
+<span onMouseEnter="{{ svcOpen }}" onMouseLeave="{{ svcClose }}" style="position:relative;display:block">
+<a href="#services" style="display:flex;align-items:center;gap:7px;font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Services<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:9px;height:9px;flex:none;transform:{{ svcCaretT }};transition:transform .25s"><path d="M20 38 50 66 80 38"></path></svg></a>
+<div style="display:{{ svcDropShow }};position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:26px;z-index:90">
+<div style="min-width:276px;background:#0E2745;border:1px solid rgba(201,162,75,.4);box-shadow:0 22px 54px rgba(4,14,28,.5);padding:10px 0;animation:fadeUp .3s cubic-bezier(.22,1,.36,1) both">
+<a href="#mutual-funds" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Mutual Funds &amp; SIPs</a>
+<a href="#demat" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Demat &amp; Equity Trading</a>
+<a href="#insurance" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Insurance</a>
+<a href="#raise-a-claim" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Raise a Claim</a>
+<a href="#become-a-posp" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Become a POSP</a>
+<span aria-hidden="true" style="display:block;height:1px;background:rgba(201,162,75,.3);margin:10px 22px"></span>
+<a href="https://diy.sharekhan.com/app/Account/Register?grpcd=13723&amp;type=pb&amp;grpid=14166" target="_blank" rel="noopener noreferrer" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:500 14px/1.3 Inter,sans-serif;color:#E3C878;transition:color .2s,background .2s" style-hover="color:#F2E2A8;background:rgba(227,200,120,.06)">Open a Demat Account<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:11px;height:11px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg></a>
+<a href="http://p.njw.bz/97331" target="_blank" rel="noopener noreferrer" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:500 14px/1.3 Inter,sans-serif;color:#E3C878;transition:color .2s,background .2s" style-hover="color:#F2E2A8;background:rgba(227,200,120,.06)">Open a Mutual Fund Account<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:11px;height:11px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg></a>
+</div>
+</div>
+</span>
 <a href="#raise-a-claim" style="display:flex;align-items:center;gap:8px;font:600 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#E3C878;transition:color .25s" style-hover="color:#F2E2A8"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:13px;height:13px;flex:none"><path d="M50 12 86 26V52C86 72 71 85 50 91C29 85 14 72 14 52V26Z"></path><path d="M36 51 46 62 66 40"></path></svg>Raise a Claim</a>
 <a href="#become-a-posp" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Become a POSP</a>
 <a href="#contact" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Contact</a>
@@ -68,6 +83,12 @@ input,textarea,button{font:inherit;color:inherit}
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px">
 <a href="#about" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .05s both">About</a>
 <a href="#services" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .13s both">Services</a>
+<div style="display:flex;flex-wrap:wrap;gap:10px 22px;margin:2px 0 8px;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .17s both">
+<a href="#mutual-funds" onClick="{{ closeMenu }}" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Mutual Funds &amp; SIPs</a>
+<a href="#demat" onClick="{{ closeMenu }}" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Demat &amp; Equity</a>
+<a href="#insurance" onClick="{{ closeMenu }}" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Insurance</a>
+<a href="https://diy.sharekhan.com/app/Account/Register?grpcd=13723&amp;type=pb&amp;grpid=14166" target="_blank" rel="noopener noreferrer" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Open a Demat Account</a>
+</div>
 <a href="#raise-a-claim" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#E3C878;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .21s both">Raise a Claim</a>
 <a href="#become-a-posp" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .25s both">Become a POSP</a>
 <a href="#contact" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .29s both">Contact</a>
@@ -357,16 +378,31 @@ input,textarea,button{font:inherit;color:inherit}
 <p style="flex:0 1 400px;margin:0;font:400 clamp(15.5px,1.05vw,17px)/1.7 Inter,sans-serif;color:rgba(14,39,69,.7);text-wrap:pretty">We work with India's leading general, health and life insurance companies. Tell us what you need and we compare plans for you.</p>
 </div>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:clamp(13px,1.3vw,18px)">
+<div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)">
+<div style="display:flex;width:max-content;animation:insScroll 55s linear infinite" style-hover="animation-play-state:paused">
+<div style="display:flex;gap:16px;padding-right:16px;flex:none">
 <sc-for list="{{ partnerList }}" as="ins" hint-placeholder-count="8">
-<div style="background:#FFFFFF;border:1px solid rgba(201,162,75,.34);padding:clamp(20px,2vw,26px) clamp(14px,1.4vw,20px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+<div style="width:212px;flex:none;background:#FFFFFF;border:1px solid rgba(201,162,75,.34);padding:22px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
 <div style="height:54px;display:flex;align-items:center;justify-content:center">
-<img src="{{ ins.logo }}" alt="{{ ins.name }}" loading="lazy" style="max-height:44px;max-width:100%;width:auto;height:auto;object-fit:contain;display:block">
+<img src="{{ ins.logo }}" alt="{{ ins.name }}" loading="lazy" style="max-height:44px;max-width:170px;width:auto;height:auto;object-fit:contain;display:block">
 </div>
 <span aria-hidden="true" style="display:block;width:24px;height:1px;background:rgba(201,162,75,.5)"></span>
 <div style="font:500 13.5px/1.45 Inter,sans-serif;color:rgba(14,39,69,.8);text-wrap:pretty">{{ ins.name }}</div>
 </div>
 </sc-for>
+</div>
+<div aria-hidden="true" style="display:flex;gap:16px;padding-right:16px;flex:none">
+<sc-for list="{{ partnerList }}" as="ins" hint-placeholder-count="0">
+<div style="width:212px;flex:none;background:#FFFFFF;border:1px solid rgba(201,162,75,.34);padding:22px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+<div style="height:54px;display:flex;align-items:center;justify-content:center">
+<img src="{{ ins.logo }}" alt="" loading="lazy" style="max-height:44px;max-width:170px;width:auto;height:auto;object-fit:contain;display:block">
+</div>
+<span aria-hidden="true" style="display:block;width:24px;height:1px;background:rgba(201,162,75,.5)"></span>
+<div style="font:500 13.5px/1.45 Inter,sans-serif;color:rgba(14,39,69,.8);text-wrap:pretty">{{ ins.name }}</div>
+</div>
+</sc-for>
+</div>
+</div>
 </div>
 
 <div style="margin-top:clamp(30px,3.4vw,46px);padding-top:24px;border-top:1px solid rgba(201,162,75,.34);display:flex;flex-wrap:wrap;gap:16px 48px">
@@ -644,6 +680,12 @@ input,textarea,button{font:inherit;color:inherit}
 <div>
 <img src="assets/logo-mark-champagne.png" alt="BS Finance emblem" style="height:60px;width:auto;display:block;margin-bottom:24px">
 <p style="margin:0;max-width:52ch;font:400 16px/1.72 Inter,sans-serif;color:rgba(245,240,230,.62);text-wrap:pretty">BS Finance helps people in Vadodara plan their money — mutual funds, SIPs, Demat accounts for the stock market, and cover for health, motor and life.</p>
+<a href="https://share.google/qeiJm9Nzn7NLOvnQL" target="_blank" rel="noopener noreferrer" style="margin-top:28px;display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:1px solid rgba(201,162,75,.5);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#E3C878;transition:border-color .25s,background .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.07)">
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;flex:none"><path d="M50 88C36 70 24 56 24 40C24 25 36 14 50 14C64 14 76 25 76 40C76 56 64 70 50 88Z"></path><circle cx="50" cy="39" r="9"></circle></svg>
+Find us on Google
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:11px;height:11px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg>
+</a>
+<p style="margin:14px 0 0;font:400 13.5px/1.6 Inter,sans-serif;color:rgba(245,240,230,.45)">Reviews, directions and opening hours.</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:34px">
 <div>
@@ -1138,6 +1180,10 @@ class Component extends DCLogic {
       navCta: 'block',
       burger: w < 1400 ? 'flex' : 'none',
       menuShow: st.menu ? 'flex' : 'none',
+      svcDropShow: st.svcDrop ? 'block' : 'none',
+      svcCaretT: st.svcDrop ? 'rotate(180deg)' : 'none',
+      svcOpen: () => this.setState({ svcDrop: true }),
+      svcClose: () => this.setState({ svcDrop: false }),
       openMenu: this.h('om', () => this.setState({ menu: true })),
       closeMenu: this.h('cm', () => this.setState({ menu: false })),
       goPortals: this.h('gp', (e) => {
