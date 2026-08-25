@@ -1,11 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=BS%20Finance%20Home.dc.html">
-<title>BS Finance</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeyondSure — Website design previews</title>
+<meta name="description" content="Live, clickable design builds for PolicyE.com, Unique Financial &amp; Marketing Services, and BS Finance.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E2745">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E2745;
+    --navy-deep:#091B31;
+    --champagne:#E3C878;
+    --champagne-soft:#F2E2A8;
+    --ink:#FFFFFF;
+    --muted:rgba(255,255,255,.62);
+    --muted-dim:rgba(255,255,255,.42);
+    --hair:rgba(227,200,120,.20);
+    --card:rgba(255,255,255,.045);
+    --card-hover:rgba(255,255,255,.075);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--navy);
+    background-image:
+      radial-gradient(900px 600px at 12% -8%, rgba(227,200,120,.11), transparent 62%),
+      radial-gradient(760px 520px at 92% 4%, rgba(41,135,186,.13), transparent 60%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--champagne);text-decoration:none}
+  ::selection{background:var(--champagne);color:var(--navy)}
+  :focus-visible{outline:2px solid var(--champagne);outline-offset:4px;border-radius:6px}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+
+  /* ---------- masthead ---------- */
+  .masthead{padding:clamp(56px,8vw,104px) 0 clamp(32px,4vw,48px)}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font:600 11.5px/1 'Inter',sans-serif;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--champagne);
+    padding:9px 15px;border:1px solid var(--hair);border-radius:999px;
+    background:rgba(227,200,120,.06);
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:99px;background:var(--champagne);flex:none}
+  h1{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    font-size:clamp(34px,5.4vw,60px);
+    line-height:1.05;
+    letter-spacing:-.02em;
+    margin:26px 0 0;
+    max-width:16ch;
+  }
+  h1 em{font-style:normal;color:var(--champagne)}
+  .lede{
+    margin:20px 0 0;max-width:58ch;
+    font:400 clamp(15px,1.5vw,17.5px)/1.65 'Inter',sans-serif;
+    color:var(--muted);
+  }
+  .lede code{
+    font-family:'Inter',sans-serif;font-weight:600;
+    color:var(--champagne-soft);background:rgba(227,200,120,.10);
+    padding:1px 6px;border-radius:5px;
+  }
+
+  /* ---------- grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:clamp(18px,2.2vw,26px);
+    padding-bottom:clamp(48px,6vw,72px);
+  }
+  .card{
+    display:flex;flex-direction:column;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:18px;
+    overflow:hidden;
+    color:inherit;
+    transition:transform .28s cubic-bezier(.2,.7,.3,1), border-color .28s, background .28s, box-shadow .28s;
+  }
+  .card:hover,.card:focus-visible{
+    transform:translateY(-5px);
+    background:var(--card-hover);
+    border-color:var(--hair);
+    box-shadow:0 24px 48px -20px rgba(0,0,0,.55);
+  }
+  .tile{
+    height:184px;
+    display:flex;align-items:center;justify-content:center;
+    padding:26px 30px;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    position:relative;
+  }
+  .tile img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+  .tile--policye{background:#FFFFFF}
+  .tile--unique{background:#FCFBF8}
+  .tile--bsf{background:#0E2745;box-shadow:inset 0 0 0 1px rgba(227,200,120,.14)}
+  /* optically balance three lockups of very different proportions */
+  .tile--policye img{max-height:72px}
+  .tile--unique  img{max-height:116px}
+  .tile--bsf     img{max-height:112px}
+
+  .body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+  .brand{
+    font-family:'Fraunces',Georgia,serif;font-weight:600;
+    font-size:20.5px;line-height:1.2;letter-spacing:-.01em;margin:0;
+  }
+  .tagline{
+    margin:7px 0 0;
+    font:500 12px/1.4 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--champagne);
+  }
+  .desc{
+    margin:15px 0 0;
+    font:400 14.5px/1.62 'Inter',sans-serif;
+    color:var(--muted);
+  }
+  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 0;padding:0}
+  .chips li{
+    font:500 11.5px/1 'Inter',sans-serif;
+    color:var(--muted-dim);
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:999px;padding:7px 11px;
+  }
+  .cta{
+    margin-top:auto;padding-top:22px;
+    display:inline-flex;align-items:center;gap:8px;
+    font:600 14px/1 'Inter',sans-serif;color:var(--champagne);
+  }
+  .cta .arrow{transition:transform .28s cubic-bezier(.2,.7,.3,1);display:inline-block}
+  .card:hover .cta .arrow,.card:focus-visible .cta .arrow{transform:translateX(5px)}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid rgba(255,255,255,.10);
+    padding:clamp(28px,3.5vw,40px) 0 clamp(48px,6vw,72px);
+    display:flex;flex-wrap:wrap;gap:14px 28px;align-items:baseline;justify-content:space-between;
+    font:400 13px/1.6 'Inter',sans-serif;color:var(--muted-dim);
+  }
+  footer .note{max-width:62ch}
+  footer strong{color:var(--muted);font-weight:500}
+
+  @media (max-width:520px){
+    .tile{height:158px}
+    .tile--policye img{max-height:60px}
+    .tile--unique  img{max-height:96px}
+    .tile--bsf     img{max-height:92px}
+  }
+</style>
 </head>
 <body>
-<p><a href="BS%20Finance%20Home.dc.html">BS Finance &mdash; continue to site</a></p>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">BeyondSure · Design previews</span>
+    <h1>Three websites, <em>ready for review.</em></h1>
+    <p class="lede">
+      Live, clickable design builds — scroll them, hover them, open them on your phone.
+      Figures shown in <code>[ brackets ]</code> are placeholders waiting on real numbers.
+    </p>
+  </header>
+
+  <main class="grid">
+
+    <a class="card" href="policye/">
+      <div class="tile tile--policye">
+        <img src="assets/policye.jpg" width="560" height="195" alt="PolicyE.com">
+      </div>
+      <div class="body">
+        <h2 class="brand">PolicyE.com</h2>
+        <p class="tagline">Your world · Fully protected</p>
+        <p class="desc">
+          A comparison-first insurance marketplace — compare plans from India's leading
+          insurers, then stay with one advisor through renewal and claim.
+        </p>
+        <ul class="chips">
+          <li>Health</li><li>Term life</li><li>Motor</li><li>Travel</li>
+        </ul>
+        <span class="cta">Open preview <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a class="card" href="unique/">
+      <div class="tile tile--unique">
+        <img src="assets/unique.jpg" width="420" height="319" alt="Unique Financial &amp; Marketing Services">
+      </div>
+      <div class="body">
+        <h2 class="brand">Unique Financial &amp; Marketing Services</h2>
+        <p class="tagline">Finance · Insurance · Mutual funds</p>
+        <p class="desc">
+          Money managed with the care of a family office — insurance, mutual funds, loans
+          and long-term wealth planning under one advisor, with a written plan.
+        </p>
+        <ul class="chips">
+          <li>Advisory</li><li>Mutual funds</li><li>Loans</li><li>Insurance</li>
+        </ul>
+        <span class="cta">Open preview <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a class="card" href="bs-finance/">
+      <div class="tile tile--bsf">
+        <img src="assets/bs-finance.png" width="420" height="304" alt="BS Finance">
+      </div>
+      <div class="body">
+        <h2 class="brand">BS Finance</h2>
+        <p class="tagline">Securing your legacy</p>
+        <p class="desc">
+          Vadodara's financial planning practice — mutual funds, SIPs, demat and insurance,
+          in the original champagne-on-navy build.
+        </p>
+        <ul class="chips">
+          <li>Mutual funds</li><li>SIP</li><li>Demat</li><li>Insurance</li>
+        </ul>
+        <span class="cta">Open preview <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    <p class="note">
+      <strong>These are design previews, not live services.</strong>
+      Forms, quotes and logins are non-functional; licence numbers, statistics and
+      contact details are placeholders pending sign-off.
+    </p>
+    <p>BeyondSure</p>
+  </footer>
+
+</div>
+
 </body>
 </html>

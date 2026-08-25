@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<title>PolicyE.com — Compare insurance plans and buy the right one</title>
+<meta name="description" content="Compare health, life, motor and travel cover from India's leading insurers in one place — with an advisor who stays with you through renewal and claim.">
+<meta name="robots" content="noindex">
+<script>window.addEventListener('pageshow',function(e){if(e.persisted)window.location.reload()});</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F2A;-webkit-font-smoothing:antialiased}
+  *{box-sizing:border-box}
+  a{color:#1D6B99;text-decoration:none}
+  a:hover{color:#61BB48}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+<sc-if value="{{ showUtilityBar }}" hint-placeholder-val="{{ true }}">
+<div style="background:#0B1F2A;color:rgba(255,255,255,.72);font:500 12.5px/1 'Plus Jakarta Sans',sans-serif">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:40px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <div style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:99px;background:#61BB48;display:block"></span><span>IRDAI Broking Licence No. <span style="color:#fff">[ to be provided ]</span></span></div>
+    <div style="display:flex;align-items:center;gap:26px">
+      <a href="#" style="color:rgba(255,255,255,.72)" style-hover="color:#fff">Track application</a>
+      <a href="#" style="color:rgba(255,255,255,.72)" style-hover="color:#fff">Claim assistance</a>
+      <a href="#" style="color:rgba(255,255,255,.72)" style-hover="color:#fff">Advisor login</a>
+      <span style="color:#fff;font-weight:700">1800 000 0000</span>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,31,42,.09)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:84px;display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,2vw,32px)">
+    <div style="position:relative;width:200px;height:69px;overflow:hidden;flex:none">
+      <img src="assets/policye-logo.jpeg" alt="PolicyE.com" style="position:absolute;width:225px;left:-12px;top:-78px">
+    </div>
+    <nav style="display:flex;align-items:center;gap:clamp(14px,1.9vw,30px);font:600 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;white-space:nowrap">
+      <a href="#" style="color:#0B1F2A;display:flex;align-items:center;gap:5px" style-hover="color:#2987BA">Insurance <span style="font-size:9px;opacity:.5">▼</span></a>
+      <a href="#" style="color:#0B1F2A;display:flex;align-items:center;gap:5px" style-hover="color:#2987BA">Investments <span style="font-size:9px;opacity:.5">▼</span></a>
+      <a href="#" style="color:#0B1F2A" style-hover="color:#2987BA">Renew</a>
+      <a href="#" style="color:#0B1F2A" style-hover="color:#2987BA">Claims</a>
+      <a href="#" style="color:#0B1F2A" style-hover="color:#2987BA">About</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;flex:none">
+      <a href="#" style="font:600 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;padding:12px 16px;border-radius:10px" style-hover="background:#F1F6F9;color:#0B1F2A">Sign in</a>
+      <a href="#" style="font:700 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#fff;background:#61BB48;padding:14px 22px;border-radius:10px;box-shadow:0 6px 18px rgba(97,187,72,.32)" style-hover="background:#4E9E38">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<section style="position:relative;background:#F6FAFC;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(41,135,186,.16) 1px,transparent 1px);background-size:24px 24px;opacity:.9"></div>
+  <div style="position:absolute;top:-260px;right:-160px;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(97,187,72,.20),rgba(41,135,186,.16) 45%,rgba(41,135,186,0) 70%)"></div>
+  <div style="position:absolute;bottom:-320px;left:-220px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(41,135,186,.14),rgba(41,135,186,0) 68%)"></div>
+
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:76px 32px 88px;display:grid;grid-template-columns:minmax(0,1fr) clamp(340px,32vw,452px);gap:clamp(32px,4vw,64px);align-items:start">
+    <div style="padding-top:18px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(41,135,186,.22);padding:7px 14px 7px 8px;border-radius:999px;box-shadow:0 2px 10px rgba(11,31,42,.05)">
+        <span style="display:flex">
+          <span style="width:22px;height:22px;border-radius:50%;background:#CFE4F1;border:2px solid #fff;display:block"></span>
+          <span style="width:22px;height:22px;border-radius:50%;background:#D9EFD0;border:2px solid #fff;display:block;margin-left:-8px"></span>
+          <span style="width:22px;height:22px;border-radius:50%;background:#E4EAEE;border:2px solid #fff;display:block;margin-left:-8px"></span>
+        </span>
+        <span style="font:600 12.5px/1 'Plus Jakarta Sans',sans-serif;color:#1D6B99;letter-spacing:.01em">Trusted by [ 00,000 ] families across India</span>
+      </div>
+
+      <h1 style="font:700 clamp(36px,4.5vw,62px)/1.06 'Sora',sans-serif;letter-spacing:-.025em;margin:24px 0 0;color:#0B1F2A;text-wrap:balance">Compare every plan.<br>Buy the right one.<br><span style="color:#2987BA">Stay fully protected.</span></h1>
+
+      <p style="font:400 17.5px/1.65 'Plus Jakarta Sans',sans-serif;color:#4A6472;margin:22px 0 0;max-width:490px;text-wrap:pretty">One place to compare health, life, motor and travel cover from India's leading insurers — with an advisor who stays with you through renewal and claim.</p>
+
+      <div style="display:flex;gap:14px;margin:34px 0 0">
+        <a href="#" style="font:700 15px/1 'Plus Jakarta Sans',sans-serif;color:#fff;background:#2987BA;padding:17px 28px;border-radius:11px;box-shadow:0 8px 22px rgba(41,135,186,.30)" style-hover="background:#1D6B99">Compare plans</a>
+        <a href="#" style="font:700 15px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#fff;border:1px solid rgba(11,31,42,.14);padding:17px 26px;border-radius:11px" style-hover="border-color:#61BB48;color:#4E9E38">Talk to an advisor</a>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,auto);gap:0;margin:52px 0 0;border-top:1px solid rgba(11,31,42,.12);padding-top:26px;max-width:530px;justify-content:start;column-gap:44px">
+        <div>
+          <div style="font:700 30px/1 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.02em">[ 00 ]+</div>
+          <div style="font:500 13px/1.4 'Plus Jakarta Sans',sans-serif;color:#6A8492;margin-top:7px">Insurance partners</div>
+        </div>
+        <div>
+          <div style="font:700 30px/1 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.02em">[ 00.0 ]%</div>
+          <div style="font:500 13px/1.4 'Plus Jakarta Sans',sans-serif;color:#6A8492;margin-top:7px">Claim settlement support</div>
+        </div>
+        <div>
+          <div style="font:700 30px/1 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.02em">[ 0,000 ]</div>
+          <div style="font:500 13px/1.4 'Plus Jakarta Sans',sans-serif;color:#6A8492;margin-top:7px">Policies serviced</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(11,31,42,.13),0 2px 6px rgba(11,31,42,.05);border:1px solid rgba(11,31,42,.06);overflow:hidden">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(11,31,42,.08);background:#FAFCFD">
+        <div style="padding:16px 6px 14px;text-align:center;font:700 12.5px/1.3 'Plus Jakarta Sans',sans-serif;color:#2987BA;background:#fff;border-bottom:2px solid #2987BA;cursor:pointer">Health</div>
+        <div style="padding:16px 6px 14px;text-align:center;font:600 12.5px/1.3 'Plus Jakarta Sans',sans-serif;color:#6A8492;cursor:pointer" style-hover="color:#0B1F2A;background:#fff">Term life</div>
+        <div style="padding:16px 6px 14px;text-align:center;font:600 12.5px/1.3 'Plus Jakarta Sans',sans-serif;color:#6A8492;cursor:pointer" style-hover="color:#0B1F2A;background:#fff">Motor</div>
+        <div style="padding:16px 6px 14px;text-align:center;font:600 12.5px/1.3 'Plus Jakarta Sans',sans-serif;color:#6A8492;cursor:pointer" style-hover="color:#0B1F2A;background:#fff">Travel</div>
+      </div>
+
+      <div style="padding:26px 26px 24px">
+        <div style="font:700 19px/1.3 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.01em">Get health quotes in 60 seconds</div>
+
+        <div style="font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492;letter-spacing:.06em;text-transform:uppercase;margin:24px 0 10px">Who is this cover for?</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#fff;background:#2987BA;padding:10px 15px;border-radius:9px;cursor:pointer">Self</span>
+          <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#F1F6F9;padding:10px 15px;border-radius:9px;cursor:pointer" style-hover="background:#E1EDF4">Spouse</span>
+          <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#F1F6F9;padding:10px 15px;border-radius:9px;cursor:pointer" style-hover="background:#E1EDF4">Son</span>
+          <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#F1F6F9;padding:10px 15px;border-radius:9px;cursor:pointer" style-hover="background:#E1EDF4">Daughter</span>
+          <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#F1F6F9;padding:10px 15px;border-radius:9px;cursor:pointer" style-hover="background:#E1EDF4">Parents</span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px">
+          <div>
+            <div style="font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Age</div>
+            <div style="border:1px solid rgba(11,31,42,.16);border-radius:10px;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font:500 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;cursor:pointer" style-hover="border-color:#2987BA">32 yrs <span style="font-size:9px;color:#8AA0AC">▼</span></div>
+          </div>
+          <div>
+            <div style="font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Pin code</div>
+            <div style="border:1px solid rgba(11,31,42,.16);border-radius:10px;height:48px;display:flex;align-items:center;padding:0 14px;font:500 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#9AAEB8" style-hover="border-color:#2987BA">400001</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div style="font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Mobile number</div>
+          <div style="border:1px solid rgba(11,31,42,.16);border-radius:10px;height:48px;display:flex;align-items:center;gap:12px;padding:0 14px" style-hover="border-color:#2987BA">
+            <span style="font:600 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;padding-right:12px;border-right:1px solid rgba(11,31,42,.14)">+91</span>
+            <span style="font:500 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#9AAEB8">98765 43210</span>
+          </div>
+        </div>
+
+        <a href="#" style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:20px;height:54px;border-radius:11px;background:#61BB48;color:#fff;font:700 15.5px/1 'Plus Jakarta Sans',sans-serif;box-shadow:0 10px 24px rgba(97,187,72,.34)" style-hover="background:#4E9E38">View free quotes <span style="font-size:17px">→</span></a>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-top:14px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.4-3.1 8.4-7.5 9.5-4.4-1.1-7.5-5.1-7.5-9.5V6z"></path></svg>
+          <span style="font:500 12px/1.4 'Plus Jakarta Sans',sans-serif;color:#7C93A2">By continuing you agree to our terms. We never sell your data.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showPartnerStrip }}" hint-placeholder-val="{{ true }}">
+<section style="background:#fff;border-bottom:1px solid rgba(11,31,42,.08)">
+  <div style="max-width:1240px;margin:0 auto;padding:30px 32px;display:flex;align-items:center;gap:36px">
+    <div style="font:600 12px/1.5 'Plus Jakarta Sans',sans-serif;color:#8AA0AC;letter-spacing:.08em;text-transform:uppercase;flex:none;max-width:150px">Plans from<br>leading insurers</div>
+    <div style="flex:1;display:grid;grid-template-columns:repeat(6,1fr);gap:14px">
+      <div style="height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9.5px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">INSURER LOGO</div>
+      <div style="height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9.5px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">INSURER LOGO</div>
+      <div style="height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9.5px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">INSURER LOGO</div>
+      <div style="height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9.5px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">INSURER LOGO</div>
+      <div style="height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9.5px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">INSURER LOGO</div>
+      <div style="height:46px;border-radius:9px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9.5px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">+ MORE</div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<section style="background:#fff;padding:96px 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:44px">
+      <div>
+        <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.12em;text-transform:uppercase">What we cover</div>
+        <h2 style="font:700 clamp(30px,3.3vw,42px)/1.15 'Sora',sans-serif;letter-spacing:-.022em;margin:14px 0 0;color:#0B1F2A;max-width:640px;text-wrap:balance">Your whole world, under one policy dashboard</h2>
+      </div>
+      <a href="#" style="font:700 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;white-space:nowrap;flex:none;padding-bottom:8px">View all products →</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(236px,1fr));gap:20px">
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EAF4FA;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2987BA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0 4.9-8.8 10.4-8.8 10.4S3.2 13.5 3.2 8.6a4.4 4.4 0 0 1 8.8-.9 4.4 4.4 0 0 1 8.8.9z"></path></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Health insurance</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">Cashless cover for hospitalisation, day-care and critical illness.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EFF8EB;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4E9E38" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.2v5.6c0 4.7-3.4 8.9-8 10-4.6-1.1-8-5.3-8-10V6.2z"></path><path d="M9 12l2.2 2.2L15.4 10"></path></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Term life</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">High cover at a low premium, so your family never has to compromise.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EAF4FA;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2987BA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13.5h18"></path><path d="M4.5 13.5l1.8-5.2A2 2 0 0 1 8.2 7h7.6a2 2 0 0 1 1.9 1.3l1.8 5.2v4.2h-15z"></path><circle cx="7.6" cy="16" r="1.1"></circle><circle cx="16.4" cy="16" r="1.1"></circle></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Car insurance</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">Own damage, third party and add-ons — renewed in under two minutes.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EFF8EB;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4E9E38" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="16.5" r="3.3"></circle><circle cx="18.5" cy="16.5" r="3.3"></circle><path d="M5.5 16.5l4-7.5h6l3 7.5"></path><path d="M9.5 9h5"></path></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Two-wheeler</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">Instant policy issue with zero paperwork and multi-year options.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EAF4FA;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2987BA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"></path></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Travel</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">Medical, baggage and trip-delay cover for every visa requirement.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EFF8EB;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4E9E38" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5L12 4l8.5 6.5"></path><path d="M5.5 10v9h13v-9"></path><path d="M10 19v-5h4v5"></path></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Home &amp; property</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">Structure and contents cover against fire, theft and natural calamity.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EAF4FA;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2987BA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"></path><rect x="5" y="12" width="3.4" height="6" rx="1"></rect><rect x="10.3" y="8.5" width="3.4" height="9.5" rx="1"></rect><rect x="15.6" y="5" width="3.4" height="13" rx="1"></rect></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Investment plans</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">Guaranteed return, ULIP and child plans mapped to your goals.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+      <div style="border:1px solid rgba(11,31,42,.10);border-radius:18px;padding:26px 24px 24px;background:#fff;transition:all .18s ease;cursor:pointer" style-hover="border-color:rgba(41,135,186,.45);box-shadow:0 16px 34px rgba(11,31,42,.09);transform:translateY(-3px)">
+        <div style="width:48px;height:48px;border-radius:13px;background:#EFF8EB;display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4E9E38" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="2.2"></rect><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"></path><path d="M3 12h18"></path></svg>
+        </div>
+        <div style="font:700 18px/1.3 'Sora',sans-serif;color:#0B1F2A;margin:20px 0 0;letter-spacing:-.01em">Business cover</div>
+        <p style="font:400 14px/1.6 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:9px 0 0">Group health, shop, liability and marine cover for growing firms.</p>
+        <div style="font:700 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;margin-top:18px">Compare plans →</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showPlanCards }}" hint-placeholder-val="{{ true }}">
+<section style="background:#F6FAFC;padding:96px 0;border-top:1px solid rgba(11,31,42,.07)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:40px">
+      <div>
+        <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.12em;text-transform:uppercase">Side-by-side</div>
+        <h2 style="font:700 clamp(30px,3.3vw,42px)/1.15 'Sora',sans-serif;letter-spacing:-.022em;margin:14px 0 0;color:#0B1F2A;max-width:600px;text-wrap:balance">Real quotes, no hidden loading</h2>
+      </div>
+      <div style="display:flex;gap:8px;flex:none;padding-bottom:8px">
+        <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#fff;background:#0B1F2A;padding:11px 16px;border-radius:9px">₹5 L</span>
+        <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#fff;border:1px solid rgba(11,31,42,.14);padding:11px 16px;border-radius:9px" style-hover="border-color:#2987BA">₹10 L</span>
+        <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#fff;border:1px solid rgba(11,31,42,.14);padding:11px 16px;border-radius:9px" style-hover="border-color:#2987BA">₹25 L</span>
+        <span style="font:600 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B1F2A;background:#fff;border:1px solid rgba(11,31,42,.14);padding:11px 16px;border-radius:9px" style-hover="border-color:#2987BA">₹50 L+</span>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;align-items:start">
+
+      <div style="background:#fff;border:1px solid rgba(11,31,42,.10);border-radius:20px;overflow:hidden;box-shadow:0 2px 8px rgba(11,31,42,.04)">
+        <div style="padding:24px 24px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px dashed rgba(11,31,42,.14)">
+          <div style="height:40px;flex:1;border-radius:8px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">INSURER LOGO</div>
+          <div style="text-align:right;flex:none">
+            <div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492;letter-spacing:.06em;text-transform:uppercase">Claim ratio</div>
+            <div style="font:700 17px/1 'Sora',sans-serif;color:#0B1F2A;margin-top:6px">[ 00.0 ]%</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px 24px">
+          <div style="font:700 19px/1.3 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.01em">[ Plan name ]</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-top:16px">
+            <span style="font:700 34px/1 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.03em">₹[ 0,000 ]</span>
+            <span style="font:500 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492">/ year</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px;margin-top:20px">
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>[ 00,000 ]+ cashless hospitals</div>
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>No room-rent capping</div>
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Restore benefit included</div>
+          </div>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;margin-top:22px;height:48px;border-radius:10px;border:1px solid rgba(11,31,42,.16);color:#0B1F2A;font:700 14.5px/1 'Plus Jakarta Sans',sans-serif" style-hover="border-color:#2987BA;color:#2987BA">Get this plan</a>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:2px solid #2987BA;border-radius:20px;overflow:hidden;box-shadow:0 22px 48px rgba(41,135,186,.16);position:relative">
+        <div style="position:absolute;top:0;right:24px;background:#2987BA;color:#fff;font:700 10.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;border-radius:0 0 7px 7px">Best value</div>
+        <div style="padding:24px 24px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px dashed rgba(11,31,42,.14)">
+          <div style="height:40px;flex:1;border-radius:8px;background:repeating-linear-gradient(135deg,#E7F1F8 0 8px,#F4F9FC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9px/1 ui-monospace,Menlo,monospace;color:#7FA3B8;letter-spacing:.06em">INSURER LOGO</div>
+          <div style="text-align:right;flex:none;margin-top:12px">
+            <div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492;letter-spacing:.06em;text-transform:uppercase">Claim ratio</div>
+            <div style="font:700 17px/1 'Sora',sans-serif;color:#0B1F2A;margin-top:6px">[ 00.0 ]%</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px 24px">
+          <div style="font:700 19px/1.3 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.01em">[ Plan name ]</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-top:16px">
+            <span style="font:700 34px/1 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.03em">₹[ 0,000 ]</span>
+            <span style="font:500 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492">/ year</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px;margin-top:20px">
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Unlimited restore benefit</div>
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Day-1 maternity add-on</div>
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Annual health check-up</div>
+          </div>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;margin-top:22px;height:48px;border-radius:10px;background:#2987BA;color:#fff;font:700 14.5px/1 'Plus Jakarta Sans',sans-serif;box-shadow:0 8px 20px rgba(41,135,186,.3)" style-hover="background:#1D6B99">Get this plan</a>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid rgba(11,31,42,.10);border-radius:20px;overflow:hidden;box-shadow:0 2px 8px rgba(11,31,42,.04)">
+        <div style="padding:24px 24px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px dashed rgba(11,31,42,.14)">
+          <div style="height:40px;flex:1;border-radius:8px;background:repeating-linear-gradient(135deg,#EEF3F7 0 8px,#F7FAFC 8px 16px);display:flex;align-items:center;justify-content:center;font:500 9px/1 ui-monospace,Menlo,monospace;color:#94A9B5;letter-spacing:.06em">INSURER LOGO</div>
+          <div style="text-align:right;flex:none">
+            <div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492;letter-spacing:.06em;text-transform:uppercase">Claim ratio</div>
+            <div style="font:700 17px/1 'Sora',sans-serif;color:#0B1F2A;margin-top:6px">[ 00.0 ]%</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px 24px">
+          <div style="font:700 19px/1.3 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.01em">[ Plan name ]</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-top:16px">
+            <span style="font:700 34px/1 'Sora',sans-serif;color:#0B1F2A;letter-spacing:-.03em">₹[ 0,000 ]</span>
+            <span style="font:500 13.5px/1 'Plus Jakarta Sans',sans-serif;color:#6A8492">/ year</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px;margin-top:20px">
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Low waiting period</div>
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>OPD &amp; wellness benefits</div>
+            <div style="display:flex;align-items:center;gap:10px;font:500 14px/1.4 'Plus Jakarta Sans',sans-serif;color:#3E5A69"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Family floater option</div>
+          </div>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;margin-top:22px;height:48px;border-radius:10px;border:1px solid rgba(11,31,42,.16);color:#0B1F2A;font:700 14.5px/1 'Plus Jakarta Sans',sans-serif" style-hover="border-color:#2987BA;color:#2987BA">Get this plan</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<section style="background:#fff;padding:96px 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="text-align:center;max-width:620px;margin:0 auto 56px">
+      <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.12em;text-transform:uppercase">How it works</div>
+      <h2 style="font:700 clamp(30px,3.3vw,42px)/1.15 'Sora',sans-serif;letter-spacing:-.022em;margin:14px 0 0;color:#0B1F2A;text-wrap:balance">Four steps from question to policy</h2>
+    </div>
+
+    <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px">
+      <div style="position:absolute;top:27px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,rgba(41,135,186,.34) 0 8px,transparent 8px 16px)"></div>
+
+      <div style="position:relative;text-align:center">
+        <div style="width:56px;height:56px;border-radius:50%;background:#2987BA;color:#fff;font:700 19px/1 'Sora',sans-serif;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 0 8px #fff,0 8px 20px rgba(41,135,186,.3)">1</div>
+        <div style="font:700 17.5px/1.3 'Sora',sans-serif;color:#0B1F2A;margin-top:22px;letter-spacing:-.01em">Tell us what you need</div>
+        <p style="font:400 14.5px/1.65 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:10px auto 0;max-width:240px">A short form on age, family and budget — no documents at this stage.</p>
+      </div>
+      <div style="position:relative;text-align:center">
+        <div style="width:56px;height:56px;border-radius:50%;background:#2987BA;color:#fff;font:700 19px/1 'Sora',sans-serif;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 0 8px #fff,0 8px 20px rgba(41,135,186,.3)">2</div>
+        <div style="font:700 17.5px/1.3 'Sora',sans-serif;color:#0B1F2A;margin-top:22px;letter-spacing:-.01em">Compare real quotes</div>
+        <p style="font:400 14.5px/1.65 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:10px auto 0;max-width:240px">See premium, cover, waiting periods and exclusions side by side.</p>
+      </div>
+      <div style="position:relative;text-align:center">
+        <div style="width:56px;height:56px;border-radius:50%;background:#2987BA;color:#fff;font:700 19px/1 'Sora',sans-serif;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 0 8px #fff,0 8px 20px rgba(41,135,186,.3)">3</div>
+        <div style="font:700 17.5px/1.3 'Sora',sans-serif;color:#0B1F2A;margin-top:22px;letter-spacing:-.01em">Buy online or with an advisor</div>
+        <p style="font:400 14.5px/1.65 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:10px auto 0;max-width:240px">Pay securely and get the policy on email and WhatsApp instantly.</p>
+      </div>
+      <div style="position:relative;text-align:center">
+        <div style="width:56px;height:56px;border-radius:50%;background:#61BB48;color:#fff;font:700 19px/1 'Sora',sans-serif;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 0 8px #fff,0 8px 20px rgba(97,187,72,.3)">4</div>
+        <div style="font:700 17.5px/1.3 'Sora',sans-serif;color:#0B1F2A;margin-top:22px;letter-spacing:-.01em">We handle the claim</div>
+        <p style="font:400 14.5px/1.65 'Plus Jakarta Sans',sans-serif;color:#5C7584;margin:10px auto 0;max-width:240px">A named person follows your file with the insurer until it is settled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0B1F2A;padding:96px 0;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-180px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(41,135,186,.30),rgba(41,135,186,0) 68%)"></div>
+  <div style="position:absolute;bottom:-220px;left:-140px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(97,187,72,.22),rgba(97,187,72,0) 68%)"></div>
+
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
+    <div>
+      <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.12em;text-transform:uppercase">Claim support</div>
+      <h2 style="font:700 42px/1.16 'Sora',sans-serif;letter-spacing:-.022em;margin:14px 0 0;color:#fff;text-wrap:balance">The paperwork is our job, not yours</h2>
+      <p style="font:400 17px/1.7 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.68);margin:20px 0 0;max-width:470px;text-wrap:pretty">Most people only discover what their policy really covers at the hospital counter. Our team files, follows up and escalates on your behalf.</p>
+
+      <div style="display:flex;flex-direction:column;gap:20px;margin-top:34px">
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(97,187,72,.16);display:flex;align-items:center;justify-content:center;flex:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+          <div>
+            <div style="font:700 16px/1.35 'Plus Jakarta Sans',sans-serif;color:#fff">A single point of contact</div>
+            <div style="font:400 14.5px/1.6 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.6);margin-top:5px">Same advisor from purchase to settlement — no call-centre queue.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(97,187,72,.16);display:flex;align-items:center;justify-content:center;flex:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+          <div>
+            <div style="font:700 16px/1.35 'Plus Jakarta Sans',sans-serif;color:#fff">Document check before you file</div>
+            <div style="font:400 14.5px/1.6 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.6);margin-top:5px">We review the file first so it is not rejected on a technicality.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(97,187,72,.16);display:flex;align-items:center;justify-content:center;flex:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#61BB48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+          <div>
+            <div style="font:700 16px/1.35 'Plus Jakarta Sans',sans-serif;color:#fff">Escalation where it is due</div>
+            <div style="font:400 14.5px/1.6 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.6);margin-top:5px">Grievance and Ombudsman routes handled by us if a claim stalls.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-radius:22px;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 10px,rgba(255,255,255,.035) 10px 20px);border:1px solid rgba(255,255,255,.14);height:440px;display:flex;align-items:center;justify-content:center">
+      <span style="font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px">photo — advisor with client</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;padding:96px 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:44px">
+      <div>
+        <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.12em;text-transform:uppercase">Customer stories</div>
+        <h2 style="font:700 clamp(30px,3.3vw,42px)/1.15 'Sora',sans-serif;letter-spacing:-.022em;margin:14px 0 0;color:#0B1F2A;max-width:560px;text-wrap:balance">What people say after a claim</h2>
+      </div>
+      <div style="display:flex;gap:10px;flex:none;padding-bottom:10px">
+        <div style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(11,31,42,.16);display:flex;align-items:center;justify-content:center;color:#0B1F2A;cursor:pointer" style-hover="border-color:#2987BA;color:#2987BA">←</div>
+        <div style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(11,31,42,.16);display:flex;align-items:center;justify-content:center;color:#0B1F2A;cursor:pointer" style-hover="border-color:#2987BA;color:#2987BA">→</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px">
+      <div style="background:#F6FAFC;border:1px solid rgba(11,31,42,.08);border-radius:20px;padding:30px 28px">
+        <div style="display:flex;gap:3px;color:#61BB48;font-size:15px;letter-spacing:2px">★★★★★</div>
+        <p style="font:400 16px/1.7 'Plus Jakarta Sans',sans-serif;color:#2C4553;margin:18px 0 0;text-wrap:pretty">[ Testimonial copy to be supplied — 2 to 3 lines describing the buying or claim experience. ]</p>
+        <div style="display:flex;align-items:center;gap:13px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(11,31,42,.09)">
+          <div style="width:44px;height:44px;border-radius:50%;background:repeating-linear-gradient(135deg,#E4EDF3 0 6px,#F1F6F9 6px 12px);flex:none"></div>
+          <div>
+            <div style="font:700 14.5px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B1F2A">[ Name ]</div>
+            <div style="font:500 13px/1.2 'Plus Jakarta Sans',sans-serif;color:#7C93A2;margin-top:5px">[ City ] · Health plan</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#F6FAFC;border:1px solid rgba(11,31,42,.08);border-radius:20px;padding:30px 28px">
+        <div style="display:flex;gap:3px;color:#61BB48;font-size:15px;letter-spacing:2px">★★★★★</div>
+        <p style="font:400 16px/1.7 'Plus Jakarta Sans',sans-serif;color:#2C4553;margin:18px 0 0;text-wrap:pretty">[ Testimonial copy to be supplied — 2 to 3 lines describing the buying or claim experience. ]</p>
+        <div style="display:flex;align-items:center;gap:13px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(11,31,42,.09)">
+          <div style="width:44px;height:44px;border-radius:50%;background:repeating-linear-gradient(135deg,#E4EDF3 0 6px,#F1F6F9 6px 12px);flex:none"></div>
+          <div>
+            <div style="font:700 14.5px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B1F2A">[ Name ]</div>
+            <div style="font:500 13px/1.2 'Plus Jakarta Sans',sans-serif;color:#7C93A2;margin-top:5px">[ City ] · Term life</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#F6FAFC;border:1px solid rgba(11,31,42,.08);border-radius:20px;padding:30px 28px">
+        <div style="display:flex;gap:3px;color:#61BB48;font-size:15px;letter-spacing:2px">★★★★★</div>
+        <p style="font:400 16px/1.7 'Plus Jakarta Sans',sans-serif;color:#2C4553;margin:18px 0 0;text-wrap:pretty">[ Testimonial copy to be supplied — 2 to 3 lines describing the buying or claim experience. ]</p>
+        <div style="display:flex;align-items:center;gap:13px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(11,31,42,.09)">
+          <div style="width:44px;height:44px;border-radius:50%;background:repeating-linear-gradient(135deg,#E4EDF3 0 6px,#F1F6F9 6px 12px);flex:none"></div>
+          <div>
+            <div style="font:700 14.5px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B1F2A">[ Name ]</div>
+            <div style="font:500 13px/1.2 'Plus Jakarta Sans',sans-serif;color:#7C93A2;margin-top:5px">[ City ] · Motor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#F6FAFC;padding:96px 0;border-top:1px solid rgba(11,31,42,.07)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:40px">
+      <h2 style="font:700 36px/1.2 'Sora',sans-serif;letter-spacing:-.022em;margin:0;color:#0B1F2A">Guides &amp; policy explainers</h2>
+      <a href="#" style="font:700 14.5px/1 'Plus Jakarta Sans',sans-serif;color:#2987BA;white-space:nowrap;flex:none;padding-bottom:6px">All articles →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px">
+      <div style="background:#fff;border:1px solid rgba(11,31,42,.09);border-radius:18px;overflow:hidden;cursor:pointer" style-hover="box-shadow:0 16px 34px rgba(11,31,42,.09)">
+        <div style="height:180px;background:repeating-linear-gradient(135deg,#EAF1F6 0 10px,#F4F8FB 10px 20px);display:flex;align-items:center;justify-content:center"><span style="font:500 10.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8AA0AC;background:rgba(255,255,255,.85);padding:7px 12px;border-radius:999px">article image</span></div>
+        <div style="padding:22px 24px 26px">
+          <div style="font:700 11.5px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.1em;text-transform:uppercase">Health</div>
+          <div style="font:600 18px/1.4 'Sora',sans-serif;color:#0B1F2A;margin-top:12px;letter-spacing:-.01em">[ Article headline to be provided ]</div>
+          <div style="font:500 13px/1 'Plus Jakarta Sans',sans-serif;color:#8AA0AC;margin-top:14px">[ 00 ] Jan 2026 · 5 min read</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(11,31,42,.09);border-radius:18px;overflow:hidden;cursor:pointer" style-hover="box-shadow:0 16px 34px rgba(11,31,42,.09)">
+        <div style="height:180px;background:repeating-linear-gradient(135deg,#EAF1F6 0 10px,#F4F8FB 10px 20px);display:flex;align-items:center;justify-content:center"><span style="font:500 10.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8AA0AC;background:rgba(255,255,255,.85);padding:7px 12px;border-radius:999px">article image</span></div>
+        <div style="padding:22px 24px 26px">
+          <div style="font:700 11.5px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.1em;text-transform:uppercase">Tax &amp; savings</div>
+          <div style="font:600 18px/1.4 'Sora',sans-serif;color:#0B1F2A;margin-top:12px;letter-spacing:-.01em">[ Article headline to be provided ]</div>
+          <div style="font:500 13px/1 'Plus Jakarta Sans',sans-serif;color:#8AA0AC;margin-top:14px">[ 00 ] Jan 2026 · 4 min read</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(11,31,42,.09);border-radius:18px;overflow:hidden;cursor:pointer" style-hover="box-shadow:0 16px 34px rgba(11,31,42,.09)">
+        <div style="height:180px;background:repeating-linear-gradient(135deg,#EAF1F6 0 10px,#F4F8FB 10px 20px);display:flex;align-items:center;justify-content:center"><span style="font:500 10.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8AA0AC;background:rgba(255,255,255,.85);padding:7px 12px;border-radius:999px">article image</span></div>
+        <div style="padding:22px 24px 26px">
+          <div style="font:700 11.5px/1 'Plus Jakarta Sans',sans-serif;color:#61BB48;letter-spacing:.1em;text-transform:uppercase">Claims</div>
+          <div style="font:600 18px/1.4 'Sora',sans-serif;color:#0B1F2A;margin-top:12px;letter-spacing:-.01em">[ Article headline to be provided ]</div>
+          <div style="font:500 13px/1 'Plus Jakarta Sans',sans-serif;color:#8AA0AC;margin-top:14px">[ 00 ] Jan 2026 · 6 min read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;padding:0 0 96px">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="margin-top:96px;border-radius:26px;background:linear-gradient(115deg,#2987BA 0%,#1D6B99 52%,#4E9E38 100%);padding:62px 64px;display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1px);background-size:22px 22px"></div>
+      <div style="position:relative;max-width:600px">
+        <h2 style="font:700 38px/1.2 'Sora',sans-serif;letter-spacing:-.022em;margin:0;color:#fff;text-wrap:balance">Not sure which cover fits? Ask a licensed advisor.</h2>
+        <p style="font:400 16.5px/1.65 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.84);margin:16px 0 0">Free, no obligation, and no premium loading for taking advice.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:12px;flex:none">
+        <a href="#" style="display:flex;align-items:center;justify-content:center;background:#fff;color:#0B1F2A;font:700 15.5px/1 'Plus Jakarta Sans',sans-serif;padding:19px 34px;border-radius:12px;white-space:nowrap" style-hover="background:#0B1F2A;color:#fff">Book a call back</a>
+        <div style="text-align:center;font:600 14px/1 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.9)">or call 1800 000 0000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0B1F2A;padding:72px 0 0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div>
+        <div style="background:#fff;border-radius:12px;padding:6px 10px;display:inline-block">
+          <div style="position:relative;width:186px;height:64px;overflow:hidden">
+            <img src="assets/policye-logo.jpeg" alt="PolicyE.com" style="position:absolute;width:210px;left:-11px;top:-73px">
+          </div>
+        </div>
+        <p style="font:400 14.5px/1.7 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.6);margin:22px 0 0;max-width:300px">[ Company description, registered address and IRDAI registration details to be provided. ]</p>
+        <div style="display:flex;gap:10px;margin-top:22px">
+          <div style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#61BB48;border-color:#61BB48;color:#fff">in</div>
+          <div style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#61BB48;border-color:#61BB48;color:#fff">f</div>
+          <div style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#61BB48;border-color:#61BB48;color:#fff">ig</div>
+          <div style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font:600 12px/1 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#61BB48;border-color:#61BB48;color:#fff">yt</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Insurance</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font:500 14.5px/1.3 'Plus Jakarta Sans',sans-serif">
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Health insurance</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Term life</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Car insurance</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Two-wheeler</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Travel</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Home &amp; property</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Investments</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font:500 14.5px/1.3 'Plus Jakarta Sans',sans-serif">
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Guaranteed return</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">ULIP</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Child plans</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Retirement</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Mutual funds</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Support</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font:500 14.5px/1.3 'Plus Jakarta Sans',sans-serif">
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Renew a policy</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">File a claim</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Track application</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Grievance redressal</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Contact us</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px">Company</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font:500 14.5px/1.3 'Plus Jakarta Sans',sans-serif">
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">About us</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Become an advisor</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Careers</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Blog</a>
+          <a href="#" style="color:rgba(255,255,255,.62)" style-hover="color:#61BB48">Privacy policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:26px 0 34px;display:flex;align-items:center;justify-content:space-between;gap:32px;font:500 13px/1.6 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.45)">
+      <div>© 2026 PolicyE.com · Insurance is the subject matter of solicitation. Visitors are hereby informed that their information submitted on the website may be shared with insurers.</div>
+      <div style="display:flex;gap:22px;flex:none">
+        <a href="#" style="color:rgba(255,255,255,.45)" style-hover="color:#fff">Terms</a>
+        <a href="#" style="color:rgba(255,255,255,.45)" style-hover="color:#fff">Privacy</a>
+        <a href="#" style="color:rgba(255,255,255,.45)" style-hover="color:#fff">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showUtilityBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPartnerStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showPlanCards&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showUtilityBar: this.props.showUtilityBar ?? true,
+      showPartnerStrip: this.props.showPartnerStrip ?? true,
+      showPlanCards: this.props.showPlanCards ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
