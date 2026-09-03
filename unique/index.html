@@ -12,7 +12,6 @@
 <meta name="description" content="Insurance, mutual funds, loans and long-term wealth planning under one advisor — with a written plan you can hold us to.">
 <meta name="robots" content="noindex">
 <script>window.addEventListener('pageshow',function(e){if(e.persisted)window.location.reload()});</script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +21,6 @@
   a{color:#02174A;text-decoration:none}
   a:hover{color:#C08A18}
 </style>
-<script src="./image-slot.js"></script>
 </helmet>
 
 <div style="width:100%;overflow-x:hidden">
@@ -78,15 +76,8 @@
         </div>
       </div>
 
-      <div style="position:relative">
-        <div style="position:relative;height:clamp(360px,38vw,480px);border:1px solid rgba(255,255,255,.16)">
-          <image-slot id="uf-hero-photo" shape="rect" style="color:rgba(255,255,255,.72)" placeholder="Photo — advisor &amp; client · portrait or 4:3, min 1200px"></image-slot>
-        </div>
-        <div style="position:absolute;left:-34px;bottom:-38px;background:#FCFBF8;color:#1A2233;padding:26px 30px;border-top:3px solid #D8971A;box-shadow:0 26px 54px rgba(1,15,51,.34);min-width:260px">
-          <div style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#6B6558">Assets advised</div>
-          <div style="font:600 40px/1 'Source Serif 4',serif;letter-spacing:-.02em;margin-top:12px;color:#02174A">₹[ 000 ] Cr</div>
-          <div style="font:400 13.5px/1.5 'Archivo',sans-serif;color:#5C6478;margin-top:10px">across [ 0,000 ] families since [ 20XX ]</div>
-        </div>
+      <div style="position:relative;height:clamp(380px,40vw,500px);border:1px solid rgba(255,255,255,.16)">
+        <img src="assets/hero-advisory.jpg" alt="An adviser and a client going through a portfolio review together" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
       </div>
     </div>
   </div>
@@ -168,7 +159,7 @@
           <span style="width:48px;height:48px;border:1px solid rgba(2,23,74,.18);background:#fff;display:flex;align-items:center;justify-content:center;flex:none"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4L1.9 10.5h2.9v10.1h14.4V10.5h2.9z" fill="#02174A"></path><rect x="10.1" y="13.9" width="3.8" height="6.7" fill="#D8971A"></rect></svg></span>
         </div>
         <div style="font:500 22px/1.3 'Source Serif 4',serif;color:#02174A;margin-top:20px;letter-spacing:-.01em">Loans &amp; finance</div>
-        <p style="font:400 14.5px/1.7 'Archivo',sans-serif;color:#5C6478;margin:12px 0 0">Home loan, balance transfer, loan against property and business finance from [ 00 ]+ lenders.</p>
+        <p style="font:400 14.5px/1.7 'Archivo',sans-serif;color:#5C6478;margin:12px 0 0">Home loan, balance transfer, loan against property and business finance through our partner lenders.</p>
         <div style="font:600 13px/1 'Archivo',sans-serif;letter-spacing:.04em;color:#02174A;margin-top:20px">Explore →</div>
       </div>
 
@@ -188,7 +179,7 @@
           <span style="width:48px;height:48px;border:1px solid rgba(2,23,74,.18);background:#fff;display:flex;align-items:center;justify-content:center;flex:none"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.9 7.2V5.9A2.2 2.2 0 0 1 11.1 3.7h1.8A2.2 2.2 0 0 1 15.1 5.9v1.3h-2.3V6h-1.6v1.2z" fill="#02174A"></path><path d="M2.6 8.2h18.8v12.1H2.6z" fill="#02174A"></path><rect x="2.6" y="12.6" width="18.8" height="2.3" fill="#D8971A"></rect></svg></span>
         </div>
         <div style="font:500 22px/1.3 'Source Serif 4',serif;color:#02174A;margin-top:20px;letter-spacing:-.01em">Corporate &amp; group</div>
-        <p style="font:400 14.5px/1.7 'Archivo',sans-serif;color:#5C6478;margin:12px 0 0">Group mediclaim, gratuity, keyman and liability programmes for teams of [ 00 ] to [ 0,000 ].</p>
+        <p style="font:400 14.5px/1.7 'Archivo',sans-serif;color:#5C6478;margin:12px 0 0">Group mediclaim, gratuity, keyman and liability programmes, sized to your headcount.</p>
         <div style="font:600 13px/1 'Archivo',sans-serif;letter-spacing:.04em;color:#02174A;margin-top:20px">Explore →</div>
       </div>
 
@@ -297,12 +288,26 @@
 
 <section style="background:#FCFBF8;padding:clamp(58px,5.4vw,84px) 0">
   <div style="max-width:1280px;margin:0 auto;padding:0 36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:clamp(40px,5vw,80px);align-items:center">
-    <div style="height:clamp(400px,42vw,540px);border:1px solid rgba(2,23,74,.12);position:relative">
-      <image-slot id="uf-team-photo" shape="rect" placeholder="Photo — the team / office · landscape, min 1400px"></image-slot>
-      <div style="position:absolute;right:-1px;bottom:-1px;background:#02174A;color:#fff;padding:24px 30px">
-        <div style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#D8971A">Since</div>
-        <div style="font:500 32px/1 'Source Serif 4',serif;margin-top:10px">[ 20XX ]</div>
+    <div style="height:clamp(400px,42vw,540px);border:1px solid rgba(2,23,74,.12);background:#fff;padding:clamp(26px,2.6vw,38px);display:flex;flex-direction:column;justify-content:center">
+      <div style="border:1px solid rgba(2,23,74,.20);padding:clamp(20px,2vw,26px)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;color:#6B5F3C">01</span>
+          <span style="font:500 15.5px/1.3 'Source Serif 4',serif;color:#02174A;letter-spacing:-.005em">What you are trying to do</span>
+        </div>
+        <div style="border:1px solid rgba(2,23,74,.20);padding:clamp(20px,2vw,26px);margin-top:clamp(16px,1.6vw,22px)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;color:#6B5F3C">02</span>
+          <span style="font:500 15.5px/1.3 'Source Serif 4',serif;color:#02174A;letter-spacing:-.005em">The written plan</span>
+        </div>
+          <div style="border:1px solid #D8971A;background:rgba(216,151,26,.10);padding:clamp(20px,2vw,26px);margin-top:clamp(16px,1.6vw,22px)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;color:#6B5F3C">03</span>
+          <span style="font:500 15.5px/1.3 'Source Serif 4',serif;color:#02174A;letter-spacing:-.005em">The product that fits it</span>
+        </div>
+          </div>
+        </div>
       </div>
+      <p style="font:400 13px/1.65 'Archivo',sans-serif;color:#6B6558;margin:clamp(20px,2vw,26px) 0 0;text-wrap:pretty">The product is the last decision, not the first. Nothing gets recommended before the plan is written down.</p>
     </div>
 
     <div>
@@ -339,120 +344,6 @@
   </div>
 </section>
 
-<section style="background:#02174A;color:#fff;padding:clamp(52px,4.6vw,72px) 0;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(216,151,26,.10) 0 1px,transparent 1px 46px)"></div>
-  <div style="position:absolute;top:-200px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(216,151,26,.16),rgba(216,151,26,0) 68%)"></div>
-  <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 36px">
-    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,4vw,64px);align-items:center">
-
-      <div>
-        <div style="font:600 11.5px/1 'Archivo',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#D8971A">Assets under advice</div>
-        <div style="font:400 clamp(64px,9vw,132px)/.9 'Source Serif 4',serif;color:#fff;letter-spacing:-.035em;margin-top:22px">₹[ 000 ]<span style="font-size:.42em;letter-spacing:-.01em;margin-left:.1em">Cr</span></div>
-        <p style="font:400 15.5px/1.7 'Archivo',sans-serif;color:rgba(255,255,255,.72);margin:24px 0 0;max-width:400px;text-wrap:pretty">Held across insurance, mutual funds and long-term plans for families who wanted one adviser instead of six.</p>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)">
-        <div style="padding:22px 30px 24px;border-left:1px solid rgba(255,255,255,.16)">
-          <div style="font:500 clamp(26px,2.4vw,34px)/1 'Source Serif 4',serif;color:#fff;letter-spacing:-.02em">[ 0,000 ]</div>
-          <div style="font:400 13px/1.5 'Archivo',sans-serif;color:rgba(255,255,255,.72);margin-top:11px">Families advised</div>
-        </div>
-        <div style="padding:22px 30px 24px;border-left:1px solid rgba(255,255,255,.16)">
-          <div style="font:500 clamp(26px,2.4vw,34px)/1 'Source Serif 4',serif;color:#fff;letter-spacing:-.02em">[ 00 ]+</div>
-          <div style="font:400 13px/1.5 'Archivo',sans-serif;color:rgba(255,255,255,.72);margin-top:11px">Insurer &amp; AMC partners</div>
-        </div>
-        <div style="padding:22px 30px 24px;border-left:1px solid rgba(255,255,255,.16)">
-          <div style="font:500 clamp(26px,2.4vw,34px)/1 'Source Serif 4',serif;color:#fff;letter-spacing:-.02em">[ 00 ]</div>
-          <div style="font:400 13px/1.5 'Archivo',sans-serif;color:rgba(255,255,255,.72);margin-top:11px">Years in practice</div>
-        </div>
-        <div style="padding:22px 30px 24px;border-left:1px solid rgba(255,255,255,.16)">
-          <div style="font:500 clamp(26px,2.4vw,34px)/1 'Source Serif 4',serif;color:#fff;letter-spacing:-.02em">[ 000 ]</div>
-          <div style="font:400 13px/1.5 'Archivo',sans-serif;color:rgba(255,255,255,.72);margin-top:11px">Partner advisors</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section style="background:#FCFBF8;padding:clamp(58px,5.4vw,84px) 0">
-  <div style="max-width:900px;margin:0 auto;padding:0 36px;text-align:center">
-    <span style="font:400 76px/1 'Source Serif 4',serif;color:#D8971A;display:block">“</span>
-    <p style="font:400 clamp(22px,2.4vw,32px)/1.5 'Source Serif 4',serif;color:#02174A;margin:8px 0 0;letter-spacing:-.01em;text-wrap:pretty">[ Client testimonial to be supplied — two or three lines in the client's own words, ideally about a claim or a goal that was met. ]</p>
-    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:36px">
-      <div style="width:52px;height:52px;border-radius:50%;background:#EDE7DA;border:1px solid rgba(2,23,74,.12);flex:none"></div>
-      <div style="text-align:left">
-        <div style="font:600 14.5px/1.2 'Archivo',sans-serif;color:#1A2233">[ Client name ]</div>
-        <div style="font:400 13px/1.2 'Archivo',sans-serif;color:#6B6558;margin-top:6px">[ Designation ] · [ City ]</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:40px">
-      <span style="width:26px;height:2px;background:#02174A;display:block"></span>
-      <span style="width:26px;height:2px;background:rgba(2,23,74,.2);display:block"></span>
-      <span style="width:26px;height:2px;background:rgba(2,23,74,.2);display:block"></span>
-    </div>
-  </div>
-</section>
-
-<section style="background:#F3EFE6;padding:clamp(58px,5.4vw,84px) 0;border-top:1px solid rgba(2,23,74,.10)">
-  <div style="max-width:1280px;margin:0 auto;padding:0 36px">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:44px">
-      <div>
-        <div style="display:flex;align-items:center;gap:14px">
-          <span style="width:34px;height:1px;background:#D8971A;display:block"></span>
-          <span style="font:600 11.5px/1 'Archivo',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6B5F3C">Insights</span>
-        </div>
-        <h2 style="font:400 clamp(28px,3.2vw,40px)/1.2 'Source Serif 4',serif;letter-spacing:-.015em;margin:20px 0 0;color:#02174A">Notes for long-term investors</h2>
-      </div>
-      <a href="#" style="font:600 13.5px/1 'Archivo',sans-serif;letter-spacing:.04em;color:#02174A;border-bottom:1px solid #D8971A;padding-bottom:6px;flex:none" style-hover="color:#C08A18">All insights →</a>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start">
-      <a href="#" style="display:block;background:#02174A;border:1px solid #02174A;padding:18px;color:#fff;transition:background .18s ease" style-hover="background:#010F33">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 4px 15px">
-          <span style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#D8971A">Mutual funds</span>
-          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l9.2 4.1v6.2c0 5.7-3.9 10.9-9.2 12.3C6.7 22.8 2.8 17.6 2.8 11.9V5.7z" fill="#D8971A"></path></svg>
-        </div>
-        <div style="background:rgba(255,255,255,.09);overflow:hidden">
-          <image-slot id="uf-article-1" shape="rect" style="height:186px;display:block;color:rgba(255,255,255,.68)" placeholder="Article image · 16:9"></image-slot>
-        </div>
-        <div style="font:500 21px/1.35 'Source Serif 4',serif;color:#fff;padding:20px 4px 0;letter-spacing:-.01em;text-wrap:pretty">[ Article headline to be provided ]</div>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px 2px">
-          <span style="font:400 12.5px/1 'Archivo',sans-serif;color:rgba(255,255,255,.62)">[ 00 ] Jan 2026</span>
-          <span style="font:600 12.5px/1 'Archivo',sans-serif;letter-spacing:.05em;color:#fff;border-bottom:1px solid #D8971A;padding-bottom:5px;flex:none">Read →</span>
-        </div>
-      </a>
-      <a href="#" style="display:block;background:#D8971A;border:1px solid #D8971A;padding:18px;color:#02174A;transition:background .18s ease" style-hover="background:#C08A18">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 4px 15px">
-          <span style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3D2A02">Insurance</span>
-          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l9.2 4.1v6.2c0 5.7-3.9 10.9-9.2 12.3C6.7 22.8 2.8 17.6 2.8 11.9V5.7z" fill="#3D2A02"></path></svg>
-        </div>
-        <div style="background:rgba(2,23,74,.10);overflow:hidden">
-          <image-slot id="uf-article-2" shape="rect" style="height:186px;display:block;color:#3D2A02" placeholder="Article image · 16:9"></image-slot>
-        </div>
-        <div style="font:500 21px/1.35 'Source Serif 4',serif;color:#02174A;padding:20px 4px 0;letter-spacing:-.01em;text-wrap:pretty">[ Article headline to be provided ]</div>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px 2px">
-          <span style="font:400 12.5px/1 'Archivo',sans-serif;color:#4A3708">[ 00 ] Jan 2026</span>
-          <span style="font:600 12.5px/1 'Archivo',sans-serif;letter-spacing:.05em;color:#02174A;border-bottom:1px solid #02174A;padding-bottom:5px;flex:none">Read →</span>
-        </div>
-      </a>
-      <a href="#" style="display:block;background:#FCFBF8;border:1px solid rgba(2,23,74,.16);padding:18px;color:#02174A;transition:background .18s ease" style-hover="background:#fff">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 4px 15px">
-          <span style="font:600 10.5px/1 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#6B5F3C">Tax planning</span>
-          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l9.2 4.1v6.2c0 5.7-3.9 10.9-9.2 12.3C6.7 22.8 2.8 17.6 2.8 11.9V5.7z" fill="#6B5F3C"></path></svg>
-        </div>
-        <div style="background:rgba(2,23,74,.06);overflow:hidden">
-          <image-slot id="uf-article-3" shape="rect" style="height:186px;display:block;color:#6B6455" placeholder="Article image · 16:9"></image-slot>
-        </div>
-        <div style="font:500 21px/1.35 'Source Serif 4',serif;color:#02174A;padding:20px 4px 0;letter-spacing:-.01em;text-wrap:pretty">[ Article headline to be provided ]</div>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px 2px">
-          <span style="font:400 12.5px/1 'Archivo',sans-serif;color:#6B6455">[ 00 ] Jan 2026</span>
-          <span style="font:600 12.5px/1 'Archivo',sans-serif;letter-spacing:.05em;color:#02174A;border-bottom:1px solid #D8971A;padding-bottom:5px;flex:none">Read →</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
 <section style="background:#010F33;color:#fff;padding:clamp(54px,5vw,76px) 0;position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;background:radial-gradient(800px 420px at 20% 50%,rgba(216,151,26,.18),rgba(1,15,51,0) 62%)"></div>
   <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 36px;display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap">
@@ -476,13 +367,7 @@
             <img src="assets/unique-logo.png" alt="Unique Financial &amp; Marketing Services" style="position:absolute;width:190px;left:-26px;top:-36px">
           </div>
         </div>
-        <p style="font:400 14px/1.75 'Archivo',sans-serif;color:rgba(255,255,255,.58);margin:24px 0 0;max-width:300px">Unique Financial and Marketing Services, Bilaspur, Chhattisgarh. [ Street address and pin code to be supplied. ]</p>
-        <div style="display:flex;gap:10px;margin-top:24px">
-          <div style="width:36px;height:36px;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font:500 11.5px/1 'Archivo',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#D8971A;border-color:#D8971A;color:#02174A">in</div>
-          <div style="width:36px;height:36px;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font:500 11.5px/1 'Archivo',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#D8971A;border-color:#D8971A;color:#02174A">f</div>
-          <div style="width:36px;height:36px;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font:500 11.5px/1 'Archivo',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#D8971A;border-color:#D8971A;color:#02174A">ig</div>
-          <div style="width:36px;height:36px;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font:500 11.5px/1 'Archivo',sans-serif;color:rgba(255,255,255,.7);cursor:pointer" style-hover="background:#D8971A;border-color:#D8971A;color:#02174A">yt</div>
-        </div>
+        <p style="font:400 14px/1.75 'Archivo',sans-serif;color:rgba(255,255,255,.58);margin:24px 0 0;max-width:300px">Unique Financial and Marketing Services, Bilaspur, Chhattisgarh.</p>
       </div>
 
       <div>
@@ -523,7 +408,6 @@
         <div style="display:flex;flex-direction:column;gap:14px;font:400 14px/1.3 'Archivo',sans-serif">
           <a href="#" style="color:rgba(255,255,255,.6)" style-hover="color:#fff">About us</a>
           <a href="#" style="color:rgba(255,255,255,.6)" style-hover="color:#fff">Partner with us</a>
-          <a href="#" style="color:rgba(255,255,255,.6)" style-hover="color:#fff">Insights</a>
           <a href="contact.html" style="color:rgba(255,255,255,.6)" style-hover="color:#fff">Contact</a>
           <a href="#" style="color:rgba(255,255,255,.6)" style-hover="color:#fff">Grievance redressal</a>
         </div>
