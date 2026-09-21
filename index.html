@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BeyondSure — Website design previews</title>
-<meta name="description" content="Live, clickable design builds for PolicyE.com, Unique Insurance Consultancy, and BS Finance.">
+<meta name="description" content="Live, clickable design builds for PolicyE.com, AGSkart, Unique Insurance Consultancy, and BS Finance.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0E2745">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,7 +76,7 @@
   /* ---------- grid ---------- */
   .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));
     gap:clamp(18px,2.2vw,26px);
     padding-bottom:clamp(48px,6vw,72px);
     list-style:none;margin:0;
@@ -105,10 +105,12 @@
   }
   .tile img{max-width:100%;max-height:100%;object-fit:contain;display:block}
   .tile--policye{background:#FFFFFF}
+  .tile--agskart{background:#FFFFFF}
   .tile--unique{background:#FFFFFF}
   .tile--bsf{background:#0E2745;box-shadow:inset 0 0 0 1px rgba(227,200,120,.14)}
-  /* optically balance three lockups of very different proportions */
+  /* optically balance four lockups of very different proportions */
   .tile--policye img{max-height:74px}
+  .tile--agskart img{max-height:56px}
   .tile--unique  img{max-height:116px}
   .tile--bsf     img{max-height:112px}
 
@@ -173,6 +175,7 @@
   @media (max-width:520px){
     .tile{height:158px}
     .tile--policye img{max-height:62px}
+    .tile--agskart img{max-height:48px}
     .tile--unique  img{max-height:96px}
     .tile--bsf     img{max-height:92px}
   }
@@ -184,7 +187,7 @@
 
   <header class="masthead">
     <span class="eyebrow">BeyondSure · Design previews</span>
-    <h1>Three websites, <em>ready for review.</em></h1>
+    <h1>Four websites, <em>ready for review.</em></h1>
     <p class="lede">
       Live, clickable design builds — scroll them, follow the links between pages, open them on your phone.
       Figures in <span class="ph">[ brackets ]</span> are placeholders waiting on real numbers, and the
@@ -218,6 +221,33 @@
         <a href="policye/#quote">Quote</a><span class="sep">·</span>
         <a href="policye/#claims">Claims</a><span class="sep">·</span>
         <a href="policye/#contact">Contact</a>
+      </nav>
+    </li>
+
+    <li class="card">
+      <a class="card-main" href="agskart/">
+        <div class="tile tile--agskart">
+          <img src="assets/agskart.png" width="369" height="90" alt="AGSkart">
+        </div>
+        <div class="body">
+          <h2 class="brand">AGSkart</h2>
+          <p class="tagline">Multiple insurers · One place to compare</p>
+          <p class="desc">
+            Choose, buy and renew insurance from multiple leading insurers, with an advisor
+            who stays with the family through renewal and claim.
+          </p>
+          <ul class="chips">
+            <li>Health</li><li>Top-up</li><li>Travel</li><li>Motor</li>
+          </ul>
+          <span class="cta">Open preview <span class="arrow">→</span></span>
+        </div>
+      </a>
+      <nav class="pages">
+        <span class="label">Jump to</span>
+        <a href="agskart/">Home</a><span class="sep">·</span>
+        <a href="agskart/#quote">Quote</a><span class="sep">·</span>
+        <a href="agskart/#claims">Claims</a><span class="sep">·</span>
+        <a href="agskart/#contact">Contact</a>
       </nav>
     </li>
 
