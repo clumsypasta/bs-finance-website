@@ -39,7 +39,7 @@
   if (burger) burger.addEventListener("click", openDrawer);
   $$(".drawer .close, .drawer .shade").forEach(function (el) { el.addEventListener("click", closeDrawer); });
   $$(".drawer a").forEach(function (a) { a.addEventListener("click", closeDrawer); });
-  window.addEventListener("resize", function () { if (window.innerWidth > 1100) closeDrawer(); });
+  window.addEventListener("resize", function () { if (window.innerWidth > 1180) closeDrawer(); });
 
   /* ---------- footer year ---------- */
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });

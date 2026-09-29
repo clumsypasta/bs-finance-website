@@ -44,6 +44,7 @@ p{margin:0}
 /* ---------- header / nav ---------- */
 .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
 .site-header .wrap{display:flex;align-items:center;gap:18px;min-height:76px;max-width:var(--head-max,1240px)}
+@media (max-width:1320px){.nav>a,.dd>button{padding:10px 8px;font-size:15px}.head-cta{gap:6px}}
 .brand-link{display:flex;align-items:center;gap:10px;flex:none}
 .brand-link img{height:var(--logo-h);width:auto}
 .brand-name{display:flex;flex-direction:column;line-height:1.15}
@@ -180,10 +181,10 @@ a.card:hover{border-color:var(--brand);box-shadow:0 14px 34px rgba(10,25,45,.10)
 /* ---------- forms ---------- */
 .form-wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:24px;align-items:start}
 .form-wrap>*,.grid>*,.hero .wrap>*{min-width:0}
-.form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px}
+.form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px}
 .form h2{font-size:26px}
 .form>p.sub{color:var(--muted);margin-top:6px}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px;margin-top:26px}
 .field{display:flex;flex-direction:column;gap:7px}
 .field.full{grid-column:1/-1}
 .field label,.field .lbl{font-weight:700;font-size:15px}
@@ -284,10 +285,10 @@ a.card:hover{border-color:var(--brand);box-shadow:0 14px 34px rgba(10,25,45,.10)
 .calc [hidden]{display:none!important}
 
 /* ---------- image cards + lightbox ---------- */
-.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.shots{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
 .shot{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;display:flex;flex-direction:column;text-align:left}
 .shot img{aspect-ratio:4/5;object-fit:cover;width:100%;height:auto}
-.shot span{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;font-weight:700}
+.shot span{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:9px 10px;font-weight:700;font-size:14px;line-height:1.25}
 .shot span .ic{color:var(--brand);font-size:20px}
 .shot:hover{border-color:var(--brand)}
 .lightbox{position:fixed;inset:0;z-index:90;background:rgba(5,12,25,.88);display:none;align-items:center;justify-content:center;padding:20px}
@@ -298,11 +299,12 @@ a.card:hover{border-color:var(--brand);box-shadow:0 14px 34px rgba(10,25,45,.10)
 
 /* ---------- responsive ---------- */
 @media (max-width:1440px){.brand-name{display:none}}
-@media (max-width:1100px){
+@media (max-width:1180px){
   .nav,.head-cta .hide-m{display:none}
   .burger{display:inline-flex}
   .head-cta{margin-left:auto}
-  .g4,.steps,.shots{grid-template-columns:repeat(2,1fr)}
+  .g4,.steps{grid-template-columns:repeat(2,1fr)}
+  .shots{grid-template-columns:repeat(4,1fr)}
   .site-footer .cols{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
@@ -318,7 +320,8 @@ a.card:hover{border-color:var(--brand);box-shadow:0 14px 34px rgba(10,25,45,.10)
   .head-cta .btn{padding:11px 14px;font-size:14.5px}
   .brand-name{display:none}
   .g2,.g3,.g4,.steps,.fgrid{grid-template-columns:1fr}
-  .shots{grid-template-columns:repeat(2,1fr);gap:10px}
+  .shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:8px;margin:0 -16px;padding-left:16px;padding-right:16px}
+  .shots .shot{flex:0 0 132px;scroll-snap-align:start}
   .ins-grid{grid-template-columns:repeat(3,1fr)}
   .hero{padding:36px 0 44px}
   .hero .actions .btn{flex:1 1 100%}
