@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="BS Finance is Vadodara's premier destination for financial planning. We specialize in Mutual Funds, SIPs, Demat accounts for stock market investing, and insurance solutions. Secure your wealth today.">
+<title>BS Finance — Securing Your Legacy | Financial Advisor in Vadodara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0E2745;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+a{color:#E3C878;text-decoration:none}
+a:hover{color:#F2E2A8}
+::selection{background:#E3C878;color:#0E2745}
+input,textarea,button{font:inherit;color:inherit}
+:focus-visible{outline:1px solid #E3C878;outline-offset:3px}
+@keyframes riseIn{from{transform:translateY(118%)}to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes drawIn{from{stroke-dashoffset:1px}to{stroke-dashoffset:0px}}
+@keyframes driftY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes insScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media (min-width:900px){body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:#0E2745}body::-webkit-scrollbar-thumb{background:#8C6A24;border:3px solid #0E2745;border-radius:6px}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="background:#0E2745;color:#F5F0E6;font-family:Inter,system-ui,sans-serif;position:relative;overflow-x:clip">
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:80;background:{{ navBg }};border-bottom:1px solid {{ navLine }};backdrop-filter:blur(6px);transition:background .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1)">
+<nav style="max-width:1520px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:{{ navH }};display:flex;align-items:center;gap:28px;transition:height .45s cubic-bezier(.22,1,.36,1)">
+<a href="#top" style="display:flex;align-items:center;gap:12px;flex:none">
+<img src="assets/logo-mark-champagne.png" alt="BS Finance emblem — rising chart arrow, gada and lotus" style="height:34px;width:auto;display:block">
+<img src="assets/logo-word-champagne.png" alt="BS Finance" style="height:15px;width:auto;display:block;opacity:.95">
+</a>
+<span style="flex:1"></span>
+<div style="display:{{ navLinks }};align-items:center;gap:clamp(18px,2.4vw,40px)">
+<a href="#about" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">About</a>
+<span onMouseEnter="{{ svcOpen }}" onMouseLeave="{{ svcClose }}" style="position:relative;display:block">
+<a href="#services" style="display:flex;align-items:center;gap:7px;font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Services<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:9px;height:9px;flex:none;transform:{{ svcCaretT }};transition:transform .25s"><path d="M20 38 50 66 80 38"></path></svg></a>
+<div style="display:{{ svcDropShow }};position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:26px;z-index:90">
+<div style="min-width:276px;background:#0E2745;border:1px solid rgba(201,162,75,.4);box-shadow:0 22px 54px rgba(4,14,28,.5);padding:10px 0;animation:fadeUp .3s cubic-bezier(.22,1,.36,1) both">
+<a href="#mutual-funds" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Mutual Funds &amp; SIPs</a>
+<a href="#demat" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Demat &amp; Equity Trading</a>
+<a href="#insurance" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Insurance</a>
+<a href="#raise-a-claim" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Raise a Claim</a>
+<a href="#become-a-posp" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:400 14px/1.3 Inter,sans-serif;color:rgba(245,240,230,.8);transition:color .2s,background .2s" style-hover="color:#E3C878;background:rgba(227,200,120,.06)">Become a POSP</a>
+<span aria-hidden="true" style="display:block;height:1px;background:rgba(201,162,75,.3);margin:10px 22px"></span>
+<a href="https://diy.sharekhan.com/app/Account/Register?grpcd=13723&amp;type=pb&amp;grpid=14166" target="_blank" rel="noopener noreferrer" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:500 14px/1.3 Inter,sans-serif;color:#E3C878;transition:color .2s,background .2s" style-hover="color:#F2E2A8;background:rgba(227,200,120,.06)">Open a Demat Account<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:11px;height:11px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg></a>
+<a href="http://p.njw.bz/97331" target="_blank" rel="noopener noreferrer" onClick="{{ svcClose }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;font:500 14px/1.3 Inter,sans-serif;color:#E3C878;transition:color .2s,background .2s" style-hover="color:#F2E2A8;background:rgba(227,200,120,.06)">Open a Mutual Fund Account<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:11px;height:11px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg></a>
+</div>
+</div>
+</span>
+<a href="#raise-a-claim" style="display:flex;align-items:center;gap:8px;font:600 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#E3C878;transition:color .25s" style-hover="color:#F2E2A8"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:13px;height:13px;flex:none"><path d="M50 12 86 26V52C86 72 71 85 50 91C29 85 14 72 14 52V26Z"></path><path d="M36 51 46 62 66 40"></path></svg>Raise a Claim</a>
+<a href="#become-a-posp" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Become a POSP</a>
+<a href="#contact" style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;opacity:.82;transition:opacity .25s" style-hover="opacity:1;color:#E3C878">Contact</a>
+<span style="display:{{ navCta }};width:1px;height:20px;background:rgba(201,162,75,.3)"></span>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="display:flex;align-items:center;gap:8px;padding:11px 20px;border:1px solid rgba(201,162,75,.5);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;color:#F5F0E6;transition:border-color .25s,color .25s,background .25s" style-hover="border-color:#E3C878;color:#E3C878;background:rgba(227,200,120,.06)">
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;flex:none"><path d="M62 22H78C84 22 88 26 88 32V68C88 74 84 78 78 78H62"/><path d="M20 50H64"/><path d="M48 34 64 50 48 66"/></svg>Login</a>
+<a href="#insurance-products" style="padding:12px 24px;border-radius:999px;background:#E3C878;border:1px solid #E3C878;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#0E2745;white-space:nowrap;transition:background .25s,box-shadow .25s" style-hover="background:#F2E2A8;box-shadow:0 6px 22px rgba(227,200,120,.24)">Get a Quote</a>
+</div>
+<button type="button" aria-label="Open menu" onClick="{{ openMenu }}" style="display:{{ burger }};flex-direction:column;gap:5px;background:none;border:0;padding:10px;cursor:pointer">
+<span style="display:block;width:22px;height:1px;background:#E3C878"></span>
+<span style="display:block;width:22px;height:1px;background:#E3C878"></span>
+</button>
+</nav>
+</header>
+
+<div style="position:fixed;inset:0;z-index:95;background:#0E2745;display:{{ menuShow }};flex-direction:column;padding:26px clamp(22px,7vw,60px) 60px;animation:fadeIn .35s ease both">
+<div style="display:flex;align-items:center">
+<img src="assets/logo-mark-champagne.png" alt="BS Finance emblem" style="height:32px;width:auto">
+<span style="flex:1"></span>
+<button type="button" aria-label="Close menu" onClick="{{ closeMenu }}" style="background:none;border:0;color:#E3C878;font-size:26px;line-height:1;padding:8px;cursor:pointer">&#215;</button>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px">
+<a href="#about" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .05s both">About</a>
+<a href="#services" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .13s both">Services</a>
+<div style="display:flex;flex-wrap:wrap;gap:10px 22px;margin:2px 0 8px;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .17s both">
+<a href="#mutual-funds" onClick="{{ closeMenu }}" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Mutual Funds &amp; SIPs</a>
+<a href="#demat" onClick="{{ closeMenu }}" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Demat &amp; Equity</a>
+<a href="#insurance" onClick="{{ closeMenu }}" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Insurance</a>
+<a href="https://diy.sharekhan.com/app/Account/Register?grpcd=13723&amp;type=pb&amp;grpid=14166" target="_blank" rel="noopener noreferrer" style="font:400 15px/1.3 Inter,sans-serif;color:rgba(245,240,230,.62)">Open a Demat Account</a>
+</div>
+<a href="#raise-a-claim" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#E3C878;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .21s both">Raise a Claim</a>
+<a href="#become-a-posp" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .25s both">Become a POSP</a>
+<a href="#contact" onClick="{{ closeMenu }}" style="font:600 clamp(34px,10vw,58px)/1.15 Fraunces,Georgia,serif;color:#F5F0E6;animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .29s both">Contact</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<a href="#insurance-products" onClick="{{ closeMenu }}" style="text-align:center;padding:18px 24px;border-radius:999px;background:#E3C878;font:600 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745">Get a Quote</a>
+<a href="BS%20Finance%20Portals.dc.html" style="display:flex;align-items:center;justify-content:center;gap:9px;padding:17px 24px;border:1px solid rgba(201,162,75,.55);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:15px;height:15px;flex:none"><path d="M62 22H78C84 22 88 26 88 32V68C88 74 84 78 78 78H62"/><path d="M20 50H64"/><path d="M48 34 64 50 48 66"/></svg>Login</a>
+</div>
+</div>
+
+<section id="top" data-screen-label="Hero" style="position:relative;min-height:100svh;background:#0E2745;display:flex;flex-direction:column;overflow:hidden;padding:clamp(104px,13vh,146px) clamp(22px,5vw,72px) clamp(32px,5vh,54px)">
+<canvas ref="{{ canvasRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:{{ globeOpacity }};pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 62% 64% at 50% 44%,#000 28%,transparent 78%);mask-image:radial-gradient(ellipse 62% 64% at 50% 44%,#000 28%,transparent 78%)"></canvas>
+<div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;width:100%;max-width:1520px;margin:0 auto">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:clamp(20px,3vh,32px);animation:fadeIn .9s ease .15s both">
+<span style="display:block;width:30px;height:1px;background:#C9A24B;opacity:.55"></span>
+<span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#E3C878">Securing Your Legacy — Vadodara, Gujarat</span>
+<span style="display:block;width:30px;height:1px;background:#C9A24B;opacity:.55"></span>
+</div>
+<h1 style="margin:0;overflow:hidden;padding:.16em 0 .14em;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:{{ heroType }};line-height:1;letter-spacing:-.028em;color:#F5F0E6;white-space:{{ heroWrap }}">
+<span style="display:block;animation:riseIn .9s cubic-bezier(.22,1,.36,1) .32s both">Invest. <span data-metal="1" style="font-style:italic;padding:.16em .12em;margin:-.16em -.12em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Protect.</span> Grow.</span>
+</h1>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:clamp(26px,4vh,44px);animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .78s both">
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><path d="M50 10 85 23V50C85 71 70 84 50 90C30 84 15 71 15 50V23Z"/><path d="M32 51H43L48 40L56 63L60 51H70"/></svg>Health</a>
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><path d="M22 48 31 14H69L78 48"/><path d="M9 48H91V74C91 80 86 85 80 85H20C14 85 9 80 9 74V48Z"/><path d="M18 63H30"/><path d="M70 63H82"/></svg>Motor · 4-Wheeler</a>
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><circle cx="20" cy="70" r="16"/><circle cx="80" cy="70" r="16"/><path d="M20 70 38 42H62L80 70"/><path d="M40 42 34 26H24"/><path d="M62 42H76"/></svg>Motor · 2-Wheeler</a>
+<a href="#insurance-products" style="display:flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid rgba(201,162,75,.42);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#F5F0E6;background:rgba(227,200,120,.04);transition:border-color .25s,background .25s,color .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.11);color:#F2E2A8">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none"><path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/></svg>Life</a>
+</div>
+</div>
+<div style="position:relative;z-index:2;width:100%;max-width:1520px;margin:0 auto;border-top:1px solid rgba(201,162,75,.34);padding-top:clamp(22px,3vh,32px);display:grid;grid-template-columns:{{ heroCols }};gap:clamp(22px,4vw,56px);align-items:start;animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .9s both">
+<p style="margin:0;font:400 clamp(15.5px,1.1vw,17px)/1.72 Inter,sans-serif;color:rgba(245,240,230,.72);text-wrap:pretty">Vadodara's trusted insurance partner — health, motor and life cover from India's leading insurers, plus SIPs and Demat investing under one roof. Backed by 6 years of experience.</p>
+<p style="margin:0;display:{{ heroP2 }};font:400 clamp(15.5px,1.1vw,17px)/1.72 Inter,sans-serif;color:rgba(245,240,230,.5);text-wrap:pretty">We run SIP seminars across the city and manage portfolios built around you. Investments and insurance planned together, in one place.</p>
+<div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+<a href="#contact" style="font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878;white-space:nowrap;border-bottom:1px solid rgba(201,162,75,.5);padding-bottom:8px;transition:border-color .25s,color .25s" style-hover="color:#F2E2A8;border-color:#E3C878">Start your journey</a>
+<a href="#services" style="font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,230,.55);white-space:nowrap;border-bottom:1px solid rgba(201,162,75,.28);padding-bottom:8px;transition:border-color .25s,color .25s" style-hover="color:#E3C878;border-color:#E3C878">Explore services</a>
+</div>
+</div>
+</section>
+
+<section id="about" data-screen-label="About the firm" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(92px,11vw,168px) clamp(22px,6vw,110px) clamp(70px,8vw,120px);overflow:hidden">
+<svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;right:-70px;top:40px;width:min(520px,52vw);height:auto;opacity:.055;pointer-events:none">
+<path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/><path d="M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z"/><path d="M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z"/>
+</svg>
+<div style="max-width:1380px;margin:0 auto;position:relative">
+<div style="display:grid;grid-template-columns:{{ aboutCols }};gap:clamp(34px,5vw,90px);align-items:start">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:26px">
+<span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E">About BS Finance</span>
+</div>
+<h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.6vw,4.4rem);line-height:1.02;letter-spacing:-.018em;color:#0E2745;text-wrap:balance">Six years of helping people grow their <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">money.</span></h2>
+</div>
+<div data-reveal="1" data-delay="120" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding-top:{{ aboutPad }}">
+<p style="margin:0 0 22px;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(14,39,69,.78);max-width:62ch;text-wrap:pretty">Financial freedom comes from investing well and planning ahead. For six years, BS Finance has guided clients across Vadodara through market highs and lows — calm when prices fall, steady when they rise.</p>
+<p style="margin:0 0 22px;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(14,39,69,.78);max-width:62ch;text-wrap:pretty">We run SIP seminars in the city and manage mutual fund portfolios ourselves instead of handing you a list of products. A plan only works when you understand it.</p>
+<p style="margin:0;font:400 clamp(16px,1.1vw,18px)/1.72 Inter,sans-serif;color:rgba(14,39,69,.78);max-width:62ch;text-wrap:pretty">Mutual funds, shares and insurance sit under one roof and are planned together.</p>
+</div>
+</div>
+
+<div style="margin-top:clamp(64px,8vw,120px);border-top:1px solid rgba(201,162,75,.4);display:grid;grid-template-columns:{{ advCols }};gap:0 clamp(28px,4vw,64px)">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:38px 0 8px">
+<svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<path d="M6 88H94"/><path d="M22 88V66"/><path d="M40 88V54"/><path d="M58 88V60"/><path d="M14 74 38 48 54 62 86 26"/><path d="M86 26H68"/><path d="M86 26V44"/>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#0E2745">6 Years of Market Experience</h3>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(14,39,69,.7);max-width:38ch">Plans tested through good markets and bad, not built for just one.</p>
+</div>
+<div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:38px 0 8px">
+<svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<path d="M14 92 56 50"/><path d="M20 86 26 92"/><path d="M50 44 62 56"/><circle cx="72" cy="34" r="17"/><ellipse cx="72" cy="34" rx="7" ry="17"/><path d="M55 34H89"/><path d="M79 25 94 10 89 26"/>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#0E2745">Local Expertise, Global Standards</h3>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(14,39,69,.7);max-width:38ch">Serving Vadodara with clear, professional advice you can check for yourself.</p>
+</div>
+<div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:38px 0 8px">
+<svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/><path d="M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z"/><path d="M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z"/>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.2;color:#0E2745">Education-First Approach</h3>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(14,39,69,.7);max-width:38ch">We don't just invest for you, we explain it. Regular client sessions and SIP seminars.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="services" data-screen-label="Services index" ref="{{ indexRef }}" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(70px,8vw,120px) clamp(22px,6vw,110px) clamp(38px,4vw,60px)">
+<div style="max-width:1380px;margin:0 auto">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:clamp(34px,5vw,64px)">
+<span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E">What we do — three services, one roof</span>
+</div>
+
+<a href="#mutual-funds" onMouseEnter="{{ enter0 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);padding:{{ pad0 }};opacity:{{ dim0 }};color:#0E2745;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
+<span style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;color:#7A5C1E;flex:none;font-variant-numeric:tabular-nums">01</span>
+<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Mutual Funds &amp; SIPs</span>
+<span style="flex:0 0 100%;display:flex;align-items:center;gap:13px;margin-top:12px">
+<svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="2.4" style="width:22px;height:22px;flex:none;opacity:{{ pv0 }};transition:opacity .35s ease" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"></path><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"></path><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"></path></svg>
+<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(14,39,69,.72)">Simple monthly SIPs and hand-picked funds for your goals.</span>
+</span>
+</a>
+
+<a href="#demat" onMouseEnter="{{ enter1 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);padding:{{ pad1 }};opacity:{{ dim1 }};color:#0E2745;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
+<span style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;color:#7A5C1E;flex:none;font-variant-numeric:tabular-nums">02</span>
+<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Demat &amp; Equity Trading</span>
+<span style="flex:0 0 100%;display:flex;align-items:center;gap:13px;margin-top:12px">
+<svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="2.4" style="width:22px;height:22px;flex:none;opacity:{{ pv1 }};transition:opacity .35s ease" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 88H94"></path><path d="M22 88V66"></path><path d="M40 88V54"></path><path d="M14 74 38 48 54 62 86 26"></path><path d="M86 26H68"></path><path d="M86 26V44"></path></svg>
+<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(14,39,69,.72)">A free Demat account and good stocks, all in one place.</span>
+</span>
+</a>
+
+<a href="#insurance" onMouseEnter="{{ enter2 }}" onMouseLeave="{{ leaveRow }}" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:0 clamp(16px,3vw,48px);border-top:1px solid rgba(201,162,75,.38);border-bottom:1px solid rgba(201,162,75,.38);padding:{{ pad2 }};opacity:{{ dim2 }};color:#0E2745;transition:opacity .35s cubic-bezier(.22,1,.36,1),padding .35s cubic-bezier(.22,1,.36,1);position:relative">
+<span style="font:500 12px/1 Inter,sans-serif;letter-spacing:.14em;color:#7A5C1E;flex:none;font-variant-numeric:tabular-nums">03</span>
+<span data-midas="1" style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,5.4vw,5.2rem);line-height:1.06;letter-spacing:-.02em;padding:.12em .05em;margin:-.12em -.05em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Insurance Cover</span>
+<span style="flex:0 0 100%;display:flex;align-items:center;gap:13px;margin-top:12px">
+<svg viewBox="0 0 100 100" fill="none" stroke="#8C6A24" stroke-width="2.4" style="width:22px;height:22px;flex:none;opacity:{{ pv2 }};transition:opacity .35s ease" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 92 56 50"></path><path d="M50 44 62 56"></path><circle cx="72" cy="34" r="17"></circle><ellipse cx="72" cy="34" rx="7" ry="17"></ellipse><path d="M55 34H89"></path></svg>
+<span style="font:400 15px/1.5 Inter,sans-serif;color:rgba(14,39,69,.72)">Health, life and motor cover for your whole family.</span>
+</span>
+</a>
+</div>
+<div ref="{{ dotRef }}" aria-hidden="true" style="position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:#E3C878;pointer-events:none;opacity:0;z-index:60;transition:opacity .3s ease;will-change:transform"></div>
+</section>
+
+<section id="mutual-funds" data-screen-label="Service — Mutual Funds &amp; SIPs" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden;border-top:1px solid rgba(201,162,75,.25)">
+<svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;left:-90px;bottom:-80px;width:min(600px,58vw);height:auto;opacity:.05;pointer-events:none">
+<path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/><path d="M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z"/><path d="M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z"/>
+</svg>
+<div style="max-width:1380px;margin:0 auto;position:relative;display:grid;grid-template-columns:{{ svcCols }};gap:clamp(34px,5vw,80px);align-items:start">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;font-variant-numeric:tabular-nums">01 — Grow</span>
+<h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em">Mutual Funds &amp; SIPs</h2>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">Small amounts invested every month grow into something big. Start a SIP online and we review it with you every year.</p>
+</div>
+<div style="display:grid;gap:0">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Systematic Investment Plans</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Invest a fixed amount every month. You never have to guess the right time to buy.</p>
+</div>
+<div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Curated Fund Selection</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Flexi-cap, large &amp; mid-cap, arbitrage and tax-saving ELSS funds, picked to match your goals and how much risk you are comfortable with.</p>
+</div>
+<div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0;display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Goal-Based Planning</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Retirement, a child's education, a big purchase. Every investment has a goal and a date on it.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="demat" data-screen-label="Service — Demat &amp; Equity" style="position:relative;background:#EAE2D2;color:#0E2745;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden">
+<svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;right:-70px;top:-60px;width:min(560px,54vw);height:auto;opacity:.06;pointer-events:none">
+<path d="M6 88H94"/><path d="M22 88V66"/><path d="M40 88V54"/><path d="M58 88V60"/><path d="M14 74 38 48 54 62 86 26"/><path d="M86 26H68"/><path d="M86 26V44"/>
+</svg>
+<div style="max-width:1380px;margin:0 auto;position:relative;display:grid;grid-template-columns:{{ svcCols }};gap:clamp(34px,5vw,80px);align-items:start">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;font-variant-numeric:tabular-nums">02 — Invest</span>
+<h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em">Demat &amp; Equity Trading</h2>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">Open a free Demat account online and keep all your shares in one place. Simple enough for beginners.</p>
+</div>
+<div style="display:grid;gap:0">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Hand-Picked Stocks</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">We pick strong companies to hold for years, and ignore the daily ups and downs.</p>
+</div>
+<div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Easy to Use Platform</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Fast orders, live prices and an app that stays out of your way.</p>
+</div>
+<div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0;display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Everything in One Place</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Shares, bonds and government securities, all held safely in one account.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="insurance" data-screen-label="Service — Insurance" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden">
+<svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;left:-80px;top:-40px;width:min(560px,54vw);height:auto;opacity:.055;pointer-events:none">
+<path d="M14 92 56 50"/><path d="M20 86 26 92"/><path d="M50 44 62 56"/><circle cx="72" cy="34" r="17"/><ellipse cx="72" cy="34" rx="7" ry="17"/><path d="M55 34H89"/><path d="M79 25 94 10 89 26"/>
+</svg>
+<div style="max-width:1380px;margin:0 auto;position:relative;display:grid;grid-template-columns:{{ svcCols }};gap:clamp(34px,5vw,80px);align-items:start">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;font-variant-numeric:tabular-nums">03 — Protect</span>
+<h2 style="margin:20px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,3.3rem);line-height:1.05;letter-spacing:-.018em">Insurance Cover</h2>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">Term life and family health cover, chosen with an advisor in Vadodara who knows your full picture.</p>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7A5C1E;border-bottom:1px solid rgba(140,106,36,.5);padding-bottom:6px">Insurance portals<span style="display:block;width:22px;height:1px;background:currentColor"></span></a>
+</div>
+<div style="display:grid;gap:0">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">The Right Cover Amount</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">We work out how much cover you actually need, so you never pay for too much or settle for too little.</p>
+</div>
+<div data-reveal="1" data-delay="90" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0 0 clamp(28px,3.2vw,42px);display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Term Life Plans</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Large cover at a low premium, so your family lives the same way if something happens to you.</p>
+</div>
+<div data-reveal="1" data-delay="180" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);padding:0;display:grid;grid-template-columns:{{ itemCols }};gap:clamp(10px,2vw,40px)">
+<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.5vw,23px);line-height:1.25">Health Insurance</h3>
+<p style="margin:0;font:400 16.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:56ch;text-wrap:pretty">Family cover that keeps up with rising hospital bills.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="insurance-products" data-screen-label="Insurance products" style="position:relative;background:#0E2745;color:#F5F0E6;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<div style="max-width:1380px;margin:0 auto;position:relative">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:30px 48px;margin-bottom:clamp(40px,5vw,68px)">
+<div style="flex:1 1 480px">
+<span style="display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878;margin-bottom:24px">Insurance products — five types of cover</span>
+<h2 style="margin:0;max-width:17ch;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.4vw,4.1rem);line-height:1.03;letter-spacing:-.02em;text-wrap:balance">Cover for every part of your <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">life.</span></h2>
+</div>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" style="flex:none;padding:19px 32px;border-radius:999px;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">View Insurance Quotes</a>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:0;border-top:1px solid rgba(201,162,75,.28);border-left:1px solid rgba(201,162,75,.28)">
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd0 }}" data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
+<svg data-prod="0" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<path pathLength="1" stroke-dasharray="1" d="M50 10 85 23V50C85 71 70 84 50 90C30 84 15 71 15 50V23Z"/>
+<path pathLength="1" stroke-dasharray="1" d="M22 52H36L43 38L53 66L59 52H78"/>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.18">Health Insurance</h3>
+<p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Cover for you or the whole family, cashless treatment at network hospitals, and top-ups when you need a bigger amount.</p>
+<span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
+</a>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd1 }}" data-reveal="1" data-delay="70" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
+<svg data-prod="1" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<circle pathLength="1" stroke-dasharray="1" cx="50" cy="50" r="40"/>
+<circle pathLength="1" stroke-dasharray="1" cx="50" cy="50" r="12"/>
+<path pathLength="1" stroke-dasharray="1" d="M50 62V90"/>
+<path pathLength="1" stroke-dasharray="1" d="M39.6 44 15.4 30"/>
+<path pathLength="1" stroke-dasharray="1" d="M60.4 44 84.6 30"/>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.18">Motor Insurance</h3>
+<p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Cars, bikes and commercial vehicles. Full cover, third-party or own-damage only, renewed before it expires.</p>
+<span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
+</a>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd2 }}" data-reveal="1" data-delay="140" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
+<svg data-prod="2" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<g transform="translate(50 50) scale(1.48) translate(-50 -57)" stroke-width="1.62">
+<path pathLength="1" stroke-dasharray="1" d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"/>
+<path pathLength="1" stroke-dasharray="1" d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"/>
+<path pathLength="1" stroke-dasharray="1" d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"/>
+</g>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.18">Life Insurance</h3>
+<p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Term plans, savings plans and child education plans, sized to your income and your family's needs.</p>
+<span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
+</a>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd3 }}" data-reveal="1" data-delay="210" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
+<svg data-prod="3" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<path pathLength="1" stroke-dasharray="1" d="M50 10C74 10 88 28 88 52V72C88 81 81 88 72 88H50C26 88 11 71 11 48C11 26 27 10 50 10Z"/>
+<path pathLength="1" stroke-dasharray="1" d="M28 40C36 31 50 27 63 27C70 27 76 28 80 30V55C75 58 68 60 59 60C43 60 32 54 28 47C25 43 25 43 28 40Z"/>
+<path pathLength="1" stroke-dasharray="1" d="M17 61C23 74 34 82 49 84"/>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.18">Two-Wheeler Insurance</h3>
+<p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Bikes and scooters covered against theft, damage and third-party claims, with instant renewal online.</p>
+<span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
+</a>
+<a href="BS%20Finance%20Portals.dc.html" onClick="{{ goPortals }}" onMouseEnter="{{ pd4 }}" data-reveal="1" data-delay="280" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1),background .3s ease;background:#0E2745;color:#F5F0E6;border-right:1px solid rgba(201,162,75,.28);border-bottom:1px solid rgba(201,162,75,.28);padding:clamp(30px,3vw,42px) clamp(24px,2.2vw,32px);display:flex;flex-direction:column" style-hover="background:#16375E">
+<svg data-prod="4" data-draw="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:46px;height:46px;display:block;margin-bottom:26px">
+<path pathLength="1" stroke-dasharray="1" d="M22 48 31 14H69L78 48"/>
+<path pathLength="1" stroke-dasharray="1" d="M9 48H91V74C91 80 86 85 80 85H20C14 85 9 80 9 74V48Z"/>
+<path pathLength="1" stroke-dasharray="1" d="M33 42 38 22H62L67 42Z"/>
+<path pathLength="1" stroke-dasharray="1" d="M17 62H31"/>
+<path pathLength="1" stroke-dasharray="1" d="M69 62H83"/>
+<path pathLength="1" stroke-dasharray="1" d="M22 85V90"/>
+<path pathLength="1" stroke-dasharray="1" d="M78 85V90"/>
+</svg>
+<h3 style="margin:0 0 12px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(20px,1.6vw,25px);line-height:1.18">Four-Wheeler Insurance</h3>
+<p style="margin:0 0 26px;font:400 15px/1.62 Inter,sans-serif;color:rgba(245,240,230,.58);text-wrap:pretty">Car cover with the add-ons that matter: zero depreciation, engine protection and roadside help.</p>
+<span style="margin-top:auto;font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E3C878">Get a quote</span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="insurer-partners" data-screen-label="Insurer partners" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<div style="max-width:1380px;margin:0 auto;position:relative">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:26px 48px;margin-bottom:clamp(34px,4vw,52px)">
+<div style="flex:1 1 460px">
+<span style="display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7A5C1E;margin-bottom:24px">Insurer partners</span>
+<h2 style="margin:0;max-width:18ch;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.4vw,4.1rem);line-height:1.03;letter-spacing:-.02em;text-wrap:balance">Top insurers, one <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">desk.</span></h2>
+</div>
+<p style="flex:0 1 400px;margin:0;font:400 clamp(15.5px,1.05vw,17px)/1.7 Inter,sans-serif;color:rgba(14,39,69,.7);text-wrap:pretty">We work with India's leading general, health and life insurance companies. Tell us what you need and we compare plans for you.</p>
+</div>
+
+<div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)">
+<div style="display:flex;width:max-content;animation:insScroll 55s linear infinite" style-hover="animation-play-state:paused">
+<div style="display:flex;gap:16px;padding-right:16px;flex:none">
+<sc-for list="{{ partnerList }}" as="ins" hint-placeholder-count="8">
+<div style="width:212px;flex:none;background:#FFFFFF;border:1px solid rgba(201,162,75,.34);padding:22px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+<div style="height:54px;display:flex;align-items:center;justify-content:center">
+<img src="{{ ins.logo }}" alt="{{ ins.name }}" loading="lazy" style="max-height:44px;max-width:170px;width:auto;height:auto;object-fit:contain;display:block">
+</div>
+<span aria-hidden="true" style="display:block;width:24px;height:1px;background:rgba(201,162,75,.5)"></span>
+<div style="font:500 13.5px/1.45 Inter,sans-serif;color:rgba(14,39,69,.8);text-wrap:pretty">{{ ins.name }}</div>
+</div>
+</sc-for>
+</div>
+<div aria-hidden="true" style="display:flex;gap:16px;padding-right:16px;flex:none">
+<sc-for list="{{ partnerList }}" as="ins" hint-placeholder-count="0">
+<div style="width:212px;flex:none;background:#FFFFFF;border:1px solid rgba(201,162,75,.34);padding:22px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+<div style="height:54px;display:flex;align-items:center;justify-content:center">
+<img src="{{ ins.logo }}" alt="" loading="lazy" style="max-height:44px;max-width:170px;width:auto;height:auto;object-fit:contain;display:block">
+</div>
+<span aria-hidden="true" style="display:block;width:24px;height:1px;background:rgba(201,162,75,.5)"></span>
+<div style="font:500 13.5px/1.45 Inter,sans-serif;color:rgba(14,39,69,.8);text-wrap:pretty">{{ ins.name }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="margin-top:clamp(30px,3.4vw,46px);padding-top:24px;border-top:1px solid rgba(201,162,75,.34);display:flex;flex-wrap:wrap;gap:16px 48px">
+<p style="margin:0;flex:1 1 420px;font:400 13.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.62);text-wrap:pretty"><strong style="font-weight:600;color:#0E2745">Motor policies we handle:</strong> new vehicles, renewals, own-damage only, third-party only and long-term plans.</p>
+<p style="margin:0;flex:1 1 320px;font:400 13.5px/1.7 Inter,sans-serif;color:rgba(14,39,69,.62);text-wrap:pretty">Plans differ by city, age and vehicle. Ask us for a comparison before you buy.</p>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Numbers" style="background:#0E2745;color:#F5F0E6;padding:clamp(80px,9vw,140px) clamp(22px,6vw,110px);border-top:1px solid rgba(201,162,75,.22)">
+<div style="max-width:1380px;margin:0 auto;display:grid;grid-template-columns:{{ numCols }};gap:clamp(34px,4vw,60px)">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<div data-metal="1" data-count="6" data-suffix="+" style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(64px,9vw,10rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent"></div>
+<div style="margin-top:24px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,240,230,.62)">Years of Experience</div>
+</div>
+<div data-reveal="1" data-delay="110" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<div data-metal="1" data-count="3" style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(64px,9vw,10rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent"></div>
+<div style="margin-top:24px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,240,230,.62)">Core Services</div>
+</div>
+<div data-reveal="1" data-delay="220" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<div data-metal="1" data-count="100" data-suffix="%" style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(64px,9vw,10rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent"></div>
+<div style="margin-top:24px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,240,230,.62)">Commitment to Your Growth</div>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Midas statement" ref="{{ statementRef }}" style="background:#F5F0E6;color:#0E2745;min-height:100svh;display:flex;align-items:center;padding:clamp(70px,10vh,120px) clamp(22px,6vw,110px)">
+<p data-midas="1" style="max-width:22ch;margin:0 auto;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.1rem,7vw,7.4rem);line-height:1.03;letter-spacing:-.022em;text-wrap:balance;padding:.1em .04em;background-image:linear-gradient(#0E2745,#0E2745);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">Financial freedom is built on smart investing and secure planning.</p>
+</section>
+
+<section data-screen-label="Invest Protect Grow" style="background:#0E2745;color:#F5F0E6;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px)">
+<div style="max-width:1380px;margin:0 auto">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:clamp(38px,5vw,70px)">
+<span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878">The discipline, in three words</span>
+</div>
+<div style="display:grid;grid-template-columns:{{ triCols }};gap:0 clamp(28px,4vw,64px);border-top:1px solid rgba(201,162,75,.38)">
+<div onMouseEnter="{{ triEnter0 }}" onMouseLeave="{{ triLeave }}" style="padding:clamp(30px,3.5vw,52px) 0;border-bottom:{{ triRuleB }}">
+<div data-metal="1" style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(38px,5vw,5.4rem);line-height:1;letter-spacing:-.025em;color:{{ triColor0 }};background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;transition:color .4s ease">Invest</div>
+<svg data-tri="0" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:64px;height:64px;display:block;margin:22px 0 18px;opacity:{{ triOp0 }};transition:opacity .4s ease">
+<path pathLength="1" d="M6 88H94" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.55s both"/>
+<path pathLength="1" d="M22 88V66" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.64s both"/>
+<path pathLength="1" d="M40 88V54" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.73s both"/>
+<path pathLength="1" d="M14 74 38 48 54 62 86 26" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.82s both"/>
+<path pathLength="1" d="M86 26H68" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.91s both"/>
+<path pathLength="1" d="M86 26V44" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 1.00s both"/>
+</svg>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(245,240,230,.62);max-width:32ch">Equity and Demat. Ownership in businesses worth owning.</p>
+</div>
+<div onMouseEnter="{{ triEnter1 }}" onMouseLeave="{{ triLeave }}" style="padding:clamp(30px,3.5vw,52px) 0;border-bottom:{{ triRuleB }}">
+<div data-metal="1" style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(38px,5vw,5.4rem);line-height:1;letter-spacing:-.025em;color:{{ triColor1 }};background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;transition:color .4s ease">Protect</div>
+<svg data-tri="1" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:64px;height:64px;display:block;margin:22px 0 18px;opacity:{{ triOp1 }};transition:opacity .4s ease">
+<path pathLength="1" d="M14 92 56 50" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.55s both"/>
+<path pathLength="1" d="M20 86 26 92" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.64s both"/>
+<path pathLength="1" d="M50 44 62 56" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.73s both"/>
+<circle pathLength="1" cx="72" cy="34" r="17" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.82s both"/>
+<ellipse pathLength="1" cx="72" cy="34" rx="7" ry="17" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.91s both"/>
+<path pathLength="1" d="M55 34H89" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 1.00s both"/>
+<path pathLength="1" d="M79 25 94 10 89 26" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 1.09s both"/>
+</svg>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(245,240,230,.62);max-width:32ch">Insurance. The floor beneath everything else you build.</p>
+</div>
+<div onMouseEnter="{{ triEnter2 }}" onMouseLeave="{{ triLeave }}" style="padding:clamp(30px,3.5vw,52px) 0">
+<div data-metal="1" style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(38px,5vw,5.4rem);line-height:1;letter-spacing:-.025em;color:{{ triColor2 }};background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;transition:color .4s ease">Grow</div>
+<svg data-tri="2" viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:64px;height:64px;display:block;margin:22px 0 18px;opacity:{{ triOp2 }};transition:opacity .4s ease">
+<path pathLength="1" d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.55s both"/>
+<path pathLength="1" d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.64s both"/>
+<path pathLength="1" d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.73s both"/>
+<path pathLength="1" d="M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.82s both"/>
+<path pathLength="1" d="M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z" stroke-dasharray="1" style="animation:drawIn .8s cubic-bezier(.22,1,.36,1) 0.91s both"/>
+</svg>
+<p style="margin:0;font:400 16px/1.68 Inter,sans-serif;color:rgba(245,240,230,.62);max-width:32ch">SIPs and compounding. Time doing the heavy lifting.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="raise-a-claim" data-screen-label="Raise a claim" style="position:relative;background:#F5F0E6;color:#0E2745;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<div style="max-width:1380px;margin:0 auto;position:relative;display:grid;grid-template-columns:{{ svcCols }};gap:clamp(34px,5vw,80px);align-items:start">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<span style="display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;background:#E3C878;font:600 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#0E2745"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:13px;height:13px;flex:none"><path d="M50 12 86 26V52C86 72 71 85 50 91C29 85 14 72 14 52V26Z"></path><path d="M36 51 46 62 66 40"></path></svg>Raise a claim</span>
+<h2 style="margin:22px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.2rem,4.6vw,4.1rem);line-height:1.02;letter-spacing:-.022em;text-wrap:balance">We handle your claim for you.</h2>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:38ch;text-wrap:pretty">Answer a few questions and we take over — the paperwork, the follow-ups with your insurer and updates until you are paid. You talk to us, not a call centre.</p>
+</div>
+
+<form onSubmit="{{ claimSubmit }}" style="display:{{ claimFormShow }};flex-direction:column;gap:clamp(30px,3.4vw,44px);max-width:680px">
+<div>
+<div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">01 — What type of claim is this?</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<button type="button" onClick="{{ ct0 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Health</button>
+<button type="button" onClick="{{ ct1 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Motor</button>
+<button type="button" onClick="{{ ct2 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Life</button>
+<button type="button" onClick="{{ ct3 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB3 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Two-wheeler</button>
+<button type="button" onClick="{{ ct4 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB4 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Four-wheeler</button>
+<button type="button" onClick="{{ ct5 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ ctB5 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Other</button>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:{{ pairCols }};gap:clamp(24px,3vw,40px)">
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">02 — Policy number</span>
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">03 — Insurer</span>
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">04 — Date of incident</span>
+<input type="date" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Mobile number</span>
+<input type="tel" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+</div>
+
+<div>
+<div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">05 — Have you informed the insurer yet?</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<button type="button" onClick="{{ cr0 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ crB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Yes</button>
+<button type="button" onClick="{{ cr1 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ crB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">No</button>
+<button type="button" onClick="{{ cr2 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.4);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ crB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Not sure</button>
+</div>
+</div>
+
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">06 — What happened?</span>
+<textarea rows="3" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.4);border-radius:0;padding:10px 0 11px;font:400 16px/1.55 Inter,sans-serif;color:#0E2745;outline:none;resize:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24"></textarea>
+</label>
+
+<div><p style="display:{{ claimErrShow }};margin:14px 0 0;font:400 14px/1.5 Inter,sans-serif;color:#8C6A24">Please choose an option above before submitting.</p>
+<button type="submit" style="margin-top:22px;padding:18px 32px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">Submit claim request</button>
+</div>
+</form>
+<div style="display:{{ claimSentShow }};align-items:flex-start;gap:14px;max-width:520px;padding:26px 0 0;border-top:1px solid rgba(140,106,36,.4)">
+<span style="display:block;width:26px;height:1px;background:#8C6A24;margin-top:12px;flex:none"></span>
+<p style="margin:0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.78)">Your claim request has been logged. A BS Finance advisor will call you to collect documents and open the file with your insurer.</p>
+</div>
+</div>
+</section>
+
+<section id="become-a-posp" data-screen-label="Become a POSP" style="position:relative;background:#EAE2D2;color:#0E2745;padding:clamp(80px,9vw,150px) clamp(22px,6vw,110px);overflow:hidden">
+<svg viewBox="0 0 100 100" fill="none" stroke="#C9A24B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;right:-80px;bottom:-70px;width:min(520px,52vw);height:auto;opacity:.06;pointer-events:none">
+<path d="M6 88H94"/><path d="M22 88V66"/><path d="M40 88V54"/><path d="M58 88V60"/><path d="M14 74 38 48 54 62 86 26"/><path d="M86 26H68"/><path d="M86 26V44"/>
+</svg>
+<div style="max-width:1380px;margin:0 auto;position:relative;display:grid;grid-template-columns:{{ svcCols }};gap:clamp(34px,5vw,80px);align-items:start">
+<div data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)">
+<span style="display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;background:#E3C878;font:600 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#0E2745"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:13px;height:13px;flex:none"><circle cx="50" cy="34" r="18"></circle><path d="M16 88C16 69 31 58 50 58C69 58 84 69 84 88"></path></svg>Become a POSP</span>
+<h2 style="margin:22px 0 0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.2rem,4.6vw,4.1rem);line-height:1.02;letter-spacing:-.022em;text-wrap:balance">Sell insurance alongside your own work.</h2>
+<p style="margin:22px 0 0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.72);max-width:40ch;text-wrap:pretty">A POSP is licensed by IRDAI to sell selected insurance plans. We handle your registration, training and product access. You earn at your own pace.</p>
+<div style="margin-top:34px;display:flex;flex-direction:column;gap:14px;max-width:34ch">
+<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(14,39,69,.72)">18 years or older, 10th standard minimum</span></div>
+<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(14,39,69,.72)">PAN and Aadhaar for KYC</span></div>
+<div style="display:flex;gap:13px;align-items:baseline"><span style="display:block;width:16px;height:1px;background:#8C6A24;flex:none;transform:translateY(-5px)"></span><span style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(14,39,69,.72)">15 hours of training, then a simple exam</span></div>
+</div>
+</div>
+
+<form onSubmit="{{ pospSubmit }}" style="display:{{ pospFormShow }};flex-direction:column;gap:clamp(28px,3.2vw,40px);max-width:680px">
+<div style="display:grid;grid-template-columns:{{ pairCols }};gap:clamp(24px,3vw,40px)">
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Full name</span>
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Mobile number</span>
+<input type="tel" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">Email</span>
+<input type="email" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+<label style="display:block">
+<span style="display:block;font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:6px">City</span>
+<input type="text" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid rgba(140,106,36,.45);border-radius:0;padding:10px 0 11px;font:400 16px/1.4 Inter,sans-serif;color:#0E2745;outline:none;transition:border-color .3s ease" style-focus="border-color:#8C6A24">
+</label>
+</div>
+
+<div>
+<div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">Highest qualification</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<button type="button" onClick="{{ pq0 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">10th pass</button>
+<button type="button" onClick="{{ pq1 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">12th pass</button>
+<button type="button" onClick="{{ pq2 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB2 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Graduate</button>
+<button type="button" onClick="{{ pq3 }}" style="padding:16px 22px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ pqB3 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Postgraduate</button>
+</div>
+</div>
+
+<div>
+<div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7A5C1E;margin-bottom:16px">Any prior insurance experience?</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<button type="button" onClick="{{ pe0 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ peB0 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">Yes</button>
+<button type="button" onClick="{{ pe1 }}" style="padding:16px 26px;border:1px solid rgba(140,106,36,.45);border-radius:999px;font:500 12px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#0E2745;cursor:pointer;background-color:{{ peB1 }};transition:background-color .25s ease,border-color .25s ease" style-hover="border-color:#8C6A24">No</button>
+</div>
+</div>
+
+<div><p style="display:{{ pospErrShow }};margin:14px 0 0;font:400 14px/1.5 Inter,sans-serif;color:#8C6A24">Please choose an option above before submitting.</p>
+<button type="submit" style="margin-top:22px;padding:18px 32px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%);transition:filter .3s ease" style-hover="filter:brightness(1.08)">Apply as a POSP</button>
+</div>
+</form>
+<div style="display:{{ pospSentShow }};align-items:flex-start;gap:14px;max-width:520px;padding:26px 0 0;border-top:1px solid rgba(140,106,36,.45)">
+<span style="display:block;width:26px;height:1px;background:#8C6A24;margin-top:12px;flex:none"></span>
+<p style="margin:0;font:400 17px/1.7 Inter,sans-serif;color:rgba(14,39,69,.78)">Application received. We will call you to verify your documents and schedule the IRDAI training module.</p>
+</div>
+</div>
+</section>
+
+<section id="contact" data-screen-label="Closing CTA" style="background:#0E2745;color:#F5F0E6;padding:clamp(90px,11vw,180px) clamp(22px,6vw,110px) clamp(70px,8vw,120px);border-top:1px solid rgba(201,162,75,.22)">
+<div style="max-width:1380px;margin:0 auto">
+<h2 data-reveal="1" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);margin:0;max-width:16ch;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.4rem,7vw,7rem);line-height:1.01;letter-spacing:-.024em;text-wrap:balance">Ready to build your <span data-metal="1" style="font-style:italic;padding:.18em .14em;margin:-.18em -.14em;background-image:linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%);background-size:100% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent">wealth?</span></h2>
+<p data-reveal="1" data-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);margin:26px 0 0;font:400 clamp(16px,1.1vw,18px)/1.7 Inter,sans-serif;color:rgba(245,240,230,.66)">Invest smartly. Protect fiercely. Grow consistently.</p>
+
+<div style="margin-top:clamp(44px,5vw,76px);display:grid;grid-template-columns:{{ ctaCols }};gap:clamp(34px,4vw,72px);border-top:1px solid rgba(201,162,75,.35);padding-top:clamp(34px,4vw,54px)">
+<div style="display:flex;flex-direction:column;gap:clamp(12px,1.4vw,16px)">
+<div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878;margin-bottom:6px">Open an account online</div>
+<a href="https://diy.sharekhan.com/app/Account/Register?grpcd=13723&amp;type=pb&amp;grpid=14166" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:clamp(16px,1.6vw,22px);padding:clamp(22px,2.4vw,30px) clamp(20px,2.2vw,28px);border:1px solid rgba(201,162,75,.35);background:rgba(227,200,120,.045);color:#F5F0E6;transition:background .3s ease,border-color .3s ease" style-hover="background:rgba(227,200,120,.1);border-color:rgba(227,200,120,.6)">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:38px;height:38px;flex:none"><path d="M6 88H94"></path><path d="M22 88V66"></path><path d="M40 88V54"></path><path d="M14 74 38 48 54 62 86 26"></path><path d="M86 26H68"></path><path d="M86 26V44"></path></svg>
+<span style="flex:1 1 auto">
+<span style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.6vw,25px);line-height:1.18;margin-bottom:7px">Open a Demat Account</span>
+<span style="display:block;font:400 15px/1.55 Inter,sans-serif;color:rgba(245,240,230,.58)">Start investing in shares. Opens in a new tab.</span>
+</span>
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg>
+</a>
+<a href="http://p.njw.bz/97331" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:clamp(16px,1.6vw,22px);padding:clamp(22px,2.4vw,30px) clamp(20px,2.2vw,28px);border:1px solid rgba(201,162,75,.35);background:rgba(227,200,120,.045);color:#F5F0E6;transition:background .3s ease,border-color .3s ease" style-hover="background:rgba(227,200,120,.1);border-color:rgba(227,200,120,.6)">
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:38px;height:38px;flex:none"><path d="M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z"></path><path d="M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z"></path><path d="M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z"></path></svg>
+<span style="flex:1 1 auto">
+<span style="display:block;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,1.6vw,25px);line-height:1.18;margin-bottom:7px">Open a Mutual Fund Account</span>
+<span style="display:block;font:400 15px/1.55 Inter,sans-serif;color:rgba(245,240,230,.58)">Start a SIP online. Opens in a new tab.</span>
+</span>
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg>
+</a>
+<div style="margin-top:auto;padding-top:clamp(16px,2vw,24px);display:flex;gap:13px;align-items:flex-start">
+<span style="display:block;width:22px;height:1px;background:rgba(201,162,75,.6);margin-top:11px;flex:none"></span>
+<p style="margin:0;font:400 14.5px/1.65 Inter,sans-serif;color:rgba(245,240,230,.5);max-width:34ch">Both accounts are free to open. Call us if you get stuck on any step.</p>
+</div>
+</div>
+<div>
+<svg viewBox="0 0 100 100" fill="none" stroke="#E3C878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:38px;height:38px;display:block;margin-bottom:22px">
+<path d="M14 92 56 50"/><path d="M50 44 62 56"/><circle cx="72" cy="34" r="17"/><ellipse cx="72" cy="34" rx="7" ry="17"/><path d="M55 34H89"/>
+</svg>
+<div style="font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(21px,1.8vw,28px);line-height:1.15;margin-bottom:10px">Schedule a Consultation</div>
+<div style="font:400 15.5px/1.6 Inter,sans-serif;color:rgba(245,240,230,.55);max-width:30ch;margin-bottom:34px">Tell us what you're planning for.</div>
+
+<form onSubmit="{{ submit }}" style="display:{{ formShow }};flex-direction:column;gap:30px;max-width:420px">
+<label style="position:relative;display:block;padding-top:20px">
+<span style="position:absolute;left:0;top:{{ lTop0 }};font-size:{{ lFs0 }};color:{{ lCol0 }};letter-spacing:.1em;text-transform:uppercase;pointer-events:none;transition:top .28s cubic-bezier(.22,1,.36,1),font-size .28s cubic-bezier(.22,1,.36,1),color .28s ease">Your name</span>
+<input type="text" value="{{ v0 }}" onChange="{{ c0 }}" onFocus="{{ f0 }}" onBlur="{{ blur }}" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid {{ lBor0 }};padding:8px 0 10px;font:400 16px/1.4 Inter,sans-serif;color:#F5F0E6;outline:none;transition:border-color .3s ease,box-shadow .3s ease;box-shadow:{{ lGlow0 }}">
+</label>
+<label style="position:relative;display:block;padding-top:20px">
+<span style="position:absolute;left:0;top:{{ lTop1 }};font-size:{{ lFs1 }};color:{{ lCol1 }};letter-spacing:.1em;text-transform:uppercase;pointer-events:none;transition:top .28s cubic-bezier(.22,1,.36,1),font-size .28s cubic-bezier(.22,1,.36,1),color .28s ease">Phone</span>
+<input type="tel" value="{{ v1 }}" onChange="{{ c1 }}" onFocus="{{ f1 }}" onBlur="{{ blur }}" required="required" style="width:100%;background:none;border:0;border-bottom:1px solid {{ lBor1 }};padding:8px 0 10px;font:400 16px/1.4 Inter,sans-serif;color:#F5F0E6;outline:none;transition:border-color .3s ease,box-shadow .3s ease;box-shadow:{{ lGlow1 }}">
+</label>
+<label style="position:relative;display:block;padding-top:20px">
+<span style="position:absolute;left:0;top:{{ lTop2 }};font-size:{{ lFs2 }};color:{{ lCol2 }};letter-spacing:.1em;text-transform:uppercase;pointer-events:none;transition:top .28s cubic-bezier(.22,1,.36,1),font-size .28s cubic-bezier(.22,1,.36,1),color .28s ease">Email</span>
+<input type="email" value="{{ v2 }}" onChange="{{ c2 }}" onFocus="{{ f2 }}" onBlur="{{ blur }}" style="width:100%;background:none;border:0;border-bottom:1px solid {{ lBor2 }};padding:8px 0 10px;font:400 16px/1.4 Inter,sans-serif;color:#F5F0E6;outline:none;transition:border-color .3s ease,box-shadow .3s ease;box-shadow:{{ lGlow2 }}">
+</label>
+<label style="position:relative;display:block;padding-top:20px">
+<span style="position:absolute;left:0;top:{{ lTop3 }};font-size:{{ lFs3 }};color:{{ lCol3 }};letter-spacing:.1em;text-transform:uppercase;pointer-events:none;transition:top .28s cubic-bezier(.22,1,.36,1),font-size .28s cubic-bezier(.22,1,.36,1),color .28s ease">What are you planning for?</span>
+<textarea rows="2" value="{{ v3 }}" onChange="{{ c3 }}" onFocus="{{ f3 }}" onBlur="{{ blur }}" style="width:100%;background:none;border:0;border-bottom:1px solid {{ lBor3 }};padding:8px 0 10px;font:400 16px/1.5 Inter,sans-serif;color:#F5F0E6;outline:none;resize:none;transition:border-color .3s ease,box-shadow .3s ease;box-shadow:{{ lGlow3 }}"></textarea>
+</label>
+<button type="submit" style="align-self:flex-start;margin-top:6px;padding:17px 30px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;font:600 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0E2745;background-image:linear-gradient(105deg,#8C6A24 0%,#C9A24B 20%,#E3C878 40%,#F2E2A8 52%,#C9A24B 74%,#8C6A24 100%)">Send Request</button>
+</form>
+<div style="display:{{ sentShow }};align-items:flex-start;gap:14px;max-width:420px;padding:22px 0 0;border-top:1px solid rgba(201,162,75,.35)">
+<span style="display:block;width:26px;height:1px;background:#E3C878;margin-top:11px;flex:none"></span>
+<p style="margin:0;font:400 16px/1.7 Inter,sans-serif;color:rgba(245,240,230,.75)">Thank you. We have your request — someone from our Vadodara office will call you soon.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer data-screen-label="Footer" style="position:relative;background:#0E2745;color:#F5F0E6;padding:clamp(70px,8vw,120px) clamp(22px,6vw,110px) 40px;overflow:hidden">
+<img src="assets/logo-word-champagne.png" alt="" aria-hidden="true" style="position:absolute;left:50%;bottom:14px;transform:translateX(-50%);width:min(1500px,96%);max-width:none;opacity:.08;pointer-events:none">
+<div style="position:relative;max-width:1380px;margin:0 auto">
+<div style="display:grid;grid-template-columns:{{ footCols }};gap:clamp(36px,5vw,90px);align-items:start">
+<div>
+<img src="assets/logo-mark-champagne.png" alt="BS Finance emblem" style="height:60px;width:auto;display:block;margin-bottom:24px">
+<p style="margin:0;max-width:52ch;font:400 16px/1.72 Inter,sans-serif;color:rgba(245,240,230,.62);text-wrap:pretty">BS Finance helps people in Vadodara plan their money — mutual funds, SIPs, Demat accounts for the stock market, and cover for health, motor and life.</p>
+<a href="https://share.google/qeiJm9Nzn7NLOvnQL" target="_blank" rel="noopener noreferrer" style="margin-top:28px;display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:1px solid rgba(201,162,75,.5);border-radius:999px;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#E3C878;transition:border-color .25s,background .25s" style-hover="border-color:#E3C878;background:rgba(227,200,120,.07)">
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;flex:none"><path d="M50 88C36 70 24 56 24 40C24 25 36 14 50 14C64 14 76 25 76 40C76 56 64 70 50 88Z"></path><circle cx="50" cy="39" r="9"></circle></svg>
+Find us on Google
+<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:11px;height:11px;flex:none"><path d="M22 78 78 22"></path><path d="M34 22H78V66"></path></svg>
+</a>
+<p style="margin:14px 0 0;font:400 13.5px/1.6 Inter,sans-serif;color:rgba(245,240,230,.45)">Reviews, directions and opening hours.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:34px">
+<div>
+<div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878;margin-bottom:20px">Sitemap</div>
+<div style="display:flex;flex-direction:column;gap:13px">
+<a href="#about" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">About</a>
+<a href="#services" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Services</a>
+<a href="#insurance-products" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Insurance Products</a>
+<a href="#raise-a-claim" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Raise a Claim</a>
+<a href="#become-a-posp" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Become a POSP</a>
+<a href="BS%20Finance%20Portals.dc.html" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Insurance Portals</a>
+<a href="#contact" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Contact</a>
+</div>
+</div>
+<div>
+<div style="font:500 10.5px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E3C878;margin-bottom:20px">Open an account</div>
+<div style="display:flex;flex-direction:column;gap:13px">
+<a href="https://diy.sharekhan.com/app/Account/Register?grpcd=13723&amp;type=pb&amp;grpid=14166" target="_blank" rel="noopener noreferrer" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Demat account</a>
+<a href="http://p.njw.bz/97331" target="_blank" rel="noopener noreferrer" style="font:400 15px/1 Inter,sans-serif;color:rgba(245,240,230,.66)" style-hover="color:#E3C878">Mutual fund account</a>
+</div>
+</div>
+</div>
+</div>
+<div style="margin-top:clamp(50px,6vw,90px);padding-top:26px;border-top:1px solid rgba(201,162,75,.28);display:flex;flex-wrap:wrap;gap:18px 40px;align-items:baseline">
+<p style="margin:0;flex:1 1 340px;font:400 12px/1.7 Inter,sans-serif;color:rgba(245,240,230,.62);max-width:70ch">Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
+<span style="font:400 12px/1.7 Inter,sans-serif;color:rgba(245,240,230,.55);letter-spacing:.06em">© 2026 BS Finance · Vadodara, Gujarat</span>
+</div>
+</div>
+</footer>
+
+<div aria-hidden="true" style="position:fixed;left:0;right:0;top:0;height:100%;z-index:120;background:#0E2745;transform:{{ wipeT }};transition:transform .6s cubic-bezier(.22,1,.36,1);pointer-events:none;border-bottom:1px solid #C9A24B"></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;particleDensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2500,&quot;min&quot;:600,&quot;max&quot;:4000,&quot;step&quot;:100,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero globe&quot;,&quot;unit&quot;:&quot; pts&quot;},&quot;arrowAlign&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero globe&quot;},&quot;midasRadius&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:480,&quot;min&quot;:220,&quot;max&quot;:900,&quot;step&quot;:20,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Midas interaction&quot;,&quot;unit&quot;:&quot;px&quot;},&quot;metalSheen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Global&quot;}}">
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    const w = typeof window !== 'undefined' ? window.innerWidth : 1440;
+    this.state = { vw: w, scrolled: false, menu: false, row: null, tri: null, sent: false, wipe: false,
+      vals: ['', '', '', ''], focus: null,
+      claimType: null, claimRep: null, claimSent: false, claimErr: false,
+      pospQual: null, pospExp: null, pospSent: false, pospErr: false };
+    this.rootRef = React.createRef();
+    this.canvasRef = React.createRef();
+    this.indexRef = React.createRef();
+    this.statementRef = React.createRef();
+    this.dotRef = React.createRef();
+    this.shimmerRef = React.createRef();
+    this.seen = new WeakSet();
+    this.midasEls = [];
+    this.mouse = { x: -9999, y: -9999 };
+    this.l1 = { x: -9999, y: -9999 };
+    this.l2 = { x: -9999, y: -9999 };
+    this.dot = { x: -9999, y: -9999, px: -9999, py: -9999 };
+    this.inIndex = false;
+    this.auto = { t: 0, on: false };
+    this.hb = { rx: 0, ry: 0 };
+    this._h = {};
+    this.pTabs = [
+      { k: 'all', label: 'All' },
+      { k: 'health', label: 'Health' },
+      { k: 'm4', label: 'Motor \u00b7 4 Wheeler' },
+      { k: 'm2', label: 'Motor \u00b7 2 Wheeler' },
+      { k: 'topup', label: 'Top-up Health' },
+      { k: 'travel', label: 'Travel' },
+      { k: 'gcv', label: 'GCV & PCV' },
+    ];
+    this.insurers = [
+      { name: 'Bajaj Allianz General', logo: 'assets/insurers/bajaj.png', c: ['m4', 'm2'], plans: 'Motor \u2014 4 Wheeler and 2 Wheeler, with add-ons.' },
+      { name: 'Care Health Insurance', logo: 'assets/insurers/care.png', c: ['health', 'travel'], plans: 'Care Supreme \u00b7 Care Classic \u00b7 Care Senior \u00b7 Care Advantage \u00b7 New Explore (travel) \u00b7 portability.' },
+      { name: 'Digit', logo: 'assets/insurers/digit.png', c: ['health', 'm4', 'm2', 'gcv'], plans: 'Double Wallet \u00b7 Infinity Wallet \u00b7 Worldwide Treatment \u00b7 Motor 4W, 2W, GCV and PCV.' },
+      { name: 'Generali Central', logo: 'assets/insurers/generali.png', c: ['health', 'm4'], plans: 'Health Total \u2014 Vital \u00b7 Motor 4 Wheeler.' },
+      { name: 'HDFC ERGO', logo: 'assets/insurers/hdfc-ergo.png', c: ['m4'], plans: 'Motor \u2014 4 Wheeler.' },
+      { name: 'ICICI Lombard', logo: 'assets/insurers/icici.png', c: ['health', 'm4', 'm2'], plans: 'Elevate Health Insurance \u00b7 Motor 4 Wheeler and 2 Wheeler.' },
+      { name: 'IFFCO-Tokio', logo: 'assets/insurers/iffco-tokio.png', c: ['health'], plans: 'Family Health Protector.' },
+      { name: 'IndusInd General Insurance', logo: 'assets/insurers/indusind.png', c: ['health', 'topup', 'm4', 'm2'], plans: 'Health Infinity \u00b7 Health Gain 3.0 \u00b7 Top-up Plan A and Plan B \u00b7 Motor 4W and 2W.' },
+      { name: 'ManipalCigna', logo: 'assets/insurers/manipalcigna.png', c: ['health'], plans: 'Sarvah \u00b7 Lifetime Health \u00b7 Prime Senior \u00b7 ProHealth Prime.' },
+      { name: 'National Insurance', logo: 'assets/insurers/national.png', c: ['m4', 'm2'], plans: 'Motor \u2014 4 Wheeler and 2 Wheeler.' },
+      { name: 'Niva Bupa', logo: 'assets/insurers/niva-bupa.png', c: ['health'], plans: 'ReAssure 2.0 \u2014 Titanium+, Platinum+ and Bronze+.' },
+      { name: 'Raheja QBE', logo: 'assets/insurers/raheja-qbe.png', c: ['health'], plans: 'Health QuBE \u00b7 Arogya Sanjeevani Policy.' },
+      { name: 'TATA AIG', logo: 'assets/insurers/tata-aig.png', c: ['m4', 'm2'], plans: 'Motor \u2014 4 Wheeler and 2 Wheeler.' },
+      { name: 'Universal Sompo', logo: 'assets/insurers/sompo.png', c: ['health', 'm4'], plans: 'Complete Healthcare \u00b7 A Plus Health Insurance \u00b7 Motor 4 Wheeler.' },
+      { name: 'Zuno', logo: 'assets/insurers/zuno.png', c: ['health', 'topup', 'm4', 'm2'], plans: 'Gold \u00b7 Silver \u00b7 Platinum \u00b7 Health Super Top Up \u00b7 Motor 4W and 2W.' },
+      { name: 'Zurich Kotak', logo: 'assets/insurers/zurich-kotak.png', c: ['health', 'm4'], plans: 'Health 360 \u2014 Gold, Silver and Platinum \u00b7 Motor 4 Wheeler.' },
+    ];
+  }
+
+  /* ---------- lifecycle ---------- */
+  componentDidMount() {
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { this.fire(e.target); this.io.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    this.onScroll = () => {
+      const s = window.scrollY > 80;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    this.onResize = () => { this.setState({ vw: window.innerWidth }); this.sizeCanvas(); };
+    this.onMove = (e) => {
+      this.mouse.x = e.clientX; this.mouse.y = e.clientY;
+      this.lastMove = performance.now();
+      if (e.pointerType === 'mouse') this.auto.on = false;
+      const c = this.canvasRef.current;
+      if (c) { const r = c.getBoundingClientRect(); this.hb.rx = ((e.clientX - r.left) / r.width - 0.5) * 2; this.hb.ry = ((e.clientY - r.top) / r.height - 0.5) * 2; }
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('pointermove', this.onMove, { passive: true });
+    this.auto.on = !window.matchMedia('(hover: hover)').matches;
+    this.scan();
+    this.scanTimer = setInterval(() => this.scan(), 350);
+    setTimeout(() => { clearInterval(this.scanTimer); this.scan(); }, 7000);
+    this.raf = requestAnimationFrame(this.frame);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf); clearInterval(this.scanTimer);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('pointermove', this.onMove);
+    if (this.io) this.io.disconnect();
+  }
+  componentDidUpdate() { this.applySheen(); }
+
+  /* ---------- reveals / counters / draws ---------- */
+  scan() {
+    const root = this.rootRef.current; if (!root) return;
+    root.querySelectorAll('[data-reveal],[data-draw],[data-count]').forEach((el) => {
+      if (this.seen.has(el)) return; this.seen.add(el);
+      if (el.hasAttribute('data-count')) el.textContent = el.getAttribute('data-count') + (el.getAttribute('data-suffix') || '');
+      if (this.reduce) { this.fire(el, true); return; }
+      if (el.hasAttribute('data-count')) el.textContent = '0' + (el.getAttribute('data-suffix') || '');
+      this.io.observe(el);
+    });
+    this.midasEls = Array.from(root.querySelectorAll('[data-midas]'));
+    this.applySheen();
+    this.hookIndex();
+    this.ensureGlobe();
+    this.shimmerSetup();
+  }
+  ensureGlobe() {
+    const c = this.canvasRef.current; if (!c) return;
+    if (!c.__ro && window.ResizeObserver) {
+      c.__ro = new ResizeObserver(() => { this.sizeCanvas(); if (this.reduce) this.drawStatic(); });
+      c.__ro.observe(c);
+    }
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height || this.pts) return;
+    this.initGlobe();
+  }
+  fire(el, instant) {
+    if (el.hasAttribute('data-reveal')) {
+      const d = parseInt(el.getAttribute('data-delay') || '0', 10);
+      setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, instant ? 0 : d);
+    }
+    if (el.hasAttribute('data-draw')) {
+      if (instant) { el.querySelectorAll('path,circle,ellipse').forEach((p) => { p.style.animation = 'none'; p.style.strokeDashoffset = '0px'; }); }
+      else this.redraw(el);
+    }
+    if (el.hasAttribute('data-count')) {
+      const target = parseFloat(el.getAttribute('data-count'));
+      const suf = el.getAttribute('data-suffix') || '';
+      if (instant) { el.textContent = target + suf; return; }
+      const t0 = performance.now(), dur = 1500;
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / dur);
+        const e = 1 - Math.pow(1 - k, 4);
+        el.textContent = Math.round(target * e) + suf;
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+  }
+  redraw(svg) {
+    svg.querySelectorAll('path,circle,ellipse').forEach((p, i) => {
+      p.style.animation = 'none';
+      void p.getBoundingClientRect();
+      p.style.animation = 'drawIn .75s cubic-bezier(.22,1,.36,1) ' + (i * 0.07).toFixed(2) + 's both';
+    });
+  }
+  prodDraw(i) {
+    if (this.reduce) return;
+    const root = this.rootRef.current; if (!root) return;
+    const svg = root.querySelector('[data-prod="' + i + '"]');
+    if (svg) this.redraw(svg);
+  }
+  triDraw(i) {
+    if (this.reduce) return;
+    const root = this.rootRef.current; if (!root) return;
+    requestAnimationFrame(() => {
+      const svg = root.querySelector('[data-tri="' + i + '"]');
+      if (svg) this.redraw(svg);
+    });
+  }
+  applySheen() {
+    const root = this.rootRef.current; if (!root) return;
+    this.metalEls = Array.from(root.querySelectorAll('[data-metal]'));
+  }
+  shimmerSetup() {
+    const a = this.shimmerRef.current; if (!a || a.__sh) return;
+    a.__sh = 1;
+    const s = a.querySelector('[data-shimmer]');
+    a.addEventListener('pointerenter', () => { if (!s) return; s.style.transition = 'none'; s.style.left = '-60%'; void s.offsetWidth; s.style.transition = 'left .75s cubic-bezier(.22,1,.36,1)'; s.style.left = '115%'; });
+  }
+  hookIndex() {
+    const el = this.indexRef.current;
+    if (!el || el.__hooked) return; el.__hooked = true;
+    el.addEventListener('pointerenter', () => { this.inIndex = true; });
+    el.addEventListener('pointerleave', () => { this.inIndex = false; });
+  }
+
+  /* ---------- particle globe ---------- */
+  sizeCanvas() {
+    const c = this.canvasRef.current; if (!c) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const r = c.getBoundingClientRect();
+    c.width = Math.max(1, Math.round(r.width * dpr)); c.height = Math.max(1, Math.round(r.height * dpr));
+    this.dpr = dpr; this.cw = r.width; this.ch = r.height;
+  }
+  initGlobe() {
+    const c = this.canvasRef.current; if (!c) return;
+    this.ctx = c.getContext('2d');
+    this.sizeCanvas();
+    const N = Math.max(400, Math.min(4000, this.props.particleDensity ?? 2500));
+    const pts = [];
+    const mer = 26, perM = Math.max(6, Math.round((N * 0.62) / mer));
+    for (let m = 0; m < mer; m++) {
+      const lon = (m / mer) * Math.PI * 2;
+      for (let i = 0; i < perM; i++) { const lat = (i / (perM - 1) - 0.5) * Math.PI; pts.push(this.sph(lat, lon)); }
+    }
+    const par = 13, perP = Math.max(8, Math.round((N * 0.38) / par));
+    for (let p = 0; p < par; p++) {
+      const lat = ((p + 0.5) / par - 0.5) * Math.PI;
+      for (let i = 0; i < perP; i++) { const lon = (i / perP) * Math.PI * 2; pts.push(this.sph(lat, lon)); }
+    }
+    this.pts = pts;
+    this.shapes = [
+      this.sampleShape(['M6 88H94', 'M22 88V66', 'M40 88V54', 'M58 88V60', 'M14 74 38 48 54 62 86 26', 'M86 26H68', 'M86 26V44'], pts.length),
+      this.sampleShape(['M14 92 56 50', 'M20 86 26 92', 'M50 44 62 56', 'M55 34a17 17 0 1 0 34 0a17 17 0 1 0 -34 0', 'M65 34a7 17 0 1 0 14 0a7 17 0 1 0 -14 0', 'M55 34H89', 'M79 25 94 10 89 26'], pts.length),
+      this.sampleShape(['M50 84C40 66 42 44 50 30C58 44 60 66 50 84Z', 'M50 84C32 76 22 58 22 42C36 48 48 64 50 84Z', 'M50 84C68 76 78 58 78 42C64 48 52 64 50 84Z', 'M50 84C28 88 10 78 4 64C22 60 42 68 50 84Z', 'M50 84C72 88 90 78 96 64C78 60 58 68 50 84Z'], pts.length)
+    ];
+    this.rot = 0; this.tilt = 0; this.tiltY = 0; this.t0 = performance.now();
+    if (this.reduce) this.drawStatic();
+  }
+  sph(lat, lon) { const cl = Math.cos(lat); return [cl * Math.cos(lon), Math.sin(lat), cl * Math.sin(lon)]; }
+  sampleShape(ds, count) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.style.cssText = 'position:absolute;left:-9999px;top:0;width:100px;height:100px;opacity:0;pointer-events:none';
+    document.body.appendChild(svg);
+    const els = ds.map((d) => { const p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); p.setAttribute('fill', 'none'); svg.appendChild(p); return p; });
+    const lens = els.map((p) => { try { return p.getTotalLength(); } catch (e) { return 0; } });
+    const total = lens.reduce((a, b) => a + b, 0);
+    const out = [];
+    for (let i = 0; i < count; i++) {
+      if (!total) { out.push([0, 0]); continue; }
+      let r = ((i + 0.5) / count) * total + (Math.random() - 0.5) * (total / count);
+      r = Math.max(0, Math.min(total - 0.001, r));
+      let k = 0;
+      while (k < lens.length - 1 && r > lens[k]) { r -= lens[k]; k++; }
+      const pt = els[k].getPointAtLength(Math.min(r, lens[k]));
+      out.push([((pt.x - 50) / 50) * 0.88 + (Math.random() - 0.5) * 0.012,
+                (-(pt.y - 50) / 50) * 0.88 + (Math.random() - 0.5) * 0.012]);
+    }
+    svg.remove();
+    return out;
+  }
+  drawStatic() {
+    const ctx = this.ctx; if (!ctx) return;
+    const w = this.cw, h = this.ch, d = this.dpr;
+    ctx.setTransform(d, 0, 0, d, 0, 0); ctx.clearRect(0, 0, w, h);
+    const cx = w * 0.5, cy = h * 0.5, R = Math.min(w, h) * 0.36;
+    ctx.strokeStyle = 'rgba(201,162,75,.4)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke();
+    for (let i = 1; i < 6; i++) { const k = (i / 6 - 0.5) * 2; ctx.beginPath(); ctx.ellipse(cx, cy + k * R, R * Math.sqrt(1 - k * k), R * 0.16 * Math.sqrt(1 - k * k), 0, 0, Math.PI * 2); ctx.stroke(); }
+    for (let i = 0; i < 6; i++) { const k = Math.cos((i / 6) * Math.PI); ctx.beginPath(); ctx.ellipse(cx, cy, Math.abs(R * k), R, 0, 0, Math.PI * 2); ctx.stroke(); }
+  }
+  frame = (now) => {
+    this.raf = requestAnimationFrame(this.frame);
+    this.midasTick(now);
+    if (this.reduce || !this.ctx || !this.pts) return;
+    const dt = Math.min(48, now - (this._last || now)); this._last = now;
+    this.rot += 0.00022 * dt * (1 - (this._m || 0) * 0.88);
+    const targetTilt = -this.hb.ry * 0.105, targetY = this.hb.rx * 0.105;
+    this.tilt += (targetTilt - this.tilt) * 0.045; this.tiltY += (targetY - this.tiltY) * 0.045;
+    const w = this.cw, h = this.ch, d = this.dpr, ctx = this.ctx;
+    if (!w || !h) return;
+    ctx.setTransform(d, 0, 0, d, 0, 0); ctx.clearRect(0, 0, w, h);
+    const cx = w * 0.5, cy = h * 0.5, R = Math.min(w * 0.46, h * 0.4);
+    // morph timing
+    let morph = 0, shape = null;
+    if (this.props.arrowAlign !== false && this.shapes && this.shapes.length) {
+      const CY = 7200, n = this.shapes.length;
+      const ph = (now - this.t0) % (CY * n);
+      const p = ph % CY;
+      shape = this.shapes[Math.floor(ph / CY) % n];
+      if (p < 1250) morph = this.ease(p / 1250);
+      else if (p < 2900) morph = 1;
+      else if (p < 4150) morph = 1 - this.ease((p - 2900) / 1250);
+    }
+    const ry = this.rot + this.tiltY, cA = Math.cos(ry), sA = Math.sin(ry);
+    const cB = Math.cos(this.tilt), sB = Math.sin(this.tilt);
+    const B = 11, buckets = [];
+    for (let i = 0; i < B; i++) buckets.push([]);
+    this._m = morph;
+    const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.45);
+    glow.addColorStop(0, 'rgba(201,162,75,.075)');
+    glow.addColorStop(0.55, 'rgba(201,162,75,.028)');
+    glow.addColorStop(1, 'rgba(201,162,75,0)');
+    ctx.fillStyle = glow; ctx.fillRect(0, 0, w, h);
+    const pts = this.pts, PR = 6;
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      const x1 = p[0] * cA + p[2] * sA, z1 = -p[0] * sA + p[2] * cA;
+      const y2 = p[1] * cB - z1 * sB, z2 = p[1] * sB + z1 * cB;
+      const f = (PR / (PR - z2)) * 0.9;
+      let sx = cx + x1 * R * f, sy = cy - y2 * R * f;
+      let dep = (z2 + 1) / 2;
+      if (morph > 0 && shape && i % 5 !== 0) {
+        const t = shape[i], m = morph;
+        sx += ((cx + t[0] * R * 1.02) - sx) * m;
+        sy += ((cy - t[1] * R * 1.02) - sy) * m;
+        dep = dep + (0.92 - dep) * m;
+      }
+      let b = (dep * (B - 1)) | 0; if (b < 0) b = 0; if (b > B - 1) b = B - 1;
+      buckets[b].push(sx, sy);
+    }
+    for (let b = 0; b < B; b++) {
+      const arr = buckets[b]; if (!arr.length) continue;
+      const k = b / (B - 1);
+      const alpha = 0.03 + 0.92 * Math.pow(k, 2.6);
+      const r = Math.round(196 + 46 * k), g = Math.round(155 + 71 * k), bl = Math.round(68 + 100 * k);
+      ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + bl + ',' + alpha.toFixed(3) + ')';
+      const s = 0.45 + 1.75 * k;
+      for (let i = 0; i < arr.length; i += 2) ctx.fillRect(arr[i], arr[i + 1], s, s);
+    }
+  };
+  ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+  /* ---------- midas blob ---------- */
+  midasTick(now) {
+    const root = this.rootRef.current;
+    if (root && (!this.midasEls.length || !this.midasEls[0].isConnected)) {
+      this.midasEls = Array.from(root.querySelectorAll('[data-midas]'));
+      this.metalEls = Array.from(root.querySelectorAll('[data-metal]'));
+      this.chips = Array.from(root.querySelectorAll('[data-chip]'));
+    }
+    if (!this.midasEls.length) return;
+    const idle = !this.lastMove || (now - this.lastMove) > 2200;
+    if (this.auto.on || idle || this.mouse.x < -1000) {
+      const mid = window.innerHeight / 2;
+      let el = null, best = Infinity;
+      [this.indexRef.current, this.statementRef.current].forEach((c) => {
+        if (!c) return;
+        const r = c.getBoundingClientRect();
+        const d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < best) { best = d; el = c; }
+      });
+      if (el) {
+        const r = el.getBoundingClientRect();
+        this.auto.t += 0.008;
+        this.mouse.x = r.left + r.width * (0.34 + 0.3 * Math.sin(this.auto.t * 1.6));
+        this.mouse.y = r.top + r.height * (0.5 + 0.4 * Math.sin(this.auto.t));
+      }
+    }
+    this.l1.x += (this.mouse.x - this.l1.x) * 0.12;
+    this.l1.y += (this.mouse.y - this.l1.y) * 0.12;
+    this.l2.x += (this.mouse.x - this.l2.x) * 0.045;
+    this.l2.y += (this.mouse.y - this.l2.y) * 0.045;
+    const R = (this.props.midasRadius ?? 480) / 2;
+    const vh = window.innerHeight;
+    const INK = 'linear-gradient(#0E2745,#0E2745)';
+    const MET = 'linear-gradient(105deg,#8C6A24 0%,#A87F2E 16%,#C9A24B 34%,#E3C878 52%,#C9A24B 70%,#A87F2E 86%,#8C6A24 100%)';
+    const lit = this.props.metalSheen !== false;
+    const paint = this.paintEls || (this.paintEls = []);
+    if (!paint.length || !paint[0].isConnected) {
+      const rt = this.rootRef.current;
+      if (rt) this.paintEls = Array.from(rt.querySelectorAll('[data-midas],[data-metal]'));
+    }
+    const list = this.paintEls;
+    for (let i = 0; i < list.length; i++) {
+      const el = list[i];
+      const r = el.getBoundingClientRect();
+      if (!r.height || r.bottom < -260 || r.top > vh + 260) continue;
+      const ink = el.hasAttribute('data-midas');
+      const base = ink ? INK : MET;
+      const x1 = this.l1.x - r.left, y1 = this.l1.y - r.top;
+      const x2 = this.l2.x - r.left, y2 = this.l2.y - r.top;
+      if (!lit || !isFinite(x1) || !isFinite(y1)) { if (el.__bg !== base) { el.__bg = base; el.style.backgroundImage = base; } continue; }
+      const rad = ink ? R : Math.max(200, r.height * 1.9);
+      if (x1 < -rad || x1 > r.width + rad || y1 < -rad || y1 > r.height + rad) {
+        if (el.__bg !== base) { el.__bg = base; el.style.backgroundImage = base; }
+        continue;
+      }
+      const g = ink
+        ? 'radial-gradient(circle ' + rad.toFixed(0) + 'px at ' + x1.toFixed(1) + 'px ' + y1.toFixed(1) + 'px, #F5E6B4 0%, #E3C878 22%, #C9A24B 44%, rgba(140,106,36,0.6) 60%, rgba(140,106,36,0) 74%), radial-gradient(circle ' + (rad * 1.5).toFixed(0) + 'px at ' + x2.toFixed(1) + 'px ' + y2.toFixed(1) + 'px, rgba(201,162,75,0.62) 0%, rgba(140,106,36,0.34) 42%, rgba(140,106,36,0) 74%), ' + INK
+        : 'radial-gradient(circle ' + rad.toFixed(0) + 'px at ' + x1.toFixed(1) + 'px ' + y1.toFixed(1) + 'px, #FBF3D2 0%, rgba(242,226,168,0.62) 26%, rgba(242,226,168,0) 64%), ' + MET;
+      el.__bg = g;
+      el.style.backgroundImage = g;
+      el.style.backgroundSize = '100% 100%';
+      el.style.backgroundRepeat = 'no-repeat';
+    }
+    if (!this.chips) { const rt = this.rootRef.current; if (rt) this.chips = Array.from(rt.querySelectorAll('[data-chip]')); }
+    if (this.chips && this.chips.length) {
+      const px = this.hb.rx * 7, py = this.hb.ry * 5;
+      for (let i = 0; i < this.chips.length; i++) {
+        const d = parseFloat(this.chips[i].getAttribute('data-depth')) || 1;
+        this.chips[i].style.transform = 'translate3d(' + (px * d).toFixed(1) + 'px,' + (py * d).toFixed(1) + 'px,0)';
+      }
+    }
+    // cursor dot
+    const dot = this.dotRef.current;
+    if (dot) {
+      this.dot.px = this.dot.x; this.dot.py = this.dot.y;
+      this.dot.x += (this.mouse.x - this.dot.x) * 0.35;
+      this.dot.y += (this.mouse.y - this.dot.y) * 0.35;
+      const vx = this.dot.x - this.dot.px, vy = this.dot.y - this.dot.py;
+      const sp = Math.min(2.6, Math.hypot(vx, vy) / 7);
+      const ang = Math.atan2(vy, vx) * 180 / Math.PI;
+      dot.style.transform = 'translate(' + (this.dot.x - 5).toFixed(1) + 'px,' + (this.dot.y - 5).toFixed(1) + 'px) rotate(' + ang.toFixed(1) + 'deg) scale(' + (1 + sp).toFixed(2) + ',' + (1 / (1 + sp * 0.45)).toFixed(2) + ')';
+      dot.style.opacity = this.inIndex ? '1' : '0';
+    }
+  }
+
+  /* ---------- handlers ---------- */
+  h(k, fn) { if (!this._h[k]) this._h[k] = fn; return this._h[k]; }
+
+  renderVals() {
+    const w = this.state.vw;
+    const narrow = w < 900, mid = w < 820, mob = w < 640;
+    const st = this.state;
+    const row = st.row;
+    const rule = '1px solid rgba(201,162,75,.38)';
+    const v = st.vals;
+    const lab = (i) => {
+      const active = st.focus === i || (v[i] && v[i].length > 0);
+      return {
+        top: active ? '0px' : '30px', fs: active ? '10px' : '15px',
+        col: active ? '#E3C878' : 'rgba(245,240,230,.5)',
+        bor: st.focus === i ? '#E3C878' : 'rgba(201,162,75,.4)',
+        glow: st.focus === i ? '0 2px 14px -6px rgba(227,200,120,.75)' : 'none'
+      };
+    };
+    const L = [lab(0), lab(1), lab(2), lab(3)];
+    const set = (i) => this.h('c' + i, (e) => { const nv = st.vals.slice(); nv[i] = e.target.value; this.setState({ vals: nv }); });
+    const foc = (i) => this.h('f' + i, () => this.setState({ focus: i }));
+    const dim = (i) => (row === null || row === i ? 1 : 0.45);
+    const pad = (i) => (row === i ? 'clamp(26px,3.4vw,50px) 0' : 'clamp(18px,2.4vw,38px) 0');
+    const ON = '#E3C878', OFF = 'transparent';
+    const pick = (key, i) => this.h(key + i, () => this.setState({ [key]: i }));
+    const on = (key, i) => (st[key] === i ? ON : OFF);
+
+    return {
+      ct0: pick('claimType', 0), ct1: pick('claimType', 1), ct2: pick('claimType', 2),
+      ct3: pick('claimType', 3), ct4: pick('claimType', 4), ct5: pick('claimType', 5),
+      ctB0: on('claimType', 0), ctB1: on('claimType', 1), ctB2: on('claimType', 2),
+      ctB3: on('claimType', 3), ctB4: on('claimType', 4), ctB5: on('claimType', 5),
+      cr0: pick('claimRep', 0), cr1: pick('claimRep', 1), cr2: pick('claimRep', 2),
+      crB0: on('claimRep', 0), crB1: on('claimRep', 1), crB2: on('claimRep', 2),
+      pq0: pick('pospQual', 0), pq1: pick('pospQual', 1), pq2: pick('pospQual', 2), pq3: pick('pospQual', 3),
+      pqB0: on('pospQual', 0), pqB1: on('pospQual', 1), pqB2: on('pospQual', 2), pqB3: on('pospQual', 3),
+      pe0: pick('pospExp', 0), pe1: pick('pospExp', 1),
+      peB0: on('pospExp', 0), peB1: on('pospExp', 1),
+      pd0: this.h('pd0', () => this.prodDraw(0)), pd1: this.h('pd1', () => this.prodDraw(1)),
+      pd2: this.h('pd2', () => this.prodDraw(2)), pd3: this.h('pd3', () => this.prodDraw(3)),
+      pd4: this.h('pd4', () => this.prodDraw(4)),
+      pairCols: mob ? '1fr' : 'repeat(2,1fr)',
+      claimFormShow: st.claimSent ? 'none' : 'flex',
+      claimSentShow: st.claimSent ? 'flex' : 'none',
+      claimErrShow: st.claimErr ? 'block' : 'none',
+      claimSubmit: this.h('csb', (e) => {
+        e.preventDefault();
+        if (this.state.claimType === null || this.state.claimRep === null) { this.setState({ claimErr: true }); return; }
+        this.setState({ claimSent: true });
+      }),
+      pospFormShow: st.pospSent ? 'none' : 'flex',
+      pospSentShow: st.pospSent ? 'flex' : 'none',
+      pospErrShow: st.pospErr ? 'block' : 'none',
+      pospSubmit: this.h('psb', (e) => {
+        e.preventDefault();
+        if (this.state.pospQual === null || this.state.pospExp === null) { this.setState({ pospErr: true }); return; }
+        this.setState({ pospSent: true });
+      }),
+
+      rootRef: this.rootRef, canvasRef: this.canvasRef, indexRef: this.indexRef,
+      statementRef: this.statementRef, dotRef: this.dotRef, shimmerRef: this.shimmerRef,
+
+      navBg: st.scrolled ? '#0E2745' : 'transparent',
+      navLine: st.scrolled ? 'rgba(201,162,75,.4)' : 'transparent',
+      navH: st.scrolled ? '68px' : '86px',
+      navLinks: w < 1400 ? 'none' : 'flex',
+      navCta: 'block',
+      burger: w < 1400 ? 'flex' : 'none',
+      menuShow: st.menu ? 'flex' : 'none',
+      svcDropShow: st.svcDrop ? 'block' : 'none',
+      svcCaretT: st.svcDrop ? 'rotate(180deg)' : 'none',
+      svcOpen: () => this.setState({ svcDrop: true }),
+      svcClose: () => this.setState({ svcDrop: false }),
+      openMenu: this.h('om', () => this.setState({ menu: true })),
+      closeMenu: this.h('cm', () => this.setState({ menu: false })),
+      goPortals: this.h('gp', (e) => {
+        e.preventDefault();
+        this.setState({ wipe: true, menu: false });
+        setTimeout(() => { window.location.href = 'BS%20Finance%20Portals.dc.html'; }, 620);
+      }),
+      wipeT: st.wipe ? 'translateY(0)' : 'translateY(-101%)',
+
+      partnerTabs: this.pTabs.map((t) => {
+        const on = (st.pTab || 'all') === t.k;
+        return {
+          label: t.label, active: on ? 'true' : 'false',
+          bg: on ? '#0E2745' : 'transparent',
+          fg: on ? '#E3C878' : 'rgba(14,39,69,.72)',
+          bd: on ? '#0E2745' : 'rgba(201,162,75,.5)',
+          on: this.h('pt' + t.k, () => this.setState({ pTab: t.k })),
+        };
+      }),
+      partnerList: this.insurers.filter((i) => !st.pTab || st.pTab === 'all' || i.c.indexOf(st.pTab) > -1),
+
+      globeOpacity: mob ? 0.3 : 0.5,
+      heroCols: mid ? '1fr' : narrow ? '1fr 200px' : '1fr 1fr 200px',
+      heroP2: narrow ? 'none' : 'block',
+      heroWrap: mob ? 'normal' : 'nowrap',
+      heroType: mob ? 'clamp(44px,11vw,72px)' : 'min(7vw,8.6rem)',
+
+      aboutCols: narrow ? '1fr' : '1.05fr 1fr',
+      aboutPad: narrow ? '0' : '14px',
+      advCols: mid ? '1fr' : 'repeat(3,1fr)',
+      advRule: 'none',
+      advRuleTop: 'none',
+      svcCols: narrow ? '1fr' : '0.8fr 1.2fr',
+      itemCols: mid ? '1fr' : '0.85fr 1.15fr',
+      numCols: mid ? '1fr' : 'repeat(3,1fr)',
+      triCols: mid ? '1fr' : 'repeat(3,1fr)',
+      triRule: 'none',
+      triRuleB: mid ? rule : 'none',
+      ctaCols: narrow ? '1fr' : '1.04fr .96fr',
+      ctaRule: 'none',
+      footCols: mid ? '1fr' : '1.15fr 1fr',
+
+      enter0: this.h('e0', () => this.setState({ row: 0 })),
+      enter1: this.h('e1', () => this.setState({ row: 1 })),
+      enter2: this.h('e2', () => this.setState({ row: 2 })),
+      leaveRow: this.h('lr', () => this.setState({ row: null })),
+      dim0: dim(0), dim1: dim(1), dim2: dim(2),
+      pad0: pad(0), pad1: pad(1), pad2: pad(2),
+      pv0: row === 0 ? 1 : 0.45, pv1: row === 1 ? 1 : 0.45, pv2: row === 2 ? 1 : 0.45,
+
+      triEnter0: this.h('t0', () => { this.setState({ tri: 0 }); this.triDraw(0); }),
+      triEnter1: this.h('t1', () => { this.setState({ tri: 1 }); this.triDraw(1); }),
+      triEnter2: this.h('t2', () => { this.setState({ tri: 2 }); this.triDraw(2); }),
+      triLeave: this.h('tl', () => this.setState({ tri: null })),
+      triColor0: st.tri === 0 ? 'transparent' : '#F5F0E6',
+      triColor1: st.tri === 1 ? 'transparent' : '#F5F0E6',
+      triColor2: st.tri === 2 ? 'transparent' : '#F5F0E6',
+      triOp0: st.tri === 0 ? 1 : 0.3, triOp1: st.tri === 1 ? 1 : 0.3, triOp2: st.tri === 2 ? 1 : 0.3,
+
+      formShow: st.sent ? 'none' : 'flex',
+      sentShow: st.sent ? 'flex' : 'none',
+      submit: this.h('sb', (e) => { e.preventDefault(); this.setState({ sent: true }); }),
+      blur: this.h('bl', () => this.setState({ focus: null })),
+      v0: v[0], v1: v[1], v2: v[2], v3: v[3],
+      c0: set(0), c1: set(1), c2: set(2), c3: set(3),
+      f0: foc(0), f1: foc(1), f2: foc(2), f3: foc(3),
+      lTop0: L[0].top, lTop1: L[1].top, lTop2: L[2].top, lTop3: L[3].top,
+      lFs0: L[0].fs, lFs1: L[1].fs, lFs2: L[2].fs, lFs3: L[3].fs,
+      lCol0: L[0].col, lCol1: L[1].col, lCol2: L[2].col, lCol3: L[3].col,
+      lBor0: L[0].bor, lBor1: L[1].bor, lBor2: L[2].bor, lBor3: L[3].bor,
+      lGlow0: L[0].glow, lGlow1: L[1].glow, lGlow2: L[2].glow, lGlow3: L[3].glow
+    };
+  }
+}
+</script>
+</body>
+</html>
