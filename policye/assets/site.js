@@ -9,7 +9,58 @@
 
   /* ---------- desktop dropdown menus ---------- */
   var dds = $$(".dd");
-  function setOpen(dd, open) { dd.classList.toggle("open", open); dd.firstElementChild.setAttribute("aria-expanded", String(open)); }
+  function setSub(li, open) {
+    li.classList.toggle("open", open); li.firstElementChild.setAttribute("aria-expanded", String(open));
+    if (open) {   // open to the left when there is no room on the right
+      var fly = li.querySelector(".fly"); fly.classList.remove("flip");
+      if (li.getBoundingClientRect().right + fly.offsetWidth + 16 > window.innerWidth) fly.classList.add("flip");
+    } else $$(".has-sub.open", li).forEach(function (x) { setSub(x, false); });
+  }
+  function setOpen(dd, open) {
+    dd.classList.toggle("open", open); dd.firstElementChild.setAttribute("aria-expanded", String(open));
+    if (!open) $$(".has-sub.open", dd).forEach(function (x) { setSub(x, false); });
+  }
+  // side flyouts inside a menu: hover opens after a short pause (so moving the mouse
+  // diagonally to a flyout does not switch to the row it passes over); click / Enter toggles
+  $$(".has-sub").forEach(function (li) {
+    var timer, btn = li.firstElementChild;
+    function siblings() { return $$(":scope > .has-sub", li.parentElement).filter(function (x) { return x !== li; }); }
+    function openAndFocus() {
+      siblings().forEach(function (x) { setSub(x, false); }); setSub(li, true);
+      var first = li.querySelector(":scope > .fly a, :scope > .fly button"); if (first) first.focus();
+    }
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (e.detail === 0) { if (li.classList.contains("open")) setSub(li, false); else openAndFocus(); return; }   // Enter / Space
+      var open = hoverMQ.matches ? true : !li.classList.contains("open");
+      siblings().forEach(function (x) { setSub(x, false); }); setSub(li, open);
+    });
+    li.addEventListener("mouseenter", function () {
+      if (!hoverMQ.matches) return;
+      clearTimeout(li._t);
+      var busy = siblings().some(function (x) { return x.classList.contains("open"); });
+      timer = setTimeout(function () { siblings().forEach(function (x) { setSub(x, false); }); setSub(li, true); }, busy ? 140 : 40);
+      li._t = timer;
+    });
+    li.addEventListener("mouseleave", function () {
+      if (!hoverMQ.matches) return;
+      clearTimeout(li._t); li._t = setTimeout(function () { setSub(li, false); }, 260);
+    });
+    li.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" && e.target === btn) { e.preventDefault(); openAndFocus(); }
+      if (e.key === "ArrowLeft" && li.classList.contains("open") && e.target !== btn) { e.preventDefault(); e.stopPropagation(); setSub(li, false); btn.focus(); }
+    });
+  });
+  // arrow keys move through the rows of an open menu
+  $$(".dd .fly").forEach(function (ul) {
+    ul.addEventListener("keydown", function (e) {
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      var items = $$(":scope > li > a, :scope > li > button", ul), i = items.indexOf(document.activeElement);
+      if (i < 0) return;
+      e.preventDefault(); e.stopPropagation();
+      items[(i + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length].focus();
+    });
+  });
   function closeAll(except) { dds.forEach(function (d) { if (d !== except) setOpen(d, false); }); }
   dds.forEach(function (dd) {
     var btn = dd.firstElementChild, timer;
@@ -27,12 +78,26 @@
 
   /* ---------- mobile drawer ---------- */
   var drawer = $(".drawer"), burger = $(".site-header .burger");
-  function openDrawer() { drawer.classList.add("open"); document.body.style.overflow = "hidden"; burger.setAttribute("aria-expanded", "true"); $(".drawer .close").focus(); }
+  // sliding screens (layout "classic"): tap a row with > to slide its list in, Back slides it out
+  var panes = $$(".drawer .pane"), stack = ["root"];
+  function showPane(id, back) {
+    panes.forEach(function (p) {
+      var k = p.getAttribute("data-pane");
+      p.classList.toggle("on", k === id);
+      p.classList.toggle("left", stack.indexOf(k) > -1 && k !== id);
+      p.classList.toggle("back-anim", !!back);
+    });
+    var cur = $('.drawer .pane[data-pane="' + id + '"]');
+    if (cur) { cur.scrollTop = 0; var f = back ? null : $(".row, .back", cur); if (f && drawer.classList.contains("open")) setTimeout(function () { f.focus({ preventScroll: true }); }, 60); }
+  }
+  $$(".drawer [data-go]").forEach(function (b) { b.addEventListener("click", function () { var id = b.getAttribute("data-go"); stack.push(id); showPane(id); }); });
+  $$(".drawer [data-back]").forEach(function (b) { b.addEventListener("click", function () { if (stack.length > 1) stack.pop(); showPane(stack[stack.length - 1], true); }); });
+  function openDrawer() { stack = ["root"]; showPane("root"); drawer.classList.add("open"); document.body.style.overflow = "hidden"; burger.setAttribute("aria-expanded", "true"); $(".drawer .close").focus(); }
   function closeDrawer() { if (!drawer || !drawer.classList.contains("open")) return; drawer.classList.remove("open"); document.body.style.overflow = ""; burger.setAttribute("aria-expanded", "false"); }
   if (burger && drawer) burger.addEventListener("click", openDrawer);
   $$(".drawer .close, .drawer .shade").forEach(function (el) { el.addEventListener("click", closeDrawer); });
   $$(".drawer a").forEach(function (a) { a.addEventListener("click", closeDrawer); });
-  window.addEventListener("resize", function () { if (window.innerWidth > 1180) closeDrawer(); });
+  window.addEventListener("resize", function () { if (burger && getComputedStyle(burger).display === "none") closeDrawer(); });
 
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
