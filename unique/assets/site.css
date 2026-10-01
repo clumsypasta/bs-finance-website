@@ -132,6 +132,12 @@ a.card:hover{border-color:var(--brand);box-shadow:0 10px 26px rgba(16,34,46,.09)
 .band{border:1px solid var(--line);background:var(--bg-soft);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px}
 .band h2{font-size:23px}
 .band p{color:var(--muted);margin-top:4px}
+/* card with a picture: text and picture side by side, buttons underneath */
+.band.art{display:grid;grid-template-columns:1fr 168px;grid-template-areas:"text img" "actions actions";align-items:center;gap:6px 16px;padding-top:20px}
+.band.art .band-text{grid-area:text}
+.band.art .band-img{grid-area:img;width:168px;height:auto;justify-self:end}
+.band.art .actions{grid-area:actions;margin-top:8px}
+@media (max-width:620px){.band.art{grid-template-columns:1fr 104px}.band.art .band-img{width:104px}.band.art h2{font-size:20px}}
 
 /* ---------- business insurance lists ---------- */
 .biz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
