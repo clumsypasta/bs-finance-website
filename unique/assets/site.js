@@ -104,9 +104,9 @@
   /* ---------- endless logo rail: auto-scroll + drag / swipe / arrows, looping both ways ---------- */
   $$("[data-rail]").forEach(function (rail) {
     var view = $(".rail-view", rail), track = $(".rail-track", rail);
-    var originals = $$(".logo-tile", track);
+    var originals = Array.prototype.slice.call(track.children);
     // three copies: we always stay in the middle one and jump by one copy width to loop
-    for (var k = 0; k < 2; k++) originals.forEach(function (t) { var c = t.cloneNode(true); c.setAttribute("aria-hidden", "true"); $("img", c).alt = ""; track.appendChild(c); });
+    for (var k = 0; k < 2; k++) originals.forEach(function (t) { var c = t.cloneNode(true); c.setAttribute("aria-hidden", "true"); $$("img", c).forEach(function (i) { i.alt = ""; }); $$("a", c).forEach(function (a) { a.setAttribute("tabindex", "-1"); }); track.appendChild(c); });
     var setW = 0, pos = 0, paused = false, resumeAt = 0, speed = 0.03, dragging = false, startX = 0, startPos = 0, moved = 0, last = 0;   // speed: px per ms
     function measure() { setW = track.scrollWidth / 3; }
     function wrap() { if (!setW) return; while (pos < setW * 0.5) pos += setW; while (pos > setW * 1.5) pos -= setW; }
@@ -129,13 +129,23 @@
     view.addEventListener("scroll", function () { if (Math.abs(view.scrollLeft - pos) > 1) { pos = view.scrollLeft; hold(); if (pos < setW * 0.5 || pos > setW * 1.5) apply(); } }, { passive: true });
     view.addEventListener("touchstart", function () { hold(4000); }, { passive: true });
     // mouse drag
-    view.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") return; dragging = true; moved = 0; startX = e.clientX; startPos = pos; view.classList.add("dragging"); view.setPointerCapture(e.pointerId); });
-    view.addEventListener("pointermove", function (e) { if (!dragging) return; moved = Math.abs(e.clientX - startX); pos = startPos - (e.clientX - startX); apply(); });
+    // the strip only takes over the mouse once it moves, so a plain click still opens a link
+    var pressed = false;
+    view.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse" || e.button !== 0) return; pressed = true; moved = 0; startX = e.clientX; startPos = pos; });
+    view.addEventListener("pointermove", function (e) {
+      if (!pressed) return;
+      moved = Math.abs(e.clientX - startX);
+      if (!dragging && moved > 5) { dragging = true; view.classList.add("dragging"); view.setPointerCapture(e.pointerId); }
+      if (dragging) { pos = startPos - (e.clientX - startX); apply(); }
+    });
+    window.addEventListener("pointerup", function () { pressed = false; });
     function endDrag() { if (!dragging) return; dragging = false; view.classList.remove("dragging"); hold(); }
+    // after dragging the strip with the mouse, do not open the item under the pointer
+    view.addEventListener("click", function (e) { if (moved > 6) { e.preventDefault(); e.stopPropagation(); moved = 0; } }, true);
     view.addEventListener("pointerup", endDrag); view.addEventListener("pointercancel", endDrag);
     // arrows: glide one step, wrapping first so there is always room
     function glide(dir) {
-      var step = ($(".logo-tile", track).getBoundingClientRect().width + 12) * 2, from = pos, t0 = null;
+      var step = (track.firstElementChild.getBoundingClientRect().width + 12) * 2, from = pos, t0 = null;
       hold(3500);
       function anim(now) { if (!t0) t0 = now; var p = Math.min(1, (now - t0) / 380), e = 1 - Math.pow(1 - p, 3); pos = from + dir * step * e; apply(); if (p < 1) requestAnimationFrame(anim); else hold(3000); }
       requestAnimationFrame(anim);
@@ -227,9 +237,14 @@
 
       form.classList.add("sending");
       var payload = Object.assign({ _subject: form.getAttribute("data-subject") + (topic ? " - " + topic : ""), _template: "table", _captcha: "false", Website: location.href.split("?")[0] }, data);
-      fetch("https://formsubmit.co/ajax/" + email, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) })
-        .then(function (r) { return r.json().catch(function () { return {}; }); })
-        .then(function () { finish(true); }, function () { finish(false); });
+      // With a Google Sheet set up (data-sheet = its Apps Script web app address), responses go to the
+      // sheet and the script emails the inbox. Otherwise FormSubmit emails the inbox.
+      var sheet = form.getAttribute("data-sheet");
+      var req = sheet
+        ? fetch(sheet, { method: "POST", mode: "no-cors", body: new URLSearchParams(Object.assign({ _form: form.getAttribute("data-name"), _to: email, _subject: payload._subject }, data, { Page: payload.Website })) })
+        : fetch("https://formsubmit.co/ajax/" + email, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) })
+            .then(function (r) { return r.json().catch(function () { return {}; }); });
+      req.then(function () { finish(true); }, function () { finish(false); });
       function finish(sent) {
         form.classList.remove("sending"); form.classList.add("sent");
         var okP = form.querySelector("[data-sent-ok]"), noP = form.querySelector("[data-sent-fail]");

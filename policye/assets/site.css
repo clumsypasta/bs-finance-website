@@ -492,6 +492,32 @@ a.card:hover{border-color:var(--brand);box-shadow:0 10px 26px rgba(16,34,46,.09)
 .dark .checks li{font-size:15.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:11px 14px;gap:12px}
 .dark .checks .ci{width:26px;height:26px}
 
+/* business policies strip (endless, like the logo strip) */
+.chip-rail .rail-track{gap:10px;padding:4px 0}
+.biz-chip{flex:none;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;background:#fff;border:1px solid var(--line);border-radius:12px;user-select:none;-webkit-user-drag:none;transition:border-color .15s,box-shadow .15s}
+.biz-chip:hover{border-color:var(--brand);box-shadow:0 6px 16px rgba(10,25,45,.08)}
+.biz-chip .ci{width:30px;height:30px}
+.biz-chip b{display:block;font-size:14.5px;line-height:1.25;white-space:nowrap}
+.biz-chip small{display:block;font-size:12.5px;color:var(--muted)}
+
+/* partner band with photo */
+.partner{display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:24px;background:linear-gradient(115deg,#E6F1F8 0%,#EEF6EC 100%);border:1px solid #D3E5EF;border-radius:20px;padding:0 24px 0 44px;overflow:hidden}
+.pt-text{padding:38px 0 40px}
+.partner h2{font-size:clamp(26px,3vw,38px);line-height:1.15;margin-top:8px}
+.partner h2 em{font-style:normal;color:var(--accent)}
+.partner p{color:var(--muted);font-size:16.5px;margin-top:10px;max-width:520px}
+.pt-roles{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pt-roles li{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 13px 6px 8px;font-weight:700;font-size:14px}
+.pt-roles .ci{width:20px;height:20px}
+.partner .actions{margin-top:22px}
+.pt-img{display:flex;justify-content:center;align-self:end}
+.pt-img img{width:100%;max-width:400px;height:auto;mix-blend-mode:multiply;display:block;margin-top:-10px}
+@media (max-width:900px){
+  .partner{grid-template-columns:1fr;padding:0 20px;gap:0}
+  .pt-text{padding:28px 0 8px}
+  .pt-img img{max-width:260px}
+}
+
 /* blue partner band */
 .lay-classic .band-sec{padding-top:8px}
 .band.blue{background:var(--brand);border:0;border-radius:18px;padding:26px 32px;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
