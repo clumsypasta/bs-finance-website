@@ -1,0 +1,153 @@
+HOW TO ADD A BLOG POST  (full steps: BLOG-HELP.txt)
+------------------------------------------------------
+Every post starts with a line of =====  and has this shape:
+
+=====
+Title: Write the post title here
+Date: 25-10-2026
+Summary: One or two short lines. They show on the blog page.
+Photo:
+-----
+Write the post here.
+
+Leave one empty line between paragraphs.
+
+## A line that starts with ## is a heading
+
+- A line that starts with - is a list point
+- Another point
+
+**Words between two stars on each side** show in bold.
+
+1. Copy the example above: from the ===== line down to the "show in bold" line.
+2. Paste it at the END of this file.
+3. Change the words. Save. Done.
+
+Only the posts BELOW the "START OF POSTS" line are shown on the website.
+The website shows the newest Date first.
+
+################  START OF POSTS (do not delete this line)  ################
+
+=====
+Title: Car insurance: third-party or comprehensive?
+Date: 30-09-2026
+Summary: Third-party cover is a must by law. Comprehensive cover also pays for damage to your own car. Here is the difference.
+Photo:
+-----
+## Third-party insurance
+
+- By law (Motor Vehicles Act, 1988), every car and bike on the road in India must have at least third-party insurance.
+- It pays for injury or damage that you cause to other people or their property.
+- It does **not** pay for damage to your own car.
+
+## Comprehensive insurance
+
+Comprehensive insurance has two parts:
+
+- **Third-party cover**, the part the law asks for.
+- **Own damage cover**. It pays for damage to your own car from an accident, fire, theft, flood and similar events.
+
+## Which one should you buy?
+
+Third-party insurance has the lowest price. But if your car is damaged or stolen, you pay for it yourself.
+
+Comprehensive insurance costs more, but it also protects your own car. It is a good choice if your car is new or would cost a lot to repair.
+
+## Add-ons
+
+You can add extra cover to a comprehensive policy. Each add-on costs extra, so pick only what you need. Common add-ons:
+
+- **Zero depreciation**: the insurance company does not cut money for the age of the parts it replaces.
+- **Engine protection**: pays for engine damage, for example from water on the road.
+- **Roadside assistance**: help if your car stops on the road.
+
+## When you renew
+
+- Check your **No Claim Bonus (NCB)**. It is a discount on your own damage premium for each year you did not make a claim.
+- Renew before your policy ends. If it ends, the insurance company may inspect your car before it gives you a new policy.
+
+Compare car insurance prices from many insurance companies: [get free quotes](https://insurance.policye.com/customer/login).
+
+=====
+Title: Insurance claim rejected? Steps you can take
+Date: 30-09-2026
+Summary: Ask for the reason, complain to the insurance company, and if needed go to the Insurance Ombudsman. It is free.
+Photo:
+-----
+## 1. Read the rejection letter
+
+The insurance company must tell you why it rejected your claim. Read the reason carefully. Then check it against your policy papers.
+
+## 2. Complain to the insurance company
+
+Every insurance company has a team to handle complaints. Write to them and say why you think the claim should be paid. Attach:
+
+- Your policy copy
+- The rejection letter
+- Your bills, reports or photos
+
+Keep a copy of everything you send.
+
+## 3. Register your complaint with Bima Bharosa
+
+Bima Bharosa is the complaint website of IRDAI, the government body that regulates insurance in India. You can register your complaint there: [bimabharosa.irdai.gov.in](https://bimabharosa.irdai.gov.in).
+
+## 4. Go to the Insurance Ombudsman
+
+The Insurance Ombudsman settles complaints between you and your insurance company. It is free, and you do not need a lawyer.
+
+You can go to the Ombudsman if:
+
+- the insurance company rejected your complaint, or
+- it did not reply within one month, or
+- you are not happy with its reply.
+
+Go within one year of the insurance company's reply. The amount you ask for must not be more than ₹50 lakh. Find your Ombudsman office on [cioins.co.in](https://www.cioins.co.in).
+
+## Need help?
+
+Call us or fill our [claim help form](claims.html#claim-form). We help you get your papers ready.
+
+=====
+Title: Health top-up plans: what they are and who needs one
+Date: 30-09-2026
+Summary: A top-up plan adds more health cover on top of your main policy. See how it works with a simple example.
+Photo:
+-----
+## What is a top-up plan?
+
+A top-up plan gives you extra health cover. It pays only after your hospital bill crosses a fixed amount. This fixed amount is called the **deductible**.
+
+A top-up plan usually costs less than buying a bigger health policy with the same cover.
+
+## A simple example
+
+Your top-up plan has a deductible of ₹5 lakh and a cover of ₹10 lakh. Your hospital bill is ₹8 lakh.
+
+- Your main health policy (or you) pays the first ₹5 lakh.
+- The top-up plan pays the other ₹3 lakh.
+
+If the bill is less than ₹5 lakh, the top-up plan pays nothing.
+
+## Top-up and super top-up
+
+A **top-up** looks at each hospital bill on its own. Each bill must cross the deductible.
+
+A **super top-up** adds up all your hospital bills in the policy year. Many small bills together can cross the deductible.
+
+Check which type a plan is before you buy.
+
+## Who should think about a top-up?
+
+- People who have health cover from their office and want more cover of their own
+- People whose health policy has a small cover amount
+- Families who want more cover on a small budget
+
+## Check these before you buy
+
+- The deductible amount
+- Waiting periods for illnesses you already have
+- Limits on hospital room rent
+- The list of network hospitals near you
+
+Want to compare top-up plans? [Get free quotes](https://insurance.policye.com/customer/login) or [ask us to call you](contact.html?topic=Buy%20new%20insurance&product=Health%20top-up#enquiry-form).

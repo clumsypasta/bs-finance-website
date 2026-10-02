@@ -380,4 +380,91 @@
     });
   });
   if (lb) lb.addEventListener("click", function (e) { if (e.target === lb || e.target.closest(".close")) closeLightbox(); });
+
+  /* ---------- blog: posts come from one text file the client edits (blog/posts.txt) ---------- */
+  var lists = $$("[data-blog-list]"), postBody = $("[data-post-body]");
+  if (lists.length || postBody) {
+    var esc = function (t) { return String(t).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+    var slugOf = function (t) { return t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); };
+    var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    function parseDate(t) {   // 25-10-2026, 25/10/2026 or 2026-10-25
+      var m = (t || "").match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})$/), y, mo, d;
+      if (m) { d = +m[1]; mo = +m[2]; y = +m[3]; } else { m = (t || "").match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/); if (!m) return null; y = +m[1]; mo = +m[2]; d = +m[3]; }
+      return mo >= 1 && mo <= 12 && d >= 1 && d <= 31 ? { n: y * 10000 + mo * 100 + d, text: d + " " + MONTHS[mo - 1] + " " + y } : null;
+    }
+    function inline(t) {
+      t = esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+      return t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_, label, url) {
+        if (!/^(https?:|mailto:|tel:|[\w.\-\/#?=&%]+$)/i.test(url) || /^javascript:/i.test(url)) return label;
+        return '<a href="' + url + '"' + (/^https?:/i.test(url) ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>";
+      });
+    }
+    function toHtml(text) {   // the small set of rules explained in posts.txt
+      var out = [], para = [], list = null;
+      function flush() {
+        if (para.length) { out.push("<p>" + inline(para.join(" ")) + "</p>"); para = []; }
+        if (list) { out.push("<" + list.tag + ">" + list.items.map(function (i) { return "<li>" + inline(i) + "</li>"; }).join("") + "</" + list.tag + ">"); list = null; }
+      }
+      text.split(/\r?\n/).forEach(function (line) {
+        var s = line.trim(), ul = s.match(/^[-*•]\s+(.*)/), ol = s.match(/^\d+[.)]\s+(.*)/);
+        if (!s) flush();
+        else if (/^###\s/.test(s)) { flush(); out.push("<h3>" + inline(s.replace(/^###\s+/, "")) + "</h3>"); }
+        else if (/^##\s/.test(s)) { flush(); out.push("<h2>" + inline(s.replace(/^##\s+/, "")) + "</h2>"); }
+        else if (ul || ol) {
+          var tag = ul ? "ul" : "ol";
+          if (para.length || (list && list.tag !== tag)) flush();
+          if (!list) list = { tag: tag, items: [] };
+          list.items.push((ul || ol)[1]);
+        } else { if (list) flush(); para.push(s); }
+      });
+      flush();
+      return out.join("\n");
+    }
+    function parse(txt) {
+      txt = txt.replace(/^﻿/, "").replace(/\r\n?/g, "\n");   // files saved on Windows (Notepad) use \r\n line endings
+      var start = txt.search(/START OF POSTS/i);
+      if (start > -1) txt = txt.slice(txt.indexOf("\n", start) + 1);
+      var posts = [];
+      txt.split(/^\s*={5,}\s*$/m).forEach(function (chunk) {
+        if (!chunk.trim()) return;
+        var parts = chunk.split(/^\s*-{5,}\s*$/m), head = parts.shift() || "", body = parts.join("\n-----\n");
+        var meta = {};
+        head.split(/\r?\n/).forEach(function (l) { var m = l.match(/^\s*(Title|Date|Summary|Photo)\s*:\s*(.*)$/i); if (m) meta[m[1].toLowerCase()] = m[2].trim(); });
+        if (!meta.title) return;
+        var date = parseDate(meta.date), words = (body.match(/\w+/g) || []).length;
+        posts.push({ title: meta.title, summary: meta.summary || "", photo: (meta.photo || "").replace(/[^\w.\-]/g, ""), slug: slugOf(meta.title),
+                     date: date ? date.text : "", sort: date ? date.n : 0, minutes: Math.max(1, Math.ceil(words / 150)), body: body });
+      });
+      return posts.sort(function (a, b) { return b.sort - a.sort; });
+    }
+    var current = params.get("post") || "";
+    function card(p) {
+      var icon = $("#post-icon"), arrow = ($("#post-arrow") || {}).innerHTML || "", top = p.photo ? '<img class="cover" src="blog/images/' + esc(p.photo) + '" alt="" loading="lazy">' : (icon ? icon.innerHTML : "");
+      return '<a class="card post" href="blog-post.html?post=' + encodeURIComponent(p.slug) + '">' + top +
+        '<small class="meta">' + esc(p.date) + (p.date ? " · " : "") + p.minutes + ' min read</small><h3>' + esc(p.title) + "</h3><p>" + esc(p.summary) +
+        '</p><span class="link go">Read more ' + arrow + '</span></a>';
+    }
+    fetch("blog/posts.txt", { cache: "no-cache" }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (txt) {
+      var posts = parse(txt);
+      lists.forEach(function (box) {
+        var list = posts.filter(function (p) { return !(box.hasAttribute("data-exclude-current") && p.slug === current); });
+        var lim = +box.getAttribute("data-limit") || 0;
+        if (lim) list = list.slice(0, lim);
+        box.innerHTML = list.length ? list.map(card).join("") : '<p class="blog-msg">No posts yet.</p>';
+        if (!list.length && box.hasAttribute("data-exclude-current")) box.closest("section").hidden = true;
+        if (!list.length && lim && !box.hasAttribute("data-exclude-current")) box.closest("section").hidden = true;   // home page: hide the empty blog strip
+      });
+      if (postBody) {
+        var p = posts.filter(function (x) { return x.slug === current; })[0], h1 = $("[data-post-title]"), meta = $("[data-post-meta] span");
+        if (!p) { h1.textContent = "Post not found"; postBody.innerHTML = '<p>This post was not found. <a href="blog.html">See all posts</a>.</p>'; return; }
+        h1.textContent = p.title; meta.textContent = (p.date ? p.date + " · " : "") + p.minutes + " min read";
+        document.title = p.title + " — " + postBody.getAttribute("data-site");
+        var d = $('meta[name="description"]'); if (d && p.summary) d.setAttribute("content", p.summary);
+        postBody.innerHTML = (p.photo ? '<img class="cover" src="blog/images/' + esc(p.photo) + '" alt="">' : "") + toHtml(p.body);
+      }
+    }).catch(function () {
+      lists.forEach(function (box) { box.innerHTML = '<p class="blog-msg">Could not load the posts. Please refresh the page.</p>'; });
+      if (postBody) { $("[data-post-title]").textContent = "Could not load this post"; postBody.innerHTML = '<p>Please refresh the page.</p>'; }
+    });
+  }
 })();

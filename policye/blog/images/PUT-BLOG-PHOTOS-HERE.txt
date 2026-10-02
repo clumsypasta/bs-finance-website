@@ -1,0 +1,1 @@
+Upload blog photos into this folder. Then write the photo's file name after Photo: in posts.txt
