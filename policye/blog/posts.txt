@@ -7,6 +7,7 @@ Title: Write the post title here
 Date: 25-10-2026
 Summary: One or two short lines. They show on the blog page.
 Photo:
+Icon:
 -----
 Write the post here.
 
@@ -25,6 +26,8 @@ Leave one empty line between paragraphs.
 
 Only the posts BELOW the "START OF POSTS" line are shown on the website.
 The website shows the newest Date first.
+Icon: is optional. Leave it empty and the site picks one from your title.
+To choose one, write: car, bike, health, claim, life, home, travel, loan, invest, business, tip or policy.
 
 ################  START OF POSTS (do not delete this line)  ################
 

@@ -429,17 +429,32 @@
         if (!chunk.trim()) return;
         var parts = chunk.split(/^\s*-{5,}\s*$/m), head = parts.shift() || "", body = parts.join("\n-----\n");
         var meta = {};
-        head.split(/\r?\n/).forEach(function (l) { var m = l.match(/^\s*(Title|Date|Summary|Photo)\s*:\s*(.*)$/i); if (m) meta[m[1].toLowerCase()] = m[2].trim(); });
+        head.split(/\r?\n/).forEach(function (l) { var m = l.match(/^\s*(Title|Date|Summary|Photo|Icon)\s*:\s*(.*)$/i); if (m) meta[m[1].toLowerCase()] = m[2].trim(); });
         if (!meta.title) return;
         var date = parseDate(meta.date), words = (body.match(/\w+/g) || []).length;
-        posts.push({ title: meta.title, summary: meta.summary || "", photo: (meta.photo || "").replace(/[^\w.\-]/g, ""), slug: slugOf(meta.title),
+        posts.push({ title: meta.title, summary: meta.summary || "", photo: (meta.photo || "").replace(/[^\w.\-]/g, ""), icon: (meta.icon || "").toLowerCase().replace(/[^a-z-]/g, ""), slug: slugOf(meta.title),
                      date: date ? date.text : "", sort: date ? date.n : 0, minutes: Math.max(1, Math.ceil(words / 150)), body: body });
       });
       return posts.sort(function (a, b) { return b.sort - a.sort; });
     }
+    // Icon for a post: "Icon:" in posts.txt if given, else chosen from the title, else a rotating default
+    var ICONS = [[/car|motor|vehicle|auto/i, "car"], [/bike|two-wheeler|scooter/i, "bike"], [/health|medical|hospital|mediclaim|top-up/i, "health"],
+      [/claim|reject|complain|ombudsman|dispute/i, "claim"], [/life|term|family|child|retire/i, "life"], [/home|house|fire|property/i, "home"],
+      [/travel|trip|abroad/i, "travel"], [/loan|emi|gold/i, "loan"], [/sip|mutual|invest|fund|saving|wealth/i, "invest"], [/premium|price|cost|tax/i, "policy"],
+      [/business|shop|office|commercial/i, "business"], [/tip|guide|how to|simple|learn/i, "tip"], [/policy|document|paper|renew/i, "policy"]];
+    var FILES = { car: "automobile", bike: "motor-scooter", health: "stethoscope", claim: "balance-scale", life: "umbrella-with-rain-drops", home: "house", travel: "airplane",
+      loan: "coin", invest: "chart-increasing", policy: "page-facing-up", business: "office-building", tip: "light-bulb" };
+    var FALLBACK = ["shield", "light-bulb", "handshake", "bullseye", "newspaper", "money-bag"];
+    function iconFor(p) {
+      var key = p.icon;
+      if (!key) { ICONS.some(function (r) { if (r[0].test(p.title)) { key = r[1]; return true; } }); }
+      var file = FILES[key] || (/^[a-z-]+$/.test(key || "") && key) || "";
+      if (!file) { var h = 0; for (var i = 0; i < p.title.length; i++) h = (h * 31 + p.title.charCodeAt(i)) >>> 0; file = FALLBACK[h % FALLBACK.length]; }
+      return '<span class="icon-box blog-ic"><img class="ci i3d" src="assets/i3d/' + file + '.webp" alt="" width="64" height="64" onerror="this.src=\'assets/i3d/newspaper.webp\'"></span>';
+    }
     var current = params.get("post") || "";
     function card(p) {
-      var icon = $("#post-icon"), arrow = ($("#post-arrow") || {}).innerHTML || "", top = p.photo ? '<img class="cover" src="blog/images/' + esc(p.photo) + '" alt="" loading="lazy">' : (icon ? icon.innerHTML : "");
+      var icon = $("#post-icon"), arrow = ($("#post-arrow") || {}).innerHTML || "", top = p.photo ? '<img class="cover" src="blog/images/' + esc(p.photo) + '" alt="" loading="lazy">' : iconFor(p);
       return '<a class="card post" href="blog-post.html?post=' + encodeURIComponent(p.slug) + '">' + top +
         '<small class="meta">' + esc(p.date) + (p.date ? " · " : "") + p.minutes + ' min read</small><h3>' + esc(p.title) + "</h3><p>" + esc(p.summary) +
         '</p><span class="link go">Read more ' + arrow + '</span></a>';
