@@ -1,0 +1,745 @@
+/* Elvana Media: site.css (built by src/build.py from src/fontfaces.css, src/site.css, src/tear_and_hero.css) */
+
+/* ---------- Fonts: woff2 files with unicode-range, so the Devanagari file only loads where Devanagari is set.
+   The 'fb' faces are metric-matched system fallbacks: nothing reflows when the real fonts arrive. ---------- */
+@font-face{font-family:'Yatra One';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/yatra-one-latin.woff2) format('woff2');unicode-range:U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-200B, U+200E-206F, U+20AC, U+20B9, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Yatra One';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/yatra-one-devanagari.woff2) format('woff2');unicode-range:U+0900-097F, U+200C-200D, U+25CC}
+@font-face{font-family:'Mukta';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/mukta-400.woff2) format('woff2');unicode-range:U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-200B, U+200E-206F, U+20AC, U+20B9, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Mukta';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/mukta-600.woff2) format('woff2');unicode-range:U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-200B, U+200E-206F, U+20AC, U+20B9, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Mukta';font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/mukta-800.woff2) format('woff2');unicode-range:U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-200B, U+200E-206F, U+20AC, U+20B9, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Yatra One fb';font-weight:400;src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('Helvetica'),local('Roboto');size-adjust:110.3%;ascent-override:89.9%;descent-override:44.2%;line-gap-override:0%}
+@font-face{font-family:'Mukta fb';font-weight:400;src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('Helvetica'),local('Roboto');size-adjust:94.2%;ascent-override:120%;descent-override:56.5%;line-gap-override:0%}
+@font-face{font-family:'Mukta fb';font-weight:600;src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('Helvetica Bold'),local('Roboto Bold');size-adjust:91.3%;ascent-override:123.8%;descent-override:58.3%;line-gap-override:0%}
+@font-face{font-family:'Mukta fb';font-weight:800;src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('Helvetica Bold'),local('Roboto Bold');size-adjust:94.2%;ascent-override:119.9%;descent-override:56.4%;line-gap-override:0%}
+
+/* =========================================================================
+   Elvana Media: site.css  ("One Wall" system, v3)
+   Reset, type, then every component, then the home page's sections.
+   Uses tokens.css only: no raw colours, sizes or curves below this line
+   (decorative shadows and the torn-edge shapes excepted).
+
+   The idea, in one sentence: the site is ONE hoarding. Every section is a
+   sheet of paper pasted on it; where a sheet ends it is torn, and under
+   every tear is the poster that was there before.
+   ========================================================================= */
+
+/* ---------- Reset and type ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:calc(var(--hdr) - 2px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--ink);color:var(--ink);font-family:var(--text);font-size:var(--fs-body);line-height:var(--lh-body);word-spacing:.04em;overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,.d,.d1,.d2,.d3{font-family:var(--display);font-weight:var(--w-regular);line-height:var(--lh-display);margin:0;word-spacing:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+ul,ol{margin:0;padding:0;list-style:none}
+dl,dd{margin:0}
+a{color:inherit;text-decoration-thickness:2px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:4px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+img,svg{max-width:100%}
+[hidden]{display:none!important}
+::selection{background:var(--ink);color:var(--yellow)}
+.g-ink ::selection,.hdr ::selection,.foot ::selection{background:var(--yellow);color:var(--ink)}
+
+.d1{font-size:var(--fs-d1)}
+.d2{font-size:var(--fs-d2)}
+.d3{font-size:var(--fs-d3)}
+.lede{font-size:var(--fs-lede);line-height:var(--lh-lede);max-width:var(--measure-lede)}
+.small{font-size:var(--fs-small)}
+.hi-ink{color:var(--hi)}
+.deva{font-family:var(--display);font-weight:var(--w-regular)}
+
+/* ---------- Utilities ---------- */
+.nw{white-space:nowrap}
+.cap{display:inline-block}.cap::first-letter{text-transform:uppercase}   /* a heading whose first words are for screen readers only still starts with a capital */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.no-js .js-only,.js:not(.motion) .motion-only{display:none!important}
+.skip{position:absolute;left:12px;top:-80px;z-index:var(--z-skip);background:var(--yellow);color:var(--ink);padding:var(--sp-3) 18px;font-weight:var(--w-heavy);text-decoration:none}
+.skip:focus{top:12px}
+.wrap{position:relative;width:min(calc(100% - 2 * var(--gutter)),var(--maxw));margin-inline:auto}
+
+/* =========================================================================
+   COMPONENTS
+   ========================================================================= */
+
+/* ---------- Tag: the button. A square-cut paper tag; on hover one corner lifts.
+   States: rest, hover, active (pressed), focus-visible, disabled, .is-stamped (after a press) ---------- */
+.tag{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 22px 8px;border:0;border-radius:var(--r-0);
+  font:var(--w-heavy) 17px/1.1 var(--text);letter-spacing:.01em;text-decoration:none;cursor:pointer;text-align:center;
+  background:var(--yellow);color:var(--ink);transform-origin:0 0;
+  transition:transform var(--t-spring) var(--spring-lift),background-color var(--t-lift) linear,color var(--t-lift) linear,box-shadow var(--t-lift) linear}
+.tag:hover{transform:rotate(-2.2deg);box-shadow:var(--e-2)}
+.tag:active{transform:translate(-1%,2px) scale(1.02,.92);transition:transform var(--t-press) var(--spring-press);box-shadow:var(--e-0)}
+.tag:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.tag[disabled],.tag[aria-disabled="true"]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.tag::after{content:"";position:absolute;inset:-4px;border:var(--bw-rule) solid var(--hi);opacity:0;pointer-events:none}
+.tag.is-stamped::after{animation:stamp-ring var(--t-stamp) var(--ease-paste) both}
+@keyframes stamp-ring{0%{opacity:.9;transform:scale(.97)}100%{opacity:0;transform:scale(1.08,1.3)}}
+.tag-ink{background:var(--ink);color:var(--yellow)}
+.tag-line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 2px currentColor}
+.tag-line:hover{background:var(--paper);color:var(--ink);box-shadow:var(--e-2)}
+.tag-line:active{transform:translateY(2px) scale(.98)}
+.g-paper .tag-line:hover,.g-yellow .tag-line:hover,.g-wall .tag-line:hover{background:var(--ink);color:var(--paper)}
+.tags{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center}
+
+/* Onward: the one quiet text link at the end of a section. States: rest, hover, focus-visible */
+.onward{margin-top:var(--sp-5)}
+.onward a{display:inline-flex;align-items:center;gap:10px;min-height:44px;font:var(--w-heavy) 17px/1.2 var(--text);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.24em}
+.onward a::after{content:"";flex:none;width:24px;height:12px;background:currentColor;clip-path:polygon(0 38%,68% 38%,68% 0,100% 50%,68% 100%,68% 62%,0 62%);transition:transform var(--t-spring) var(--spring-lift)}
+.onward a:hover{text-decoration-thickness:4px}
+.onward a:hover::after{transform:translateX(6px)}
+
+/* Small line button (demo Replay and other secondary controls) */
+.replay{min-height:44px;padding:10px 16px 7px;background:transparent;color:inherit;border:0;border-radius:var(--r-0);box-shadow:inset 0 0 0 2px currentColor;font:var(--w-heavy) 15px/1 var(--text);cursor:pointer;transition:transform var(--t-spring) var(--spring-lift)}
+.replay:hover{transform:rotate(-2deg)}
+.replay:active{transform:translateY(1px) scale(.98)}
+
+/* Imprint: the printer's line on the edge of every sheet. Sheet number, then its name.
+   On a desktop it runs up the left margin like the imprint on a real poster; on smaller screens it sits above the heading. */
+.slug{display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-5);font:var(--w-heavy) var(--fs-label)/1 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;white-space:nowrap}
+.slug b{display:inline-grid;place-items:center;padding:6px 7px 4px;background:var(--fg);color:var(--ground);font-weight:var(--w-heavy);letter-spacing:.06em}
+@media (min-width:1100px){
+  .slug{position:absolute;top:4px;left:calc(var(--gutter) * -.5 - 13px);margin:0;writing-mode:vertical-rl;transform:rotate(180deg)}
+  .slug b{padding:7px 6px 7px 4px}
+}
+
+/* Strip: one word pasted across a headline on its own strip of paper */
+.strip{display:inline-block;background:var(--yellow);color:var(--ink);padding:.07em .16em 0;margin:0 .03em;transform:rotate(-2.4deg);box-shadow:var(--e-2)}
+
+/* ---------- Header: the hoarding frame's nameplate.
+   Nav link states: rest, hover, focus-visible, current page [aria-current], current section .is-here ---------- */
+.hdr{position:sticky;top:0;z-index:var(--z-hdr);height:var(--hdr);display:flex;align-items:center;gap:20px;padding:0 var(--gutter);background:var(--ink);color:var(--paper);--focus:var(--yellow);--hi:var(--red)}
+.wordmark{font-family:var(--display);font-size:clamp(28px,2.6vw,36px);line-height:1;color:var(--yellow);text-decoration:none;padding-top:6px;margin-right:auto}
+.wordmark:hover{color:var(--paper)}
+.nav-links{display:flex;gap:2px}
+.nav-links a{display:block;padding:12px 12px 9px;font-weight:var(--w-semi);font-size:17px;text-decoration:none;color:var(--paper);box-shadow:inset 0 0 0 transparent;transition:box-shadow var(--t-lift) var(--ease-paste),color var(--t-lift) linear}
+.nav-links a:hover,.nav-links a[aria-current],.nav-links a.is-here{box-shadow:inset 0 -4px 0 var(--yellow)}
+.nav-links a[aria-current="page"],.nav-links a.is-here{color:var(--yellow)}
+.hdr .tag{min-height:44px;padding:10px 18px 7px}
+.hdr .tag[aria-current="page"]{background:var(--paper)}
+.menu-btn{display:none;min-height:44px;padding:10px 16px 7px;background:transparent;color:var(--paper);border:0;box-shadow:inset 0 0 0 2px var(--paper);font:var(--w-heavy) 16px/1 var(--text);cursor:pointer}
+.menu-btn:hover{background:var(--paper);color:var(--ink)}
+.menu-btn:active{transform:translateY(1px)}
+/* The phone / tablet menu is a native popover: a yellow sheet pasted down from the top */
+#menu{position:fixed;inset:0 0 auto 0;margin:0;width:100%;max-width:none;height:auto;max-height:100svh;overflow:auto;border:0;padding:20px var(--gutter) var(--sp-6);background:var(--yellow);color:var(--ink);--focus:var(--ink);--hi:var(--red)}
+#menu::backdrop{background:rgba(26,24,20,.6)}
+#menu .menu-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+#menu .menu-top span{font-family:var(--display);font-size:30px}
+#menu .close{min-height:44px;padding:10px 16px 7px;border:0;background:var(--ink);color:var(--yellow);font:var(--w-heavy) 16px/1 var(--text);cursor:pointer}
+#menu ul a{display:block;font-family:var(--display);font-size:clamp(30px,8vw,48px);line-height:1;padding:11px 0 7px;text-decoration:none;border-top:var(--bw-rule) solid var(--ink)}
+#menu ul a:hover,#menu ul a[aria-current]{color:var(--red)}
+#menu ul a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:4px}
+#menu .tag{margin-top:var(--sp-5);background:var(--ink);color:var(--yellow)}
+@media (prefers-reduced-motion:no-preference){
+  #menu{transition:clip-path var(--t-paste) var(--ease-paste),overlay var(--t-paste) allow-discrete,display var(--t-paste) allow-discrete;clip-path:inset(0 0 0 0)}
+  @starting-style{#menu:popover-open{clip-path:inset(0 0 100% 0)}}
+}
+@media (max-width:1019px){.hdr>.nav-main,.hdr>.tag{display:none}.menu-btn{display:inline-flex;align-items:center}}
+
+/* ---------- Snipe: the strip pasted under the hero poster ---------- */
+.snipe{position:relative;z-index:var(--z-rip);min-height:var(--snipe-h);display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px var(--sp-6);padding:20px var(--gutter) 18px}
+.snipe .pos{font-family:var(--display);font-size:clamp(24px,2.3vw,34px);line-height:1.05;color:var(--yellow)}
+.snipe .hint{font-size:var(--fs-small);color:var(--paper-dim);grid-column:1}
+.snipe .acts{grid-column:2;grid-row:1 / span 2;display:flex;gap:var(--sp-3);flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:699px){
+  .snipe{grid-template-columns:1fr;gap:var(--sp-3);padding:18px var(--gutter) 20px;align-content:center}
+  .snipe .acts{grid-column:1;grid-row:auto;justify-content:flex-start}
+  .snipe .hint{grid-row:auto}
+}
+
+/* ---------- Poster: one sheet on the wall ----------
+   <section class="poster g-paper has-rip" id="..."><div class="rip">...</div><div class="wrap">...</div></section>
+   A poster never animates in by itself: the page's movement is the visitor's (tear, tug, press). */
+.poster{position:relative;z-index:var(--z-sheet);isolation:isolate;padding-block:var(--section-y)}
+.poster.has-rip{padding-top:calc(var(--section-y) + var(--rip))}
+/* paper grain, then the seams between sheets */
+.poster::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url(../img/grain.png) 0 0/160px 160px;opacity:.5;mix-blend-mode:multiply}
+.poster::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(to right,rgba(0,0,0,.06) 1px,rgba(255,255,255,.1) 1px 2px,transparent 2px);
+  background-size:var(--sheet) 100%;background-position:-1px 0}
+.g-wall.poster::after{background-image:none}
+.g-wall.poster::before{opacity:.9}
+/* a sheet pasted over bare wall shows its thickness along the top */
+.g-wall + .poster:not(.has-rip){box-shadow:0 -3px 0 rgba(0,0,0,.22),0 -9px 14px rgba(0,0,0,.14)}
+
+/* Section head: display heading left, lede right, bottoms aligned */
+.head-split{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--col-gap);row-gap:var(--sp-5);align-items:end}
+.head-split>:first-child{grid-column:1 / span 8}
+.head-split>:last-child{grid-column:9 / -1;padding-bottom:.5em}
+.poster-foot{margin-top:var(--sp-7);display:flex;flex-wrap:wrap;gap:var(--sp-4) var(--sp-5);align-items:center}
+
+/* ---------- Rip: the torn lower edge of the sheet above, with older posters showing under it ----------
+   Built by build.py: <div class="rip"><span style="--rc:INK;--rk:DEPTH"><i class="f eNf"></i><i class="c eN"></i></span>...</div>
+   Each layer is the paper (c) over its white fibre (f). The shapes (.e1 ... .e6) are at the end of this file. */
+.rip{position:absolute;left:0;right:0;top:-1px;height:var(--rip);z-index:var(--z-rip);pointer-events:none}
+.rip>span{position:absolute;left:0;right:0;top:0;height:calc(var(--rip) * var(--rk) + 14px);filter:var(--e-torn);transform-origin:50% 0}
+.rip i{position:absolute;inset:0;transform:scaleY(-1)}
+.rip .f{background:var(--fibre)}
+.rip .c{background:var(--rc) url(../img/grain.png) 0 0/160px 160px;background-blend-mode:multiply}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    /* the only scroll-linked motion on the page: the layers under a tear open a few pixels as it passes */
+    .rip>span{animation:rip-open linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    @keyframes rip-open{from{transform:scaleY(calc(1 - .3 * var(--rk)))}to{transform:scaleY(calc(1 + .34 * var(--rk)))}}
+  }
+}
+
+/* ---------- Coming soon: the strip pasted across a space where content is still to come ---------- */
+.coming-soon{position:relative;z-index:var(--z-sticker);display:inline-flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:.15em .6em;
+  padding:.5em 1em .34em;background:var(--red);color:var(--paper);border-block:var(--bw-rule) solid var(--paper);box-shadow:var(--e-2);
+  font:var(--w-heavy) 15px/1.2 var(--text);text-align:center;transform:rotate(var(--strip-angle,-2.4deg))}
+.coming-soon>b{font:var(--w-regular) clamp(22px,2.2vw,32px)/1 var(--display)}
+.coming-soon--inline{padding:.4em .8em .26em;--strip-angle:-2deg}
+.coming-soon--yellow{background:var(--yellow);color:var(--ink);border-color:var(--ink)}
+
+/* ---------- Plate: a small sheet pasted over a bigger one, with one action on it ---------- */
+.plate{max-width:520px;padding:clamp(22px,2.4vw,34px);display:grid;gap:var(--sp-4);justify-items:start;box-shadow:var(--e-3)}
+.plate p{font-size:var(--fs-lede);line-height:var(--lh-lede)}
+
+/* ---------- Form. Field states: rest, hover, focus-visible, invalid (:user-invalid or aria-invalid), disabled ---------- */
+.field{display:grid;gap:6px;margin-bottom:var(--sp-2)}
+.field label{font-weight:var(--w-heavy);font-size:16px}
+.field .opt{font-weight:var(--w-semi)}
+.field input,.field textarea,.field select{width:100%;min-height:56px;padding:13px 14px 10px;border:var(--bw-rule) solid var(--rule);border-radius:var(--r-0);background:var(--field);color:var(--field-fg);font:var(--w-regular) 18px/1.4 var(--text);
+  transition:box-shadow var(--t-lift) var(--ease-paste)}
+.field textarea{min-height:150px;resize:vertical;field-sizing:content}
+.field input:hover,.field textarea:hover,.field select:hover{box-shadow:var(--e-2)}
+.field input:focus-visible,.field textarea:focus-visible,.field select:focus-visible{outline:3px solid var(--blue);outline-offset:2px;box-shadow:var(--e-2)}
+.field input:user-invalid,.field textarea:user-invalid,.field [aria-invalid="true"]{border-color:var(--danger);box-shadow:inset 6px 0 0 var(--danger)}
+.field input:disabled,.field textarea:disabled,.field select:disabled{opacity:.55;cursor:not-allowed;box-shadow:none}
+.err{font-weight:var(--w-heavy);font-size:15px;line-height:1.35;color:var(--fg);min-height:1.35em}
+.err:not(:empty)::before{content:"Fix this: "}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.form-foot{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:6px}
+.form-foot .small{max-width:36ch}
+.status{margin-top:var(--sp-4);font-weight:var(--w-semi);font-size:var(--fs-body)}
+.status:not(:empty){background:var(--ink);color:var(--paper);padding:14px 16px 12px}
+.details{display:grid;gap:22px;font-size:var(--fs-lede);line-height:1.35}
+.details dt{font:var(--w-heavy) var(--fs-label)/1.2 var(--text);letter-spacing:var(--track-label);text-transform:uppercase}
+.details dd{margin:4px 0 0}
+.details a{font-weight:var(--w-semi)}
+.details .big{font-family:var(--display);font-weight:var(--w-regular);font-size:var(--fs-d3);line-height:1.1;overflow-wrap:anywhere}
+
+/* ---------- Table: the rate board. Row states: rest, hover. Becomes stacked cards on a phone. ---------- */
+.rate-wrap{margin-top:var(--sp-8)}
+.rate{width:100%;border-collapse:collapse;border-top:var(--bw-bar) solid var(--hi);text-align:left}
+.rate thead th:first-child{padding-left:var(--sp-4)}
+.rate thead th{padding:14px var(--sp-5) 12px 0;font:var(--w-heavy) var(--fs-label)/1.2 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;vertical-align:bottom}
+.rate tbody tr{border-top:var(--bw-rule) solid var(--rule-soft);background:linear-gradient(var(--yellow),var(--yellow)) 0 0/0% 100% no-repeat;transition:background-size var(--t-paste) var(--ease-paste),color var(--t-lift) linear}
+.rate tbody tr:hover{background-size:100% 100%;color:var(--ink)}
+.rate tbody tr:hover th{color:var(--ink)}
+.rate tbody th{padding:28px var(--sp-6) 24px var(--sp-4);transition:color var(--t-lift) linear;font:var(--w-regular) var(--fs-d3)/1 var(--display);color:var(--hi);vertical-align:top;white-space:nowrap}
+.rate td{padding:28px var(--sp-5) 24px 0;font-size:var(--fs-lede);line-height:1.3;vertical-align:top}
+.rate td:nth-child(2){font-weight:var(--w-heavy)}
+.rate td:nth-child(3){font-size:var(--fs-body);line-height:var(--lh-body);max-width:44ch}
+.rate td:last-child{white-space:nowrap;padding-right:var(--sp-4)}
+
+/* =========================================================================
+   HOME SECTIONS
+   ========================================================================= */
+
+/* ---------- 3. Who we are ---------- */
+.about{position:relative;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--col-gap);row-gap:var(--sp-5);align-items:end}
+.about h2{grid-column:1 / span 8;grid-row:1;max-width:11ch}
+.about .lede{grid-column:9 / -1;grid-row:1;padding-bottom:.6em}
+/* the licence stamp: the year the company was incorporated, in red ink, slightly off square */
+.stamp{grid-column:9 / -1;grid-row:1;align-self:start;justify-self:end;width:clamp(150px,17vw,264px);height:auto;color:var(--red);transform:rotate(-13deg);margin:calc(var(--sp-5) * -1) var(--sp-4) 0 0;overflow:visible}
+.stamp__ring{font:var(--w-heavy) 16.5px/1 var(--text);letter-spacing:.14em;fill:currentColor}
+.stamp__year{font:var(--w-regular) 52px/1 var(--display);fill:currentColor}
+/* Facts: one specification line, like the small print under a film title */
+/* three equal cells on the page's 12-column grid, so Vision and Mission below line up under the second and third */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--col-gap);margin-top:var(--sp-8);border-block:var(--bw-rule) solid var(--rule)}
+.facts li{display:flex;align-items:baseline;gap:var(--sp-3);padding:var(--sp-4) var(--sp-6) var(--sp-3) 0}
+.facts li+li{position:relative}
+.facts li+li::before{content:"";position:absolute;left:calc(var(--col-gap) / -2 - 1px);top:0;bottom:0;border-left:var(--bw-rule) solid var(--rule)}
+.facts .num{font:var(--w-regular) var(--fs-d2)/.9 var(--display);color:var(--fg)}
+.facts span{font:var(--w-heavy) var(--fs-label)/1.3 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;max-width:20ch}
+.statements{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--col-gap);row-gap:var(--sp-5);margin-top:var(--sp-7)}
+.statements p{grid-column:span 4;font-size:var(--fs-lede);line-height:var(--lh-lede)}
+.statements p:first-child{grid-column:5 / span 4}
+.statements b{display:block;margin-bottom:var(--sp-2);font:var(--w-heavy) var(--fs-label)/1.2 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--hi)}
+
+/* ---------- 4. Create. Connect. Grow. ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-6) var(--col-gap);align-items:start}
+.pillar{container-type:inline-size}
+.pillar h3{font-size:min(21cqw,var(--fs-d1));line-height:.9}
+.pillar h3 span{display:inline-block;padding:.12em .14em .02em;transform:rotate(var(--tilt));transform-origin:0 100%;box-shadow:var(--e-3)}
+.pillar--create h3 span{background:var(--yellow);color:var(--ink);--tilt:-2.2deg}
+.pillar--connect h3 span{background:var(--red);color:var(--paper);--tilt:1.3deg}
+.pillar--grow h3 span{background:var(--paper);color:var(--ink);--tilt:-.9deg}
+.pillar p{margin-top:var(--sp-5);font-size:var(--fs-lede);line-height:var(--lh-lede);max-width:25ch}
+
+/* Catalogue: every service in one index, numbered 01 to 14.
+   Row states: rest (number + name), hover / focus-within (a yellow sheet is pasted across the row and its one-line
+   description appears on it). On touch screens the row is just the name: the description is one tap away on the service's page. */
+.catalogue{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-8) var(--col-gap);margin-top:var(--sp-8);align-items:start}
+.catalogue__head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--sp-4);padding-bottom:var(--sp-3);border-bottom:var(--bw-bar) solid var(--hi)}
+.catalogue__head h3{font-size:var(--fs-d3);color:var(--hi)}
+.catalogue__head p{font:var(--w-heavy) var(--fs-label)/1.3 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--fg-soft);text-align:right}
+.index{counter-reset:svc var(--start,0)}
+.index li{counter-increment:svc;position:relative;isolation:isolate;display:grid;grid-template-columns:2.4em 1fr;align-items:baseline;column-gap:var(--sp-3);padding:15px var(--sp-3) 11px;border-bottom:var(--bw-hair) solid var(--rule-soft);transition:color var(--t-lift) linear}
+.index li::before{content:counter(svc,decimal-leading-zero);font:var(--w-heavy) 14px/1 var(--text);letter-spacing:.06em;color:var(--hi);transition:color var(--t-lift) linear}
+.index li::after{content:"";position:absolute;inset:0 0 -2px 0;z-index:-1;background:var(--yellow);clip-path:inset(0 100% 0 0);transition:clip-path var(--t-paste) var(--ease-paste)}
+.index h4{font:var(--w-regular) clamp(22px,1.85vw,29px)/1.1 var(--display)}
+.index h4 a{text-decoration:none}
+.index h4 a::before{content:"";position:absolute;inset:0;z-index:1}            /* the whole row is the link */
+.index h4 a::after{content:"";position:absolute;right:var(--sp-3);top:50%;width:24px;height:12px;margin-top:-6px;background:currentColor;clip-path:polygon(0 38%,68% 38%,68% 0,100% 50%,68% 100%,68% 62%,0 62%);opacity:0;transform:translateX(-10px);transition:transform var(--t-spring) var(--spring-lift),opacity var(--t-lift) linear}
+.index h4 a:focus-visible{outline:0}
+.index p{position:absolute;right:calc(var(--sp-3) + 40px);top:50%;max-width:42%;text-align:right;font-size:var(--fs-small);line-height:1.25;font-weight:var(--w-semi);color:var(--ink);opacity:0;transform:translate(-10px,-50%);transition:opacity var(--t-lift) linear,transform var(--t-paste) var(--ease-paste)}
+.index li:hover,.index li:focus-within{color:var(--ink)}
+.index li:hover::before,.index li:focus-within::before{color:var(--ink)}
+.index li:hover::after,.index li:focus-within::after{clip-path:inset(0 0 0 0)}
+.index li:hover p,.index li:focus-within p{opacity:1;transform:translate(0,-50%)}
+.index li:hover h4 a::after,.index li:focus-within h4 a::after{opacity:1;transform:none}
+.index li:focus-within{outline:3px solid var(--ink);outline-offset:-6px}   /* ink inside the yellow sheet: the keyboard state is not the hover state */
+@media (hover:none){.index p{display:none}}
+
+/* ---------- 5. Our edge: four posters on bare wall, each a working demo ----------
+   <article class="demo g-blue" data-demo="chat|call|blast|report">: core.js plays it once in view.
+   Poster states: rest (slightly askew), hover (straightens and lifts) */
+.demo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.7vw,30px);align-items:start;width:min(calc(100% - 2 * var(--gutter)),var(--maxw));margin:var(--sp-8) auto 0}
+.demo-grid:focus-visible{outline-offset:8px}
+.demo{position:relative;padding:clamp(18px,1.8vw,30px);display:flex;flex-direction:column;gap:10px;box-shadow:var(--e-3);transform:rotate(var(--tilt,0deg));transition:transform var(--t-spring) var(--spring-lift),box-shadow var(--t-lift) linear}
+.demo:nth-child(1){--tilt:-1.1deg}.demo:nth-child(2){--tilt:.7deg;margin-top:var(--sp-5)}.demo:nth-child(3){--tilt:-.6deg}.demo:nth-child(4){--tilt:1deg;margin-top:var(--sp-6)}
+@media (hover:hover){.demo:hover{transform:rotate(0deg) translateY(-6px);box-shadow:var(--e-4);z-index:2}}
+.demo h3{font-size:var(--fs-d3);line-height:.98}
+.demo .line{font-size:var(--fs-body);line-height:1.35;font-weight:var(--w-semi);max-width:30ch}
+.demo figure{margin:var(--sp-3) 0 0;display:flex;flex-direction:column;gap:var(--sp-4);flex:1}
+.demo figcaption{margin-top:auto;padding-top:var(--sp-2);font-size:var(--fs-small);line-height:1.35;display:flex;gap:var(--sp-3);align-items:center;justify-content:space-between}
+.who{display:block;font-weight:var(--w-heavy);font-size:14px;line-height:1.3;margin-bottom:2px}
+.ln{transition:clip-path var(--t-paste) var(--ease-paste),opacity var(--t-paste) linear}
+.js.motion [data-armed] .ln:not(.in){clip-path:inset(0 100% 0 0);opacity:0}
+/* chat */
+.chat{display:flex;flex-direction:column;gap:10px}
+.chat li{max-width:92%;font-size:16px;line-height:1.35}
+.chat .them{align-self:flex-start;padding:2px 0}
+.chat .bot{align-self:flex-end;background:var(--yellow);color:var(--ink);padding:9px 12px 7px;box-shadow:var(--e-2)}
+.chat .bot:nth-child(4n){transform:rotate(.6deg)}
+.chat .bot:nth-child(4n+2){transform:rotate(-.5deg)}
+/* call */
+.wave{display:flex;align-items:center;gap:3px;height:48px}
+.wave i{flex:1;height:calc(var(--h) * 1%);background:var(--red);transform-origin:50% 50%}
+.wave.on i{animation:talk calc(380ms * var(--slow)) ease-in-out infinite alternate;animation-delay:calc(var(--d) * -1ms)}
+@keyframes talk{from{transform:scaleY(.25)}to{transform:scaleY(1.05)}}
+.script{display:grid;gap:var(--sp-3)}
+.script li{display:grid;gap:2px}
+.script .who{color:var(--red);margin:0}
+.script .said{font-size:16px;line-height:1.35;font-weight:var(--w-semi)}
+.script .gloss{font-size:14px;line-height:1.35;color:var(--ink-soft)}
+/* blast */
+.tpl{background:var(--paper);color:var(--ink);padding:12px 14px 10px;box-shadow:var(--e-2)}
+.tpl p{font-size:16px;line-height:1.35}
+.segs{display:grid;gap:var(--sp-3)}
+.seg{display:grid;gap:6px}
+.seg>span{font-weight:var(--w-heavy);font-size:14px;line-height:1.3}
+.cells{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.cells i{aspect-ratio:2/3;background:var(--paper);transform-origin:50% 0;transition:transform var(--t-paste) var(--ease-paste),opacity var(--t-paste) linear}
+.seg.off .cells i{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(242,243,239,.6)}
+.js.motion [data-armed] .seg:not(.off) .cells i:not(.in){transform:scaleY(0);opacity:0}
+/* report */
+.bars{display:grid;gap:var(--sp-3)}
+.bars li{display:grid;gap:4px;font-weight:var(--w-heavy);font-size:14px}
+.bars i{display:block;height:20px;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--v));transition:transform calc(700ms * var(--slow)) var(--ease-paste)}
+.js.motion [data-armed] .bars i:not(.in){transform:scaleX(0)}
+/* phone rail pager (wall.js adds it) */
+.rail-dots{display:none;justify-content:center;gap:var(--sp-2);margin-top:var(--sp-2)}
+.rail-dots i{width:22px;height:6px;background:var(--ink);opacity:.3;transition:opacity var(--t-lift) linear,width var(--t-spring) var(--spring-settle)}
+.rail-dots i.on{opacity:1;width:40px}
+
+/* ---------- 6. How we work: a line with five stops ----------
+   wall.js sets --p (0 to 1) on .route as it crosses the screen and marks reached stops .is-reached.
+   Without JS or with reduced motion the whole line is drawn and every stop is reached. */
+#process h2{max-width:14ch}
+.route{position:relative;margin-top:calc(var(--sp-9) + var(--sp-5));--p:1;--dot:60px}
+.route__end{position:absolute;top:calc(var(--sp-6) * -1 - 6px);left:0;font:var(--w-heavy) var(--fs-label)/1 var(--text);letter-spacing:var(--track-label);text-transform:uppercase}
+.route__end--to{left:auto;right:0}
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr)}
+.steps::before,.steps::after{content:"";position:absolute;left:0;right:14px;top:calc(var(--dot) / 2 - 4px);height:8px;background:var(--ink)}
+.steps::after{background:var(--red);transform-origin:0 50%;transform:scaleX(var(--p))}
+.route::after{content:"";position:absolute;right:0;top:calc(var(--dot) / 2 - 14px);width:22px;height:28px;background:var(--ink);clip-path:polygon(0 0,100% 50%,0 100%)}
+.steps li{position:relative;z-index:1;padding-right:var(--sp-5)}
+.steps .n{display:grid;place-items:center;width:var(--dot);height:var(--dot);padding-top:5px;border-radius:var(--r-dot);background:var(--paper);color:var(--ink);border:var(--bw-bar) solid var(--ink);font:var(--w-regular) 27px/1 var(--display);
+  transition:background-color var(--t-lift) linear,color var(--t-lift) linear,transform var(--t-spring) var(--spring-lift)}
+.steps li.is-reached .n{background:var(--red);color:var(--paper);transform:scale(1.08)}
+.no-js .steps .n{background:var(--red);color:var(--paper)}
+.steps h3{margin-top:var(--sp-5);font-size:var(--fs-d3)}
+.steps p{margin-top:var(--sp-2);max-width:22ch}
+.js.motion .route[data-route]:not(.is-live) .steps::after{transform:scaleX(0)}
+
+/* ---------- 7. Who we serve: a flyer with tear-off tabs ----------
+   <ul class="tabs"><li><button class="tab" data-sector aria-pressed>: wall.js tears a tab off and adds
+   the sector to the enquiry form. Tab states: rest (hangs), hover (swings), focus-visible, pressed (torn off;
+   its outline stays on the wall and pressing it again pastes it back). */
+#sectors{z-index:calc(var(--z-sheet) + 1);padding-bottom:0}
+#sectors .wrap{padding-bottom:var(--sp-7)}
+.tabs-hint{display:flex;align-items:center;gap:var(--sp-3);margin-top:var(--sp-8);font:var(--w-heavy) var(--fs-label)/1.3 var(--text);letter-spacing:var(--track-label);text-transform:uppercase}
+.scissors{flex:none;width:44px;height:0;border-top:var(--bw-hair) dashed currentColor}
+.tabs{position:absolute;left:0;right:0;top:100%;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));grid-template-rows:var(--tab-h);gap:3px;height:var(--tab-h);filter:var(--e-torn)}
+.tabs li{position:relative;height:var(--tab-h);min-width:0}
+.tabs li::before{content:"";position:absolute;inset:0 0 auto 0;height:12px;background:var(--paper);clip-path:polygon(0 0,100% 0,100% 60%,88% 100%,74% 52%,60% 92%,46% 48%,31% 96%,17% 56%,6% 100%,0 64%)}  /* the stub a torn tab leaves */
+.tab{position:relative;display:flex;align-items:center;justify-content:flex-start;width:100%;height:var(--tab-h);margin:0;padding:var(--sp-5) 4px var(--sp-4);overflow:hidden;border:0;border-radius:0 0 var(--r-cut) var(--r-cut);background:var(--paper) url(../img/grain.png) 0 0/160px 160px;background-blend-mode:multiply;color:var(--ink);cursor:pointer;border-top:var(--bw-hair) dashed rgba(26,24,20,.4);
+  writing-mode:vertical-rl;font:var(--w-regular) clamp(20px,2vw,31px)/1.02 var(--display);text-align:left;transform-origin:50% 0;
+  transition:transform var(--t-wobble) var(--spring-wobble)}
+.tab span{display:block;max-height:100%;block-size:auto;text-wrap:balance}
+.tabs li:nth-child(odd) .tab{--swing:-2.6deg}
+.tabs li:nth-child(even) .tab{--swing:2.2deg}
+@media (hover:hover){.tab:hover{transform:rotate(var(--swing))}}
+.tab:focus-visible{outline:3px solid var(--ink);outline-offset:-6px}
+.tab:active{transform:translateY(5px);transition:transform var(--t-press) var(--spring-press)}
+.tab[aria-pressed="true"]{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px rgba(26,24,20,.5);transform:none;transition:none}
+.tab[aria-pressed="true"] span{text-decoration:line-through;text-decoration-thickness:2px}
+.tab-fall{position:absolute;inset:0;pointer-events:none;animation:tab-fall var(--t-drop) var(--ease-tug) both}
+@keyframes tab-fall{0%{transform:none;opacity:1}18%{transform:translateY(8px) rotate(-3deg)}100%{transform:translateY(130%) rotate(11deg);opacity:0}}
+span.tab{cursor:default}
+.tabs-status{min-height:0;font:var(--w-heavy) var(--fs-body)/1.35 var(--text)}
+.tabs-status:not(:empty){display:inline-block;margin-bottom:var(--sp-6);padding:10px 14px 8px;background:var(--yellow);color:var(--ink);box-shadow:var(--e-2);transform:rotate(-.8deg)}
+.tabs-status a{font-weight:var(--w-heavy)}
+
+/* ---------- 8. Work: the vacant space ---------- */
+#work{padding-top:calc(var(--section-y) + var(--tab-h))}
+.vacant{position:relative;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--col-gap)}
+.vacant__frame{position:relative;grid-column:1 / -1;grid-row:1;min-height:clamp(400px,38vw,640px);display:flex;flex-direction:column;justify-content:flex-end;gap:var(--sp-4);padding:clamp(22px,3.2vw,56px);border:var(--bw-rule) dashed rgba(26,24,20,.62);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.13' stroke-linecap='round'%3E%3Cpath d='M40 360 C 260 300 380 330 600 250 S 980 160 1160 120' stroke-width='70'/%3E%3Cpath d='M-20 120 C 200 60 420 130 640 70 S 1000 40 1240 20' stroke-width='46'/%3E%3Cpath d='M300 420 C 520 330 700 380 900 300 S 1150 260 1260 230' stroke-width='38'/%3E%3C/g%3E%3C/svg%3E");background-size:100% 100%}
+.vacant__frame .coming-soon{position:absolute;top:0;left:clamp(-28px,-1.6vw,-12px);transform:translateY(-50%) rotate(var(--strip-angle,-2.4deg))}
+.vacant__title{font-size:var(--fs-mega);line-height:.86;max-width:9ch}
+.vacant__note{max-width:40ch;font-size:var(--fs-lede);line-height:var(--lh-lede);font-weight:var(--w-semi)}
+.vacant .plate{grid-column:8 / -1;grid-row:1;align-self:end;justify-self:end;margin:0 calc(var(--gutter) * -.4) calc(var(--sp-7) * -1) 0;transform:rotate(-1.6deg);transform-origin:100% 100%;z-index:var(--z-sticker)}
+/* corner marks: where the first poster will be registered */
+.vacant__frame::before,.vacant__frame::after{content:"";position:absolute;width:28px;height:28px;border:var(--bw-rule) solid var(--ink)}
+.vacant__frame::before{top:-3px;right:-3px;border-left:0;border-bottom:0}
+.vacant__frame::after{left:-3px;bottom:-3px;border-right:0;border-top:0}
+
+/* ---------- 9. Engagement models: uses the table component ---------- */
+#models h2{max-width:12ch}
+
+/* ---------- 10. People: a billing block ---------- */
+.billing{margin-top:var(--sp-7)}
+.role{font:var(--w-heavy) var(--fs-label)/1.3 var(--text);letter-spacing:var(--track-label);text-transform:uppercase}
+.founder{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--col-gap);row-gap:var(--sp-3);align-items:end}
+.founder .role{grid-column:1 / -1;color:var(--hi)}
+.founder h3{grid-column:1 / span 8;font-size:clamp(58px,10.4vw,188px);line-height:.84;color:var(--hi)}
+.founder .org{grid-column:9 / -1;align-self:start;font-weight:var(--w-heavy);font-size:var(--fs-body);grid-row:2}
+.founder .bio{grid-column:9 / -1;grid-row:2;align-self:end;font-size:var(--fs-lede);line-height:var(--lh-lede);padding-top:2.2em}
+.team{display:grid;grid-template-columns:repeat(5,1fr);margin-top:var(--sp-8);border-top:var(--bw-slab) solid var(--rule)}
+.team li{padding:var(--sp-5) var(--sp-5) 0 0}
+.team li+li{padding-left:var(--sp-5);border-left:var(--bw-rule) solid var(--rule)}
+.team .role{color:var(--fg-soft)}
+.team h4{margin-top:var(--sp-2);font:var(--w-regular) var(--fs-d3)/1 var(--display)}
+.team .note{margin-top:var(--sp-3);font-size:var(--fs-small);line-height:1.4;max-width:24ch}
+.backing{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--col-gap);row-gap:var(--sp-6);margin-top:var(--sp-8);padding:var(--sp-6) clamp(20px,3vw,48px);background:var(--ink);color:var(--paper);box-shadow:var(--e-3);transform:rotate(-.5deg)}
+.backing__head{grid-column:1 / span 5}
+.backing h3{font-size:var(--fs-d3);line-height:1;color:var(--yellow)}
+.backing__head p{margin-top:var(--sp-3);max-width:44ch;color:var(--paper-dim)}
+.backing ul{grid-column:6 / -1;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-5) var(--col-gap);align-content:start}
+.backing li{font-size:var(--fs-small);line-height:1.4;color:var(--paper-dim)}
+.backing li b{display:block;margin-bottom:6px;font:var(--w-regular) var(--fs-d4)/1.05 var(--display);color:var(--yellow)}
+#people .onward{margin-top:var(--sp-6)}
+
+/* ---------- 11. Cities: station boards on one platform ----------
+   Each board is sign / posts / plate. The three rows are shared by all five boards (subgrid),
+   so every post lands on the same platform line whatever the sign or the caption above and below it. */
+.boards{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;grid-template-rows:auto auto auto;column-gap:clamp(12px,1.8vw,32px);width:min(calc(100% - 2 * var(--gutter)),var(--maxw));margin:var(--sp-8) auto 0}
+.board{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}
+.board .sign{align-self:end;background:var(--yellow);color:var(--ink);border:4px solid var(--ink);box-shadow:0 0 0 5px var(--yellow);margin:5px;padding:14px 8px 10px;text-align:center}
+.board .sign .hi{display:block;font-family:var(--display);font-size:clamp(22px,2.2vw,36px);line-height:1.25}
+.board .sign .en{display:block;font-family:var(--display);font-size:clamp(28px,3.3vw,56px);line-height:1}
+.board.main .sign{padding:22px 12px 16px}
+.board.main .sign .en{font-size:clamp(48px,6.6vw,112px)}
+.board.main .sign .hi{font-size:clamp(30px,3.6vw,58px)}
+.board .posts{display:flex;justify-content:space-around;height:clamp(30px,4vw,64px);margin:0 22%}
+.board .posts::before,.board .posts::after{content:"";width:8px;background:var(--post)}
+.board .meta{display:grid;align-content:start;gap:2px;margin-inline:calc(clamp(12px,1.8vw,32px) / -2);padding:var(--sp-4) calc(clamp(12px,1.8vw,32px) / 2) 0;border-top:var(--bw-bar) solid var(--post);font-size:var(--fs-small);line-height:1.35}
+.board:first-child .meta{margin-left:0;padding-left:0}.board:last-child .meta{margin-right:0;padding-right:0}
+.board .meta b{font-weight:var(--w-heavy);font-size:var(--fs-body)}
+.board .meta span{color:var(--fg-soft)}
+.board.next .sign{background:transparent;color:var(--paper);border:var(--bw-rule) dashed rgba(242,243,239,.7);box-shadow:none}
+
+/* ---------- 12. Contact ---------- */
+#contact h2{max-width:15ch}
+.contact-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(36px,5vw,88px);margin-top:var(--sp-8);align-items:start}
+/* the enquiry slip: a sheet of white stock pasted on the yellow, a touch off square */
+#contact-form{position:relative;padding:clamp(20px,2.6vw,40px);background:var(--paper) url(../img/grain.png) 0 0/160px 160px;background-blend-mode:multiply;box-shadow:var(--e-3);transform:rotate(-.7deg);--focus:var(--blue)}
+#contact-form::before{content:"Enquiry";position:absolute;right:clamp(20px,2.6vw,40px);top:0;transform:translateY(-58%) rotate(2.5deg);padding:7px 12px 4px;background:var(--red);color:var(--paper);font:var(--w-heavy) var(--fs-label)/1 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;box-shadow:var(--e-2)}
+.sector-slot{margin:0 0 var(--sp-4)}
+.sector-chip{display:inline-flex;align-items:center;gap:var(--sp-3);padding:8px 8px 6px 14px;background:var(--red);color:var(--paper);font-weight:var(--w-heavy);box-shadow:var(--e-2);transform:rotate(-1deg)}
+.sector-chip button{min-width:44px;min-height:36px;border:0;background:var(--paper);color:var(--ink);font:var(--w-heavy) 14px/1 var(--text);cursor:pointer;padding:4px 10px 2px}
+.sector-chip button:hover{background:var(--ink);color:var(--paper)}
+.sector-chip button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+/* ---------- Footer: the promise, the site map, contact, the legal line ---------- */
+.foot{position:relative;z-index:var(--z-sheet);isolation:isolate;padding:calc(var(--section-y) + var(--rip)) var(--gutter) 28px;--focus:var(--yellow)}
+.foot::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url(../img/grain.png) 0 0/160px 160px;opacity:.5;mix-blend-mode:multiply}
+.foot .d1{color:var(--yellow);font-size:clamp(42px,12.6vw,236px);line-height:.86;max-width:var(--maxw);margin-inline:auto}
+.foot .tagline{margin:clamp(18px,2.4vw,32px) auto 0;font-size:var(--fs-lede);max-width:var(--maxw)}
+.foot-map{display:grid;grid-template-columns:3fr 3fr 3fr 4fr;gap:36px var(--col-gap);max-width:var(--maxw);margin:var(--sp-9) auto 0;padding-top:28px;border-top:var(--bw-bar) solid var(--yellow)}
+.foot-h{font:var(--w-heavy) var(--fs-label)/1.2 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--yellow);margin:0 0 var(--sp-3)}
+.foot-map li a{display:inline-block;padding:7px 0 5px;font-size:16px;line-height:1.3;text-decoration:none;color:var(--paper)}
+.foot-map li a:hover{text-decoration:underline}
+.foot-map a[aria-current="page"]{color:var(--yellow);text-decoration:underline}
+.foot-contact{font-size:16px;line-height:1.4}
+.foot-contact dl{display:grid;gap:14px}
+.foot-contact .big{font-family:var(--display);font-size:clamp(22px,1.9vw,28px);line-height:1.1;color:var(--paper);text-decoration:none;overflow-wrap:anywhere}
+.foot-contact .big:hover{text-decoration:underline}
+.foot-contact dt{font-weight:var(--w-heavy);font-size:14px;color:var(--paper-dim)}
+.legal{display:flex;flex-wrap:wrap;gap:var(--sp-4) 36px;justify-content:space-between;align-items:center;max-width:var(--maxw);margin:var(--sp-8) auto 0;padding-top:20px;border-top:var(--bw-rule) solid rgba(242,243,239,.35);font-size:var(--fs-small);color:var(--paper-dim)}
+.legal p{max-width:80ch}
+.foot-ctl{display:flex;gap:var(--sp-3);flex-wrap:wrap}
+.foot-ctl button,.foot-ctl a{min-height:44px;display:inline-flex;align-items:center;padding:10px 14px 7px;background:transparent;color:var(--paper);border:0;box-shadow:inset 0 0 0 2px rgba(242,243,239,.6);font:700 15px/1 var(--text);text-decoration:none;cursor:pointer}
+.foot-ctl button:hover,.foot-ctl a:hover{background:var(--paper);color:var(--ink)}
+.foot-ctl button[aria-pressed="true"]{background:var(--yellow);color:var(--ink);box-shadow:none}
+.foot-ctl a[aria-current="page"]{box-shadow:inset 0 0 0 2px var(--yellow);color:var(--yellow)}
+
+/* ---------- Paste-over page transitions (cross-document View Transitions), unchanged ---------- */
+@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
+::view-transition-old(root),::view-transition-new(root){mix-blend-mode:normal}
+::view-transition-old(root){animation:none}
+::view-transition-new(root){animation:vt-paste var(--t-vt) var(--ease-paste) both}
+::view-transition-group(squeegee){animation:vt-squeegee var(--t-vt) var(--ease-paste) both}
+::view-transition-old(squeegee),::view-transition-new(squeegee){animation:none}
+html:active-view-transition-type(peel)::view-transition-new(root){animation:none}
+html:active-view-transition-type(peel)::view-transition-old(root){z-index:1;animation:vt-peel var(--t-vt-peel) var(--ease-tug) both}
+.vt-squeegee{position:fixed;top:0;left:-170px;width:180px;height:100vh;z-index:300;pointer-events:none;view-transition-name:squeegee;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.26) calc(100% - 9px),var(--ink) calc(100% - 9px),var(--ink) calc(100% - 3px),rgba(255,255,255,.5) calc(100% - 3px))}
+@keyframes vt-paste{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes vt-squeegee{from{transform:translateX(-170px)}to{transform:translateX(calc(100vw - 160px))}}
+@keyframes vt-peel{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 100% 0 0)}}
+
+/* =========================================================================
+   RESPONSIVE. 1920 to 360. Three steps: tablet 1099, small tablet 860, phone 699.
+   ========================================================================= */
+@media (max-width:1099px){
+  .head-split>:first-child,.head-split>:last-child,.about h2,.about .lede{grid-column:1 / -1}
+  .about .lede{grid-row:2}
+  .stamp{grid-column:1 / -1;grid-row:1;width:clamp(120px,22vw,190px);margin:0}
+  .head-split>:last-child,.about .lede{padding-bottom:0}
+  .statements p,.statements p:first-child{grid-column:span 6}
+  .catalogue{grid-template-columns:1fr}
+  .demo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .demo:nth-child(2),.demo:nth-child(4){margin-top:0}
+  .founder h3,.founder .org,.founder .bio{grid-column:1 / -1;grid-row:auto}
+  .founder .bio{padding-top:0;max-width:48ch}
+  .team{grid-template-columns:repeat(3,1fr)}
+  .team li:nth-child(4){padding-left:0;border-left:0}
+  .team li:nth-child(n+4){margin-top:var(--sp-5);padding-top:var(--sp-5);border-top:var(--bw-rule) solid var(--rule)}
+  .backing__head,.backing ul{grid-column:1 / -1}
+  .boards{grid-template-columns:repeat(4,1fr);grid-template-rows:none;grid-auto-rows:auto;row-gap:0}
+  .board.main{grid-column:1 / -1;margin-bottom:var(--sp-6)}
+  .board.main .meta{margin:0;padding-inline:0}
+  .board:nth-child(2) .meta{margin-left:0;padding-left:0}
+  .contact-grid{grid-template-columns:1fr}
+  .vacant .plate{grid-column:5 / -1;grid-row:2;margin-top:calc(var(--sp-6) * -1);margin-bottom:0}
+  .facts li{flex-direction:column;gap:var(--sp-1);padding-right:0}
+  .foot-map{grid-template-columns:1fr 1fr}
+  .rate td:last-child,.rate tbody th{white-space:normal}
+}
+@media (max-width:860px){
+  .pillars{grid-template-columns:1fr;gap:var(--sp-6)}
+  .pillar{display:grid;grid-template-columns:auto 1fr;align-items:end;column-gap:var(--sp-5)}
+  .pillar h3{font-size:clamp(52px,14vw,96px)}
+  .pillar p{margin:0 0 .5em}
+  .steps{grid-template-columns:1fr;row-gap:var(--sp-6)}
+  .steps::before,.steps::after{left:calc(var(--dot) / 2 - 4px);right:auto;top:0;bottom:22px;width:8px;height:auto}
+  .steps::after{transform-origin:50% 0;transform:scaleY(var(--p))}
+  .js.motion .route[data-route]:not(.is-live) .steps::after{transform:scaleY(0)}
+  .route::after{right:auto;left:calc(var(--dot) / 2 - 14px);top:auto;bottom:0;width:28px;height:22px;clip-path:polygon(0 0,100% 0,50% 100%)}
+  .route{padding-bottom:var(--sp-7);margin-top:var(--sp-9)}
+  .route__end{top:calc(var(--sp-6) * -1)}
+  .route__end--to{top:auto;bottom:0;left:calc(var(--dot) + var(--sp-4));right:auto}
+  .steps li{display:grid;grid-template-columns:var(--dot) 1fr;column-gap:var(--sp-4);align-items:center;padding-right:0}
+  .steps .n{grid-row:1 / span 2}
+  .steps h3{margin-top:0;align-self:end}
+  .steps p{grid-column:2;margin-top:2px;align-self:start;max-width:none}
+}
+@media (max-width:699px){
+  .facts{grid-template-columns:1fr}
+  .facts li+li::before{display:none}
+  .facts li,.facts li+li{flex-direction:row;gap:var(--sp-3);padding:var(--sp-3) 0 var(--sp-2)}
+  .facts li+li{border-top:var(--bw-hair) solid var(--rule-soft)}
+  .facts .num{min-width:2.3em}
+  .stamp{position:absolute;right:0;top:3.1em;width:112px;margin:0}
+  .statements p,.statements p:first-child{grid-column:1 / -1}
+  .pillar{grid-template-columns:1fr}
+  .pillar p{margin-top:var(--sp-4)}
+  .catalogue__head{flex-direction:column;gap:var(--sp-1)}
+  .catalogue__head p{text-align:left}
+  .index li{grid-template-columns:2.2em 1fr;padding-inline:var(--sp-2)}
+  .index p,.index h4 a::after{display:none}
+  /* the four demo posters become a rail you swipe; the next one always peeks in */
+  .demo-grid{display:flex;width:auto;margin-inline:0;padding:var(--sp-3) var(--gutter) var(--sp-5);gap:14px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);scrollbar-width:none}
+  .demo-grid::-webkit-scrollbar{display:none}
+  .demo{flex:0 0 min(80vw,330px);scroll-snap-align:start;--tilt:0deg!important;margin-top:0!important}
+  .rail-dots{display:flex}
+  .tab{font:var(--w-heavy) 14.5px/1.14 var(--text);padding:var(--sp-4) 2px var(--sp-3)}
+  .tabs{gap:2px}
+  .vacant__frame{min-height:420px}
+  .vacant .plate{grid-column:2 / -1;margin-right:calc(var(--gutter) * -.5)}
+  #contact-form{transform:none;margin-inline:calc(var(--gutter) * -.4)}
+  /* the rate board becomes three cards */
+  .rate thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .rate,.rate tbody,.rate tr,.rate th,.rate td{display:block}
+  .rate tbody tr{padding:var(--sp-5) 0 var(--sp-4)}
+  .rate tbody th{padding:0 0 var(--sp-3);white-space:normal}
+  .rate td{padding:0 0 var(--sp-3);font-size:var(--fs-body)!important;max-width:none!important}
+  .rate td::before{content:attr(data-label);display:block;font:var(--w-heavy) var(--fs-label)/1.3 var(--text);letter-spacing:var(--track-label);text-transform:uppercase;opacity:.9}
+  /* the billing block becomes a credits list: role on the left, name on the right */
+  .team{grid-template-columns:1fr}
+  .team li,.team li+li{display:grid;grid-template-columns:7.2em 1fr;column-gap:var(--sp-4);align-items:baseline;padding:var(--sp-4) 0 var(--sp-3);border-left:0;margin-top:0}
+  .team li+li{border-top:var(--bw-hair) solid var(--rule-soft)}
+  .team h4{margin-top:0;font-size:var(--fs-d4)}
+  .team .note{grid-column:2;margin-top:var(--sp-1);max-width:none}
+  .backing{transform:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+  .backing ul{grid-template-columns:1fr}
+  .boards{grid-template-columns:1fr 1fr}
+  .board:nth-child(n+2){margin-bottom:var(--sp-5)}
+  .board:nth-child(2) .meta,.board:nth-child(4) .meta{margin-left:0;padding-left:0}
+  .board:nth-child(3) .meta,.board:nth-child(5) .meta{margin-right:0;padding-right:0}
+  .two{grid-template-columns:1fr}
+  .foot-map{gap:28px 20px}
+  .foot-contact{grid-column:1 / -1}
+}
+@media (max-width:399px){
+  .tab{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .tag,.replay,.nav-links a,.demo,.tab,.index li::after,.index p,.onward a::after{transition:none}
+  .tag::after{display:none}
+  .tag:hover,.replay:hover,.demo:hover,.tab:hover{transform:rotate(var(--tilt,0deg))}
+  .tab-fall{display:none}
+}
+
+/* =========================================================================
+   TEAR ENGINE CSS and the hero's composition: unchanged from the supplied site
+   (tear.js owns this DOM contract).
+   ========================================================================= */
+/* tear.css */
+/* =========================================================================
+   Elvana Media: tear.css (tear engine v2)
+   The CSS the engine needs: the hoarding's layering, the corner peel, and
+   the still, layered composition shown without JS or with reduced motion.
+   Composition (where the h1, sign-off and promise sit, seams, wrinkles)
+   stays in the page CSS. Pairs with tear.js; see lab/TEAR.md.
+   ========================================================================= */
+
+/* ---------- Hero: two posters, one on top of the other ---------- */
+.hero{position:relative;z-index:3;height:var(--hero-h);container:hero / size;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+.no-js .hero,.js:not(.motion) .hero{-webkit-user-select:auto;user-select:auto}
+.sheet{position:absolute;inset:0;overflow:hidden}
+.sheet-top{background:var(--yellow);color:var(--ink)}
+/* The poster underneath sits ABOVE the top poster and is revealed through a clip:
+   a still torn corner without JS or with reduced motion, live strips otherwise */
+.sheet-under{background:var(--red);color:var(--paper);clip-path:url(#still-tall);z-index:2}
+.js.motion .sheet-under{clip-path:url(#tear-clip);will-change:transform}   /* own layer: a new hole re-masks it instead of repainting its type */
+.still-rim{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
+.still-rim .wide{display:none}
+.js.motion .still-rim{display:none}
+/* Paper, shadows and fibres. Reaches 140px below the hero so a falling roll can leave the frame. */
+.tear-canvas{position:absolute;left:0;top:0;width:100%;height:calc(100% + 140px);pointer-events:none;z-index:4}
+/* Edge zones where a touch tears instead of scrolling */
+.grip{position:absolute;z-index:5;touch-action:none}
+.grip-b{left:0;right:0;bottom:0;height:72px}
+.grip-l{left:0;top:0;bottom:0;width:30px}
+.grip-r{right:0;top:0;bottom:0;width:30px}
+.hero.grabbing,.hero.grabbing *{cursor:grabbing!important}
+
+@container hero (min-aspect-ratio:5/4){
+  .sheet-under{clip-path:url(#still-wide)}
+  .still-rim .wide{display:block}.still-rim .tall{display:none}
+}
+
+/* ---------- Corner peel (inner pages) ----------
+   <div class="peel" data-peel data-peel-corner="br|bl|tr|tl">
+     <div class="peel__under">...</div><div class="peel__over">...</div></div>
+   tear.js mounts every [data-peel], sets [data-peel-mounted], and adds
+   .peel__canvas, .peel__grip and the "Peel back" button .peel__btn.     */
+.peel{position:relative;display:grid;isolation:isolate;--peel:clamp(64px,8vw,120px)}
+.peel>.peel__under,.peel>.peel__over{grid-area:1 / 1;min-width:0;min-height:0}
+.peel__under{z-index:0}
+.peel__over{z-index:1}
+.peel__canvas{position:absolute;z-index:2;pointer-events:none}
+.peel__grip{position:absolute;z-index:3;width:clamp(56px,16%,96px);aspect-ratio:1;right:0;bottom:0;touch-action:none}
+.peel[data-peel-corner="bl"] .peel__grip{right:auto;left:0}
+.peel[data-peel-corner="tr"] .peel__grip{bottom:auto;top:0}
+.peel[data-peel-corner="tl"] .peel__grip{bottom:auto;top:0;right:auto;left:0}
+.peel.is-peeled .peel__grip{display:none}
+.peel.is-grabbing,.peel.is-grabbing *{cursor:grabbing!important}
+/* Keyboard: visually hidden until focused, then it sits on the corner it peels */
+.peel__btn{position:absolute;z-index:4;right:12px;bottom:12px;width:1px;height:1px;padding:0;margin:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0;
+  background:var(--ink,#1A1814);color:var(--yellow,#FFD000);font:800 16px/1 var(--text,sans-serif);cursor:pointer}
+.peel__btn:focus-visible{width:auto;height:auto;min-height:44px;padding:12px 18px 9px;clip-path:none;overflow:visible;outline:3px solid var(--yellow,#FFD000);outline-offset:2px}
+.peel[data-peel-corner="bl"] .peel__btn{right:auto;left:12px}
+.peel[data-peel-corner="tr"] .peel__btn{bottom:auto;top:12px}
+.peel[data-peel-corner="tl"] .peel__btn{bottom:auto;top:12px;right:auto;left:12px}
+
+/* Still composition: no JS, reduced motion, or the script missing.
+   The corner stays peeled and curled, showing a triangle of the poster underneath. */
+.peel:not([data-peel-mounted])>.peel__over{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--peel)),calc(100% - var(--peel)) 100%,0 100%)}
+.peel:not([data-peel-mounted])::after{content:"";position:absolute;right:0;bottom:0;width:var(--peel);height:var(--peel);z-index:2;pointer-events:none;
+  background:linear-gradient(to top left,transparent 50%,#B9B7B0 50%,var(--back,#E2E1DB) 64%,#F7F7F3 100%);filter:drop-shadow(-3px -3px 3px rgba(0,0,0,.3))}
+.peel[data-peel-corner="bl"]:not([data-peel-mounted])>.peel__over{clip-path:polygon(0 0,100% 0,100% 100%,var(--peel) 100%,0 calc(100% - var(--peel)))}
+.peel[data-peel-corner="bl"]:not([data-peel-mounted])::after{right:auto;left:0;background:linear-gradient(to top right,transparent 50%,#B9B7B0 50%,var(--back,#E2E1DB) 64%,#F7F7F3 100%);filter:drop-shadow(3px -3px 3px rgba(0,0,0,.3))}
+.peel[data-peel-corner="tr"]:not([data-peel-mounted])>.peel__over{clip-path:polygon(0 0,calc(100% - var(--peel)) 0,100% var(--peel),100% 100%,0 100%)}
+.peel[data-peel-corner="tr"]:not([data-peel-mounted])::after{bottom:auto;top:0;background:linear-gradient(to bottom left,transparent 50%,#B9B7B0 50%,var(--back,#E2E1DB) 64%,#F7F7F3 100%);filter:drop-shadow(-3px 3px 3px rgba(0,0,0,.3))}
+.peel[data-peel-corner="tl"]:not([data-peel-mounted])>.peel__over{clip-path:polygon(var(--peel) 0,100% 0,100% 100%,0 100%,0 var(--peel))}
+.peel[data-peel-corner="tl"]:not([data-peel-mounted])::after{bottom:auto;top:0;right:auto;left:0;background:linear-gradient(to bottom right,transparent 50%,#B9B7B0 50%,var(--back,#E2E1DB) 64%,#F7F7F3 100%);filter:drop-shadow(3px 3px 3px rgba(0,0,0,.3))}
+
+/* pages/home.css */
+/* =========================================================================
+   Elvana Media: pages/home.css
+   Home only. The hero's COMPOSITION (where the type sits on each poster,
+   seams, wrinkles); its tear mechanics are in tear.css. Then the few
+   section tweaks that are not reusable components.
+   ========================================================================= */
+
+/* ---------- Hero: the top poster (yellow) and the one underneath (red) ---------- */
+.hero .seams{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(to right,rgba(0,0,0,.09) 1px,rgba(255,255,255,.16) 1px 2px,transparent 2px),linear-gradient(to bottom,rgba(0,0,0,.08) 1px,rgba(255,255,255,.14) 1px 2px,transparent 2px);
+  background-size:50% 100%,100% 33.34%;background-position:-1px 0,0 -1px}
+.hero .sheet-under .seams{background-size:50% 100%,100% 25%;background-position:25cqw 0,0 -1px}
+.hero .wrinkles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero h1{position:absolute;left:5cqw;top:4.5cqh;font-size:min(15.2cqh,24cqw);line-height:.9;letter-spacing:-.005em}
+.hero h1 .l{display:block}
+.hero .signoff{position:absolute;left:5cqw;bottom:5cqh;display:grid;gap:4px;font-weight:800;font-size:15px;line-height:1.3}
+.hero .signoff .d{font-size:max(26px,min(4.6cqh,7.4cqw));line-height:1;font-weight:400}
+.hero .promise{position:absolute;left:5cqw;right:5cqw;bottom:4cqh}
+.hero .promise .hi{display:block;font-family:var(--display);font-size:max(24px,min(3.6cqh,6.2cqw));line-height:1.25;color:var(--yellow);margin-bottom:.3em}
+.hero .promise .en{display:block;font-family:var(--display);font-size:min(8cqh,12.6cqw);line-height:.92}
+.hero .promise .en span{display:block}
+.hero .under-mark{position:absolute;left:5cqw;top:4.5cqh;font-family:var(--display);font-size:max(26px,min(4.4cqh,7cqw));line-height:1;color:var(--yellow)}
+
+@container hero (min-aspect-ratio:5/4){
+  .hero .seams{background-size:16.667% 100%,100% 50%}
+  .hero .sheet-under .seams{background-size:25% 100%,100% 50%;background-position:12cqw 0,0 -1px}
+  .hero h1{left:4cqw;top:5.5cqh;font-size:min(23cqh,12.4cqw)}
+  .hero h1 .tall{display:none}
+  /* Live poster at rest: the headline steps down across the whole hoarding,
+     so the right of the first screen carries type instead of bare yellow
+     (A left the right ~40% empty at 1440). Same face, size and lines as A;
+     only lines 2 and 3 move. The still poster (no JS, reduced motion) keeps
+     A's left-set headline: its torn corner already fills the right. */
+  .js.motion .hero h1{right:4cqw}
+  .js.motion .hero h1 .l:nth-child(2){padding-left:31cqw}
+  .js.motion .hero h1 .l:nth-child(3){text-align:right}
+  .hero .signoff{left:4cqw;bottom:6cqh}
+  .hero .signoff .d{font-size:max(26px,min(5.4cqh,2.8cqw))}
+  .hero .promise{left:auto;right:4cqw;bottom:6cqh;text-align:right}
+  .hero .promise .hi{font-size:max(24px,min(4.6cqh,2.6cqw))}
+  .hero .promise .en{font-size:min(15cqh,8.3cqw)}
+  .hero .under-mark{left:4cqw;top:5.5cqh;font-size:max(26px,min(6cqh,3.2cqw))}
+}
+
+
+/* ---------- Torn-edge shapes (generated by src/build.py; six edges, each as paper + fibre) ---------- */
+.e1{clip-path:polygon(0 100%,0% 4.2px,0.76% 5.4px,1.52% 5.3px,2.27% 6.3px,3.03% 7.4px,3.79% 7.8px,4.55% 7.3px,5.3% 7.1px,6.06% 7.3px,6.82% 7.5px,7.58% 7.9px,8.33% 8.4px,9.09% 11.8px,9.85% 13.5px,10.61% 14.9px,11.36% 15.2px,12.12% 14.2px,12.88% 14.8px,13.64% 14.2px,14.39% 14.4px,15.15% 14.9px,15.91% 14.3px,16.67% 14.4px,17.42% 16.1px,18.18% 17.3px,18.94% 17.9px,19.7% 16.3px,20.45% 15.9px,21.21% 14.8px,21.97% 15.3px,22.73% 14px,23.48% 13.7px,24.24% 13.2px,25% 13.8px,25.76% 16.2px,26.52% 18.1px,27.27% 17.8px,28.03% 16.5px,28.79% 15.6px,29.55% 15.1px,30.3% 14.8px,31.06% 13.9px,31.82% 12.2px,32.58% 11.6px,33.33% 12.4px,34.09% 11.1px,34.85% 10.2px,35.61% 10.8px,36.36% 11.7px,37.12% 11.8px,37.88% 11.1px,38.64% 9.6px,39.39% 7.9px,40.15% 6.7px,40.91% 5.4px,41.67% 7.8px,42.42% 7.8px,43.18% 7.9px,43.94% 7.5px,44.7% 7px,45.45% 7.5px,46.21% 7.1px,46.97% 7.6px,47.73% 7.6px,48.48% 7.4px,49.24% 6.8px,50% 6.8px,50.76% 7.6px,51.52% 6.9px,52.27% 7.7px,53.03% 8.4px,53.79% 8.1px,54.55% 7.1px,55.3% 8.4px,56.06% 8.9px,56.82% 9.1px,57.58% 10.6px,58.33% 11.6px,59.09% 11.9px,59.85% 12.1px,60.61% 12px,61.36% 11.5px,62.12% 11.4px,62.88% 12.2px,63.64% 12.9px,64.39% 14px,65.15% 14.8px,65.91% 16.7px,66.67% 17.7px,67.42% 15.5px,68.18% 13.5px,68.94% 11.5px,69.7% 10.1px,70.45% 8.7px,71.21% 8.9px,71.97% 10.4px,72.73% 11.3px,73.48% 12.2px,74.24% 10.8px,75% 11.3px,75.76% 10.7px,76.52% 9.5px,77.27% 9.9px,78.03% 10.2px,78.79% 9.5px,79.55% 8.3px,80.3% 6.9px,81.06% 6.7px,81.82% 8.2px,82.58% 9.7px,83.33% 10.4px,84.09% 11.2px,84.85% 10.5px,85.61% 9.6px,86.36% 9.8px,87.12% 9.3px,87.88% 8.7px,88.64% 9.2px,89.39% 9.9px,90.15% 9.7px,90.91% 11.2px,91.67% 12.1px,92.42% 11.7px,93.18% 10.2px,93.94% 7.9px,94.7% 7.4px,95.45% 7.4px,96.21% 5.7px,96.97% 7.3px,97.73% 7.3px,98.48% 9px,99.24% 10.5px,100% 10px,100% 100%)}.e1f{clip-path:polygon(0 100%,0% 2.1px,0.76% 3.2px,1.52% 2.7px,2.27% 3.2px,3.03% 4px,3.79% 4.4px,4.55% 4.4px,5.3% 4.9px,6.06% 5.6px,6.82% 5.9px,7.58% 6.4px,8.33% 7px,9.09% 10.6px,9.85% 12.3px,10.61% 13.8px,11.36% 14px,12.12% 12.9px,12.88% 13.4px,13.64% 12.8px,14.39% 12.8px,15.15% 13px,15.91% 12px,16.67% 11.9px,17.42% 13.4px,18.18% 14.5px,18.94% 14.8px,19.7% 13px,20.45% 12.5px,21.21% 11.5px,21.97% 12px,22.73% 10.8px,23.48% 10.5px,24.24% 10.1px,25% 11.1px,25.76% 13.8px,26.52% 16px,27.27% 15.8px,28.03% 14.5px,28.79% 13.6px,29.55% 13.2px,30.3% 13px,31.06% 12px,31.82% 9.8px,32.58% 8.7px,33.33% 9.1px,34.09% 7.7px,34.85% 7.1px,35.61% 8.1px,36.36% 9.3px,37.12% 9.5px,37.88% 9px,38.64% 7.8px,39.39% 6.5px,40.15% 5.5px,40.91% 4.3px,41.67% 6.7px,42.42% 6.7px,43.18% 6.7px,43.94% 6.3px,44.7% 5.6px,45.45% 5.5px,46.21% 4.5px,46.97% 4.5px,47.73% 4.5px,48.48% 4.2px,49.24% 3.6px,50% 3.5px,50.76% 4.2px,51.52% 3.6px,52.27% 4.6px,53.03% 5.5px,53.79% 5.3px,54.55% 4.2px,55.3% 5.3px,56.06% 5.4px,56.82% 5.5px,57.58% 6.9px,58.33% 8.1px,59.09% 8.9px,59.85% 9.6px,60.61% 9.9px,61.36% 9.2px,62.12% 8.7px,62.88% 9px,63.64% 9.2px,64.39% 10.2px,65.15% 11.1px,65.91% 13px,66.67% 14.1px,67.42% 11.9px,68.18% 9.9px,68.94% 8.3px,69.7% 7.4px,70.45% 6.4px,71.21% 6.6px,71.97% 8.3px,72.73% 9.6px,73.48% 10.8px,74.24% 9.5px,75% 9.7px,75.76% 8.5px,76.52% 6.6px,77.27% 6.4px,78.03% 6.7px,78.79% 6.3px,79.55% 5.5px,80.3% 4.5px,81.06% 4.5px,81.82% 5.9px,82.58% 7.2px,83.33% 7.7px,84.09% 8.3px,84.85% 7.7px,85.61% 6.9px,86.36% 7.2px,87.12% 6.9px,87.88% 6.3px,88.64% 6.9px,89.39% 7.6px,90.15% 7.4px,90.91% 9px,91.67% 9.8px,92.42% 9.2px,93.18% 7.3px,93.94% 4.6px,94.7% 4px,95.45% 4.4px,96.21% 3.4px,96.97% 5.7px,97.73% 6.2px,98.48% 7.7px,99.24% 8.6px,100% 7.2px,100% 100%)}
+.e2{clip-path:polygon(0 100%,0% 15.8px,0.76% 17.4px,1.52% 17.2px,2.27% 17.1px,3.03% 17.2px,3.79% 15.7px,4.55% 14.6px,5.3% 14.1px,6.06% 13.8px,6.82% 13.9px,7.58% 13.5px,8.33% 12.2px,9.09% 14.2px,9.85% 13.8px,10.61% 12.1px,11.36% 11.4px,12.12% 9.3px,12.88% 9.4px,13.64% 9.1px,14.39% 9.2px,15.15% 8.4px,15.91% 8.3px,16.67% 9px,17.42% 9.5px,18.18% 9.5px,18.94% 9.9px,19.7% 11.4px,20.45% 12.3px,21.21% 10.2px,21.97% 11.4px,22.73% 11.2px,23.48% 12.9px,24.24% 12.4px,25% 10.5px,25.76% 10.1px,26.52% 10.4px,27.27% 10.3px,28.03% 9.5px,28.79% 7.9px,29.55% 6.5px,30.3% 6.4px,31.06% 6.4px,31.82% 8.7px,32.58% 8.4px,33.33% 9px,34.09% 7px,34.85% 6.2px,35.61% 5.9px,36.36% 5.7px,37.12% 6px,37.88% 5.9px,38.64% 5.6px,39.39% 5.2px,40.15% 4.2px,40.91% 6px,41.67% 8.2px,42.42% 9.4px,43.18% 8.3px,43.94% 9.4px,44.7% 12.6px,45.45% 15px,46.21% 17.8px,46.97% 16.5px,47.73% 14.8px,48.48% 13.2px,49.24% 11.4px,50% 10.4px,50.76% 12px,51.52% 14.1px,52.27% 16.8px,53.03% 16.6px,53.79% 15.8px,54.55% 15.1px,55.3% 12.6px,56.06% 14.1px,56.82% 15px,57.58% 15.3px,58.33% 14.5px,59.09% 13.6px,59.85% 13.9px,60.61% 15.1px,61.36% 15.3px,62.12% 15.2px,62.88% 16.5px,63.64% 17px,64.39% 15.2px,65.15% 10.4px,65.91% 8.8px,66.67% 8.9px,67.42% 8.6px,68.18% 8.3px,68.94% 7.9px,69.7% 6.1px,70.45% 6.5px,71.21% 8px,71.97% 8.2px,72.73% 8.6px,73.48% 9.9px,74.24% 12.7px,75% 14.3px,75.76% 16.1px,76.52% 15.5px,77.27% 13.9px,78.03% 13.1px,78.79% 13.2px,79.55% 13.7px,80.3% 13.1px,81.06% 12.5px,81.82% 12.7px,82.58% 13px,83.33% 12px,84.09% 11.2px,84.85% 9.9px,85.61% 11.1px,86.36% 10.4px,87.12% 12.4px,87.88% 12.8px,88.64% 13.8px,89.39% 14.8px,90.15% 14.8px,90.91% 14.2px,91.67% 14.4px,92.42% 15.1px,93.18% 15.6px,93.94% 15.8px,94.7% 15.7px,95.45% 15.2px,96.21% 15.8px,96.97% 15.8px,97.73% 17.1px,98.48% 18.9px,99.24% 17.7px,100% 16.5px,100% 100%)}.e2f{clip-path:polygon(0 100%,0% 14.3px,0.76% 16px,1.52% 15.9px,2.27% 15.9px,3.03% 16.1px,3.79% 14.6px,4.55% 13.4px,5.3% 12.8px,6.06% 12.5px,6.82% 12.4px,7.58% 11.5px,8.33% 9.6px,9.09% 11.2px,9.85% 10.8px,10.61% 9.2px,11.36% 8.8px,12.12% 6.8px,12.88% 7px,13.64% 6.7px,14.39% 6.9px,15.15% 6.1px,15.91% 6px,16.67% 6.5px,17.42% 6.7px,18.18% 6.5px,18.94% 6.8px,19.7% 8.5px,20.45% 9.6px,21.21% 7.8px,21.97% 9.2px,22.73% 8.7px,23.48% 10.1px,24.24% 9.2px,25% 7.1px,25.76% 6.8px,26.52% 7.5px,27.27% 7.8px,28.03% 7.1px,28.79% 5.3px,29.55% 3.6px,30.3% 3px,31.06% 2.8px,31.82% 5.2px,32.58% 5.1px,33.33% 6.1px,34.09% 4.3px,34.85% 3.4px,35.61% 2.9px,36.36% 2.4px,37.12% 2.6px,37.88% 2.5px,38.64% 2.1px,39.39% 1.8px,40.15% 0.9px,40.91% 2.7px,41.67% 5.1px,42.42% 6.6px,43.18% 5.7px,43.94% 6.8px,44.7% 9.7px,45.45% 11.7px,46.21% 14.1px,46.97% 12.7px,47.73% 11.1px,48.48% 9.5px,49.24% 7.8px,50% 6.9px,50.76% 8.5px,51.52% 10.6px,52.27% 13.4px,53.03% 13.3px,53.79% 12.7px,54.55% 12.5px,55.3% 10.6px,56.06% 12.4px,56.82% 13.3px,57.58% 13.3px,58.33% 12.2px,59.09% 11px,59.85% 11.2px,60.61% 12.3px,61.36% 12.2px,62.12% 12px,62.88% 13.2px,63.64% 13.7px,64.39% 11.8px,65.15% 6.9px,65.91% 5.3px,66.67% 5.6px,67.42% 5.4px,68.18% 5.3px,68.94% 4.9px,69.7% 3px,70.45% 3.2px,71.21% 4.5px,71.97% 4.7px,72.73% 5.1px,73.48% 6.6px,74.24% 9.5px,75% 11.2px,75.76% 13.3px,76.52% 13.2px,77.27% 12.2px,78.03% 11.7px,78.79% 11.7px,79.55% 12.1px,80.3% 11.3px,81.06% 10.6px,81.82% 10.7px,82.58% 10.6px,83.33% 9.1px,84.09% 8px,84.85% 6.7px,85.61% 8.2px,86.36% 7.8px,87.12% 10px,87.88% 10.4px,88.64% 11.6px,89.39% 12.8px,90.15% 13px,90.91% 12.4px,91.67% 12.6px,92.42% 13.2px,93.18% 13.6px,93.94% 13.7px,94.7% 13.8px,95.45% 13.4px,96.21% 14.1px,96.97% 14.2px,97.73% 15.3px,98.48% 16.5px,99.24% 14.8px,100% 13.4px,100% 100%)}
+.e3{clip-path:polygon(0 100%,0% 12.1px,0.76% 11px,1.52% 7.9px,2.27% 6.8px,3.03% 6.9px,3.79% 5.9px,4.55% 6.2px,5.3% 7px,6.06% 7.2px,6.82% 7.3px,7.58% 8px,8.33% 8px,9.09% 10.3px,9.85% 9.3px,10.61% 9.5px,11.36% 9.2px,12.12% 8px,12.88% 8.3px,13.64% 8.7px,14.39% 8.4px,15.15% 7.6px,15.91% 7.9px,16.67% 8.3px,17.42% 8.1px,18.18% 8.2px,18.94% 7.9px,19.7% 9.3px,20.45% 10.6px,21.21% 12.3px,21.97% 10.4px,22.73% 8.1px,23.48% 6.7px,24.24% 7.9px,25% 9.8px,25.76% 10.1px,26.52% 10.2px,27.27% 10.5px,28.03% 10.5px,28.79% 11.7px,29.55% 14.7px,30.3% 15.5px,31.06% 16px,31.82% 14.7px,32.58% 15.6px,33.33% 16.1px,34.09% 15.3px,34.85% 16.5px,35.61% 15.6px,36.36% 12.7px,37.12% 10.6px,37.88% 11.3px,38.64% 13.1px,39.39% 13.7px,40.15% 12.3px,40.91% 11px,41.67% 9.7px,42.42% 9.5px,43.18% 9.6px,43.94% 11.6px,44.7% 10.8px,45.45% 11.2px,46.21% 10.7px,46.97% 10.4px,47.73% 10.3px,48.48% 10.2px,49.24% 10.3px,50% 8.9px,50.76% 6.4px,51.52% 7.2px,52.27% 6.4px,53.03% 7px,53.79% 6.6px,54.55% 7.5px,55.3% 9.1px,56.06% 8.5px,56.82% 8.2px,57.58% 7.9px,58.33% 6.4px,59.09% 7.4px,59.85% 8.3px,60.61% 7.6px,61.36% 7.6px,62.12% 7.3px,62.88% 7.2px,63.64% 6px,64.39% 4.7px,65.15% 4.2px,65.91% 4.5px,66.67% 4.2px,67.42% 4.6px,68.18% 6.2px,68.94% 8px,69.7% 9.4px,70.45% 10.2px,71.21% 9.4px,71.97% 7.5px,72.73% 6.4px,73.48% 5px,74.24% 4.8px,75% 5px,75.76% 6.4px,76.52% 6.8px,77.27% 6.6px,78.03% 7.6px,78.79% 8.8px,79.55% 8.7px,80.3% 8.3px,81.06% 8.4px,81.82% 8.8px,82.58% 10px,83.33% 11.7px,84.09% 11.4px,84.85% 11px,85.61% 11.9px,86.36% 11.5px,87.12% 9.9px,87.88% 8px,88.64% 9px,89.39% 10.2px,90.15% 11px,90.91% 10.2px,91.67% 9.6px,92.42% 9.3px,93.18% 9.4px,93.94% 10.1px,94.7% 9.7px,95.45% 10.7px,96.21% 10.6px,96.97% 9.2px,97.73% 10.2px,98.48% 9.5px,99.24% 8.5px,100% 8.9px,100% 100%)}.e3f{clip-path:polygon(0 100%,0% 8.7px,0.76% 7.7px,1.52% 4.8px,2.27% 3.8px,3.03% 4px,3.79% 3.4px,4.55% 4.3px,5.3% 5.5px,6.06% 5.8px,6.82% 6px,7.58% 6.7px,8.33% 6.7px,9.09% 8.9px,9.85% 7.4px,10.61% 6.9px,11.36% 6.2px,12.12% 5px,12.88% 5.8px,13.64% 6.7px,14.39% 6.7px,15.15% 5.7px,15.91% 5.5px,16.67% 5.4px,17.42% 4.9px,18.18% 5px,18.94% 4.6px,19.7% 5.9px,20.45% 7.1px,21.21% 9.1px,21.97% 7.8px,22.73% 5.9px,23.48% 4.7px,24.24% 6.1px,25% 8.3px,25.76% 8.8px,26.52% 8.9px,27.27% 9px,28.03% 8.7px,28.79% 9.7px,29.55% 12.5px,30.3% 12.9px,31.06% 13px,31.82% 11.5px,32.58% 12.3px,33.33% 13px,34.09% 12.3px,34.85% 13.5px,35.61% 12.9px,36.36% 10.3px,37.12% 8.6px,37.88% 9.5px,38.64% 11.5px,39.39% 12.3px,40.15% 11.1px,40.91% 9.8px,41.67% 8.2px,42.42% 7.3px,43.18% 7px,43.94% 8.9px,44.7% 8.3px,45.45% 9px,46.21% 8.8px,46.97% 8.5px,47.73% 8.3px,48.48% 8.1px,49.24% 8.2px,50% 6.8px,50.76% 4.2px,51.52% 4.9px,52.27% 4px,53.03% 4.8px,53.79% 4.8px,54.55% 6.2px,55.3% 8px,56.06% 7.2px,56.82% 6.8px,57.58% 6.3px,58.33% 4.8px,59.09% 5.8px,59.85% 6.7px,60.61% 6.1px,61.36% 6.1px,62.12% 5.1px,62.88% 4.2px,63.64% 2.3px,64.39% 1px,65.15% 0.6px,65.91% 1.1px,66.67% 0.8px,67.42% 1.4px,68.18% 3.6px,68.94% 6px,69.7% 7.8px,70.45% 8.6px,71.21% 7.7px,71.97% 5.7px,72.73% 4.7px,73.48% 3.4px,74.24% 3.3px,75% 3.6px,75.76% 5.1px,76.52% 5.2px,77.27% 4.5px,78.03% 5.1px,78.79% 6.2px,79.55% 6.2px,80.3% 6px,81.06% 6.2px,81.82% 6.6px,82.58% 7.6px,83.33% 8.9px,84.09% 8.5px,84.85% 8.1px,85.61% 8.8px,86.36% 8.4px,87.12% 6.7px,87.88% 5.1px,88.64% 6.8px,89.39% 8.7px,90.15% 9.8px,90.91% 9px,91.67% 8.4px,92.42% 8.1px,93.18% 8.3px,93.94% 8.5px,94.7% 7.4px,95.45% 7.7px,96.21% 7.5px,96.97% 6.5px,97.73% 8.1px,98.48% 7.8px,99.24% 6.9px,100% 7.2px,100% 100%)}
+.e4{clip-path:polygon(0 100%,0% 11.4px,0.76% 10.6px,1.52% 12.3px,2.27% 12.1px,3.03% 11.8px,3.79% 10.7px,4.55% 10.4px,5.3% 11.4px,6.06% 12.2px,6.82% 12.3px,7.58% 12.9px,8.33% 12.3px,9.09% 11.7px,9.85% 15.3px,10.61% 16.8px,11.36% 18px,12.12% 16.8px,12.88% 17.1px,13.64% 17.3px,14.39% 14.1px,15.15% 12.7px,15.91% 12.7px,16.67% 14.1px,17.42% 15.3px,18.18% 13.8px,18.94% 12.8px,19.7% 11.4px,20.45% 10.2px,21.21% 9.5px,21.97% 11px,22.73% 9px,23.48% 8.7px,24.24% 9px,25% 8.6px,25.76% 9.5px,26.52% 9.5px,27.27% 8.6px,28.03% 8.2px,28.79% 8.7px,29.55% 8.8px,30.3% 11px,31.06% 12.6px,31.82% 16.6px,32.58% 19.6px,33.33% 19.8px,34.09% 18.4px,34.85% 17.8px,35.61% 16.9px,36.36% 17.5px,37.12% 17.3px,37.88% 17px,38.64% 16.7px,39.39% 16.7px,40.15% 17.6px,40.91% 15.9px,41.67% 13.5px,42.42% 13.6px,43.18% 14.4px,43.94% 13.2px,44.7% 14.7px,45.45% 15.3px,46.21% 15px,46.97% 13.3px,47.73% 12.8px,48.48% 12.4px,49.24% 11.4px,50% 10.9px,50.76% 10.8px,51.52% 10px,52.27% 7.8px,53.03% 9.1px,53.79% 11.5px,54.55% 11.2px,55.3% 8.7px,56.06% 8.1px,56.82% 7px,57.58% 6.7px,58.33% 7.3px,59.09% 6.9px,59.85% 6.4px,60.61% 6.7px,61.36% 6.9px,62.12% 6.3px,62.88% 5.2px,63.64% 4.9px,64.39% 4.4px,65.15% 4.2px,65.91% 5.3px,66.67% 4.8px,67.42% 5.2px,68.18% 7.7px,68.94% 9.5px,69.7% 10.6px,70.45% 9.9px,71.21% 8.5px,71.97% 8.4px,72.73% 9.9px,73.48% 13.3px,74.24% 13.6px,75% 12.7px,75.76% 10.8px,76.52% 9.2px,77.27% 12.2px,78.03% 14.6px,78.79% 14.6px,79.55% 14.4px,80.3% 13.6px,81.06% 12.1px,81.82% 9.3px,82.58% 7.2px,83.33% 7.4px,84.09% 8px,84.85% 8.9px,85.61% 9px,86.36% 11.3px,87.12% 10.9px,87.88% 12.1px,88.64% 11.9px,89.39% 13.5px,90.15% 12.2px,90.91% 12.6px,91.67% 15.6px,92.42% 20px,93.18% 23.7px,93.94% 24.1px,94.7% 22.2px,95.45% 20.6px,96.21% 19px,96.97% 17.5px,97.73% 15.2px,98.48% 15.8px,99.24% 12.5px,100% 11.8px,100% 100%)}.e4f{clip-path:polygon(0 100%,0% 9.3px,0.76% 8.6px,1.52% 10.4px,2.27% 10.3px,3.03% 10px,3.79% 9px,4.55% 8.6px,5.3% 9.7px,6.06% 10.5px,6.82% 10.6px,7.58% 11.2px,8.33% 10.6px,9.09% 9.7px,9.85% 12.9px,10.61% 14px,11.36% 15.2px,12.12% 14.2px,12.88% 14.7px,13.64% 15px,14.39% 11.7px,15.15% 10px,15.91% 9.9px,16.67% 11.3px,17.42% 12.8px,18.18% 11.6px,18.94% 10.7px,19.7% 9.2px,20.45% 7.7px,21.21% 6.6px,21.97% 8px,22.73% 6px,23.48% 5.7px,24.24% 6px,25% 5.6px,25.76% 6.6px,26.52% 6.8px,27.27% 5.9px,28.03% 5.8px,28.79% 6.8px,29.55% 7.4px,30.3% 9.6px,31.06% 10.6px,31.82% 14.1px,32.58% 16.9px,33.33% 16.9px,34.09% 15.4px,34.85% 14.6px,35.61% 13.7px,36.36% 14.6px,37.12% 14.9px,37.88% 14.9px,38.64% 14.4px,39.39% 13.8px,40.15% 14.2px,40.91% 12.3px,41.67% 10.2px,42.42% 10.8px,43.18% 12px,43.94% 11px,44.7% 12.7px,45.45% 13.6px,46.21% 13.4px,46.97% 11.5px,47.73% 10.4px,48.48% 9.6px,49.24% 8.6px,50% 8.2px,50.76% 8.3px,51.52% 7.7px,52.27% 5.3px,53.03% 6.1px,53.79% 8px,54.55% 7.6px,55.3% 5.2px,56.06% 4.6px,56.82% 3.5px,57.58% 3.4px,58.33% 4.9px,59.09% 5.4px,59.85% 5.2px,60.61% 5px,61.36% 4.1px,62.12% 2.7px,62.88% 1.5px,63.64% 1.6px,64.39% 1.8px,65.15% 1.9px,65.91% 2.9px,66.67% 2.2px,67.42% 2.4px,68.18% 4.9px,68.94% 6.4px,69.7% 7.2px,70.45% 6.2px,71.21% 4.9px,71.97% 5.1px,72.73% 7px,73.48% 10.5px,74.24% 10.8px,75% 9.8px,75.76% 7.7px,76.52% 6.1px,77.27% 8.9px,78.03% 11.3px,78.79% 11.2px,79.55% 11.3px,80.3% 11px,81.06% 10px,81.82% 7.2px,82.58% 5px,83.33% 5.1px,84.09% 5.7px,84.85% 6.6px,85.61% 7.2px,86.36% 9.9px,87.12% 9.6px,87.88% 10.6px,88.64% 10.1px,89.39% 11.4px,90.15% 10px,90.91% 10px,91.67% 12.6px,92.42% 16.8px,93.18% 20.8px,93.94% 22.1px,94.7% 20.8px,95.45% 19.3px,96.21% 17.1px,96.97% 14.8px,97.73% 12px,98.48% 12.7px,99.24% 9.8px,100% 9.4px,100% 100%)}
+.e5{clip-path:polygon(0 100%,0% 7px,0.76% 5.8px,1.52% 5.3px,2.27% 4.5px,3.03% 7.4px,3.79% 8.7px,4.55% 9.1px,5.3% 8.1px,6.06% 7.1px,6.82% 6.5px,7.58% 4.9px,8.33% 4.4px,9.09% 4.4px,9.85% 4.7px,10.61% 6.3px,11.36% 10.5px,12.12% 10px,12.88% 9.2px,13.64% 7.2px,14.39% 6.2px,15.15% 5.1px,15.91% 4.2px,16.67% 4.8px,17.42% 6.4px,18.18% 6.5px,18.94% 6.5px,19.7% 6px,20.45% 5.9px,21.21% 5.9px,21.97% 9.2px,22.73% 8.9px,23.48% 9.7px,24.24% 8.7px,25% 9.3px,25.76% 10.2px,26.52% 10.6px,27.27% 9.6px,28.03% 8.1px,28.79% 8.2px,29.55% 9.2px,30.3% 8.5px,31.06% 9.5px,31.82% 10.6px,32.58% 13.3px,33.33% 11.8px,34.09% 12.9px,34.85% 12.2px,35.61% 11.3px,36.36% 10.9px,37.12% 11px,37.88% 10.9px,38.64% 10.6px,39.39% 10.1px,40.15% 10.1px,40.91% 11.2px,41.67% 13.1px,42.42% 15.1px,43.18% 14px,43.94% 15.3px,44.7% 13.7px,45.45% 12.2px,46.21% 10.4px,46.97% 9px,47.73% 9.8px,48.48% 10.6px,49.24% 10.7px,50% 12.6px,50.76% 14.4px,51.52% 12.8px,52.27% 11.5px,53.03% 11.2px,53.79% 10.1px,54.55% 9.5px,55.3% 8.4px,56.06% 8.4px,56.82% 9.6px,57.58% 10px,58.33% 13.5px,59.09% 16px,59.85% 15.4px,60.61% 14.5px,61.36% 14.9px,62.12% 15.4px,62.88% 16.3px,63.64% 16.3px,64.39% 16.9px,65.15% 15.8px,65.91% 15.9px,66.67% 16.4px,67.42% 16.9px,68.18% 16.6px,68.94% 15.5px,69.7% 14.6px,70.45% 13.7px,71.21% 13.1px,71.97% 13.7px,72.73% 15.5px,73.48% 16.4px,74.24% 14.7px,75% 14.2px,75.76% 15.6px,76.52% 16.1px,77.27% 18.2px,78.03% 17.7px,78.79% 18.6px,79.55% 18.5px,80.3% 17.8px,81.06% 16.5px,81.82% 16px,82.58% 15.5px,83.33% 14.3px,84.09% 14.2px,84.85% 13.7px,85.61% 14px,86.36% 12.1px,87.12% 10.2px,87.88% 9px,88.64% 9.7px,89.39% 9.5px,90.15% 8.9px,90.91% 7.5px,91.67% 6.5px,92.42% 5.6px,93.18% 4.6px,93.94% 5.1px,94.7% 6.1px,95.45% 8.6px,96.21% 10.2px,96.97% 7.6px,97.73% 7.2px,98.48% 7.7px,99.24% 8.5px,100% 9.4px,100% 100%)}.e5f{clip-path:polygon(0 100%,0% 5.1px,0.76% 4.1px,1.52% 3.7px,2.27% 3px,3.03% 5.9px,3.79% 7.2px,4.55% 7.5px,5.3% 6.5px,6.06% 5.2px,6.82% 4.3px,7.58% 2.5px,8.33% 2.1px,9.09% 2.3px,9.85% 2.8px,10.61% 4.3px,11.36% 7.8px,12.12% 6.7px,12.88% 5.6px,13.64% 4px,14.39% 3.5px,15.15% 2.7px,15.91% 1.9px,16.67% 2.8px,17.42% 4.6px,18.18% 4.8px,18.94% 4.7px,19.7% 4.1px,20.45% 4px,21.21% 3.7px,21.97% 6.5px,22.73% 5.8px,23.48% 6.6px,24.24% 5.9px,25% 6.8px,25.76% 7.8px,26.52% 8.4px,27.27% 7.8px,28.03% 6.5px,28.79% 6.5px,29.55% 7.4px,30.3% 6.7px,31.06% 7.6px,31.82% 8px,32.58% 10px,33.33% 8.3px,34.09% 9.4px,34.85% 8.8px,35.61% 7.9px,36.36% 7.6px,37.12% 8px,37.88% 8.2px,38.64% 7.9px,39.39% 7.5px,40.15% 7.6px,40.91% 8.8px,41.67% 10.8px,42.42% 13.2px,43.18% 12.3px,43.94% 13.4px,44.7% 11.1px,45.45% 8.9px,46.21% 7.1px,46.97% 6.2px,47.73% 7.7px,48.48% 8.9px,49.24% 9.1px,50% 11px,50.76% 12.7px,51.52% 11px,52.27% 9.1px,53.03% 8.1px,53.79% 6.9px,54.55% 6.8px,55.3% 6.3px,56.06% 6.8px,56.82% 7.7px,57.58% 7.4px,58.33% 10.3px,59.09% 12.9px,59.85% 12.9px,60.61% 12.6px,61.36% 13.2px,62.12% 13.8px,62.88% 14.7px,63.64% 14.7px,64.39% 15.3px,65.15% 13.9px,65.91% 13.7px,66.67% 14.2px,67.42% 14.2px,68.18% 13.3px,68.94% 11.9px,69.7% 11.6px,70.45% 11.7px,71.21% 11.9px,71.97% 12.5px,72.73% 14.1px,73.48% 14.8px,74.24% 12.9px,75% 11.8px,75.76% 12.4px,76.52% 12.4px,77.27% 14.5px,78.03% 14px,78.79% 14.8px,79.55% 14.8px,80.3% 14.6px,81.06% 13.9px,81.82% 13.6px,82.58% 12.6px,83.33% 10.8px,84.09% 10.4px,84.85% 10.3px,85.61% 11.6px,86.36% 10.5px,87.12% 8.7px,87.88% 6.9px,88.64% 6.8px,89.39% 6.4px,90.15% 5.8px,90.91% 4.4px,91.67% 3.3px,92.42% 2.5px,93.18% 2px,93.94% 2.9px,94.7% 3.9px,95.45% 5.9px,96.21% 6.7px,96.97% 3.8px,97.73% 3.6px,98.48% 4.4px,99.24% 5.4px,100% 6.3px,100% 100%)}
+.e6{clip-path:polygon(0 100%,0% 21.9px,0.76% 21px,1.52% 17.8px,2.27% 14.9px,3.03% 11.1px,3.79% 9.6px,4.55% 10.7px,5.3% 12.5px,6.06% 12.7px,6.82% 11.8px,7.58% 10.6px,8.33% 9.8px,9.09% 8.4px,9.85% 7.9px,10.61% 9.2px,11.36% 10.7px,12.12% 11px,12.88% 11.2px,13.64% 11.1px,14.39% 9.3px,15.15% 6.8px,15.91% 6.9px,16.67% 7.5px,17.42% 7.3px,18.18% 6.9px,18.94% 7.5px,19.7% 7.8px,20.45% 8.5px,21.21% 9.4px,21.97% 12.9px,22.73% 16.4px,23.48% 19.3px,24.24% 18.2px,25% 16.3px,25.76% 14.4px,26.52% 12.1px,27.27% 10.9px,28.03% 11.2px,28.79% 11.3px,29.55% 11.2px,30.3% 13.6px,31.06% 13.5px,31.82% 10.7px,32.58% 10.3px,33.33% 9.7px,34.09% 11.6px,34.85% 11.4px,35.61% 9.9px,36.36% 9.1px,37.12% 9.8px,37.88% 11.8px,38.64% 12.5px,39.39% 11.8px,40.15% 11.1px,40.91% 11.7px,41.67% 11.9px,42.42% 11.3px,43.18% 9.6px,43.94% 7.7px,44.7% 7.3px,45.45% 6.3px,46.21% 6.5px,46.97% 8.1px,47.73% 8.5px,48.48% 8.1px,49.24% 7.5px,50% 6.4px,50.76% 5.5px,51.52% 5.4px,52.27% 5.2px,53.03% 4.2px,53.79% 5.3px,54.55% 6.3px,55.3% 6.2px,56.06% 6.2px,56.82% 5px,57.58% 5.3px,58.33% 6.3px,59.09% 7.5px,59.85% 8.3px,60.61% 6.4px,61.36% 4.2px,62.12% 5px,62.88% 7.2px,63.64% 7px,64.39% 8.9px,65.15% 10px,65.91% 10.9px,66.67% 11.3px,67.42% 12.5px,68.18% 13px,68.94% 14.1px,69.7% 14.1px,70.45% 13.2px,71.21% 13.5px,71.97% 14.6px,72.73% 14.1px,73.48% 14.4px,74.24% 14px,75% 15.4px,75.76% 13.6px,76.52% 10.8px,77.27% 12px,78.03% 14.6px,78.79% 15.8px,79.55% 15.6px,80.3% 15.2px,81.06% 14.4px,81.82% 11.1px,82.58% 8.5px,83.33% 9.2px,84.09% 8.7px,84.85% 8.5px,85.61% 8px,86.36% 10px,87.12% 9.2px,87.88% 10.8px,88.64% 11.8px,89.39% 11.7px,90.15% 11.6px,90.91% 10.8px,91.67% 12.2px,92.42% 13.7px,93.18% 14px,93.94% 14.7px,94.7% 14.9px,95.45% 14.8px,96.21% 14.9px,96.97% 13.3px,97.73% 11.1px,98.48% 9.2px,99.24% 8.9px,100% 6.2px,100% 100%)}.e6f{clip-path:polygon(0 100%,0% 18.6px,0.76% 17.7px,1.52% 14.4px,2.27% 11.4px,3.03% 7.7px,3.79% 6.4px,4.55% 7.6px,5.3% 9.4px,6.06% 9.3px,6.82% 8.2px,7.58% 7.1px,8.33% 7px,9.09% 6.4px,9.85% 6.1px,10.61% 7.6px,11.36% 9.3px,12.12% 9.7px,12.88% 9.4px,13.64% 8.4px,14.39% 6.1px,15.15% 3.9px,15.91% 4.4px,16.67% 5.2px,17.42% 5.1px,18.18% 5.1px,18.94% 6.1px,19.7% 6.5px,20.45% 7.2px,21.21% 8.1px,21.97% 11.5px,22.73% 14.4px,23.48% 16.7px,24.24% 15.4px,25% 13.6px,25.76% 11.9px,26.52% 9.6px,27.27% 8.5px,28.03% 9.2px,28.79% 9.4px,29.55% 9.4px,30.3% 11.8px,31.06% 11.7px,31.82% 8.7px,32.58% 7.5px,33.33% 6.2px,34.09% 8.1px,34.85% 7.8px,35.61% 6.2px,36.36% 5.4px,37.12% 6.6px,37.88% 9.1px,38.64% 10px,39.39% 9px,40.15% 7.9px,40.91% 8.3px,41.67% 8.9px,42.42% 9.1px,43.18% 7.9px,43.94% 5.9px,44.7% 5.1px,45.45% 3.9px,46.21% 4px,46.97% 5.6px,47.73% 5.9px,48.48% 5.6px,49.24% 5.3px,50% 4.6px,50.76% 3.7px,51.52% 3.4px,52.27% 2.7px,53.03% 1.6px,53.79% 2.7px,54.55% 3.8px,55.3% 3.7px,56.06% 4.1px,56.82% 3.4px,57.58% 4.1px,58.33% 5px,59.09% 6.1px,59.85% 6.6px,60.61% 4.7px,61.36% 2.2px,62.12% 2.8px,62.88% 4.9px,63.64% 5px,64.39% 7.2px,65.15% 8.4px,65.91% 8.9px,66.67% 8.7px,67.42% 9.7px,68.18% 10.2px,68.94% 11.2px,69.7% 11.2px,70.45% 10.6px,71.21% 11.5px,71.97% 13px,72.73% 12.3px,73.48% 12.3px,74.24% 11.5px,75% 13px,75.76% 11.6px,76.52% 9.2px,77.27% 10.4px,78.03% 13px,78.79% 14.3px,79.55% 14.2px,80.3% 13.7px,81.06% 12.9px,81.82% 9.6px,82.58% 7px,83.33% 7.7px,84.09% 7.2px,84.85% 7.1px,85.61% 6.6px,86.36% 8.7px,87.12% 7.9px,87.88% 9.6px,88.64% 10.6px,89.39% 10.3px,90.15% 9.6px,90.91% 8.2px,91.67% 9.5px,92.42% 11.5px,93.18% 12.2px,93.94% 13.1px,94.7% 13px,95.45% 12.7px,96.21% 12.6px,96.97% 11.1px,97.73% 9.1px,98.48% 7.4px,99.24% 6.9px,100% 3.6px,100% 100%)}
+@media (max-width:699px){
+.e1{clip-path:polygon(0 100%,0% 12.7px,1.72% 12.3px,3.45% 12.9px,5.17% 12.5px,6.9% 13.2px,8.62% 13.7px,10.34% 13.8px,12.07% 13.7px,13.79% 13px,15.52% 11.8px,17.24% 10.8px,18.97% 11.6px,20.69% 11.7px,22.41% 13.6px,24.14% 12.5px,25.86% 12.2px,27.59% 9.6px,29.31% 8.4px,31.03% 8.8px,32.76% 9.6px,34.48% 11.2px,36.21% 11.3px,37.93% 11.1px,39.66% 11px,41.38% 10.6px,43.1% 11.5px,44.83% 12.8px,46.55% 14px,48.28% 14.3px,50% 11.8px,51.72% 12.6px,53.45% 11.7px,55.17% 12.8px,56.9% 13.8px,58.62% 14.3px,60.34% 13.9px,62.07% 14px,63.79% 14.6px,65.52% 14.1px,67.24% 12.3px,68.97% 11.5px,70.69% 11.6px,72.41% 12px,74.14% 10.3px,75.86% 8.5px,77.59% 8.6px,79.31% 9.2px,81.03% 9.4px,82.76% 8.7px,84.48% 8.5px,86.21% 9.2px,87.93% 9.7px,89.66% 9.4px,91.38% 9.3px,93.1% 9.9px,94.83% 9.9px,96.55% 9.6px,98.28% 6.8px,100% 4.2px,100% 100%)}.e1f{clip-path:polygon(0 100%,0% 9px,1.72% 8.9px,3.45% 10.2px,5.17% 10.6px,6.9% 11.7px,8.62% 12.1px,10.34% 12.3px,12.07% 12.2px,13.79% 11.4px,15.52% 10.2px,17.24% 8.9px,18.97% 9.2px,20.69% 8.9px,22.41% 10.7px,24.14% 9.9px,25.86% 10px,27.59% 7.9px,29.31% 6.8px,31.03% 7.3px,32.76% 8.1px,34.48% 9.6px,36.21% 9.8px,37.93% 9.4px,39.66% 8.8px,41.38% 7.7px,43.1% 8.1px,44.83% 9.4px,46.55% 10.5px,48.28% 10.7px,50% 8.1px,51.72% 8.9px,53.45% 8.4px,55.17% 10.3px,56.9% 12px,58.62% 13px,60.34% 12.4px,62.07% 12.1px,63.79% 12.3px,65.52% 11.5px,67.24% 9.7px,68.97% 8.8px,70.69% 8.9px,72.41% 9.3px,74.14% 7.7px,75.86% 6.1px,77.59% 6.4px,79.31% 7.3px,81.03% 7.6px,82.76% 6.9px,84.48% 6.8px,86.21% 7.6px,87.93% 8.1px,89.66% 7.7px,91.38% 7.3px,93.1% 7.7px,94.83% 7.5px,96.55% 7.2px,98.28% 4.5px,100% 2px,100% 100%)}
+.e2{clip-path:polygon(0 100%,0% 5.4px,1.72% 6.4px,3.45% 7.2px,5.17% 7.1px,6.9% 7.7px,8.62% 6.9px,10.34% 5.6px,12.07% 5.2px,13.79% 6px,15.52% 6.6px,17.24% 6.7px,18.97% 7.7px,20.69% 7.3px,22.41% 7.8px,24.14% 6.8px,25.86% 6.1px,27.59% 7px,29.31% 5.9px,31.03% 4.7px,32.76% 4.8px,34.48% 6.4px,36.21% 7.5px,37.93% 7.8px,39.66% 7.7px,41.38% 6.9px,43.1% 7.3px,44.83% 6.6px,46.55% 8.3px,48.28% 7.7px,50% 8.7px,51.72% 8.6px,53.45% 9.3px,55.17% 8.5px,56.9% 8.8px,58.62% 8.8px,60.34% 8.2px,62.07% 7.6px,63.79% 7.2px,65.52% 5.9px,67.24% 5px,68.97% 4.2px,70.69% 4.8px,72.41% 5.6px,74.14% 4.5px,75.86% 5.9px,77.59% 7.2px,79.31% 7.4px,81.03% 7.3px,82.76% 5.8px,84.48% 5.4px,86.21% 6.2px,87.93% 7.2px,89.66% 7.7px,91.38% 8.3px,93.1% 9px,94.83% 7.8px,96.55% 8.3px,98.28% 8.4px,100% 9.3px,100% 100%)}.e2f{clip-path:polygon(0 100%,0% 3.1px,1.72% 4.2px,3.45% 5.2px,5.17% 5.4px,6.9% 6px,8.62% 5.1px,10.34% 3.4px,12.07% 2.8px,13.79% 3.5px,15.52% 4.2px,17.24% 4.1px,18.97% 5.1px,20.69% 4.8px,22.41% 5.7px,24.14% 5.2px,25.86% 4.8px,27.59% 5.7px,29.31% 4.3px,31.03% 2.9px,32.76% 2.8px,34.48% 4.2px,36.21% 4.7px,37.93% 4.4px,39.66% 4px,41.38% 3.2px,43.1% 3.6px,44.83% 2.9px,46.55% 4.6px,48.28% 4.2px,50% 5.6px,51.72% 5.7px,53.45% 6.4px,55.17% 5.9px,56.9% 6.3px,58.62% 6.6px,60.34% 6px,62.07% 5.5px,63.79% 5.1px,65.52% 3.8px,67.24% 2.9px,68.97% 2.1px,70.69% 2.8px,72.41% 3.5px,74.14% 2.2px,75.86% 3.1px,77.59% 4.1px,79.31% 4.1px,81.03% 4.4px,82.76% 3.6px,84.48% 3.7px,86.21% 4.6px,87.93% 5.2px,89.66% 5.1px,91.38% 5.2px,93.1% 5.9px,94.83% 4.6px,96.55% 4.9px,98.28% 5px,100% 6px,100% 100%)}
+.e3{clip-path:polygon(0 100%,0% 8.9px,1.72% 8.1px,3.45% 6.3px,5.17% 6.3px,6.9% 6.6px,8.62% 6.2px,10.34% 6.7px,12.07% 8.3px,13.79% 9.6px,15.52% 9.7px,17.24% 8.4px,18.97% 7px,20.69% 6.4px,22.41% 5.5px,24.14% 5.7px,25.86% 5.9px,27.59% 7.5px,29.31% 8px,31.03% 7.9px,32.76% 7.1px,34.48% 7.2px,36.21% 8.3px,37.93% 8.7px,39.66% 9.1px,41.38% 10.7px,43.1% 11.2px,44.83% 10.9px,46.55% 8.8px,48.28% 8.6px,50% 9.7px,51.72% 9.5px,53.45% 8.8px,55.17% 9.1px,56.9% 8.2px,58.62% 8.2px,60.34% 7.7px,62.07% 7.5px,63.79% 7.9px,65.52% 7.5px,67.24% 6.5px,68.97% 7px,70.69% 7px,72.41% 6.4px,74.14% 8.6px,75.86% 9.9px,77.59% 9.7px,79.31% 8.6px,81.03% 8.9px,82.76% 8.3px,84.48% 7.7px,86.21% 7.2px,87.93% 6.2px,89.66% 5.2px,91.38% 4.3px,93.1% 6.4px,94.83% 8.9px,96.55% 7.6px,98.28% 5.4px,100% 4.2px,100% 100%)}.e3f{clip-path:polygon(0 100%,0% 7.7px,1.72% 6.9px,3.45% 4.9px,5.17% 4.8px,6.9% 5px,8.62% 3.8px,10.34% 3.6px,12.07% 4.8px,13.79% 6.3px,15.52% 6.5px,17.24% 5.2px,18.97% 4.1px,20.69% 4.1px,22.41% 4.1px,24.14% 4.5px,25.86% 4.4px,27.59% 5.5px,29.31% 5.6px,31.03% 5.6px,32.76% 5px,34.48% 5.2px,36.21% 6.4px,37.93% 6.4px,39.66% 6.3px,41.38% 7.7px,43.1% 8.2px,44.83% 8px,46.55% 6px,48.28% 5.8px,50% 7.5px,51.72% 7.8px,53.45% 7.5px,55.17% 7.5px,56.9% 5.8px,58.62% 5.2px,60.34% 4.7px,62.07% 5.2px,63.79% 6.3px,65.52% 6.2px,67.24% 5.1px,68.97% 5.4px,70.69% 5.4px,72.41% 4.7px,74.14% 6.4px,75.86% 7.2px,77.59% 6.8px,79.31% 5.5px,81.03% 5.6px,82.76% 4.8px,84.48% 4.3px,86.21% 4.2px,87.93% 3.7px,89.66% 3px,91.38% 2.2px,93.1% 4.4px,94.83% 7px,96.55% 5.7px,98.28% 3.2px,100% 1.8px,100% 100%)}
+.e4{clip-path:polygon(0 100%,0% 6.8px,1.72% 7.8px,3.45% 8.1px,5.17% 7.2px,6.9% 5.8px,8.62% 5.2px,10.34% 7px,12.07% 8.5px,13.79% 8.6px,15.52% 8.2px,17.24% 8px,18.97% 7.9px,20.69% 8.8px,22.41% 8.1px,24.14% 6.1px,25.86% 6.3px,27.59% 4.9px,29.31% 5.8px,31.03% 5.7px,32.76% 5.4px,34.48% 5.8px,36.21% 6.1px,37.93% 7.1px,39.66% 7.8px,41.38% 7.3px,43.1% 7.1px,44.83% 7.7px,46.55% 7.6px,48.28% 7.5px,50% 8.4px,51.72% 8.6px,53.45% 9.6px,55.17% 9px,56.9% 8.6px,58.62% 7.4px,60.34% 6.9px,62.07% 6.4px,63.79% 6px,65.52% 6.4px,67.24% 6.7px,68.97% 6.9px,70.69% 5.1px,72.41% 4.2px,74.14% 5.3px,75.86% 5.7px,77.59% 8px,79.31% 9px,81.03% 8.6px,82.76% 7.8px,84.48% 8.9px,86.21% 9.5px,87.93% 8.3px,89.66% 7px,91.38% 7.1px,93.1% 6.7px,94.83% 5.5px,96.55% 4.7px,98.28% 5.6px,100% 4.6px,100% 100%)}.e4f{clip-path:polygon(0 100%,0% 5.1px,1.72% 5.7px,3.45% 5.5px,5.17% 4.3px,6.9% 2.9px,8.62% 2.5px,10.34% 4.5px,12.07% 5.9px,13.79% 5.4px,15.52% 4.5px,17.24% 4.5px,18.97% 5.1px,20.69% 6.8px,22.41% 6.2px,24.14% 3.5px,25.86% 2.8px,27.59% 1.2px,29.31% 2.8px,31.03% 3.8px,32.76% 4px,34.48% 3.8px,36.21% 3.1px,37.93% 3.5px,39.66% 4.3px,41.38% 3.9px,43.1% 3.7px,44.83% 4.3px,46.55% 4px,48.28% 3.8px,50% 4.7px,51.72% 5.2px,53.45% 6.4px,55.17% 5.9px,56.9% 6.3px,58.62% 5.9px,60.34% 5.6px,62.07% 5px,63.79% 4.5px,65.52% 4.8px,67.24% 5px,68.97% 4.9px,70.69% 3px,72.41% 2.2px,74.14% 3.4px,75.86% 3.8px,77.59% 5.8px,79.31% 6.1px,81.03% 5.2px,82.76% 4.5px,84.48% 5.9px,86.21% 6.9px,87.93% 5.8px,89.66% 5px,91.38% 5.6px,93.1% 5.3px,94.83% 4px,96.55% 3.2px,98.28% 4.1px,100% 2.3px,100% 100%)}
+.e5{clip-path:polygon(0 100%,0% 17px,1.72% 16.5px,3.45% 16.9px,5.17% 17.6px,6.9% 18.1px,8.62% 17.9px,10.34% 14.5px,12.07% 12.6px,13.79% 14.7px,15.52% 16.9px,17.24% 16.4px,18.97% 15.5px,20.69% 15px,22.41% 15.3px,24.14% 16.9px,25.86% 13.7px,27.59% 9.7px,29.31% 8px,31.03% 10.4px,32.76% 12px,34.48% 11.3px,36.21% 11px,37.93% 9.7px,39.66% 7.7px,41.38% 7.5px,43.1% 7.6px,44.83% 8.3px,46.55% 8.9px,48.28% 10.6px,50% 10.8px,51.72% 10.5px,53.45% 7.7px,55.17% 4.6px,56.9% 4.2px,58.62% 5.1px,60.34% 6.1px,62.07% 6.2px,63.79% 5.9px,65.52% 7.4px,67.24% 10.8px,68.97% 11.6px,70.69% 10.7px,72.41% 11.4px,74.14% 10.7px,75.86% 10.6px,77.59% 12.1px,79.31% 14.4px,81.03% 14.8px,82.76% 13.3px,84.48% 12.9px,86.21% 15.4px,87.93% 16.9px,89.66% 15.4px,91.38% 14.1px,93.1% 16.6px,94.83% 21.4px,96.55% 23.6px,98.28% 23.6px,100% 23.6px,100% 100%)}.e5f{clip-path:polygon(0 100%,0% 15.8px,1.72% 14.6px,3.45% 13.8px,5.17% 14px,6.9% 14.8px,8.62% 15px,10.34% 11.8px,12.07% 10.2px,13.79% 12.8px,15.52% 15.1px,17.24% 13.8px,18.97% 12px,20.69% 11.3px,22.41% 12.2px,24.14% 14.5px,25.86% 11.4px,27.59% 7.4px,29.31% 5.6px,31.03% 7.9px,32.76% 8.9px,34.48% 7.9px,36.21% 7.5px,37.93% 6px,39.66% 4px,41.38% 4px,43.1% 4.6px,44.83% 5.6px,46.55% 6px,48.28% 7.3px,50% 7.2px,51.72% 6.9px,53.45% 4.1px,55.17% 1px,56.9% 0.6px,58.62% 1.4px,60.34% 2.4px,62.07% 3.3px,63.79% 4px,65.52% 5.8px,67.24% 8.5px,68.97% 8.4px,70.69% 7.4px,72.41% 8.6px,74.14% 8.4px,75.86% 8.4px,77.59% 10.3px,79.31% 13.1px,81.03% 13.2px,82.76% 10.6px,84.48% 9.3px,86.21% 11.9px,87.93% 14.3px,89.66% 13.4px,91.38% 12.1px,93.1% 14.7px,94.83% 19.5px,96.55% 21.8px,98.28% 21.9px,100% 21.9px,100% 100%)}
+.e6{clip-path:polygon(0 100%,0% 4.2px,1.72% 5.2px,3.45% 5.6px,5.17% 7px,6.9% 7.9px,8.62% 7.4px,10.34% 6px,12.07% 6.4px,13.79% 8.7px,15.52% 9.7px,17.24% 9.4px,18.97% 9.2px,20.69% 8.7px,22.41% 8.3px,24.14% 9.3px,25.86% 8.4px,27.59% 8px,29.31% 7.8px,31.03% 8.5px,32.76% 8.2px,34.48% 8.1px,36.21% 8.8px,37.93% 9.2px,39.66% 9.4px,41.38% 9px,43.1% 8.8px,44.83% 9.4px,46.55% 7px,48.28% 6.2px,50% 6.6px,51.72% 7.1px,53.45% 7.9px,55.17% 9.8px,56.9% 10.5px,58.62% 11px,60.34% 12.1px,62.07% 13.5px,63.79% 15.1px,65.52% 17.5px,67.24% 18.5px,68.97% 16.4px,70.69% 15.4px,72.41% 14.9px,74.14% 12.7px,75.86% 12.3px,77.59% 12.5px,79.31% 11.8px,81.03% 9.8px,82.76% 10.2px,84.48% 10.8px,86.21% 10.7px,87.93% 11.7px,89.66% 11.8px,91.38% 10.3px,93.1% 8.7px,94.83% 7.9px,96.55% 6.3px,98.28% 4.8px,100% 5.2px,100% 100%)}.e6f{clip-path:polygon(0 100%,0% 2.3px,1.72% 3.3px,3.45% 3.8px,5.17% 5.2px,6.9% 5.2px,8.62% 3.8px,10.34% 2.7px,12.07% 4.3px,13.79% 7.5px,15.52% 7.9px,17.24% 6.4px,18.97% 5.8px,20.69% 5.8px,22.41% 5.9px,24.14% 7.1px,25.86% 6.3px,27.59% 6px,29.31% 5.4px,31.03% 5.1px,32.76% 4.5px,34.48% 5.5px,36.21% 7.5px,37.93% 8px,39.66% 7.6px,41.38% 6.7px,43.1% 6.2px,44.83% 6.1px,46.55% 3.4px,48.28% 3.5px,50% 5.1px,51.72% 5.7px,53.45% 5.6px,55.17% 6.8px,56.9% 7.8px,58.62% 9.1px,60.34% 10.7px,62.07% 11.9px,63.79% 13.2px,65.52% 15.5px,67.24% 15.9px,68.97% 13.2px,70.69% 12.5px,72.41% 12.9px,74.14% 11.3px,75.86% 10.3px,77.59% 9.5px,79.31% 8.6px,81.03% 6.8px,82.76% 7.4px,84.48% 8.2px,86.21% 8.6px,87.93% 10px,89.66% 10px,91.38% 8.4px,93.1% 6.7px,94.83% 5.2px,96.55% 2.9px,98.28% 1.4px,100% 2.3px,100% 100%)}
+}

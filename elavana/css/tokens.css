@@ -1,0 +1,178 @@
+/* =========================================================================
+   Elvana Media: tokens.css  ("One Wall" system, v3)
+   Every colour, size, space, radius, shadow and curve on the site is named
+   here and only here. Components use the ROLE tokens; nothing downstream
+   contains a raw hex value, pixel size or cubic-bezier.
+
+   Backward compatible: every custom property the previous system defined
+   (--yellow, --ink, --ease-paste, --fs-d1, --pad-x, --hero-h ...) still
+   exists with the same meaning, so pages that have not been rebuilt yet
+   keep working against this file. --back and --slow are read and written
+   by tear.js / core.js: do not rename them.
+   ========================================================================= */
+
+:root{
+  /* ---------------------------------------------------------------------
+     1. INKS (brand primitives, values unchanged from the brand as supplied)
+     Contrast figures are WCAG 2.x, measured.
+     --------------------------------------------------------------------- */
+  --yellow:#FFD000;      /* hoarding yellow. ink on it 12.05 */
+  --red:#C8201A;         /* cinema red. paper on it 5.12; yellow on it 3.88 (24px+ only) */
+  --ink:#1A1814;         /* key plate. paper on it 15.90; yellow on it 12.05 */
+  --blue:#1F3FB4;        /* process blue. paper on it 7.76; yellow on it 5.88 */
+  --paper:#F2F3EF;       /* cool white poster stock. ink 15.90, blue 7.76, red 5.12 */
+  --wall:#A39F96;        /* bare concrete, where no poster is pasted. ink on it 6.56 */
+  --back:#E2E1DB;        /* the back of the paper (tear.js reads this) */
+  --fibre:#FBFBF6;       /* the white core exposed along a torn edge */
+  --paper-dim:#D9DAD5;   /* small print on ink: 12.61 */
+  --ink-soft:#3D3A35;    /* secondary text on paper: 10.16; on yellow 7.70 */
+  --post:#6E6A62;        /* station-board posts (decorative only) */
+  --wall-deep:#8E8A81;   /* shade on concrete (decorative only) */
+
+  /* ---------------------------------------------------------------------
+     2. COLOUR ROLES. A "ground" class (.g-yellow, .g-ink ...) re-points
+     these for everything printed on that sheet. Components only use roles.
+     --------------------------------------------------------------------- */
+  --ground:var(--paper);         /* the sheet */
+  --fg:var(--ink);               /* text printed on it */
+  --fg-soft:var(--ink-soft);     /* secondary text (AA on its ground) */
+  --hi:var(--red);               /* the sheet's one highlight ink */
+  --rule:var(--ink);             /* rules, borders, table lines */
+  --rule-soft:rgba(26,24,20,.22);/* hairlines */
+  --focus:var(--blue);           /* focus ring */
+  --field:var(--paper);          /* input fill */
+  --field-fg:var(--ink);         /* input text */
+  --danger:var(--red);           /* invalid state */
+
+  /* ---------------------------------------------------------------------
+     3. TYPE. Display: Yatra One (Latin + Devanagari, one brush).
+        Text: Mukta 400 / 600 / 800. Nothing is ever set below 14px.
+     --------------------------------------------------------------------- */
+  --display:'Yatra One','Yatra One fb','Mukta',sans-serif;
+  --text:'Mukta','Mukta fb','Yatra One',sans-serif;
+
+  --fs-mega:clamp(64px,13.2vw,236px);  /* one statement per page, edge to edge */
+  --fs-d1:clamp(46px,7.6vw,132px);     /* section statements */
+  --fs-d2:clamp(34px,4.4vw,72px);
+  --fs-d3:clamp(26px,2.5vw,40px);
+  --fs-d4:clamp(21px,1.7vw,27px);      /* names in lists */
+  --fs-lede:clamp(19px,1.5vw,24px);
+  --fs-body:clamp(16px,1.15vw,18px);
+  --fs-small:clamp(14px,1vw,15px);
+  --fs-label:14px;                     /* slugs, table heads: 800, caps, tracked */
+
+  --lh-display:.92;
+  --lh-tight:1.1;
+  --lh-lede:1.36;
+  --lh-body:1.5;
+  --track-label:.11em;
+  --w-regular:400; --w-semi:600; --w-heavy:800;
+  --measure:60ch;                      /* longest line of running text */
+  --measure-lede:34ch;
+
+  /* ---------------------------------------------------------------------
+     4. SPACE. A 4px step scale, plus three fluid layout values.
+     --------------------------------------------------------------------- */
+  --sp-1:4px;  --sp-2:8px;  --sp-3:12px; --sp-4:16px; --sp-5:24px;
+  --sp-6:32px; --sp-7:48px; --sp-8:64px; --sp-9:96px; --sp-10:128px;
+  --gutter:clamp(20px,4.4vw,72px);        /* page edge to content */
+  --col-gap:clamp(20px,3vw,56px);         /* between columns */
+  --section-y:clamp(56px,6.2vw,108px);    /* above and below a section's content */
+  --maxw:1760px;                          /* content never runs wider */
+
+  /* ---------------------------------------------------------------------
+     5. SHAPE. Paper has square corners; the only curves are cut marks.
+     --------------------------------------------------------------------- */
+  --r-0:0px;          /* sheets, tags, fields */
+  --r-cut:3px;        /* die-cut tabs and stickers */
+  --r-dot:999px;      /* route-map stations */
+  --bw-hair:2px; --bw-rule:3px; --bw-bar:6px; --bw-slab:10px;
+
+  /* ---------------------------------------------------------------------
+     6. ELEVATION. How far a piece of paper stands off the wall.
+        Hard offset = printed shadow; soft = contact shadow.
+     --------------------------------------------------------------------- */
+  --e-0:none;                                                     /* pasted flat */
+  --e-1:0 1px 0 rgba(0,0,0,.18);                                  /* an edge */
+  --e-2:2px 3px 0 rgba(0,0,0,.24);                                /* a strip or sticker */
+  --e-3:4px 6px 0 rgba(0,0,0,.24),0 12px 22px rgba(0,0,0,.16);    /* a poster on the wall */
+  --e-4:6px 10px 0 rgba(0,0,0,.22),0 26px 44px rgba(0,0,0,.24);   /* lifted, about to come off */
+  --e-torn:drop-shadow(0 3px 2px rgba(0,0,0,.3));                 /* under a torn edge (filter) */
+
+  /* ---------------------------------------------------------------------
+     7. MOTION. Named curves and springs. core.js mirrors paste / tug / lift;
+        tear.js keeps its own material constants. --slow is set to 10 by the
+        slow-motion review switch (footer button, or the S key).
+     --------------------------------------------------------------------- */
+  --slow:1;
+  --ease-paste:cubic-bezier(.2,.7,.1,1);    /* paste: a squeegee settling. every entrance */
+  --ease-tug:cubic-bezier(.55,0,.75,.2);    /* tug: gravity, a sheet letting go */
+  --ease-lift:cubic-bezier(.3,1.3,.5,1);    /* lift: a corner lifting, one small overshoot */
+  /* Springs (damped-spring step responses, sampled; duration is the settle time).
+     press  zeta 1.0  critically damped, no overshoot   use with --t-press / --t-lift
+     settle zeta .78  2% overshoot                       use with --t-paste
+     lift   zeta .55  12% overshoot                      use with --t-spring
+     wobble zeta .32  a tab swinging on its last fibre   use with --t-wobble */
+  --spring-press:linear(0,.034,.112,.211,.316,.417,.51,.593,.665,.726,.778,.82,.856,.884,.908,.927,.942,.954,.964,.972,.978,.982,.986,.989,.992,.993,.995,1);
+  --spring-settle:linear(0,.033,.114,.221,.338,.455,.565,.663,.748,.818,.875,.92,.954,.979,.996,1.008,1.015,1.019,1.02,1.019,1.018,1.016,1.014,1.011,1.009,1.007,1.005,1);
+  --spring-lift:linear(0,.053,.184,.354,.535,.704,.849,.963,1.045,1.096,1.121,1.126,1.117,1.099,1.077,1.054,1.034,1.016,1.002,.993,.987,.984,.984,.986,.988,.991,.994,1);
+  --spring-wobble:linear(0,.174,.558,.957,1.236,1.344,1.304,1.178,1.037,.931,.883,.89,.93,.979,1.019,1.039,1.04,1.027,1.01,.995,.987,.986,.99,.995,1.001,1.004,1.005,1);
+
+  --t-press:calc(120ms * var(--slow));
+  --t-lift:calc(220ms * var(--slow));
+  --t-paste:calc(320ms * var(--slow));
+  --t-spring:calc(460ms * var(--slow));
+  --t-wobble:calc(900ms * var(--slow));
+  --t-drop:calc(620ms * var(--slow));       /* a torn tab falling off the flyer */
+  --t-paste-in:calc(900ms * var(--slow));   /* kept for pages still on the previous system */
+  --t-stamp:calc(380ms * var(--slow));
+  --t-vt:520ms;                             /* page transition: paste-over (never above 600ms) */
+  --t-vt-peel:440ms;                        /* page transition: peel-off on Back */
+
+  /* ---------------------------------------------------------------------
+     8. LAYERS
+     --------------------------------------------------------------------- */
+  --z-under:0; --z-sheet:1; --z-rip:2; --z-hero:3; --z-sticker:4; --z-hdr:50; --z-menu:60; --z-skip:100;
+
+  /* ---------------------------------------------------------------------
+     9. LAYOUT of the hoarding (the tear engine's CSS reads these)
+     --------------------------------------------------------------------- */
+  --hdr:64px;
+  --sheet:calc(100vw / 6);                  /* one poster sheet; seams are drawn at every sheet */
+  --sheet-h:calc(var(--sheet) * 1.5);
+  --snipe-h:118px;
+  --hero-h:max(440px, min(50vw, calc(100svh - var(--hdr) - var(--snipe-h))));
+  --page-hero-h:max(420px, min(42vw, calc(100svh - var(--hdr) - 96px)));
+  --rip:clamp(30px,3.4vw,52px);             /* how far a torn edge hangs over the next sheet */
+  --tab-h:clamp(196px,17vw,252px);          /* the tear-off fringe under the sectors flyer */
+
+  /* Aliases from the previous system (same meaning) */
+  --pad-x:var(--gutter);
+  --pad-y:var(--section-y);
+}
+
+@media (max-width:1099px){
+  :root{--sheet:25vw;--snipe-h:132px;
+    --hero-h:max(480px, min(100vw, calc(100svh - var(--hdr) - var(--snipe-h))));
+    --page-hero-h:max(420px, min(70vw, 620px))}
+}
+@media (max-width:699px){
+  html.no-js,html.js:not(.motion){--snipe-h:150px}
+  :root{--sheet:50vw;--hdr:56px;--snipe-h:200px;
+    --hero-h:max(470px, min(165vw, calc(100svh - var(--hdr) - var(--snipe-h))));
+    --page-hero-h:max(400px, min(118vw, 520px))}
+}
+
+/* A spring is only a spring where linear() is understood; elsewhere fall back to the nearest curve */
+@supports not (transition-timing-function:linear(0,1)){
+  :root{--spring-press:var(--ease-paste);--spring-settle:var(--ease-paste);--spring-lift:var(--ease-lift);--spring-wobble:var(--ease-lift)}
+}
+
+/* ---------- Grounds: each sheet is printed on one stock, and re-points the roles ---------- */
+.g-yellow{--ground:var(--yellow);--fg:var(--ink);--fg-soft:var(--ink-soft);--hi:var(--red);--rule:var(--ink);--rule-soft:rgba(26,24,20,.26);--focus:var(--ink)}
+.g-red{--ground:var(--red);--fg:var(--paper);--fg-soft:var(--paper);--hi:var(--yellow);--rule:var(--paper);--rule-soft:rgba(242,243,239,.38);--focus:var(--paper)}
+.g-ink{--ground:var(--ink);--fg:var(--paper);--fg-soft:var(--paper-dim);--hi:var(--yellow);--rule:var(--paper);--rule-soft:rgba(242,243,239,.24);--focus:var(--yellow)}
+.g-blue{--ground:var(--blue);--fg:var(--paper);--fg-soft:var(--paper);--hi:var(--yellow);--rule:var(--paper);--rule-soft:rgba(242,243,239,.36);--focus:var(--yellow)}
+.g-paper{--ground:var(--paper);--fg:var(--ink);--fg-soft:var(--ink-soft);--hi:var(--red);--rule:var(--ink);--rule-soft:rgba(26,24,20,.22);--focus:var(--blue)}
+.g-wall{--ground:var(--wall);--fg:var(--ink);--fg-soft:var(--ink);--hi:var(--ink);--rule:var(--ink);--rule-soft:rgba(26,24,20,.34);--focus:var(--ink)}
+.g-yellow,.g-red,.g-ink,.g-blue,.g-paper,.g-wall{background-color:var(--ground);color:var(--fg)}

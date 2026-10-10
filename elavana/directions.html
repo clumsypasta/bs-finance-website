@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study and direction | Elvana Media rebuild</title>
+<meta name="description" content="What was studied on the Elvana Media site, the brand as it stands, three art directions and the one that was built.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1A1814">
+<link rel="stylesheet" href="css/tokens.css?v=d3b44dd4">
+<link rel="stylesheet" href="css/site.css?v=c1e8f39d">
+<link rel="stylesheet" href="css/docs.css?v=f1ca3596">
+</head>
+<body class="doc">
+<a class="skip" href="#main">Skip to content</a>
+<header class="doc-hdr"><a class="wordmark" href="index.html" aria-label="Elvana Media, the rebuilt site">Elvana</a><nav aria-label="Rebuild documents"><a href="index.html">The site</a><a href="directions.html" aria-current="page">Directions</a><a href="system.html">System</a><a href="before-after.html">Before / after</a></nav></header>
+<main id="main">
+
+<p class="label">Step 1 and 2 of the rebuild</p>
+<h1>Study, then direction</h1>
+<p class="lede">What the current site does, what must not break, the brand as it stands, three ways to take it forward, and the one I built.</p>
+
+<h2>What I studied</h2>
+<p>I captured the live page at 1440 and 390 px wide and read all of its markup, CSS and both scripts. Only the home page was supplied. It links to 24 other pages that are not in the folder, so those are listed here but not rebuilt.</p>
+<div class="cols">
+  <div>
+    <h4>Does well: keep</h4>
+    <ul class="plain">
+      <li><b>The tear.</b> A hoarding you can rip, with real paper physics, a keyboard button, and a still torn composition for reduced motion and no JavaScript. It is the idea people will remember. Kept exactly.</li>
+      <li><b>Five flat inks</b> with measured contrast, and one brush face that covers Latin and Devanagari.</li>
+      <li><b>Honesty.</b> No borrowed logos, no invented numbers; the demos are labelled as illustrations.</li>
+      <li><b>The plumbing.</b> Skip link, live regions, native popover menu, a form that still works without JavaScript, slow-motion and sound switches.</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Holds it back: change</h4>
+    <ul class="plain">
+      <li>Twelve full-bleed colour blocks, all at the same volume, each arriving with the same wipe.</li>
+      <li>One list of services shown three ways: three pillars, an eight-tile wall, then a six-item bill.</li>
+      <li>A stat row where two of the four numbers are not facts (<q>8+</q> beside a button that says 14; <q>1 partner</q>).</li>
+      <li>Work in progress on show: TODO stickers, empty price boxes, a placeholder portrait.</li>
+      <li>Length: 15,716 px tall on a desktop and 18,785 px on a phone.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Inventory: everything that has to keep working</h3>
+<div class="log-wrap"><table class="log">
+<thead><tr><th scope="col">Kind</th><th scope="col">What is there</th><th scope="col">In the rebuild</th></tr></thead>
+<tbody>
+<tr><th scope="row">Pages</th><td>1 supplied: Home. 24 linked but not supplied: <code>about/</code>, <code>contact/</code>, <code>engagement-models/</code>, <code>how-we-work/</code>, <code>industries/</code>, <code>our-edge/</code>, <code>privacy/</code>, <code>services/ai-calling/</code>, <code>services/branding-identity/</code>, <code>services/content-video-production/</code>, <code>services/events-activations/</code>, <code>services/</code>, <code>services/outdoor-hoardings-signage/</code>, <code>services/post-creation-content/</code>, <code>services/pr-media-relations/</code>, <code>services/print-digital-publishing/</code>, <code>services/seo-sem/</code>, <code>services/sms-blasting/</code>, <code>services/social-media-management/</code>, <code>services/website-development/</code>, <code>services/whatsapp-blasting/</code>, <code>services/whatsapp-chat-bot/</code>, <code>terms/</code>, <code>work/</code>.</td><td>Home rebuilt. <code>index.multipage.html</code> keeps every original link. In <code>index.html</code> (the preview) those links point at the matching section, because the pages are not here.</td></tr>
+<tr><th scope="row">Sections</th><td>Hero, Who we are, Create/Connect/Grow with Core services and Beyond digital, Our edge, How we work, Who we serve, Work, Engagement models, People and backing, Cities, Contact, Footer.</td><td>All twelve, same order, same IDs.</td></tr>
+<tr><th scope="row">Links</th><td>31 different addresses, used 70 times: 14 service pages, 9 site pages, Privacy, Terms, email, phone, canonical, and in-page anchors.</td><td>Every address is still linked (checked by script).</td></tr>
+<tr><th scope="row">Form</th><td><code>#contact-form</code>, <code>data-mailto-form</code>, posts to <code>mailto:info@elvanamedia.com</code>. Fields <code>name</code>, <code>email</code>, <code>phone</code>, <code>message</code>. Errors in <code>#e-name</code>, <code>#e-email</code>, <code>#e-msg</code>; status in <code>#f-status</code>.</td><td>Unchanged. A tear-off tab can add one extra field, <code>sector</code>, which the existing script already includes in the email.</td></tr>
+<tr><th scope="row">IDs</th><td>45 in total: <code>about</code>, <code>about-h</code>, <code>cities</code>, <code>cities-h</code>, <code>contact</code>, <code>contact-form</code>, <code>contact-h</code>, <code>core-h</code>, <code>e-email</code>, <code>e-msg</code>, <code>e-name</code>, <code>edge</code>, <code>edge-h</code>, <code>f-email</code>, <code>f-msg</code>, <code>f-name</code>, <code>f-phone</code>, <code>f-status</code>, <code>fm-beyond</code>, <code>fm-company</code>, <code>fm-core</code>, <code>hero-h</code>, <code>main</code>, <code>menu</code>, <code>models</code>, <code>models-h</code>, <code>people</code>, <code>people-h</code>, <code>pillars-h</code>, <code>process</code>, <code>process-h</code>, <code>sectors</code>, <code>sectors-h</code>, <code>services</code>, <code>slowmo</code>, <code>sound</code>, <code>sr-live</code>, <code>still-tall</code>, <code>still-wide</code>, <code>tear-btn</code>, <code>tear-clip</code>, <code>tear-live</code>, <code>top</code>, <code>work</code>, <code>work-h</code></td><td>All 45 present (checked by script).</td></tr>
+<tr><th scope="row">Script hooks</th><td><code>.hero</code>, <code>.sheet-top</code>, <code>.tear-canvas</code>, <code>#tear-clip</code>, <code>#tear-btn</code>, <code>#tear-live</code>, <code>.poster</code>, <code>[data-demo]</code> with <code>.ln</code> <code>.wave</code> <code>.tpl</code> <code>.cells i</code> <code>.bars i</code> <code>.replay</code> <code>data-ms</code>, <code>.tag</code>, <code>#menu</code>, <code>#slowmo</code>, <code>#sound</code>, <code>#sr-live</code>, <code>data-todo</code>, the custom properties <code>--slow</code> and <code>--back</code>.</td><td>All kept. <code>tear.js</code> and <code>core.js</code> are byte-for-byte the originals.</td></tr>
+<tr><th scope="row">Integrations</th><td>None: no analytics, no third-party requests, no cookies. JSON-LD for Organization, LocalBusiness, WebSite and WebPage. Open Graph and Twitter cards.</td><td>Head, meta and JSON-LD carried over unchanged.</td></tr>
+</tbody></table></div>
+
+<h2>The brand as it stands</h2>
+<p>No brand kit was supplied, so this is read from the site itself.</p>
+<ol class="five">
+  <li><span><b>Keep the wordmark exactly.</b> It is the word <q>Elvana</q> set in Yatra One, yellow on ink. The source says an official logo file is still to come; nothing was redrawn.</span></li>
+  <li><span><b>Keep the five inks</b> at their current values: yellow <code>#FFD000</code>, red <code>#C8201A</code>, ink <code>#1A1814</code>, blue <code>#1F3FB4</code>, paper <code>#F2F3EF</code>.</span></li>
+  <li><span><b>Keep the type:</b> Yatra One for statements in English and Hindi, Mukta for everything you read.</span></li>
+  <li><span><b>Evolve the hoarding</b> from a trick in the hero into the way the whole page is put together.</span></li>
+  <li><span><b>Replace</b> the wall-to-wall colour, the stat row, the stand-in portrait and initials, and every visible TODO.</span></li>
+</ol>
+
+<h2>Three directions</h2>
+<div class="dirs">
+  <article class="dir">
+    <p class="label">Evolution</p>
+    <h3>Fresh Paste</h3>
+    <div class="mock" role="img" aria-label="Mockup: the yellow hoarding with a curled corner, then full colour blocks stacked under it, as today but tidier.">
+  <div class="bar-top"></div>
+  <div style="inset:9cqh 0 30cqh 0;background:var(--yellow)"></div>
+  <div class="h" style="color:var(--ink)"><span>Ideas that</span><span style="padding-left:16cqw">create</span><span style="padding-left:30cqw">impact.</span></div>
+  <div style="right:0;bottom:30cqh;width:11cqw;height:16cqh;background:linear-gradient(to top left,var(--red) 50%,var(--back) 50%,var(--fibre));"></div>
+  <div style="inset:auto 0 15cqh 0;height:15cqh;background:var(--blue)"></div>
+  <div style="inset:auto 0 0 0;height:15cqh;background:var(--red)"></div>
+  <div style="left:4cqw;bottom:19cqh;color:var(--paper);font-size:6.4cqh">A new-age media &amp; growth company.</div>
+  <div style="left:4cqw;bottom:4.4cqh;color:var(--paper);font-size:6.4cqh">Built for brands of every size</div>
+</div>
+    <dl>
+      <div><dt>Idea</dt><dd>The site people know, re-pasted cleanly: same blocks, less copy, the wipe removed.</dd></div>
+      <div><dt>Palette</dt><dd><span class="chips"><i style="background:var(--yellow)"></i><i style="background:var(--red)"></i><i style="background:var(--ink)"></i><i style="background:var(--blue)"></i><i style="background:var(--paper)"></i></span></dd></div>
+      <div><dt>Type</dt><dd>Yatra One with Mukta 400 and 800, as now.</dd></div>
+      <div><dt>Signature moment</dt><dd>Tearing the hoarding, untouched.</dd></div>
+    </dl>
+  </article>
+  <article class="dir is-pick">
+    <p class="label">Confident</p>
+    <h3>One Wall</h3>
+    <div class="mock" role="img" aria-label="Mockup: the yellow hoarding ends in a torn edge. Blue and red posters show under the tear, then a white sheet with a red stamp and a row of tear-off tabs.">
+  <div class="bar-top"></div>
+  <div style="inset:9cqh 0 0 0;background:var(--paper)"></div>
+  <div style="inset:9cqh 0 46cqh 0;background:var(--yellow)"></div>
+  <div class="h" style="color:var(--ink);font-size:13cqh"><span>Ideas that</span><span style="padding-left:16cqw">create impact.</span></div>
+  <div style="inset:54cqh 0 auto 0;height:9cqh"><div class="rip" style="--rip:8cqh;top:0" aria-hidden="true"><span style="--rc:var(--blue);--rk:1"><i class="f e3f"></i><i class="c e3"></i></span><span style="--rc:var(--red);--rk:.62"><i class="f e5f"></i><i class="c e5"></i></span></div></div>
+  <div style="left:4cqw;top:65cqh;color:var(--ink);font-size:7.4cqh">A <span style="position:static;background:var(--yellow);padding:0 .14em;display:inline-block;transform:rotate(-2.4deg)">new-age</span> media company.</div>
+  <div style="right:6cqw;top:62cqh;width:15cqh;height:15cqh;border-radius:50%;border:.7cqh solid var(--red);transform:rotate(-13deg);display:grid;place-items:center;color:var(--red);font-size:4.4cqh"><span style="position:static">2026</span></div>
+  <div style="inset:auto 0 0 0;height:16cqh;display:grid;grid-template-columns:repeat(8,1fr);gap:.4cqw;background:var(--wall)">
+    <i style="position:static;background:var(--paper)"></i><i style="position:static;background:var(--paper)"></i><i style="position:static;background:transparent;box-shadow:inset 0 0 0 1px rgba(26,24,20,.5)"></i><i style="position:static;background:var(--paper)"></i><i style="position:static;background:var(--paper)"></i><i style="position:static;background:var(--paper);transform:rotate(3deg);transform-origin:50% 0"></i><i style="position:static;background:var(--paper)"></i><i style="position:static;background:var(--paper)"></i>
+  </div>
+</div>
+    <dl>
+      <div><dt>Idea</dt><dd>The whole site is one hoarding. Sheets end in torn edges, and the posters from before show underneath.</dd></div>
+      <div><dt>Palette</dt><dd><span class="chips"><i style="background:var(--yellow)"></i><i style="background:var(--red)"></i><i style="background:var(--ink)"></i><i style="background:var(--blue)"></i><i style="background:var(--paper)"></i><i style="background:var(--wall)"></i><i style="background:var(--fibre)"></i></span>The five inks, plus bare concrete and torn-paper white.</dd></div>
+      <div><dt>Type</dt><dd>Yatra One for statements. Mukta 800 in tracked capitals for the printer's imprint on each sheet. Mukta 400 to read.</dd></div>
+      <div><dt>Signature moment</dt><dd>Tear your sector off the flyer and it lands on your enquiry form.</dd></div>
+    </dl>
+    <p class="pick">Chosen and built</p>
+  </article>
+  <article class="dir">
+    <p class="label">Leap</p>
+    <h3>Whitewash</h3>
+    <div class="mock" role="img" aria-label="Mockup: a wall whitewashed with blank paper. The headline is in Hindi first. One torn hole shows the yellow and red posters underneath.">
+  <div class="bar-top" style="background:var(--paper);box-shadow:inset 0 -2px 0 var(--ink)"></div>
+  <div style="left:4cqw;top:2.4cqh;color:var(--ink);font-size:5.2cqh">Elvana</div>
+  <div style="inset:9cqh 0 0 0;background:var(--fibre)"></div>
+  <div class="h" style="color:var(--ink);font-size:14cqh;line-height:1.16" lang="hi"><span>दिखिए।</span><span>चुने जाइए।</span><span>आगे बढ़िए।</span></div>
+  <div style="left:4.4cqw;bottom:7cqh;color:var(--ink-soft);font:800 3.3cqh/1.2 var(--text);letter-spacing:.11em">GET SEEN. GET CHOSEN. GROW.</div>
+  <div style="right:-4cqw;top:22cqh;width:44cqw;height:58cqh;background:var(--yellow);border-radius:48% 52% 40% 60% / 58% 44% 56% 42%;box-shadow:0 0 0 1.2cqh var(--fibre),.6cqh 1cqh 0 1.2cqh rgba(0,0,0,.2)"></div>
+  <div style="right:-2cqw;top:44cqh;width:26cqw;height:30cqh;background:var(--red);border-radius:52% 48% 60% 40% / 44% 58% 42% 56%"></div>
+  <div style="right:7cqw;top:30cqh;color:var(--ink);font-size:6.6cqh">Ideas that</div>
+</div>
+    <dl>
+      <div><dt>Idea</dt><dd>The wall has been papered over in white. Hindi leads, English echoes. Colour only exists where a visitor tears.</dd></div>
+      <div><dt>Palette</dt><dd><span class="chips"><i style="background:var(--fibre)"></i><i style="background:var(--paper)"></i><i style="background:var(--wall)"></i><i style="background:var(--ink)"></i><i style="background:var(--red)"></i></span>White, concrete, ink, and red for one stamp. Yellow and blue are hidden until torn open.</dd></div>
+      <div><dt>Type</dt><dd>Yatra One in Devanagari at headline size, with Mukta 800 capitals as the English echo.</dd></div>
+      <div><dt>Signature moment</dt><dd>The first screen is almost blank. Every colour on the site is one the visitor uncovered.</dd></div>
+    </dl>
+  </article>
+</div>
+
+<h3>Why One Wall</h3>
+<p class="lede" style="max-width:62ch">It takes the one thing people already remember about Elvana, the tear, and makes it how the whole page is built instead of a trick at the top. It also answers the complaint about density in the structure itself: one idea per sheet, and the seams do the decorating so the copy does not have to.</p>
+<p>Fresh Paste would have been safer and forgettable. Whitewash is the most striking of the three, but it hides the brand's colours from anyone who does not interact, and it puts a Hindi line in the headline that the source marks as still waiting for client approval. It is worth a second look once that line is signed off.</p>
+<p class="poster-foot"><a class="tag tag-ink" href="index.html">Open the rebuilt site</a><a class="tag tag-line" href="system.html">See the system</a></p>
+
+</main>
+</body>
+</html>

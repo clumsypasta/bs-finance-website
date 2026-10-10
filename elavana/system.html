@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The system | Elvana Media rebuild</title>
+<meta name="description" content="Design tokens and every component of the Elvana Media rebuild, in every state.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1A1814">
+<link rel="stylesheet" href="css/tokens.css?v=d3b44dd4">
+<link rel="stylesheet" href="css/site.css?v=c1e8f39d">
+<link rel="stylesheet" href="css/docs.css?v=f1ca3596">
+<link rel="stylesheet" href="css/states.css?v=cc46f243">
+</head>
+<body class="doc">
+<a class="skip" href="#main">Skip to content</a>
+<header class="doc-hdr"><a class="wordmark" href="index.html" aria-label="Elvana Media, the rebuilt site">Elvana</a><nav aria-label="Rebuild documents"><a href="index.html">The site</a><a href="directions.html">Directions</a><a href="system.html" aria-current="page">System</a><a href="before-after.html">Before / after</a></nav></header>
+<main id="main">
+
+<p class="label">Step 3 of the rebuild</p>
+<h1>The One Wall system</h1>
+<p class="lede">Tokens first, then every component in every state. The states on this page are not redrawn: they are copied by script from the real <code>:hover</code>, <code>:active</code> and <code>:focus</code> rules in <code>css/site.css</code>, so what you see here is what the site does.</p>
+<p class="poster-foot"><a class="tag tag-ink" href="css/tokens.css">Open tokens.css</a><a class="tag tag-line" href="index.html">Open the site</a></p>
+
+<h2 id="colour">Colour</h2>
+<p>Eight inks. The first five are the brand's, with unchanged values. Wall, back and fibre are the materials around the paper.</p>
+<div class="spec"><div class="cell"><div class="sw" style="background:var(--yellow);color:var(--ink)">#FFD000</div><small>--yellow</small><span>Hoarding yellow</span></div><div class="cell"><div class="sw" style="background:var(--red);color:var(--paper)">#C8201A</div><small>--red</small><span>Cinema red</span></div><div class="cell"><div class="sw" style="background:var(--ink);color:var(--paper)">#1A1814</div><small>--ink</small><span>Key plate</span></div><div class="cell"><div class="sw" style="background:var(--blue);color:var(--paper)">#1F3FB4</div><small>--blue</small><span>Process blue</span></div><div class="cell"><div class="sw" style="background:var(--paper);color:var(--ink)">#F2F3EF</div><small>--paper</small><span>Poster stock</span></div><div class="cell"><div class="sw" style="background:var(--wall);color:var(--ink)">#A39F96</div><small>--wall</small><span>Bare concrete</span></div><div class="cell"><div class="sw" style="background:var(--back);color:var(--ink)">#E2E1DB</div><small>--back</small><span>Back of the paper</span></div><div class="cell"><div class="sw" style="background:var(--fibre);color:var(--ink)">#FBFBF6</div><small>--fibre</small><span>Torn fibre</span></div></div>
+<h3>Grounds</h3>
+<p>A ground class re-points the role tokens (<code>--fg</code>, <code>--fg-soft</code>, <code>--hi</code>, <code>--rule</code>, <code>--focus</code>) for everything printed on that sheet. Components only ever use roles. The figure is the contrast of text on the sheet.</p>
+<div class="spec"><div class="cell g-paper"><small>.g-paper</small><p class="d3">Paper</p><p>Text on this sheet, 15.9 to 1.</p><p style="color:var(--fg-soft)">Secondary text.</p><p class="d3" style="color:var(--hi)">Highlight</p><div style="width:100%;border-top:var(--bw-rule) solid var(--rule)"></div><a class="tag " href="#colour">Tag</a><span class="is-focus" style="display:inline-block;padding:4px 8px">Focus ring</span></div><div class="cell g-yellow"><small>.g-yellow</small><p class="d3">Yellow</p><p>Text on this sheet, 12.1 to 1.</p><p style="color:var(--fg-soft)">Secondary text.</p><p class="d3" style="color:var(--hi)">Highlight</p><div style="width:100%;border-top:var(--bw-rule) solid var(--rule)"></div><a class="tag tag-ink" href="#colour">Tag</a><span class="is-focus" style="display:inline-block;padding:4px 8px">Focus ring</span></div><div class="cell g-ink"><small>.g-ink</small><p class="d3">Ink</p><p>Text on this sheet, 15.9 to 1.</p><p style="color:var(--fg-soft)">Secondary text.</p><p class="d3" style="color:var(--hi)">Highlight</p><div style="width:100%;border-top:var(--bw-rule) solid var(--rule)"></div><a class="tag " href="#colour">Tag</a><span class="is-focus" style="display:inline-block;padding:4px 8px">Focus ring</span></div><div class="cell g-blue"><small>.g-blue</small><p class="d3">Blue</p><p>Text on this sheet, 7.8 to 1.</p><p style="color:var(--fg-soft)">Secondary text.</p><p class="d3" style="color:var(--hi)">Highlight</p><div style="width:100%;border-top:var(--bw-rule) solid var(--rule)"></div><a class="tag " href="#colour">Tag</a><span class="is-focus" style="display:inline-block;padding:4px 8px">Focus ring</span></div><div class="cell g-red"><small>.g-red</small><p class="d3">Red</p><p>Text on this sheet, 5.1 to 1.</p><p style="color:var(--fg-soft)">Secondary text.</p><p class="d3" style="color:var(--hi)">Highlight</p><div style="width:100%;border-top:var(--bw-rule) solid var(--rule)"></div><a class="tag " href="#colour">Tag</a><span class="is-focus" style="display:inline-block;padding:4px 8px">Focus ring</span></div><div class="cell g-wall"><small>.g-wall</small><p class="d3">Wall</p><p>Text on this sheet, 6.6 to 1.</p><p style="color:var(--fg-soft)">Secondary text.</p><p class="d3" style="color:var(--hi)">Highlight</p><div style="width:100%;border-top:var(--bw-rule) solid var(--rule)"></div><a class="tag " href="#colour">Tag</a><span class="is-focus" style="display:inline-block;padding:4px 8px">Focus ring</span></div></div>
+
+<h2 id="type">Type</h2>
+<p>Two families, both already the brand's. Sizes are fluid between 360 and 1920 px.</p>
+<div class="type-row"><div><p class="label">--fs-mega</p><p class="small">Yatra One 400</p></div><div><p style="font:400 var(--fs-mega)/.92 var(--display);white-space:nowrap">Blank.</p></div></div><div class="type-row"><div><p class="label">--fs-d1</p><p class="small">Yatra One 400</p></div><div><p style="font:400 var(--fs-d1)/.92 var(--display);white-space:nowrap">A new-age media</p></div></div><div class="type-row"><div><p class="label">--fs-d2</p><p class="small">Yatra One 400</p></div><div><p style="font:400 var(--fs-d2)/.92 var(--display);white-space:nowrap">Four cities today</p></div></div><div class="type-row"><div><p class="label">--fs-d3</p><p class="small">Yatra One 400</p></div><div><p style="font:400 var(--fs-d3)/.92 var(--display);white-space:nowrap">Monthly Retainer</p></div></div><div class="type-row"><div><p class="label">--fs-d4</p><p class="small">Yatra One 400</p></div><div><p style="font:400 var(--fs-d4)/.92 var(--display);white-space:nowrap">Website Development</p></div></div><div class="type-row"><div><p class="label">--fs-lede</p><p class="small">Mukta 400</p></div><div><p class="lede" style="max-width:none">We help brands get seen, get chosen and grow.</p></div></div><div class="type-row"><div><p class="label">--fs-body</p><p class="small">Mukta 400, 600, 800</p></div><div><p>Running text. <span style="font-weight:600">Semi for emphasis.</span> <b>Heavy for labels.</b> हिंदी in the same brush.</p></div></div><div class="type-row"><div><p class="label">--fs-small</p><p class="small">never under 14px</p></div><div><p class="small">Captions and the legal line.</p></div></div><div class="type-row"><div><p class="label">--fs-label</p><p class="small">Mukta 800, capitals, tracked</p></div><div><p class="label">Who we are</p></div></div>
+
+<h2 id="space">Space, shape, elevation</h2>
+<h3>Spacing steps</h3>
+<div class="spec"><div class="cell"><small>--sp-1</small><div class="bar" style="width:var(--sp-1)"></div></div><div class="cell"><small>--sp-2</small><div class="bar" style="width:var(--sp-2)"></div></div><div class="cell"><small>--sp-3</small><div class="bar" style="width:var(--sp-3)"></div></div><div class="cell"><small>--sp-4</small><div class="bar" style="width:var(--sp-4)"></div></div><div class="cell"><small>--sp-5</small><div class="bar" style="width:var(--sp-5)"></div></div><div class="cell"><small>--sp-6</small><div class="bar" style="width:var(--sp-6)"></div></div><div class="cell"><small>--sp-7</small><div class="bar" style="width:var(--sp-7)"></div></div><div class="cell"><small>--sp-8</small><div class="bar" style="width:var(--sp-8)"></div></div><div class="cell"><small>--sp-9</small><div class="bar" style="width:var(--sp-9)"></div></div><div class="cell"><small>--sp-10</small><div class="bar" style="width:var(--sp-10)"></div></div></div>
+<p>Three fluid layout values sit beside the steps: <code>--gutter</code> (page edge), <code>--col-gap</code> (between columns) and <code>--section-y</code> (above and below a sheet).</p>
+<h3>Shape</h3>
+<p>Paper has square corners: <code>--r-0</code> for sheets, tags and fields. <code>--r-cut</code> (3px) is only for die-cut tabs. <code>--r-dot</code> is only for the stops on the route line. Rules come in four weights: <code>--bw-hair</code> 2, <code>--bw-rule</code> 3, <code>--bw-bar</code> 6, <code>--bw-slab</code> 10.</p>
+<h3>Elevation: how far paper stands off the wall</h3>
+<div class="spec"><div class="cell g-wall"><small>--e-1</small><div style="width:100%;aspect-ratio:3/2;background:var(--paper);box-shadow:var(--e-1)"></div></div><div class="cell g-wall"><small>--e-2</small><div style="width:100%;aspect-ratio:3/2;background:var(--paper);box-shadow:var(--e-2)"></div></div><div class="cell g-wall"><small>--e-3</small><div style="width:100%;aspect-ratio:3/2;background:var(--paper);box-shadow:var(--e-3)"></div></div><div class="cell g-wall"><small>--e-4</small><div style="width:100%;aspect-ratio:3/2;background:var(--paper);box-shadow:var(--e-4)"></div></div></div>
+<h3>The torn edge</h3>
+<p>Where a sheet ends, it is torn, and older posters show under it. Six edge shapes are generated at build time; each layer is the paper over its own white fibre.</p>
+<div class="g-paper" style="position:relative;height:150px;margin-top:var(--sp-5);box-shadow:var(--e-3)"><div class="rip" aria-hidden="true"><span style="--rc:var(--blue);--rk:1"><i class="f e3f"></i><i class="c e3"></i></span><span style="--rc:var(--yellow);--rk:.7"><i class="f e5f"></i><i class="c e5"></i></span><span style="--rc:var(--ink);--rk:.44"><i class="f e1f"></i><i class="c e1"></i></span></div><p class="label" style="position:absolute;left:var(--sp-4);bottom:var(--sp-4)">.rip with three layers</p></div>
+
+<h2 id="motion">Motion</h2>
+<p>Four springs and three curves, all named. Nothing on the site fades up as you scroll. Movement belongs to the visitor: tearing, pressing, hovering. With reduced motion on, every one of these is instant.</p>
+<p class="poster-foot"><button class="tag tag-ink" type="button" id="play">Play all</button></p>
+<div class="spec" id="motions"><div class="cell"><small>--spring-press</small><div class="track"><i style="transition:transform calc(var(--t-press) * 2.4) var(--spring-press)"></i></div><span class="small">critically damped; a press, over <code>--t-press</code></span></div><div class="cell"><small>--spring-settle</small><div class="track"><i style="transition:transform calc(var(--t-paste) * 2.4) var(--spring-settle)"></i></div><span class="small">2% overshoot; things landing, over <code>--t-paste</code></span></div><div class="cell"><small>--spring-lift</small><div class="track"><i style="transition:transform calc(var(--t-spring) * 2.4) var(--spring-lift)"></i></div><span class="small">12% overshoot; a corner lifting, over <code>--t-spring</code></span></div><div class="cell"><small>--spring-wobble</small><div class="track"><i style="transition:transform calc(var(--t-wobble) * 2.4) var(--spring-wobble)"></i></div><span class="small">a tab swinging on its last fibre, over <code>--t-wobble</code></span></div><div class="cell"><small>--ease-paste</small><div class="track"><i style="transition:transform calc(var(--t-paste) * 2.4) var(--ease-paste)"></i></div><span class="small">a squeegee settling, over <code>--t-paste</code></span></div><div class="cell"><small>--ease-tug</small><div class="track"><i style="transition:transform calc(var(--t-drop) * 2.4) var(--ease-tug)"></i></div><span class="small">gravity; a sheet letting go, over <code>--t-drop</code></span></div></div>
+
+<h2 id="buttons">Buttons</h2>
+<h3>Tag</h3>
+<p>The button is a square-cut paper tag. One corner lifts on hover, it squashes when pressed, and a stamp ring spreads after a click.</p>
+<div class="spec"><div class="cell g-ink"><small>Rest</small><button class="tag  " type="button">Let's talk</button></div><div class="cell g-ink"><small>Hover</small><button class="tag  is-hover" type="button">Let's talk</button></div><div class="cell g-ink"><small>Pressed</small><button class="tag  is-active" type="button">Let's talk</button></div><div class="cell g-ink"><small>Focus</small><button class="tag  is-focus" type="button">Let's talk</button></div><div class="cell g-ink"><small>Disabled</small><button class="tag " type="button" disabled>Let's talk</button></div><div class="cell g-yellow"><small>Rest</small><button class="tag tag-ink " type="button">Send to Elvana</button></div><div class="cell g-yellow"><small>Hover</small><button class="tag tag-ink is-hover" type="button">Send to Elvana</button></div><div class="cell g-yellow"><small>Pressed</small><button class="tag tag-ink is-active" type="button">Send to Elvana</button></div><div class="cell g-yellow"><small>Focus</small><button class="tag tag-ink is-focus" type="button">Send to Elvana</button></div><div class="cell g-yellow"><small>Disabled</small><button class="tag tag-ink" type="button" disabled>Send to Elvana</button></div><div class="cell g-ink"><small>Rest</small><button class="tag tag-line " type="button">Tear a strip</button></div><div class="cell g-ink"><small>Hover</small><button class="tag tag-line is-hover" type="button">Tear a strip</button></div><div class="cell g-ink"><small>Pressed</small><button class="tag tag-line is-active" type="button">Tear a strip</button></div><div class="cell g-ink"><small>Focus</small><button class="tag tag-line is-focus" type="button">Tear a strip</button></div><div class="cell g-ink"><small>Disabled</small><button class="tag tag-line" type="button" disabled>Tear a strip</button></div></div>
+<h3>Onward link and small line button</h3>
+<div class="spec">
+  <div class="cell"><small>Rest</small><p class="onward" style="margin:0"><a href="#buttons">More on our edge</a></p></div>
+  <div class="cell"><small>Hover</small><p class="onward" style="margin:0"><a class="is-hover" href="#buttons">More on our edge</a></p></div>
+  <div class="cell"><small>Focus</small><p class="onward" style="margin:0"><a class="is-focus" href="#buttons">More on our edge</a></p></div>
+  <div class="cell g-blue"><small>Replay, rest</small><button class="replay" type="button">Replay</button></div>
+  <div class="cell g-blue"><small>Replay, hover</small><button class="replay is-hover" type="button">Replay</button></div>
+  <div class="cell g-blue"><small>Replay, pressed</small><button class="replay is-active" type="button">Replay</button></div>
+</div>
+
+<h2 id="nav">Navigation</h2>
+<p>Under 1020 px the links fold into a Menu button, which opens a native popover sheet.</p>
+<div class="hdr" style="position:static;margin-top:var(--sp-5);flex-wrap:wrap;height:auto;min-height:var(--hdr)">
+  <span class="wordmark">Elvana</span>
+  <div class="nav-main" style="display:block"><ul class="nav-links" style="flex-wrap:wrap">
+    <li><a href="#nav">Rest</a></li><li><a class="is-hover" href="#nav">Hover</a></li><li><a class="is-here" href="#nav">This section</a></li><li><a href="#nav" aria-current="page">This page</a></li><li><a class="is-focus" href="#nav">Focus</a></li>
+  </ul></div>
+  <a class="tag" href="#nav" style="display:inline-flex">Let's talk</a>
+</div>
+<div class="spec">
+  <div class="cell g-ink"><small>Menu button, rest</small><button class="menu-btn" style="display:inline-flex;align-items:center" type="button">Menu</button></div>
+  <div class="cell g-ink"><small>Menu button, hover</small><button class="menu-btn is-hover" style="display:inline-flex;align-items:center" type="button">Menu</button></div>
+  <div class="cell g-ink"><small>Open the sheet</small><button class="menu-btn" style="display:inline-flex;align-items:center" type="button" popovertarget="menu">Menu</button></div>
+</div>
+<nav id="menu" popover aria-label="Menu specimen">
+  <div class="menu-top"><span aria-hidden="true">Elvana</span><button class="close" type="button" popovertarget="menu" popovertargetaction="hide">Close</button></div>
+  <ul><li><a href="#nav" aria-current="page">Home</a></li><li><a href="#nav">Services</a></li><li><a href="#nav">Our edge</a></li><li><a href="#nav">Work</a></li></ul>
+  <a class="tag" href="#nav">Let's talk</a>
+</nav>
+
+<h2 id="inputs">Inputs</h2>
+<div class="spec wide g-yellow" style="padding:var(--sp-5);gap:var(--sp-5)">
+  <div class="field"><label for="s1">Rest</label><input id="s1" value="Asha Rao"></div>
+  <div class="field"><label for="s2">Hover</label><input id="s2" class="is-hover" value="Asha Rao"></div>
+  <div class="field"><label for="s3">Focus</label><input id="s3" class="is-focus" value="Asha Rao"></div>
+  <div class="field"><label for="s4">Invalid</label><input id="s4" aria-invalid="true" aria-describedby="s4e" value="asha@"><p class="err" id="s4e">enter an email address like you@company.com.</p></div>
+  <div class="field"><label for="s5">Disabled</label><input id="s5" disabled value="Not available"></div>
+  <div class="field"><label for="s6">Text area <span class="opt">(optional)</span></label><textarea id="s6" style="min-height:96px">A website and a WhatsApp bot.</textarea></div>
+  <div><p class="label">Status message</p><p class="status">Your email app should now open with the message ready to send.</p></div>
+  <div><p class="label">Sector chip (from a torn-off tab)</p><p class="sector-chip" style="margin-top:var(--sp-4)"><span>Sector: Healthcare &amp; Wellness</span><button type="button">Remove</button></p></div>
+</div>
+
+<h2 id="cards">Cards and pieces of paper</h2>
+<h3>Index row</h3>
+<p>The whole row is the link. Under the cursor, or on keyboard focus, a yellow sheet is pasted across it and its one-line description appears.</p>
+<div class="g-ink" style="padding:var(--sp-5);margin-top:var(--sp-5)">
+  <ol class="index" style="max-width:720px">
+    <li><h4><a href="#cards">Rest</a></h4><p>Fast, mobile-first sites built to convert.</p></li>
+    <li class="is-hover"><h4><a href="#cards">Hover</a></h4><p>Rank higher. Search ads that pay back.</p></li>
+    <li class="is-focus-within"><h4><a href="#cards">Keyboard focus</a></h4><p>Bulk SMS on DLT-registered templates.</p></li>
+  </ol>
+</div>
+<h3>Poster, plate, strips</h3>
+<div class="spec wide g-wall" style="padding:var(--sp-6);gap:var(--sp-6)">
+  <article class="demo g-yellow" style="--tilt:-1.1deg"><h3 style="margin:0">Poster, rest</h3><p class="line">Pasted a little off square.</p><figure><ul class="bars"><li>WhatsApp<i style="--v:.84"></i></li><li>SMS<i style="--v:.46"></i></li></ul><figcaption><span>Illustration only.</span><button class="replay" type="button">Replay</button></figcaption></figure></article>
+  <article class="demo g-yellow is-hover" style="--tilt:-1.1deg"><h3 style="margin:0">Poster, hover</h3><p class="line">Straightens and lifts.</p><figure><ul class="bars"><li>WhatsApp<i style="--v:.84"></i></li><li>SMS<i style="--v:.46"></i></li></ul><figcaption><span>Illustration only.</span><button class="replay" type="button">Replay</button></figcaption></figure></article>
+  <div class="plate g-red"><p>A plate: a small sheet with one action on it.</p><a class="tag" href="#cards">Become one of the first</a></div>
+  <div style="display:grid;gap:var(--sp-5);justify-items:start;align-content:start">
+    <p class="coming-soon"><b>Coming soon</b>Case studies</p>
+    <p class="coming-soon coming-soon--inline">Rates coming soon</p>
+    <p class="coming-soon coming-soon--yellow"><b>Coming soon</b>Yellow variant</p>
+    <p class="d2">A <span class="strip">strip</span> word</p>
+    <p class="slug" style="position:static;writing-mode:horizontal-tb;transform:none;margin:0"><b>03/10</b>Imprint</p>
+  </div>
+</div>
+<h3>Tear-off tab</h3>
+<p>A real button. Pressing it tears the tab off and adds that sector to the enquiry; pressing its outline pastes it back. Without JavaScript the tabs are a plain list.</p>
+<div class="g-wall" style="margin-top:var(--sp-5);padding:0 var(--sp-5) var(--sp-7)">
+  <ul class="tabs" style="position:static;grid-template-columns:repeat(4,minmax(0,1fr));max-width:640px">
+    <li><button class="tab" type="button" aria-pressed="false"><span>Rest</span></button></li>
+    <li><button class="tab is-hover" type="button" aria-pressed="false"><span>Hover: it swings</span></button></li>
+    <li><button class="tab is-focus" type="button" aria-pressed="false"><span>Keyboard focus</span></button></li>
+    <li><button class="tab" type="button" aria-pressed="true"><span>Torn off</span></button></li>
+  </ul>
+</div>
+
+<h2 id="tables">Table</h2>
+<p>The rate board. A row takes the same yellow paste on hover as the index. On a phone each row becomes a card and every cell carries its own label.</p>
+<div class="g-blue" style="padding:var(--sp-5);margin-top:var(--sp-5)">
+<table class="rate">
+  <thead><tr><th scope="col">Model</th><th scope="col">Best for</th><th scope="col">What's included</th><th scope="col">Billed</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Rest</th><td data-label="Best for">Always-on growth</td><td data-label="What's included">Social media, content, SEO, ads management and monthly reporting.</td><td data-label="Billed">By the month</td></tr>
+    <tr class="is-hover"><th scope="row">Hover</th><td data-label="Best for">Launches &amp; seasons</td><td data-label="What's included">Product launches, festive pushes, events and PR bursts.</td><td data-label="Billed">Per campaign</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="footer">Footer</h2>
+<div class="foot g-ink" style="padding:var(--sp-6) var(--sp-5);margin-top:var(--sp-5)">
+  <div class="foot-map" style="margin-top:0">
+    <nav aria-label="Footer links specimen"><h3 class="foot-h">Link list</h3><ul><li><a href="#footer">Rest</a></li><li><a href="#footer" class="is-hover">Hover</a></li><li><a href="#footer" aria-current="page">This page</a></li></ul></nav>
+    <div class="foot-contact"><h3 class="foot-h">Contact</h3><dl><div><dt>Email</dt><dd><a class="big" href="#footer">info@elvanamedia.com</a></dd></div></dl></div>
+  </div>
+  <div class="legal"><p>Legal line, small print.</p><div class="foot-ctl"><a href="#footer">Rest</a><a href="#footer" class="is-hover">Hover</a><button type="button" aria-pressed="true">Switched on</button><a href="#footer" aria-current="page">This page</a></div></div>
+</div>
+
+</main>
+<script>
+document.getElementById('play').addEventListener('click', function () {
+  document.querySelectorAll('#motions .track').forEach(function (t) {
+    t.style.setProperty('--run', (t.clientWidth - 30) + 'px');
+    t.classList.toggle('go');
+  });
+});
+</script>
+</body>
+</html>
