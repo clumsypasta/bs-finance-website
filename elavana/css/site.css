@@ -584,7 +584,7 @@ html:active-view-transition-type(peel)::view-transition-old(root){z-index:1;anim
   /* the billing block becomes a credits list: role on the left, name on the right */
   .team{grid-template-columns:1fr}
   .team li,.team li+li{display:grid;grid-template-columns:7.2em 1fr;column-gap:var(--sp-4);align-items:baseline;padding:var(--sp-4) 0 var(--sp-3);border-left:0;margin-top:0}
-  .team li+li{border-top:var(--bw-hair) solid var(--rule-soft)}
+  .team li:nth-child(n+2){margin-top:0;padding-top:var(--sp-4);border-top:var(--bw-hair) solid var(--rule-soft)}
   .team h4{margin-top:0;font-size:var(--fs-d4)}
   .team .note{grid-column:2;margin-top:var(--sp-1);max-width:none}
   .backing{transform:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
