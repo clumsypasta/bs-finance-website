@@ -17,7 +17,7 @@
     } else $$(".has-sub.open", li).forEach(function (x) { setSub(x, false); });
   }
   function setOpen(dd, open) {
-    dd.classList.toggle("open", open); dd.firstElementChild.setAttribute("aria-expanded", String(open));
+    dd.classList.toggle("open", open); dd.querySelector("button").setAttribute("aria-expanded", String(open));
     if (!open) $$(".has-sub.open", dd).forEach(function (x) { setSub(x, false); });
   }
   // side flyouts inside a menu: hover opens after a short pause (so moving the mouse
@@ -63,7 +63,7 @@
   });
   function closeAll(except) { dds.forEach(function (d) { if (d !== except) setOpen(d, false); }); }
   dds.forEach(function (dd) {
-    var btn = dd.firstElementChild, timer;
+    var btn = dd.querySelector("button"), timer;
     btn.addEventListener("click", function (e) {
       e.stopPropagation();
       // With a mouse, hover has already opened the menu, so a click must not shut it again.
