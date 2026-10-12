@@ -159,12 +159,33 @@ transition: transform var(--d-slow) var(--lift), background-color var(--d-base) 
 @media (prefers-reduced-motion: reduce) {
 *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
 }
-main.is-scrolling { pointer-events: none; }
+.veil { position: fixed; inset: 0; z-index: 65; }
 section:focus, footer:focus, form:focus, main:focus { outline: none; }
 a, button, input, textarea, label { -webkit-tap-highlight-color: transparent; }
 a, button { touch-action: manipulation; }
 .hero__pin, .how__pin, .pit, .ai__art, .how__text, .svc, .rows { contain: layout style; }
 .pit, .ai__art { contain: layout paint style; }
+html { scrollbar-color: #2563eb #0b0c0f; scrollbar-width: thin; }
+html.eased { scrollbar-width: none; }
+html.eased::-webkit-scrollbar { display: none; }
+html:not(.eased)::-webkit-scrollbar { width: 12px; }
+html:not(.eased)::-webkit-scrollbar-track { background: #0b0c0f; }
+html:not(.eased)::-webkit-scrollbar-thumb { border: 3px solid #0b0c0f; border-radius: 12px; background: linear-gradient(180deg, #48cbc8, #60a5fa); }
+textarea { scrollbar-color: #48cbc8 transparent; scrollbar-width: thin; }
+.sbar { position: fixed; z-index: 70; top: 8px; bottom: 8px; right: 0; width: 22px; touch-action: none; cursor: default;
+--rail: rgba(255, 255, 255, .13); --thumb: linear-gradient(180deg, #48cbc8, #60a5fa); }
+.sbar[hidden] { display: none; }
+.sbar[data-on="paper"], .sbar[data-on="chalk"] { --rail: rgba(17, 17, 17, .12); --thumb: linear-gradient(180deg, #007e7c, #1d4ed8); }
+.sbar[data-on="wash"], .sbar[data-on="blue"] { --rail: rgba(255, 255, 255, .22); --thumb: linear-gradient(180deg, #ffffff, #dbeafe); }
+.sbar::before { content: ""; position: absolute; top: 0; bottom: 0; right: 7px; width: 6px; border-radius: 6px; background: var(--rail); opacity: 0; transform: scaleX(.34); transform-origin: right center;
+transition: opacity 260ms linear, transform 420ms var(--lift), background-color 300ms linear; }
+.sbar:hover::before, .sbar.is-held::before, .sbar.is-moving::before { opacity: 1; transform: none; }
+.sbar i { position: absolute; top: 0; right: 7px; width: 6px; min-height: 56px; border-radius: 6px; background: var(--thumb); will-change: transform; cursor: grab; }
+.sbar i::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: inherit; transform-origin: right center; transition: transform 420ms var(--lift); }
+.sbar:hover i::after, .sbar.is-held i::after { transform: scaleX(1.7); }
+.sbar.is-held i { cursor: grabbing; }
+.menu-open .sbar { display: none; }
+@media print { .sbar { display: none; } }
 </style>
 <style>
 section { position: relative; }
@@ -205,32 +226,33 @@ section { position: relative; }
 .say__f { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: clamp(40px, 6vw, 88px); font: 500 14.5px/1.3 var(--sans); color: var(--mute); }
 .say__f span { display: inline-flex; align-items: center; gap: 10px; }
 .say__f span::before { content: ""; width: 22px; height: 8px; border-radius: 8px; background: currentColor; }
-.mark { --bh: clamp(92px, 12.5vw, 176px); display: grid; gap: calc(var(--bh) / 2); }
+.mark { --bh: clamp(92px, 12.5vw, 176px); --bar-d: 760ms; --bar-e: cubic-bezier(.6, 0, .2, 1); display: grid; gap: calc(var(--bh) / 2); container-type: inline-size; }
 .bar { position: relative; width: calc(var(--len) * 100%); min-height: var(--bh); border-radius: calc(var(--bh) / 2); color: #fff;
-background-image: var(--sig-deep); background-size: calc(100% / var(--len)) 100%;
-transition: width var(--d-signal) var(--lift), background-size var(--d-signal) var(--lift); }
-.bar.is-open { width: 100%; background-size: 100% 100%; }
+background-image: var(--sig-deep); background-size: calc(100% / var(--len)) 100%; background-size: 100cqw 100%;
+transition: width var(--bar-d) var(--bar-e); }
+.bar.is-open { width: 100%; }
 .bar h3 { font: inherit; }
 .bar__top { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 36px); width: 100%; min-height: var(--bh); padding: 0 clamp(22px, 3.4vw, 56px); text-align: left; border-radius: calc(var(--bh) / 2); }
 .bar__top:focus-visible { outline-color: var(--ink); outline-offset: 4px; border-radius: calc(var(--bh) / 2); }
 .bar__n { font: 500 clamp(12px, 1vw, 15px)/1 var(--mono); opacity: .85; }
 .bar__t { font: 600 clamp(38px, 7vw, 104px)/1 var(--sans); letter-spacing: -.05em; padding-bottom: .06em; transition: transform var(--d-slow) var(--lift); }
 .bar__top:hover .bar__t { transform: translateX(12px); }
-.bar__x { position: relative; flex: none; margin-left: auto; width: clamp(40px, 4.4vw, 60px); aspect-ratio: 1; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(255,255,255,.9); transition: transform var(--d-slow) var(--lift), background var(--d-fast) linear; }
-.bar__x::before, .bar__x::after { content: ""; position: absolute; left: 50%; top: 50%; width: 42%; height: 3px; margin: -1.5px 0 0 -21%; border-radius: 3px; background: currentColor; transition: transform var(--d-slow) var(--lift); }
+.bar__x { position: relative; flex: none; margin-left: auto; width: clamp(40px, 4.4vw, 60px); aspect-ratio: 1; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(255,255,255,.9); transition: transform var(--bar-d) var(--bar-e), background-color var(--d-base) linear, color var(--d-base) linear; }
+.bar__x::before, .bar__x::after { content: ""; position: absolute; left: 50%; top: 50%; width: 42%; height: 3px; margin: -1.5px 0 0 -21%; border-radius: 3px; background: currentColor; transition: transform var(--bar-d) var(--bar-e); }
 .bar__x::after { transform: rotate(90deg); }
-.bar.is-open .bar__x { transform: rotate(180deg); background: #fff; color: var(--blue-deep); }
+.bar.is-open .bar__x { transform: rotate(180deg); background-color: #fff; color: var(--blue-deep); }
 .bar.is-open .bar__x::after { transform: rotate(0deg); }
-.bar__more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--d-signal) var(--lift); }
+.bar__more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--bar-d) var(--bar-e); }
 .bar.is-open .bar__more { grid-template-rows: 1fr; }
-.bar__more ul { min-height: 0; overflow: hidden; display: flex; flex-wrap: wrap; gap: 10px; padding: 0 clamp(22px, 3.4vw, 56px); }
-.bar.is-open .bar__more ul { padding-bottom: clamp(26px, 3.6vw, 52px); }
-.bar__more li { padding: .5em 1em; border-radius: var(--r-full); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.85); font: 500 clamp(16px, 1.7vw, 24px)/1.1 var(--sans); transform: translateX(-24px); opacity: 0; transition: transform var(--d-slow) var(--lift), opacity var(--d-base) linear; }
-.bar.is-open .bar__more li { transform: none; opacity: 1; }
-.bar.is-open .bar__more li:nth-child(2) { transition-delay: 60ms; } .bar.is-open .bar__more li:nth-child(3) { transition-delay: 120ms; }
-.bar.is-open .bar__more li:nth-child(4) { transition-delay: 180ms; } .bar.is-open .bar__more li:nth-child(5) { transition-delay: 240ms; }
-.no-js .bar__more { grid-template-rows: 1fr; } .no-js .bar { width: 100%; background-size: 100% 100%; } .no-js .bar__more li { transform: none; opacity: 1; } .no-js .bar__more ul { padding-bottom: 32px; } .no-js .bar__x { display: none; }
-@media (max-width: 719px) { .mark { gap: 18px; } .bar[style*=".625"]:not(.is-open) { width: 74%; background-size: 135% 100%; } }
+.bar__clip { min-height: 0; overflow: hidden; }
+.bar__more ul { display: flex; flex-wrap: wrap; gap: 10px; padding: 2px clamp(22px, 3.4vw, 56px) clamp(26px, 3.6vw, 52px); }
+.bar__more li { padding: .5em 1em; border-radius: var(--r-full); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.85); font: 500 clamp(16px, 1.7vw, 24px)/1.1 var(--sans);
+transform: translate3d(-28px, 0, 0); opacity: 0; transition: transform 320ms var(--bar-e), opacity 200ms linear; }
+.bar.is-open .bar__more li { transform: none; opacity: 1; transition: transform 640ms var(--lift), opacity 360ms linear; transition-delay: calc(220ms + var(--i, 0) * 55ms); }
+.bar__more li:nth-child(2) { --i: 1; } .bar__more li:nth-child(3) { --i: 2; } .bar__more li:nth-child(4) { --i: 3; } .bar__more li:nth-child(5) { --i: 4; }
+.no-js .bar__more { grid-template-rows: 1fr; } .no-js .bar { width: 100%; } .no-js .bar__more li { transform: none; opacity: 1; } .no-js .bar__x { display: none; }
+.calm .bar, .calm .bar__more, .calm .bar__more li, .calm .bar__x { transition: none !important; }
+@media (max-width: 719px) { .mark { gap: 18px; } .bar[style*=".625"]:not(.is-open) { width: 74%; } }
 .pitwrap { display: grid; grid-template-columns: minmax(0, 1fr) clamp(260px, 26vw, 360px); gap: clamp(16px, 2vw, 28px); align-items: stretch; }
 .pit { position: relative; min-height: clamp(480px, 68vh, 700px); border-radius: var(--r-card); background: #0b0c0f; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; touch-action: pan-y; }
 .pit__list { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 10px; padding: clamp(18px, 2.4vw, 32px); }
@@ -397,7 +419,8 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   var q = location.search;
   var calm = (m && m('(prefers-reduced-motion: reduce)').matches) || /[?&]calm=1/.test(q);
   var fine = m && m('(hover: hover) and (pointer: fine)').matches;
-  d.className = d.className.replace('no-js', 'js') + (calm ? ' calm' : '') + (fine ? ' fine' : '');
+  var coarse = m && m('(pointer: coarse)').matches;
+  d.className = d.className.replace('no-js', 'js') + (calm ? ' calm' : '') + (fine ? ' fine' : '') + (fine && !calm && !coarse ? ' eased' : '');
 })();
 </script>
 </head>
@@ -471,15 +494,15 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     <div class="mark" id="mark">
       <article class="bar" data-bar style="--len:1">
         <h3><button class="bar__top" type="button" aria-expanded="false" aria-controls="bar-create" data-cur="Open"><span class="bar__n">01</span><span class="bar__t">Create</span><span class="bar__x" aria-hidden="true"></span></button></h3>
-        <div class="bar__more" id="bar-create"><ul><li>Content</li><li>Video</li><li>Design</li><li>Branding</li><li>Campaign ideas</li></ul></div>
+        <div class="bar__more" id="bar-create"><div class="bar__clip"><ul><li>Content</li><li>Video</li><li>Design</li><li>Branding</li><li>Campaign ideas</li></ul></div></div>
       </article>
       <article class="bar" data-bar style="--len:.625">
         <h3><button class="bar__top" type="button" aria-expanded="false" aria-controls="bar-connect" data-cur="Open"><span class="bar__n">02</span><span class="bar__t">Connect</span><span class="bar__x" aria-hidden="true"></span></button></h3>
-        <div class="bar__more" id="bar-connect"><ul><li>Social</li><li>WhatsApp</li><li>SMS</li><li>AI calling</li><li>PR</li></ul></div>
+        <div class="bar__more" id="bar-connect"><div class="bar__clip"><ul><li>Social</li><li>WhatsApp</li><li>SMS</li><li>AI calling</li><li>PR</li></ul></div></div>
       </article>
       <article class="bar" data-bar style="--len:1">
         <h3><button class="bar__top" type="button" aria-expanded="false" aria-controls="bar-grow" data-cur="Open"><span class="bar__n">03</span><span class="bar__t">Grow</span><span class="bar__x" aria-hidden="true"></span></button></h3>
-        <div class="bar__more" id="bar-grow"><ul><li>SEO</li><li>SEM</li><li>Performance ads</li><li>Automation</li><li>Reporting</li></ul></div>
+        <div class="bar__more" id="bar-grow"><div class="bar__clip"><ul><li>SEO</li><li>SEM</li><li>Performance ads</li><li>Automation</li><li>Reporting</li></ul></div></div>
       </article>
     </div>
   </div>
@@ -745,10 +768,12 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
 
   var raf = 0, lastT = 0, cur = E.y, target = E.y, easing = false, lastSet = -1, idle = 0, quietTimer = 0, moving = false;
   var EASE = 9.5;                                              /* how quickly the page catches up with the wheel */
-  var main = null;
+  var main = null, veil = null;
   function setMoving(on) {
     if (!E.fine || on === moving) return;
-    moving = on; if (!main) main = d.querySelector('main'); if (main) main.classList.toggle('is-scrolling', on);
+    moving = on;
+    if (!veil) { veil = d.createElement('div'); veil.className = 'veil'; veil.hidden = true; veil.setAttribute('aria-hidden', 'true'); d.body.appendChild(veil); }
+    veil.hidden = !on;
   }
   function tick(now) {
     raf = 0;
@@ -784,14 +809,19 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   if (d.fonts && d.fonts.ready) d.fonts.ready.then(E.measure);
   d.addEventListener('DOMContentLoaded', function () {
     main = d.querySelector('main');
-    if ('ResizeObserver' in root && main) new ResizeObserver(function () { E.measure(); }).observe(main);
+    var roT = 0, roLast = 0;
+    if ('ResizeObserver' in root && main) new ResizeObserver(function () {
+      var now = performance.now(); clearTimeout(roT);
+      if (now - roLast > 140) { roLast = now; E.measure(); } else roT = setTimeout(function () { roLast = performance.now(); E.measure(); }, 150);
+    }).observe(main);
     else setInterval(E.measure, 1500);
     E.measure();
   });
 
   if (E.lite) de.classList.add('lite');
   E.smoothWheel = E.fine && !E.calm && !coarse;
-  if (E.smoothWheel) de.classList.add('eased');
+  if (E.smoothWheel) de.classList.add('eased'); else de.classList.remove('eased');
+  E.maxY = function () { return maxY; };
   E.scrollTo = function (y, instant) {
     y = E.clamp(y, 0, Math.max(maxY, de.scrollHeight - root.innerHeight));
     if (instant || E.calm) { easing = false; root.scrollTo(0, y); cur = target = y; wake(); return; }
@@ -1198,7 +1228,7 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   }
   var menu = $('menu-btn'), sheet = $('sheet'), sheetOpen = false;
   function setSheet(open) {
-    sheetOpen = open; E.locked = open; sheet.hidden = !open; menu.setAttribute('aria-expanded', String(open)); d.body.style.overflow = open ? 'hidden' : '';
+    sheetOpen = open; E.locked = open; d.documentElement.classList.toggle('menu-open', open); sheet.hidden = !open; menu.setAttribute('aria-expanded', String(open)); d.body.style.overflow = open ? 'hidden' : '';
     if (open) { navAway = false; nav.classList.remove('is-away'); }
     navTick();
   }
@@ -1497,24 +1527,42 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   var ctx = cv && cv.getContext ? cv.getContext('2d') : null;
   if (E.calm || !ctx) { if (shakeBtn) shakeBtn.hidden = true; pit.removeAttribute('data-cur'); return; }
 
-  var W = 0, H = 0, dpr = 1, bodies = [], pts = [], live = false, raf = 0, last = 0, still = 0, held = null, shake = 0, hover = null, font = '', dirty = false;
+  var W = 0, H = 0, dpr = 1, bodies = [], pts = [], live = false, raf = 0, last = 0, still = 0, held = null, shake = 0, hover = null, font = '', dirty = false, seen = false, awake = 0;
   var G = 2200, rand = E.rng(77), pitRect = null, ITER = E.lite ? 9 : 12, SUB = E.lite ? 2 : 3;
   addEventListener('scroll', function () { pitRect = null; }, { passive: true });
 
+  var cache = [], prepW = -1, idle = window.requestIdleCallback ? function (f) { requestIdleCallback(f, { timeout: 1200 }); } : function (f) { setTimeout(f, 80); };
+  function prepare() {
+    if (live || !pills.length) return;
+    var cs = getComputedStyle(pills[0]); font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily; dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var sizes = pills.map(function (el) { return [el.offsetWidth, el.offsetHeight]; }), i = 0; prepW = window.innerWidth;
+    (function next() {
+      if (live || i >= pills.length) return;
+      var el = pills[i], w = sizes[i][0], h = sizes[i][1];
+      if (w && h) { var tmp = { text: el.querySelector('b').textContent, core: el.getAttribute('data-g') === 'core', w: w, h: h, spr: {} }; sprite(tmp, 'n'); cache[i] = { w: w, h: h, dpr: dpr, font: font, spr: tmp.spr }; }
+      i++; idle(next);
+    })();
+  }
   function build(drop) {
-    pit.classList.remove('is-live');
-    W = pit.clientWidth; H = pit.clientHeight;
-    var cs = getComputedStyle(pills[0]);
-    font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
-    var sizes = pills.map(function (el) { return [el.offsetWidth, el.offsetHeight]; });
+    var ready = !live && cache.length === pills.length && prepW === window.innerWidth, sizes;
+    if (ready) sizes = cache.map(function (c) { return [c.w, c.h]; });
+    else {
+      pit.classList.remove('is-live');
+      var cs = getComputedStyle(pills[0]);
+      font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      sizes = pills.map(function (el) { return [el.offsetWidth, el.offsetHeight]; });
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+    }
     pit.classList.add('is-live');
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = pit.clientWidth; H = pit.clientHeight;
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
     bodies = []; pts = [];
     pills.forEach(function (el, i) {
       var w = sizes[i][0], h = sizes[i][1], r = h / 2, n = Math.max(2, Math.round((w - h) / (h * 0.62)) + 1), gap = (w - h) / (n - 1);
       var x0 = r + rand() * Math.max(1, W - w - h), y0 = drop ? -h - i * h * 1.5 - rand() * 60 : r + rand() * (H - h), a = drop ? (rand() - .5) * 0.9 : 0;
-      var b = { el: el, text: el.querySelector('b').textContent, core: el.getAttribute('data-g') === 'core', w: w, h: h, r: r, p: [], gap: gap, cx: 0, cy: 0, a: 0, spr: {}, inside: !drop };
+      var kept = cache[i] && cache[i].w === w && cache[i].h === h && cache[i].dpr === dpr && cache[i].font === font ? cache[i].spr : {};
+      var b = { el: el, text: el.querySelector('b').textContent, core: el.getAttribute('data-g') === 'core', w: w, h: h, r: r, p: [], gap: gap, cx: 0, cy: 0, a: 0, spr: kept, inside: !drop };
+      cache[i] = { w: w, h: h, dpr: dpr, font: font, spr: kept };
       for (var k = 0; k < n; k++) { var px = x0 + r + Math.cos(a) * gap * k, py = y0 + Math.sin(a) * gap * k; var q = { x: px, y: py, ox: px, oy: py, r: r, b: b }; b.p.push(q); pts.push(q); }
       bodies.push(b);
     });
@@ -1629,11 +1677,17 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     if (hit > 14) shake = Math.min(7, hit * 0.22);                         /* a hard landing shakes the box a little */
     if (shake > 0.2) { pit.style.transform = 'translate(' + ((rand() - .5) * shake).toFixed(1) + 'px,' + ((rand() - .5) * shake).toFixed(1) + 'px)'; shake *= 0.78; }
     else if (shake) { shake = 0; pit.style.transform = ''; }
-    still = (moving < bodies.length * 0.05 && !pin) ? still + 1 : 0;
-    if (still < 50 && live && !d.hidden) raf = requestAnimationFrame(frame);
-    else draw(true);                                                      /* at rest: one sharp pass */
+    awake += dt;
+    var calmNow = moving < bodies.length * 0.22 && !pin;
+    still = calmNow ? still + 1 : 0;
+    if (calmNow) { for (var q = 0; q < pts.length; q++) { var pp = pts[q]; pp.ox = pp.x - (pp.x - pp.ox) * 0.8; pp.oy = pp.y - (pp.y - pp.oy) * 0.8; } }   /* nearly still: let it settle */
+    if (still < 40 && awake < 9 && live && seen && !d.hidden) raf = requestAnimationFrame(frame);
+    else {
+      for (var z = 0; z < pts.length; z++) { pts[z].ox = pts[z].x; pts[z].oy = pts[z].y; }                    /* asleep: no leftover motion */
+      if (seen) draw(true);                                               /* at rest: one sharp pass */
+    }
   }
-  function wake() { still = 0; if (!raf && live) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+  function wake() { still = 0; awake = 0; if (!raf && live && seen) { last = performance.now(); raf = requestAnimationFrame(frame); } }
   function redraw() { if (!live || raf || dirty) return; dirty = true; requestAnimationFrame(function () { if (!raf) { draw(true); } dirty = false; }); }
   function nudge(v) { if (!live) return; pts.forEach(function (p) { p.oy = p.y + v * 0.016 * (0.4 + rand()); p.ox = p.x + (rand() - .5) * v * 0.02; }); wake(); }
 
@@ -1682,9 +1736,61 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   E.hooks.pills = function () { return bodies.map(function (b) { return { x: b.cx, y: b.cy, w: b.w, h: b.h, a: b.a, name: b.text }; }); };
 
   var builtOnce = false, rt = 0;
-  E.watch(pit, function (v) { if (v && !builtOnce) { builtOnce = true; (d.fonts && d.fonts.ready ? d.fonts.ready : Promise.resolve()).then(function () { build(true); }); } else if (v) wake(); }, 0.18);
+  (d.fonts && d.fonts.ready ? d.fonts.ready : Promise.resolve()).then(function () { setTimeout(function () { idle(prepare); }, 900); });
+  E.watch(pit, function (v) { seen = v; if (v && !builtOnce) { builtOnce = true; (d.fonts && d.fonts.ready ? d.fonts.ready : Promise.resolve()).then(function () { build(true); }); } else if (v) wake(); }, 0.18);
+  E.watch(pit, function (v) { if (!v) seen = false; });
   addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (builtOnce && Math.abs(pit.clientWidth - W) > 4) build(false); else if (builtOnce) { H = pit.clientHeight; wake(); } }, 200); });
   d.addEventListener('visibilitychange', function () { if (!d.hidden) wake(); });
+})();
+</script>
+<script>
+/* 45-scrollbar.js */
+(function () {
+  'use strict';
+  var E = window.ELV, d = document;
+  if (!E.smoothWheel) return;
+  var rail = d.createElement('div'), thumb = d.createElement('i');
+  rail.className = 'sbar'; rail.setAttribute('aria-hidden', 'true'); rail.appendChild(thumb); d.body.appendChild(rail);
+  var grounds = [].map.call(d.querySelectorAll('[data-ground]'), function (el) { return { b: E.box(el), g: el.getAttribute('data-ground') }; });
+  var PAD = 8, railH = 0, thumbH = 0, max = 1, tone = '', lastT = -1, lastH = -1, drag = null, quiet = 0;
+
+  function layout() {
+    max = Math.max(1, E.maxY());
+    railH = E.vh - 2 * PAD;
+    thumbH = Math.max(56, Math.min(railH, railH * E.vh / (max + E.vh)));
+    rail.hidden = E.maxY() < 4;
+    if (thumbH !== lastH) { lastH = thumbH; thumb.style.height = thumbH.toFixed(1) + 'px'; }
+  }
+  function tick() {
+    layout();
+    var t = E.clamp(E.y / max, 0, 1) * (railH - thumbH);
+    if (Math.abs(t - lastT) > 0.05) { lastT = t; thumb.style.transform = 'translate3d(0,' + t.toFixed(1) + 'px,0)'; }
+    var probe = E.y + PAD + t + thumbH / 2, g = 'void';
+    for (var i = 0; i < grounds.length; i++) { var b = grounds[i].b; if (b.top <= probe && b.top + b.h > probe) { g = grounds[i].g; break; } }
+    if (g !== tone) { tone = g; rail.setAttribute('data-on', g); }
+    rail.classList.add('is-moving'); clearTimeout(quiet); quiet = setTimeout(function () { rail.classList.remove('is-moving'); }, 900);
+  }
+  E.onScroll(tick);
+
+  rail.addEventListener('pointerdown', function (e) {
+    if (e.button) return;
+    e.preventDefault();
+    var r = rail.getBoundingClientRect(), y = e.clientY - r.top, t = lastT < 0 ? 0 : lastT;
+    if (e.target === thumb || (y >= t && y <= t + thumbH)) {
+      drag = { id: e.pointerId, off: y - t };
+      rail.classList.add('is-held'); try { rail.setPointerCapture(e.pointerId); } catch (err) {}
+    } else {
+      E.scrollTo(E.clamp((y - thumbH / 2) / (railH - thumbH), 0, 1) * max);          /* a click on the rail: go there */
+    }
+  });
+  rail.addEventListener('pointermove', function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var r = rail.getBoundingClientRect();
+    E.scrollTo(E.clamp((e.clientY - r.top - drag.off) / (railH - thumbH), 0, 1) * max, true);   /* the thumb follows the hand exactly */
+  });
+  function drop() { if (drag) { drag = null; rail.classList.remove('is-held'); } }
+  rail.addEventListener('pointerup', drop); rail.addEventListener('pointercancel', drop); rail.addEventListener('lostpointercapture', drop);
+  E.hooks.scrollbar = function () { return { thumbH: thumbH, t: lastT, tone: tone }; };
 })();
 </script>
 <script>
