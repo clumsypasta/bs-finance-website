@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Elevana Media | Get seen. Get chosen. Grow.</title>
-<meta name="description" content="Elevana Media is a new-age media and growth company in Mumbai, Delhi, Gurgaon and Noida: creative storytelling, performance marketing and AI-powered automation under one roof.">
+<title>Elvana Media | Get seen. Get chosen. Grow.</title>
+<meta name="description" content="Elvana Media is a new-age media and growth company in Mumbai, Delhi, Gurgaon and Noida: creative storytelling, performance marketing and AI-powered automation under one roof.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Elevana Media">
-<meta property="og:title" content="Elevana Media | Get seen. Get chosen. Grow.">
+<meta property="og:site_name" content="Elvana Media">
+<meta property="og:title" content="Elvana Media | Get seen. Get chosen. Grow.">
 <meta property="og:description" content="A new-age media and growth company: creative storytelling, performance marketing and AI-powered automation under one roof.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230d9a98'/%3E%3Cstop offset='1' stop-color='%232563eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1024' height='1024' rx='256' fill='url(%23g)'/%3E%3Cg fill='%23fff'%3E%3Crect x='281.6' y='281.6' width='460.8' height='115.2' rx='57.6'/%3E%3Crect x='281.6' y='454.4' width='288' height='115.2' rx='57.6'/%3E%3Crect x='281.6' y='627.2' width='460.8' height='115.2' rx='57.6'/%3E%3C/g%3E%3C/svg%3E">
 <style>
@@ -189,7 +189,7 @@ transition: opacity 260ms linear, transform 420ms var(--lift), background-color 
 </style>
 <style>
 section { position: relative; }
-.pillars, .svcs, .edge, .sectors, .models, .people, .contact { padding: var(--sec) 0; }
+.pillars, .svcs, .edge, .sectors, .models, .contact { padding: var(--sec) 0; }
 .hero { height: 380vh; height: 380svh; }
 .hero__pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
 .hero__field { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -217,27 +217,39 @@ section { position: relative; }
 .no-js .hero__h span:nth-child(2) { color: var(--teal-bright); }
 .no-js .hero__h span:nth-child(3) { color: var(--blue-bright); }
 .no-js .hero__foot { position: static; }
-.say { padding: clamp(72px, 9vw, 140px) 0 clamp(96px, 12vw, 190px); }
-.say__k { font: 500 clamp(15px, 1.3vw, 19px)/1.3 var(--sans); color: var(--mute); margin-bottom: clamp(20px, 3vw, 40px); }
-.say__t { font: 300 clamp(31px, 5.4vw, 86px)/1.06 var(--sans); letter-spacing: -.04em; max-width: 17em; text-wrap: balance; }
+.say { padding: clamp(72px, 11vw, 150px) 0; }
+.say__h { font: 600 clamp(44px, 7.4vw, 120px)/.98 var(--sans); letter-spacing: -.05em; text-wrap: balance; }
+.say__t { display: grid; gap: clamp(14px, 1.8vw, 26px); margin-top: clamp(22px, 3.2vw, 46px); }
+.say__l1 { font: 500 clamp(21px, 3vw, 46px)/1.16 var(--sans); letter-spacing: -.03em; text-wrap: balance; }
+.say__l2 { font: 400 clamp(16px, 1.5vw, 22px)/1.5 var(--sans); color: var(--mute); text-wrap: pretty; }
+@media (min-width: 720px) { .say__l1 { white-space: nowrap; } }
+@media (min-width: 1100px) { .say__l2 { white-space: nowrap; } }
 .say__t .w { opacity: .3; transition: opacity 260ms linear; }
 .say__t .w.is-lit { opacity: 1; }
 .lite .say__t .w { transition: none; }
-.say__f { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: clamp(40px, 6vw, 88px); font: 500 14.5px/1.3 var(--sans); color: var(--mute); }
-.say__f span { display: inline-flex; align-items: center; gap: 10px; }
-.say__f span::before { content: ""; width: 22px; height: 8px; border-radius: 8px; background: currentColor; }
-.mark { --bh: clamp(92px, 12.5vw, 176px); --bar-d: 760ms; --bar-e: cubic-bezier(.6, 0, .2, 1); display: grid; gap: calc(var(--bh) / 2); container-type: inline-size; }
-.bar { position: relative; width: calc(var(--len) * 100%); min-height: var(--bh); border-radius: calc(var(--bh) / 2); color: #fff;
+.say__go { align-self: flex-start; margin-top: clamp(30px, 4.4vw, 60px); }
+.say__go .elv-icon { flex: none; transition: transform var(--d-slow) var(--lift); }
+.say__go:hover .elv-icon, .say__go:focus-visible .elv-icon { transform: translateX(4px); }
+.say__f { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; margin-top: clamp(40px, 6vw, 84px); padding-top: clamp(20px, 2.4vw, 30px); border-top: 1px solid var(--line); }
+.say__tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.say__tags li { padding: .62em 1.15em; border-radius: var(--r-full); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.85); font: 500 clamp(14px, 1.15vw, 17px)/1 var(--sans); }
+.say__inc { display: inline-flex; align-items: center; gap: 10px; font: 500 14.5px/1.3 var(--sans); color: var(--mute); }
+.say__inc::before { content: ""; width: 22px; height: 8px; border-radius: 8px; background: currentColor; }
+.pillars .sh { margin-bottom: clamp(26px, 5.4vh, 64px); }
+.if-fine { display: none; } .fine .if-fine { display: inline; } .fine .if-touch { display: none; }
+.mark { --bh: clamp(72px, min(10.5vw, 13.5vh), 150px); --padx: clamp(22px, 3.4vw, 56px); --xw: clamp(36px, calc(var(--bh) * .4), 60px);
+--bar-d: 760ms; --bar-e: cubic-bezier(.6, 0, .2, 1); display: grid; gap: calc(var(--bh) / 2); container-type: inline-size; }
+.bar { position: relative; width: min(100%, max(calc(var(--len) * 100%), var(--fitw, 0px))); min-height: var(--bh); border-radius: calc(var(--bh) / 2); color: #fff;
 background-image: var(--sig-deep); background-size: calc(100% / var(--len)) 100%; background-size: 100cqw 100%;
 transition: width var(--bar-d) var(--bar-e); }
 .bar.is-open { width: 100%; }
 .bar h3 { font: inherit; }
-.bar__top { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 36px); width: 100%; min-height: var(--bh); padding: 0 clamp(22px, 3.4vw, 56px); text-align: left; border-radius: calc(var(--bh) / 2); }
+.bar__top { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 36px); width: 100%; min-height: var(--bh); padding: 0 var(--padx); text-align: left; border-radius: calc(var(--bh) / 2); }
 .bar__top:focus-visible { outline-color: var(--ink); outline-offset: 4px; border-radius: calc(var(--bh) / 2); }
 .bar__n { font: 500 clamp(12px, 1vw, 15px)/1 var(--mono); opacity: .85; }
-.bar__t { font: 600 clamp(38px, 7vw, 104px)/1 var(--sans); letter-spacing: -.05em; padding-bottom: .06em; transition: transform var(--d-slow) var(--lift); }
-.bar__top:hover .bar__t { transform: translateX(12px); }
-.bar__x { position: relative; flex: none; margin-left: auto; width: clamp(40px, 4.4vw, 60px); aspect-ratio: 1; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(255,255,255,.9); transition: transform var(--bar-d) var(--bar-e), background-color var(--d-base) linear, color var(--d-base) linear; }
+.bar__t { font: 600 calc(var(--bh) * .54)/1 var(--sans); letter-spacing: -.05em; padding-bottom: .06em; transition: transform var(--d-slow) var(--lift); }
+.bar__top:hover .bar__t, .bar.is-open .bar__t { transform: translateX(12px); }
+.bar__x { position: relative; flex: none; margin-left: auto; width: var(--xw); aspect-ratio: 1; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(255,255,255,.9); transition: transform var(--bar-d) var(--bar-e), background-color var(--d-base) linear, color var(--d-base) linear; }
 .bar__x::before, .bar__x::after { content: ""; position: absolute; left: 50%; top: 50%; width: 42%; height: 3px; margin: -1.5px 0 0 -21%; border-radius: 3px; background: currentColor; transition: transform var(--bar-d) var(--bar-e); }
 .bar__x::after { transform: rotate(90deg); }
 .bar.is-open .bar__x { transform: rotate(180deg); background-color: #fff; color: var(--blue-deep); }
@@ -245,16 +257,23 @@ transition: width var(--bar-d) var(--bar-e); }
 .bar__more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--bar-d) var(--bar-e); }
 .bar.is-open .bar__more { grid-template-rows: 1fr; }
 .bar__clip { min-height: 0; overflow: hidden; }
-.bar__more ul { display: flex; flex-wrap: wrap; gap: 10px; padding: 2px clamp(22px, 3.4vw, 56px) clamp(26px, 3.6vw, 52px); }
+.bar__more ul { display: flex; flex-wrap: wrap; gap: 10px; padding: 2px var(--padx) clamp(22px, 3.2vw, 46px); }
 .bar__more li { padding: .5em 1em; border-radius: var(--r-full); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.85); font: 500 clamp(16px, 1.7vw, 24px)/1.1 var(--sans);
 transform: translate3d(-28px, 0, 0); opacity: 0; transition: transform 320ms var(--bar-e), opacity 200ms linear; }
 .bar.is-open .bar__more li { transform: none; opacity: 1; transition: transform 640ms var(--lift), opacity 360ms linear; transition-delay: calc(220ms + var(--i, 0) * 55ms); }
 .bar__more li:nth-child(2) { --i: 1; } .bar__more li:nth-child(3) { --i: 2; } .bar__more li:nth-child(4) { --i: 3; } .bar__more li:nth-child(5) { --i: 4; }
 .no-js .bar__more { grid-template-rows: 1fr; } .no-js .bar { width: 100%; } .no-js .bar__more li { transform: none; opacity: 1; } .no-js .bar__x { display: none; }
 .calm .bar, .calm .bar__more, .calm .bar__more li, .calm .bar__x { transition: none !important; }
-@media (max-width: 719px) { .mark { gap: 18px; } .bar[style*=".625"]:not(.is-open) { width: 74%; } }
-.pitwrap { display: grid; grid-template-columns: minmax(0, 1fr) clamp(260px, 26vw, 360px); gap: clamp(16px, 2vw, 28px); align-items: stretch; }
-.pit { position: relative; min-height: clamp(480px, 68vh, 700px); border-radius: var(--r-card); background: #0b0c0f; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; touch-action: pan-y; }
+@container (min-width: 860px) {
+.bar__more { position: absolute; top: 0; bottom: 0; left: var(--cx, 44%); right: calc(var(--padx) + var(--xw) + 24px); display: block; overflow: hidden; pointer-events: none; transition: none; }
+.bar__clip { height: 100%; display: flex; align-items: center; overflow: visible; }
+.bar__more ul { flex: none; width: calc(100cqw - var(--cx, 44%) - var(--padx) - var(--xw) - 24px); align-content: center; padding: 0; }
+.bar__more li { font-size: clamp(14px, calc(var(--bh) * .15), 21px); }
+.bar.is-open .bar__more li { transition-delay: calc(110ms + var(--i, 0) * 50ms); }
+}
+@media (max-width: 719px) { .mark { gap: 18px; } .bar[style*=".625"]:not(.is-open) { width: min(100%, max(74%, var(--fitw, 0px))); } }
+.pitwrap { --pit-h: clamp(500px, 70vh, 720px); display: grid; grid-template-columns: minmax(0, 1fr) clamp(280px, 28vw, 400px); gap: clamp(16px, 2vw, 28px); align-items: start; }
+.pit { position: relative; height: var(--pit-h); border-radius: var(--r-card); background: #0b0c0f; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; touch-action: pan-y; }
 .pit__list { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 10px; padding: clamp(18px, 2.4vw, 32px); }
 .pill { --ph: clamp(54px, 5vw, 74px); display: inline-flex; align-items: center; height: var(--ph); padding: 0 calc(var(--ph) * .5); border-radius: var(--r-full); font: 600 calc(var(--ph) * .33)/1 var(--sans); letter-spacing: -.01em; white-space: nowrap; user-select: none; -webkit-user-select: none;
 background: var(--chalk); color: var(--ink); transition: background-color var(--d-fast) linear, color var(--d-fast) linear, box-shadow var(--d-fast) linear, opacity var(--d-base) linear; }
@@ -271,16 +290,43 @@ background: var(--chalk); color: var(--ink); transition: background-color var(--
 .pit.is-live .pit__list { position: absolute; left: 0; top: 0; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .no-js .pill { height: auto; display: grid; gap: 4px; padding: 14px 20px; border-radius: 22px; white-space: normal; text-align: left; max-width: 320px; }
 .no-js .pill span { font: 400 14px/1.4 var(--sans); }
-.no-js .svc, .no-js .chips { display: none; } .no-js .pitwrap { grid-template-columns: 1fr; } .no-js .pit { min-height: 0; }
-.svc { display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 2.4vw, 34px); border-radius: var(--r-card); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+.no-js .svc, .no-js .chips, .no-js .tray { display: none; } .no-js .pitwrap { grid-template-columns: 1fr; } .no-js .pit { height: auto; }
+.svc { display: flex; flex-direction: column; gap: 14px; height: var(--pit-h); padding: clamp(22px, 2.4vw, 34px); border-radius: var(--r-card); background: var(--card); box-shadow: inset 0 0 0 1px var(--line);
+overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #3a3d43 transparent; }
 .svc__n { font: 500 13px/1 var(--mono); color: var(--mute); }
-.svc__t { font: 300 clamp(28px, 2.8vw, 42px)/1.04 var(--sans); letter-spacing: -.035em; text-wrap: balance; }
-.svc__d { color: var(--mute); font-size: 16.5px; text-wrap: pretty; }
-.svc .btn { margin-top: auto; align-self: flex-start; }
-.svc.is-swap .svc__t, .svc.is-swap .svc__d, .svc.is-swap .svc__n { animation: from-left var(--d-slow) var(--lift) both; }
-.svc.is-swap .svc__d { animation-delay: 60ms; }
+.svc__t { font: 300 clamp(26px, 2.4vw, 38px)/1.06 var(--sans); letter-spacing: -.035em; text-wrap: balance; }
+.svc__d { color: var(--mute); font-size: 16px; text-wrap: pretty; }
+.svc__more { display: grid; gap: 14px; }
+.svc__more:empty { display: none; }
+.svc__more ul { display: grid; gap: 9px; }
+.svc__more li { position: relative; padding-left: 24px; font-size: 15px; line-height: 1.45; color: #d6d8dc; text-wrap: pretty; }
+.svc__more li::before { content: ""; position: absolute; left: 0; top: .5em; width: 13px; height: 6px; border-radius: 6px; background: var(--sig-bright); }
+.svc__more p { display: grid; gap: 3px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.45; text-wrap: pretty; }
+.svc__more p small { font: 500 12.5px/1.3 var(--sans); color: var(--mute); }
+.svc.is-swap .svc__t, .svc.is-swap .svc__d, .svc.is-swap .svc__n, .svc.is-swap .svc__more { animation: from-left var(--d-slow) var(--lift) both; }
+.svc.is-swap .svc__d { animation-delay: 60ms; } .svc.is-swap .svc__more { animation-delay: 110ms; }
 @keyframes from-left { from { transform: translateX(-22px); opacity: 0; } }
-@media (max-width: 899px) { .pitwrap { grid-template-columns: 1fr; } .sh--row { grid-template-columns: 1fr; } .pit { min-height: 560px; } .pill { --ph: 40px; font-size: 13.5px; } }
+.tray { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; min-height: 76px; margin-top: clamp(14px, 1.6vw, 20px); padding: 12px 12px 12px clamp(20px, 2.2vw, 30px);
+border-radius: 38px; background: #0b0c0f; box-shadow: inset 0 0 0 1px var(--line); }
+.tray__h { flex: none; display: inline-flex; align-items: center; gap: 10px; font: 500 15px/1 var(--sans); }
+.tray__h b { display: inline-grid; place-items: center; min-width: 30px; height: 30px; padding: 0 9px; border-radius: 15px; background: #1b1d21; font-size: 13px; color: var(--mute); transition: color var(--d-base) linear, background-color var(--d-base) linear; }
+.tray.has-some .tray__h b { background: var(--teal-bright); color: var(--ink); }
+.tray__list { flex: 1 1 0; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tray__list:empty, .tray.has-some .tray__empty { display: none; }
+.tray__empty { flex: 1 1 0; min-width: 12em; font-size: 15px; color: var(--mute); }
+.tray__list li { max-width: 100%; }
+.tray__list button { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; height: 40px; padding: 0 7px 0 16px; border-radius: var(--r-full); box-shadow: inset 0 0 0 1.5px var(--teal-bright);
+font: 500 14.5px/1 var(--sans); white-space: nowrap; transition: background-color var(--d-fast) linear; animation: from-left var(--d-slow) var(--lift) both; }
+.tray__list button span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.tray__list button:hover { background: #1b1d21; }
+.tray__list button:focus-visible { border-radius: var(--r-full); }
+.tray__x { position: relative; flex: none; width: 26px; height: 26px; border-radius: 50%; background: #1b1d21; transition: transform var(--d-base) var(--lift), background-color var(--d-fast) linear; }
+.tray__x::before, .tray__x::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 2px; margin: -1px 0 0 -5.5px; border-radius: 2px; background: currentColor; transform: rotate(45deg); }
+.tray__x::after { transform: rotate(-45deg); }
+.tray__list button:hover .tray__x { transform: rotate(90deg); background: #2a2c31; }
+.tray__go { flex: none; margin-left: auto; }
+@media (max-width: 899px) { .pitwrap { grid-template-columns: 1fr; } .sh--row { grid-template-columns: 1fr; } .pitwrap { --pit-h: 560px; } .svc { height: auto; overflow: visible; } .pill { --ph: 40px; font-size: 13.5px; } }
+@media (max-width: 599px) { .tray { border-radius: 28px; padding: 18px 16px 16px; } .tray__list, .tray__empty { flex-basis: 100%; } .tray__go { width: 100%; } }
 .ai { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); }
 .ai__t { display: grid; align-content: start; gap: 10px; padding: 14px 14px 26px; border-radius: var(--r-card); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); transform-style: preserve-3d; transition: transform var(--d-base) var(--lift), box-shadow var(--d-base) var(--lift); }
 .ai__t:hover { box-shadow: inset 0 0 0 1px var(--line), 0 26px 50px -24px rgba(17,17,17,.35); }
@@ -329,22 +375,23 @@ background: var(--chalk); color: var(--ink); transition: background-color var(--
 .how__steps li { padding: 7px 0; }
 }
 .sectors { overflow: hidden; }
-.rows { display: grid; gap: clamp(12px, 1.6vw, 22px); }
-.row { display: flex; gap: clamp(12px, 1.6vw, 22px); width: max-content; will-change: transform; }
-.row li { flex: none; padding: .32em .7em .38em; border-radius: var(--r-full); box-shadow: inset 0 0 0 2px #fff; font: 300 clamp(30px, 5.6vw, 88px)/1 var(--sans); letter-spacing: -.045em; white-space: nowrap; transition: background-color var(--d-base) linear, color var(--d-base) linear; }
+.rows { display: grid; gap: clamp(12px, 1.4vw, 20px); }
+.row { --g: clamp(10px, 1.2vw, 18px); display: flex; width: max-content; will-change: transform; animation: chain var(--dur, 240s) linear infinite; }
+.row[data-dir="1"] { animation-direction: reverse; }
+.row:hover { animation-play-state: paused; }
+@keyframes chain { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+.row li { flex: none; margin-right: var(--g); padding: .34em .78em .4em; border-radius: var(--r-full); box-shadow: inset 0 0 0 2px #fff; font: 300 clamp(22px, 3.2vw, 50px)/1 var(--sans); letter-spacing: -.035em; white-space: nowrap; transition: background-color var(--d-base) linear, color var(--d-base) linear; }
 .row li:hover { background: #fff; color: var(--blue-deep); }
-.no-js .row { width: auto; flex-wrap: wrap; padding: 0 var(--gut); }
-@supports (animation-timeline: view()) {
-.rows.is-native .row { animation: row-travel linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
-@keyframes row-travel { from { transform: translate3d(var(--x0, 0px), 0, 0); } to { transform: translate3d(var(--x1, 0px), 0, 0); } }
-}
+.no-js .row, .calm .row { width: auto; flex-wrap: wrap; row-gap: var(--g); padding: 0 var(--gut); animation: none; }
+.no-js .row li, .calm .row li { font-size: clamp(18px, 2vw, 30px); }
+.models .sh { margin-bottom: clamp(22px, 4.4vh, 60px); }
 .gantt { display: grid; }
-.g-row { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: clamp(16px, 4vw, 64px); align-items: center; padding: clamp(20px, 2.6vw, 38px) 0; border-top: 1px solid var(--line); }
+.g-row { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr); gap: clamp(16px, 4vw, 64px); align-items: center; padding: clamp(14px, min(2.6vw, 2.8vh), 36px) 0; border-top: 1px solid var(--line); }
 .g-row:last-child { border-bottom: 1px solid var(--line); }
-.g-l h3 { font: 300 clamp(28px, 3.9vw, 60px)/1.02 var(--sans); letter-spacing: -.045em; transition: font-weight var(--d-slow) var(--lift); }
+.g-l h3 { font: 300 clamp(28px, min(3.9vw, 6vh), 60px)/1.02 var(--sans); letter-spacing: -.045em; transition: font-weight var(--d-slow) var(--lift); }
 .g-row:hover .g-l h3 { font-weight: 600; }
-.g-l p { margin-top: 8px; color: var(--mute); font-size: var(--t-lede); }
-.g-t { position: relative; height: clamp(44px, 5vw, 72px); }
+.g-l p { margin-top: 6px; color: var(--mute); font-size: var(--t-lede); }
+.g-t { position: relative; height: clamp(40px, min(5vw, 6.6vh), 72px); }
 .g-t i, .g-t b { position: absolute; top: 0; left: calc(var(--x) * 1%); height: 100%; border-radius: var(--r-full); transform-origin: left center; }
 .g-t i { width: calc(var(--w) * 1%); background-image: var(--sig-deep); background-size: calc(10000% / var(--w)) 100%; background-position: calc(var(--x) * 100% / (100 - var(--w) + .001)) 0; }
 .g-t b { top: 36%; width: 4.4%; height: 28%; background: var(--blue-deep); opacity: .55; }
@@ -352,36 +399,23 @@ background: var(--chalk); color: var(--ink); transition: background-color var(--
 .js:not(.calm) .gantt .g-t b { transition-delay: calc(500ms + var(--x) * 9ms); }
 .js:not(.calm) .gantt.is-in .g-t i, .js:not(.calm) .gantt.is-in .g-t b { transform: none; }
 @media (max-width: 719px) { .g-row { grid-template-columns: 1fr; gap: 14px; } }
-.ppl { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .9fr); gap: clamp(24px, 4vw, 72px); align-items: start; }
-.ppl__list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 24px; padding: clamp(10px, 1.3vw, 18px) 0; border-top: 1px solid var(--line); }
-.ppl__list li:last-child { border-bottom: 1px solid var(--line); }
-.ppl__name { font: 250 clamp(26px, 3.9vw, 58px)/1.05 var(--sans); letter-spacing: -.045em; transition: font-weight var(--d-slow) var(--lift), letter-spacing var(--d-slow) var(--lift); }
-.ppl__list li:hover .ppl__name { font-weight: 700; }
-.ppl__lead .ppl__name { font-size: clamp(34px, 5.6vw, 88px); font-weight: 600; }
-.ppl__role { font-size: 15px; color: var(--mute); max-width: 30ch; }
-.back { position: sticky; top: calc(var(--nav-h) + 24px); display: grid; gap: 14px; padding: clamp(24px, 2.8vw, 40px); border-radius: var(--r-card); background: var(--ink); color: var(--chalk); }
-.back h3 { font: 300 clamp(26px, 2.6vw, 38px)/1.06 var(--sans); letter-spacing: -.035em; }
-.back p { color: #b9bcc2; }
-.back dl { display: grid; margin-top: 10px; }
-.back dl div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.16); font-size: 14.5px; }
-.back dt { color: #a3a6ad; }
-@media (max-width: 899px) { .ppl { grid-template-columns: 1fr; } .back { position: static; } }
-.contact__h { font: 200 var(--t-mega)/.9 var(--sans); letter-spacing: -.06em; margin-bottom: clamp(36px, 6vw, 96px); }
+.contact { padding: clamp(64px, 10vh, 130px) 0; }
+.contact__h { font: 200 clamp(46px, 7.4vw, 120px)/.92 var(--sans); letter-spacing: -.055em; margin-bottom: clamp(28px, 4.6vh, 64px); }
 .contact__h span { display: inline-block; padding-bottom: .1em; }
 .contact__h2 { font-weight: 700; }
 .contact__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(24px, 5vw, 90px); align-items: start; }
 .contact__ways { display: grid; }
-.way { display: grid; gap: 6px; padding: 18px 0; border-top: 1px solid var(--line); text-decoration: none; }
+.way { display: grid; gap: 6px; padding: 16px 0; border-top: 1px solid var(--line); text-decoration: none; }
 .way:last-child { border-bottom: 1px solid var(--line); }
-.way small { font-size: 13.5px; color: var(--mute); }
-.way b { font: 400 clamp(19px, 1.9vw, 27px)/1.25 var(--sans); letter-spacing: -.02em; overflow-wrap: anywhere; }
-a.way b { font-size: clamp(22px, 2.6vw, 38px); font-weight: 300; letter-spacing: -.035em; transition: font-weight var(--d-slow) var(--lift), color var(--d-fast) linear; }
+.way small { font-size: 14px; color: var(--mute); }
+.way b { font: 400 clamp(17px, 1.45vw, 21px)/1.35 var(--sans); letter-spacing: -.015em; overflow-wrap: anywhere; }
+a.way b { font-size: clamp(21px, 2.1vw, 31px); font-weight: 300; letter-spacing: -.03em; transition: font-weight var(--d-slow) var(--lift), color var(--d-fast) linear; }
 a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-bright); }
 .way b.mono { font: 500 16px/1.3 var(--mono); letter-spacing: .02em; }
 #contact-form { display: grid; gap: 16px; padding: clamp(20px, 2.8vw, 40px); border-radius: var(--r-card); background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field { display: grid; gap: 8px; }
-.field label { font: 500 14px/1.2 var(--sans); color: #d6d8dc; }
+.field label { font: 500 15px/1.2 var(--sans); color: #d6d8dc; }
 .field .opt { color: var(--mute); font-weight: 400; }
 .field input, .field textarea { width: 100%; padding: 15px 18px; border: 0; border-radius: 18px; background: #18191d; color: var(--paper); font-size: 16.5px; line-height: 1.4; box-shadow: inset 0 0 0 1.5px #2e3035; transition: box-shadow var(--d-fast) linear, background-color var(--d-fast) linear; }
 .field textarea { resize: vertical; min-height: 128px; }
@@ -395,6 +429,13 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
 .status { font-size: 14.5px; color: var(--teal-bright); }
 .status:empty { display: none; }
 @media (max-width: 899px) { .contact__grid { grid-template-columns: 1fr; } }
+@media (min-width: 960px) and (max-height: 860px) {
+.contact { padding: clamp(40px, 6.4vh, 130px) 0; }
+.contact__h { font-size: clamp(46px, min(7.4vw, 11.5vh), 120px); margin-bottom: clamp(22px, 3.6vh, 64px); }
+.way { padding: 13px 0; }
+#contact-form { gap: 13px; padding: clamp(20px, 2.4vw, 34px); }
+.field textarea { min-height: 104px; }
+}
 @media (max-width: 519px) { .two { grid-template-columns: 1fr; } }
 .foot { padding: clamp(56px, 8vw, 120px) 0 40px; border-top: 1px solid var(--line); }
 .foot__big { color: var(--paper); margin-bottom: clamp(40px, 6vw, 88px); }
@@ -412,6 +453,9 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
 .foot__big.is-armed.is-in svg g rect { transform: none; }
 .foot__big.is-armed path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.5s var(--glide) .25s; }
 .foot__big.is-armed.is-in path { stroke-dashoffset: 0; }
+@media (min-width: 960px) {
+.say, .pillars, .models { display: flex; flex-direction: column; justify-content: center; min-height: 100vh; min-height: 100svh; padding: clamp(56px, 9vh, 120px) 0; }
+}
 </style>
 <script>
 (function () {
@@ -434,11 +478,10 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
 <div class="cur" id="cur" aria-hidden="true"><span id="cur-label"></span></div>
 
 <header class="nav" id="nav" data-on="void">
-  <a class="nav__logo" href="#top" aria-label="Elevana Media, top of page"><svg viewBox="0 0 353.125 48" aria-hidden="true" focusable="false"><defs><linearGradient id="elv-sig-1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="48" y2="0"><stop offset="0" stop-color="#0d9a98"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><g fill="url(#elv-sig-1)"><rect x="0" y="0" width="48" height="12" rx="6"/><rect x="0" y="18" width="30" height="12" rx="6"/><rect x="0" y="36" width="48" height="12" rx="6"/></g><path d="M2.625 2.5H31.375M2.625 24H31.375M2.625 45.5H31.375M44.875 2.5V45.5H71.375M84.875 2.5H113.625M84.875 24H113.625M84.875 45.5H113.625M127.125 2.5L141.5 45.5L155.875 2.5M169.125 45.5L184.5 2.5L199.875 45.5M213.375 45.5V2.5L242.125 45.5V2.5M255.625 45.5L270.875 2.5L286.125 45.5" transform="translate(64.375 0)" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <a class="nav__logo" href="#top" aria-label="Elvana Media, top of page"><svg viewBox="0 0 310.875 48" aria-hidden="true" focusable="false"><defs><linearGradient id="elv-sig-1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="48" y2="0"><stop offset="0" stop-color="#0d9a98"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><g fill="url(#elv-sig-1)"><rect x="0" y="0" width="48" height="12" rx="6"/><rect x="0" y="18" width="30" height="12" rx="6"/><rect x="0" y="36" width="48" height="12" rx="6"/></g><path d="M2.625 2.5H31.375M2.625 24H31.375M2.625 45.5H31.375M44.875 2.5V45.5H71.375M84.875 2.5L99.25 45.5L113.625 2.5M126.875 45.5L142.25 2.5L157.625 45.5M171.125 45.5V2.5L199.875 45.5V2.5M213.375 45.5L228.625 2.5L243.875 45.5" transform="translate(64.375 0)" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <nav class="nav__links" aria-label="Main">
     <a href="#services">Services</a>
     <a href="#how">How it works</a>
-    <a href="#people">People</a>
     <a href="#contact">Contact</a>
   </nav>
   <a class="btn btn--signal nav__cta" href="#contact" data-magnet>Start a project</a>
@@ -450,8 +493,8 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     <a href="#services"><span>Services</span></a>
     <a href="#edge"><span>Media and AI</span></a>
     <a href="#how"><span>How it works</span></a>
-    <a href="#sectors"><span>Who it serves</span></a>
-    <a href="#people"><span>People</span></a>
+    <a href="#sectors"><span>Who we work with</span></a>
+    <a href="#models"><span>Ways to work</span></a>
     <a href="#contact"><span>Contact</span></a>
   </nav>
   <p class="sheet__foot"><a href="tel:+918928339531">+91 89283 39531</a><a href="mailto:info@elvanamedia.com">info@elvanamedia.com</a></p>
@@ -475,21 +518,28 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     <p class="hero__hint" id="hero-hint" aria-hidden="true"><span>Scroll</span><i></i></p>
   </div>
 </section>
-<!-- WHAT IT IS. The hero's bars grow until they fill the screen; this section is that colour. The words light up as you read. -->
-<section class="say" id="about" data-ground="wash" aria-label="About Elevana Media">
+<!-- WHAT IT IS. The hero's bars grow until they fill the screen; this section is that colour. One line to say it, two to explain it. -->
+<section class="say" id="about" data-ground="wash" aria-labelledby="say-h">
   <div class="wrap">
-    <p class="say__k">Ideas that create impact.</p>
-    <p class="say__t" id="say">Elevana Media helps brands get seen, get chosen and grow. Creative storytelling, performance marketing and AI-powered automation, all under one roof.</p>
-    <p class="say__f"><span>Incorporated in Mumbai, 2026</span><span>A group company of BeyondSure</span></p>
+    <h2 class="say__h" id="say-h" data-wipe>Ideas that create impact.</h2>
+    <div class="say__t" id="say">
+      <p class="say__l1" data-light>We help brands get seen, chosen, and grow.</p>
+      <p class="say__l2" data-light>Creative storytelling, performance marketing, and AI-powered automation — all under one roof.</p>
+    </div>
+    <a class="btn btn--line btn--lg say__go" href="#pillars" data-magnet>Explore what we do <svg class="elv-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+    <div class="say__f">
+      <ul class="say__tags" aria-label="What we do"><li>Creative &amp; Content</li><li>Performance Marketing</li><li>AI &amp; Automation</li></ul>
+      <p class="say__inc">Incorporated in Mumbai</p>
+    </div>
   </div>
 </section>
 
-<!-- THREE PILLARS. The mark itself, at the size of the page: long, short, long. Each bar opens. -->
+<!-- THREE PILLARS. The mark itself, at the size of the page: long, short, long. A bar opens as the pointer reaches it. -->
 <section class="pillars" id="pillars" data-ground="paper" aria-labelledby="pillars-h">
   <div class="wrap">
     <header class="sh">
       <h2 class="sh__t" id="pillars-h" data-wipe>Create. Connect. Grow.</h2>
-      <p class="sh__p">Three things we do. Open a bar to see what is inside.</p>
+      <p class="sh__p">Three things we do. <span class="if-fine">Hover over a bar to see what is inside.</span><span class="if-touch">Tap a bar to see what is inside.</span></p>
     </header>
     <div class="mark" id="mark">
       <article class="bar" data-bar style="--len:1">
@@ -508,13 +558,13 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   </div>
 </section>
 
-<!-- FOURTEEN SERVICES. A box of pills you can pick up and throw. Tap one to read what it is. -->
+<!-- FOURTEEN SERVICES. A box of pills you can pick up and throw. Tap the ones you need: they collect in your box. -->
 <section class="svcs" id="services" data-ground="void" aria-labelledby="services-h">
   <div class="wrap">
     <header class="sh sh--row">
       <div>
         <h2 class="sh__t" id="services-h" data-wipe>Fourteen services.<br>Pick one up.</h2>
-        <p class="sh__p">Eight core services, and six that go beyond digital. Throw them around. Tap one to read more.</p>
+        <p class="sh__p">Eight core services, and six that go beyond digital. Throw them around, or tap the ones you need and press Explore.</p>
       </div>
       <div class="chips" role="group" aria-label="Show">
         <button class="chip is-on" type="button" data-filter="all" aria-pressed="true">All 14</button>
@@ -527,28 +577,34 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
       <div class="pit" id="pit" data-cur="Throw">
         <canvas class="pit__cv" id="pit-cv" aria-hidden="true"></canvas>
         <ul class="pit__list" id="pit-list">
-          <li><button class="pill" type="button" data-g="core"><b>Website development</b><span>Fast, mobile-first sites built to convert.</span></button></li>
-          <li><button class="pill" type="button" data-g="core"><b>SEO &amp; SEM</b><span>Rank higher on Google and run search ads that pay back.</span></button></li>
-          <li><button class="pill" type="button" data-g="core"><b>SMS blasting</b><span>Bulk SMS campaigns on DLT-registered templates.</span></button></li>
-          <li><button class="pill" type="button" data-g="core"><b>WhatsApp blasting</b><span>Broadcast offers and updates where customers read.</span></button></li>
-          <li><button class="pill" type="button" data-g="core"><b>WhatsApp chat bot</b><span>24x7 automated replies, lead capture and support.</span></button></li>
-          <li><button class="pill" type="button" data-g="core"><b>AI calling</b><span>AI voice agents for follow-ups, reminders and qualification, in Indian languages.</span></button></li>
-          <li><button class="pill" type="button" data-g="core"><b>Post creation &amp; content</b><span>Posts, reels, carousels and copy.</span></button></li>
-          <li><button class="pill" type="button" data-g="core"><b>PR &amp; media relations</b><span>Stories placed with the press.</span></button></li>
-          <li><button class="pill" type="button" data-g="beyond"><b>Content &amp; video production</b><span>Ad films, brand films, animation, graphics and sound.</span></button></li>
-          <li><button class="pill" type="button" data-g="beyond"><b>Social media management</b><span>Calendars, community management and paid social.</span></button></li>
-          <li><button class="pill" type="button" data-g="beyond"><b>Branding &amp; identity</b><span>Logos, brand books, packaging and voice.</span></button></li>
-          <li><button class="pill" type="button" data-g="beyond"><b>Events &amp; activations</b><span>Pan-India event management, launches and on-ground experiences.</span></button></li>
-          <li><button class="pill" type="button" data-g="beyond"><b>Outdoor, hoardings &amp; signage</b><span>High-visibility outdoor media.</span></button></li>
-          <li><button class="pill" type="button" data-g="beyond"><b>Print &amp; digital publishing</b><span>Magazines, brochures and regional-language content.</span></button></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>Website development</b><span>Fast, mobile-first websites that turn visitors into enquiries.</span></button><div class="pill__more" hidden><ul><li>Custom design, mobile-first build, SEO-ready structure</li><li>Lead forms, WhatsApp button, quote and enquiry flows</li></ul><p data-k="For">Insurance advisors, clinics, real estate, SMEs and more</p><p data-k="Pricing">One-time project fee, optional monthly maintenance</p></div></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>SEO &amp; SEM</b><span>Get found on Google, and pay only for search ads that work.</span></button><div class="pill__more" hidden><ul><li>Keyword research, on-page and local SEO, Google Business profile</li><li>Google Ads setup, ad copy and conversion tracking</li><li>Monthly report on rankings, clicks and leads</li></ul><p data-k="For">Businesses that depend on local or search-led enquiries</p></div></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>SMS blasting</b><span>Bulk SMS that reaches customers instantly, DLT-compliant.</span></button><div class="pill__more" hidden><ul><li>DLT sender ID and template registration support</li><li>Campaign setup, audience segmentation, scheduling</li><li>Delivery report after every campaign</li></ul><p data-k="For">Renewals, offers, payment reminders, event invites</p><p data-k="Pricing">Per-SMS rate plus setup fee</p></div></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>WhatsApp blasting</b><span>Broadcast offers and updates where customers actually read them.</span></button><div class="pill__more" hidden><ul><li>WhatsApp Business API setup and template approval</li><li>Broadcast campaigns with images, buttons and links</li><li>Opt-in based lists, delivery and read reports</li></ul><p data-k="For">Product launches, renewals, festive offers, follow-ups</p><p data-k="Pricing">Per-message rate plus monthly platform fee</p></div></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>WhatsApp chat bot</b><span>Never miss a lead. Your business answers 24x7.</span></button><div class="pill__more" hidden><ul><li>Automated replies, FAQs, lead capture and appointment booking</li><li>Hand-off to a human when needed</li><li>Leads synced to Sheets or CRM</li></ul><p data-k="For">Businesses with high enquiry volume or after-hours queries</p><p data-k="Pricing">One-time setup plus monthly fee</p></div></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>AI calling</b><span>AI voice agents that follow up, remind and qualify leads, in Indian languages.</span></button><div class="pill__more" hidden><ul><li>Voice agent scripted for your use case: follow-ups, reminders, lead qualification</li><li>Hindi, English and regional language support</li><li>Call summaries and lead status in your dashboard</li></ul><p data-k="For">Renewals, payment reminders, lead screening</p><p data-k="Pricing">Setup fee plus per-minute or per-call usage</p></div></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>Post creation &amp; content</b><span>Posts, reels and copy that keep your brand active and consistent.</span></button><div class="pill__more" hidden><ul><li>Monthly content calendar</li><li>Posts, carousels, reels and captions</li><li>Brand-consistent design and regional-language options</li></ul><p data-k="For">Brands that need regular social presence without an in-house team</p><p data-k="Pricing">Monthly package, by number of posts and reels</p></div></li>
+          <li><button class="pill" type="button" data-g="core" aria-pressed="false"><b>PR &amp; media relations</b><span>Get your story into the press.</span></button><div class="pill__more" hidden><ul><li>Press release writing and distribution</li><li>Media outreach and coverage tracking</li><li>Founder and brand story pitches</li></ul><p data-k="For">Launches, funding news, awards, thought leadership</p><p data-k="Pricing">Monthly retainer or per release</p></div></li>
+          <li><button class="pill" type="button" data-g="beyond" aria-pressed="false"><b>Content &amp; video production</b><span>Ad films, brand films, animation and sound, made end to end.</span></button><div class="pill__more" hidden><ul><li>Concept, script, edit and delivery</li><li>Explainer videos, animation, graphics and audio</li></ul><p data-k="For">Brand campaigns, product launches, social ads</p><p data-k="Pricing">Per project</p></div></li>
+          <li><button class="pill" type="button" data-g="beyond" aria-pressed="false"><b>Social media management</b><span>Your social channels run, grown and measured for you.</span></button><div class="pill__more" hidden><ul><li>Content calendar, posting and community management</li><li>Paid social campaigns (Meta, LinkedIn)</li><li>Monthly performance report</li></ul><p data-k="For">Brands that want one team handling organic and paid</p><p data-k="Pricing">Monthly retainer plus ad budget</p></div></li>
+          <li><button class="pill" type="button" data-g="beyond" aria-pressed="false"><b>Branding &amp; identity</b><span>A brand people recognise and remember.</span></button><div class="pill__more" hidden><ul><li>Logo, colours, typography, brand guidelines</li><li>Packaging and brand voice</li></ul><p data-k="For">New businesses and rebrands</p><p data-k="Pricing">Per project</p></div></li>
+          <li><button class="pill" type="button" data-g="beyond" aria-pressed="false"><b>Events &amp; activations</b><span>Pan-India event management, launches and on-ground experiences.</span></button><div class="pill__more" hidden><p data-k="Pricing">Per event, quote based</p></div></li>
+          <li><button class="pill" type="button" data-g="beyond" aria-pressed="false"><b>Outdoor, hoardings &amp; signage</b><span>High-visibility media in the places your customers pass daily.</span></button><div class="pill__more" hidden><ul><li>Design for hoardings, signage and transit media</li></ul></div></li>
+          <li><button class="pill" type="button" data-g="beyond" aria-pressed="false"><b>Print &amp; digital publishing</b><span>Magazines, brochures and regional-language content.</span></button><div class="pill__more" hidden><ul><li>Design, writing, translation and brochures</li></ul><p data-k="For">Corporate brochures, catalogues, house magazines</p></div></li>
         </ul>
       </div>
-      <aside class="svc" id="svc" aria-live="polite">
+      <aside class="svc" id="svc" aria-live="polite" data-scroll>
         <p class="svc__n" id="svc-n">14 services</p>
         <h3 class="svc__t" id="svc-t">Tap a pill</h3>
-        <p class="svc__d" id="svc-d">Each pill is one service. Pick it up, throw it, or tap it to see what it is.</p>
-        <a class="btn btn--signal" id="svc-ask" href="#contact" data-magnet hidden>Ask about this</a>
+        <p class="svc__d" id="svc-d">Each pill is one service. Tap one to read about it and put it in your box. Tap it again to take it out.</p>
+        <div class="svc__more" id="svc-more"></div>
       </aside>
+    </div>
+    <div class="tray" id="tray">
+      <p class="tray__h">Your box <b class="mono" id="tray-n">0</b></p>
+      <ul class="tray__list" id="tray-list" aria-label="Services in your box"></ul>
+      <p class="tray__empty" id="tray-empty">Nothing here yet. Tap the services you need.</p>
+      <a class="btn btn--signal tray__go" id="svc-ask" href="#contact" data-magnet aria-disabled="true">Explore</a>
     </div>
   </div>
 </section>
@@ -606,21 +662,17 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   </div>
 </section>
 
-<!-- WHO IT SERVES. Two rows that move with your scroll, in opposite directions. -->
+<!-- WHO WE WORK WITH. Two chains of industries that never stop, travelling in opposite directions. Point at one to hold it still. -->
 <section class="sectors" id="sectors" data-ground="blue" aria-labelledby="sectors-h">
   <div class="wrap">
     <header class="sh">
-      <h2 class="sh__t" id="sectors-h" data-wipe>Who it serves.</h2>
-      <p class="sh__p">Brands in eight sectors.</p>
+      <h2 class="sh__t" id="sectors-h" data-wipe>Who we work with.</h2>
+      <p class="sh__p">We help brands across industries to grow and stand out.</p>
     </header>
   </div>
-  <div class="rows" id="rows">
-    <ul class="row" data-dir="-1">
-      <li>Insurance &amp; financial services</li><li>Healthcare &amp; wellness</li><li>Education &amp; EdTech</li><li>Real estate &amp; infrastructure</li>
-    </ul>
-    <ul class="row" data-dir="1">
-      <li>Retail, D2C &amp; e-commerce</li><li>Hospitality &amp; events</li><li>Startups &amp; SMEs</li><li>Corporate &amp; B2B</li>
-    </ul>
+  <div class="rows" id="rows" data-live>
+    <ul class="row" data-dir="-1" aria-label="Industries, part one"><li>SaaS &amp; Software Companies</li><li>Universities &amp; Higher Education</li><li>Schools &amp; Educational Institutions</li><li>EdTech &amp; Online Learning</li><li>Banking &amp; Financial Services</li><li>Insurance &amp; InsurTech</li><li>FinTech &amp; NBFCs</li><li>Healthcare &amp; Hospitals</li><li>Pharmaceuticals &amp; Healthcare Products</li><li>Skincare, Beauty &amp; Cosmetics</li><li>Fitness, Gyms &amp; Sports</li><li>Real Estate &amp; Property Development</li><li>Architecture &amp; Interior Design</li><li>Retail &amp; E-commerce</li><li>Fashion &amp; Apparel</li><li>Food &amp; Beverage</li><li>Hotels &amp; Hospitality</li><li>Travel &amp; Tourism</li><li>Events &amp; Entertainment</li><li>Manufacturing &amp; Industrial Businesses</li></ul>
+    <ul class="row" data-dir="1" aria-label="Industries, part two"><li>Automotive &amp; Automobile Dealerships</li><li>Logistics &amp; Supply Chain</li><li>IT Services &amp; Consulting</li><li>Recruitment &amp; HR Services</li><li>Legal &amp; Professional Services</li><li>Consulting &amp; Business Advisory</li><li>Agriculture &amp; Agritech</li><li>Home Décor &amp; Furniture</li><li>NGOs &amp; Non-Profit Organisations</li><li>Personal Brands, Creators &amp; Influencers</li><li>Telecommunications</li><li>Renewable Energy &amp; CleanTech</li><li>Cybersecurity</li><li>E-commerce Marketplaces</li><li>D2C Consumer Brands</li><li>Jewellery &amp; Luxury Goods</li><li>Restaurants, Cafés &amp; Cloud Kitchens</li><li>Beauty Salons &amp; Spas</li><li>Home Services &amp; Maintenance</li><li>B2B Distribution &amp; Wholesale</li></ul>
   </div>
 </section>
 
@@ -648,34 +700,6 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   </div>
 </section>
 
-<!-- PEOPLE AND BACKING. No case studies yet, said plainly. -->
-<section class="people" id="people" data-ground="chalk" aria-labelledby="people-h">
-  <div class="wrap">
-    <header class="sh">
-      <h2 class="sh__t" id="people-h" data-wipe>People and backing.</h2>
-      <p class="sh__p">Elevana Media is new. There are no case studies yet, so meet the people behind the work.</p>
-    </header>
-    <div class="ppl">
-      <ul class="ppl__list" id="ppl">
-        <li class="ppl__lead"><span class="ppl__name" data-weight>Shivansh Choudhary</span><span class="ppl__role">Founder. Also Head of Innovation &amp; Technology, BeyondSure</span></li>
-        <li><span class="ppl__name" data-weight>Rashhi Choudhary</span><span class="ppl__role">Co-founder</span></li>
-        <li><span class="ppl__name" data-weight>Deepak K. Choudhary</span><span class="ppl__role">Co-founder</span></li>
-        <li><span class="ppl__name" data-weight>Kunal Verma</span><span class="ppl__role">Co-founder</span></li>
-        <li><span class="ppl__name" data-weight>Srinivas Mahindrakar</span><span class="ppl__role">Co-founder</span></li>
-        <li><span class="ppl__name" data-weight>Anushka Maurya</span><span class="ppl__role">Project lead</span></li>
-      </ul>
-      <aside class="back">
-        <h3>A BeyondSure group company</h3>
-        <p>Promoted by BeyondSure Private Limited, the AI-powered insurance advisory platform, as majority shareholder.</p>
-        <dl>
-          <div><dt>Incorporated</dt><dd>2026, Mumbai</dd></div>
-          <div><dt>CIN</dt><dd class="mono">U73100MH2026PTC472228</dd></div>
-        </dl>
-      </aside>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT. The same form the site has always had: same ids, same field names, same hand-off to the visitor's email app. -->
 <section class="contact" id="contact" data-ground="void" aria-labelledby="contact-h">
   <div class="wrap">
@@ -696,7 +720,7 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
         <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
         <div class="field"><label for="f-msg">What do you need?</label><textarea id="f-msg" name="message" rows="4" required aria-describedby="e-msg"></textarea><p class="err" id="e-msg" aria-live="polite"></p></div>
         <div class="form-foot">
-          <button class="btn btn--signal btn--lg" type="submit" data-magnet>Send to Elevana</button>
+          <button class="btn btn--signal btn--lg" type="submit" data-magnet>Send to Elvana</button>
           <p class="small">This opens your email app with the message ready, addressed to info@elvanamedia.com.</p>
         </div>
         <p class="status" id="f-status" role="status"></p>
@@ -707,20 +731,19 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
 </main>
 <footer class="foot" id="foot" data-ground="void">
   <div class="wrap">
-    <div class="foot__big" id="foot-big" aria-hidden="true"><svg viewBox="0 0 353.125 48" aria-hidden="true" focusable="false"><defs><linearGradient id="elv-sig-2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="48" y2="0"><stop offset="0" stop-color="#0d9a98"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><g fill="url(#elv-sig-2)"><rect x="0" y="0" width="48" height="12" rx="6"/><rect x="0" y="18" width="30" height="12" rx="6"/><rect x="0" y="36" width="48" height="12" rx="6"/></g><path d="M2.625 2.5H31.375M2.625 24H31.375M2.625 45.5H31.375M44.875 2.5V45.5H71.375M84.875 2.5H113.625M84.875 24H113.625M84.875 45.5H113.625M127.125 2.5L141.5 45.5L155.875 2.5M169.125 45.5L184.5 2.5L199.875 45.5M213.375 45.5V2.5L242.125 45.5V2.5M255.625 45.5L270.875 2.5L286.125 45.5" transform="translate(64.375 0)" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="foot__big" id="foot-big" aria-hidden="true"><svg viewBox="0 0 310.875 48" aria-hidden="true" focusable="false"><defs><linearGradient id="elv-sig-2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="48" y2="0"><stop offset="0" stop-color="#0d9a98"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><g fill="url(#elv-sig-2)"><rect x="0" y="0" width="48" height="12" rx="6"/><rect x="0" y="18" width="30" height="12" rx="6"/><rect x="0" y="36" width="48" height="12" rx="6"/></g><path d="M2.625 2.5H31.375M2.625 24H31.375M2.625 45.5H31.375M44.875 2.5V45.5H71.375M84.875 2.5L99.25 45.5L113.625 2.5M126.875 45.5L142.25 2.5L157.625 45.5M171.125 45.5V2.5L199.875 45.5V2.5M213.375 45.5L228.625 2.5L243.875 45.5" transform="translate(64.375 0)" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div class="foot__row">
       <nav class="foot__links" aria-label="Footer">
         <a href="#services">Services</a>
         <a href="#edge">Media and AI</a>
         <a href="#how">How it works</a>
-        <a href="#sectors">Who it serves</a>
+        <a href="#sectors">Who we work with</a>
         <a href="#models">Ways to work</a>
-        <a href="#people">People</a>
         <a href="#contact">Contact</a>
         <a href="#top">Back to top</a>
       </nav>
       <div class="foot__legal">
-        <p>Elevana Media Private Limited. A group company of BeyondSure.</p>
+        <p>Elvana Media Private Limited. A group company of BeyondSure.</p>
         <p>CIN <span class="mono">U73100MH2026PTC472228</span></p>
         <p>203, Shivam Square, Building No. 4, Sahar Road, Andheri East, Mumbai 400069</p>
         <p><a href="https://www.elvanamedia.com/">www.elvanamedia.com</a></p>
@@ -829,7 +852,7 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     else { try { root.scrollTo({ top: y, behavior: 'smooth' }); } catch (e) { root.scrollTo(0, y); } }
   };
   function canScroll(el, dy) {
-    var t = el && el.closest ? el.closest('textarea') : null;
+    var t = el && el.closest ? el.closest('textarea, [data-scroll]') : null;
     return !!t && t.scrollHeight > t.clientHeight + 1 && ((dy > 0 && t.scrollTop + t.clientHeight < t.scrollHeight - 1) || (dy < 0 && t.scrollTop > 0));
   }
   if (E.smoothWheel) {
@@ -1257,10 +1280,13 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
 
   (function () {
     var p = $('say'); if (!p) return;
-    var words = p.textContent.trim().split(/\s+/);
-    p.setAttribute('aria-label', p.textContent.trim());
-    p.innerHTML = words.map(function (w) { return '<span class="w" aria-hidden="true">' + w.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>'; }).join(' ');
-    var spans = p.children, box = E.box(p), lit = 0;
+    var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }, spans = [];
+    [].forEach.call(p.querySelectorAll('[data-light]'), function (line) {
+      var text = line.textContent.trim();
+      line.innerHTML = '<span class="sr">' + esc(text) + '</span>' + text.split(/\s+/).map(function (w) { return '<span class="w" aria-hidden="true">' + esc(w) + '</span>'; }).join(' ');
+      spans.push.apply(spans, line.querySelectorAll('.w'));
+    });
+    var box = E.box(p), lit = 0;
     function tick() {
       var top = box.top - E.y, vh = E.vh;
       if (top + box.h < -200 || top > vh + 200) return;
@@ -1273,43 +1299,51 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   })();
 
   (function () {
-    var barsEl = [].slice.call(d.querySelectorAll('[data-bar]'));
-    barsEl.forEach(function (bar) {
+    var mark = $('mark'); if (!mark) return;
+    var barsEl = [].slice.call(mark.querySelectorAll('[data-bar]')), hover = E.fine, lastType = '';
+    function set(bar, open) {
       var btn = bar.querySelector('.bar__top');
-      btn.addEventListener('click', function () {
-        var open = !bar.classList.contains('is-open');
-        barsEl.forEach(function (o) { o.classList.remove('is-open'); o.querySelector('.bar__top').setAttribute('aria-expanded', 'false'); o.querySelector('.bar__top').setAttribute('data-cur', 'Open'); });
-        if (open) { bar.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); btn.setAttribute('data-cur', 'Close'); }
+      if (bar.classList.contains('is-open') === open) return;
+      bar.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', String(open));
+      if (!hover) btn.setAttribute('data-cur', open ? 'Close' : 'Open');
+    }
+    function only(bar) { barsEl.forEach(function (o) { set(o, o === bar); }); }
+    barsEl.forEach(function (bar) {
+      var btn = bar.querySelector('.bar__top'), t = 0;
+      if (hover) btn.removeAttribute('data-cur');                       /* the bar opens by itself: the cursor tag has nothing to add */
+      btn.addEventListener('pointerdown', function (e) { lastType = e.pointerType; });
+      btn.addEventListener('click', function (e) {
+        var open = bar.classList.contains('is-open');
+        if (open && e.detail > 0 && lastType === 'mouse') return;        /* a click on a bar the pointer has just opened keeps it open */
+        if (open) set(bar, false); else only(bar);
       });
+      if (!hover) return;
+      bar.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'mouse') return; clearTimeout(t); t = setTimeout(function () { only(bar); }, 60); });
+      bar.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'mouse') return; clearTimeout(t); t = setTimeout(function () { set(bar, false); }, 120); });
     });
+    function place() {
+      var right = 0;
+      barsEl.forEach(function (b) {
+        var n = b.querySelector('.bar__t'), btn = b.querySelector('.bar__top'), x = b.querySelector('.bar__x'), cs = getComputedStyle(btn), gap = parseFloat(cs.columnGap) || 0;
+        right = Math.max(right, n.offsetLeft + n.offsetWidth);
+        b.style.setProperty('--fitw', Math.ceil(n.offsetLeft + n.offsetWidth + 12 + gap + x.offsetWidth + parseFloat(cs.paddingRight)) + 'px');
+      });
+      mark.style.setProperty('--cx', Math.round(right + 12 + Math.max(24, mark.clientWidth * 0.028)) + 'px');
+    }
+    place(); if (d.fonts && d.fonts.ready) d.fonts.ready.then(place);
+    var rt = 0; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(place, 160); });
   })();
 
   (function () {
     var wrap = $('rows'); if (!wrap || E.calm) return;
-    var rows = [].slice.call(wrap.querySelectorAll('.row')), sec = wrap.closest('section'), widths = [];
-    rows.forEach(function (r) { var items = [].slice.call(r.children); for (var k = 0; k < 2; k++) items.forEach(function (li) { var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); r.appendChild(c); }); });
-    function measure() { widths = rows.map(function (r) { return r.scrollWidth / 3; }); }
-    var box = E.box(sec), dirs = rows.map(function (r) { return +r.getAttribute('data-dir'); });
-    var native = !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && !/[?&]native=0/.test(location.search);
-    function setNative() {
-      rows.forEach(function (r, i) {
-        var w = widths[i] || 1, travel = (E.vh + r.offsetHeight) * 0.42;
-        r.style.setProperty('--x0', (dirs[i] < 0 ? -w * 0.15 : -w * 1.15) + 'px'); r.style.setProperty('--x1', (dirs[i] < 0 ? -w * 0.15 - travel : -w * 1.15 + travel) + 'px');
-      });
-      wrap.classList.add('is-native');
+    var rows = [].slice.call(wrap.querySelectorAll('.row'));
+    rows.forEach(function (r) { [].slice.call(r.children).forEach(function (li) { var c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); r.appendChild(c); }); });
+    function pace() {
+      var speed = E.vw < 720 ? 34 : 46;                                  /* pixels a second */
+      rows.forEach(function (r) { r.style.setProperty('--dur', (r.scrollWidth / 2 / speed).toFixed(1) + 's'); });
     }
-    function tick() {
-      if (native) return;
-      var top = box.top - E.y; if (top + box.h < -50 || top > E.vh + 50) return;
-      var travel = (E.vh - top) * 0.42;
-      for (var i = 0; i < rows.length; i++) {
-        var w = widths[i] || 1, x = dirs[i] < 0 ? -(travel % w) - w * 0.15 : -w + (travel % w) - w * 0.15;
-        rows[i].style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0)';
-      }
-    }
-    function all() { measure(); if (native) setNative(); else E.measure(); }
-    all(); addEventListener('resize', all); if (d.fonts && d.fonts.ready) d.fonts.ready.then(all);
-    E.onScroll(tick);
+    pace(); if (d.fonts && d.fonts.ready) d.fonts.ready.then(pace);
+    var rt = 0; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(pace, 200); });
   })();
 
   if (E.fine && !E.calm) {
@@ -1497,22 +1531,57 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   var E = window.ELV, d = document, pit = E.$('pit'), list = E.$('pit-list'), cv = E.$('pit-cv');
   if (!pit || !list) return;
   var pills = [].slice.call(list.querySelectorAll('.pill'));
-  var panel = E.$('svc'), pn = E.$('svc-n'), pt = E.$('svc-t'), pd = E.$('svc-d'), ask = E.$('svc-ask'), msg = E.$('f-msg');
-  var selected = null, lastAuto = '';
+  var panel = E.$('svc'), pn = E.$('svc-n'), pt = E.$('svc-t'), pd = E.$('svc-d'), pm = E.$('svc-more'), msg = E.$('f-msg');
+  var tray = E.$('tray'), trayN = E.$('tray-n'), trayList = E.$('tray-list'), go = E.$('svc-ask');
+  var chosen = [], lastAuto = '';
+  function isSel(el) { return chosen.indexOf(el) >= 0; }
+  function nameOf(el) { return el.querySelector('b').textContent; }
 
-  function select(el) {
-    if (selected) selected.classList.remove('is-sel');
-    selected = el; el.classList.add('is-sel');
-    var i = pills.indexOf(el), name = el.querySelector('b').textContent, text = el.querySelector('span').textContent;
+  function show(el) {
+    var i = pills.indexOf(el), more = el.parentNode.querySelector('.pill__more');
     pn.textContent = (i < 9 ? '0' : '') + (i + 1) + ' / 14 · ' + (el.getAttribute('data-g') === 'core' ? 'Core service' : 'Beyond digital');
-    pt.textContent = name; pd.textContent = text; ask.hidden = false;
-    ask.onclick = function () { if (msg && (!msg.value.trim() || msg.value === lastAuto)) { lastAuto = 'I would like to know more about: ' + name + '.'; msg.value = lastAuto; } };
+    pt.textContent = nameOf(el); pd.textContent = el.querySelector('span').textContent;
+    pm.innerHTML = more ? more.innerHTML : '';
+    [].forEach.call(pm.querySelectorAll('p[data-k]'), function (p) { var k = d.createElement('small'); k.textContent = p.getAttribute('data-k'); p.insertBefore(k, p.firstChild); });
+    panel.scrollTop = 0;
     panel.classList.remove('is-swap'); void panel.offsetWidth; panel.classList.add('is-swap');
+  }
+
+  function toggle(el, fromBox) {
+    var at = chosen.indexOf(el), on = at < 0;
+    if (on) { chosen.push(el); chip(el); }
+    else { chosen.splice(at, 1); if (el.__chip && el.__chip.parentNode) el.__chip.parentNode.removeChild(el.__chip); el.__chip = null; }
+    el.classList.toggle('is-sel', on); el.setAttribute('aria-pressed', String(on));
+    if (!fromBox) show(el);
+    var n = chosen.length;
+    trayN.textContent = n; tray.classList.toggle('has-some', n > 0); go.setAttribute('aria-disabled', String(!n));
     redraw();
   }
+  function chip(el) {
+    var li = d.createElement('li'), b = d.createElement('button'), t = d.createElement('span'), x = d.createElement('i');
+    b.type = 'button'; t.textContent = nameOf(el); b.setAttribute('aria-label', 'Take ' + nameOf(el) + ' out of your box');
+    x.className = 'tray__x'; x.setAttribute('aria-hidden', 'true'); b.appendChild(t); b.appendChild(x);
+    b.addEventListener('click', function () {
+      var next = li.nextElementSibling || li.previousElementSibling;
+      toggle(el, true);
+      try { (next ? next.querySelector('button') : el).focus({ preventScroll: true }); } catch (err) {}
+    });
+    li.appendChild(b); trayList.appendChild(li); el.__chip = li;
+  }
+  function and(names) { return names.length < 2 ? names.join('') : names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1]; }
+  go.addEventListener('click', function (e) {
+    if (!chosen.length) { e.preventDefault(); return; }
+    if (!msg) return;
+    var text = 'I would like to explore: ' + and(chosen.map(nameOf)) + '.', v = msg.value;
+    if (lastAuto && v.indexOf(lastAuto) >= 0) msg.value = v.replace(lastAuto, text);
+    else if (!v.trim()) msg.value = text;
+    else msg.value = v.replace(/\s+$/, '') + '\n\n' + text;
+    lastAuto = text;
+    try { msg.dispatchEvent(new Event('input')); } catch (err) {}
+  });
   pills.forEach(function (el) {
-    el.setAttribute('aria-label', el.querySelector('b').textContent + '. ' + el.querySelector('span').textContent);
-    el.addEventListener('click', function () { select(el); });
+    el.setAttribute('aria-label', nameOf(el) + '. ' + el.querySelector('span').textContent);
+    el.addEventListener('click', function () { toggle(el); });
     el.addEventListener('focus', redraw); el.addEventListener('blur', redraw);
   });
   [].forEach.call(d.querySelectorAll('[data-filter]'), function (chip) {
@@ -1644,7 +1713,7 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     return s;
   }
   function paintOne(b, sharp) {
-    var sel = b.el === selected, dim = b.el.classList.contains('is-dim'), hov = b === hover || (held && held.b === b), foc = d.activeElement === b.el && b.el.matches(':focus-visible');
+    var sel = isSel(b.el), dim = b.el.classList.contains('is-dim'), hov = b === hover || (held && held.b === b), foc = d.activeElement === b.el && b.el.matches(':focus-visible');
     var state = sel ? 's' : hov ? 'h' : 'n';
     ctx.save(); ctx.translate(b.cx, b.cy); ctx.rotate(b.a); ctx.globalAlpha = dim ? 0.22 : 1;
     if (sharp) look(ctx, b, state);
@@ -1663,8 +1732,8 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
     ctx.font = font; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     var top = held ? held.b : null;
-    for (i = 0; i < bodies.length; i++) { b = bodies[i]; if (b.el !== selected && b !== top) paintOne(b, sharp); }
-    for (i = 0; i < bodies.length; i++) { b = bodies[i]; if (b.el === selected && b !== top) paintOne(b, sharp); }
+    for (i = 0; i < bodies.length; i++) { b = bodies[i]; if (!isSel(b.el) && b !== top) paintOne(b, sharp); }
+    for (i = 0; i < bodies.length; i++) { b = bodies[i]; if (isSel(b.el) && b !== top) paintOne(b, sharp); }
     if (top) paintOne(top, sharp);
     return moving;
   }
@@ -1692,7 +1761,7 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
   function nudge(v) { if (!live) return; pts.forEach(function (p) { p.oy = p.y + v * 0.016 * (0.4 + rand()); p.ox = p.x + (rand() - .5) * v * 0.02; }); wake(); }
 
   function at(x, y) {
-    var best = null, order = bodies.filter(function (b) { return b.el !== selected; }).concat(bodies.filter(function (b) { return b.el === selected; }));
+    var best = null, order = bodies.filter(function (b) { return !isSel(b.el); }).concat(bodies.filter(function (b) { return isSel(b.el); }));
     for (var i = 0; i < order.length; i++) {
       var b = order[i], a = b.p[0], z = b.p[b.p.length - 1], vx = z.x - a.x, vy = z.y - a.y, L = vx * vx + vy * vy || 1;
       var t = E.clamp(((x - a.x) * vx + (y - a.y) * vy) / L, 0, 1), dx = x - (a.x + vx * t), dy = y - (a.y + vy * t);
@@ -1726,7 +1795,7 @@ a.way:hover b, a.way:focus-visible b { font-weight: 600; color: var(--teal-brigh
     if (!held) return;
     var h = held; pin = null; held = null; cv.style.cursor = hover ? 'grab' : '';
     if (E.hooks.curLabel) E.hooks.curLabel('');
-    if (e.type === 'pointerup' && h.moved < 8 && performance.now() - h.t < 450) { select(h.b.el); try { h.b.el.focus({ preventScroll: true }); } catch (err) {} }
+    if (e.type === 'pointerup' && h.moved < 8 && performance.now() - h.t < 450) { toggle(h.b.el); try { h.b.el.focus({ preventScroll: true }); } catch (err) {} }
     wake();
   }
   cv.addEventListener('pointerup', drop); cv.addEventListener('pointercancel', drop); cv.addEventListener('lostpointercapture', drop);
