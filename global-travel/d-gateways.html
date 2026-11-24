@@ -24,6 +24,9 @@
 <script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"}}
 </script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/objects/Reflector.js" crossorigin>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/utils/BufferGeometryUtils.js" crossorigin>
 <style>
 :root{
   --ink:#0B1E42; --ink-2:#2A3A5C; --paper:#F7F3EC; --paper-2:#EFE8DC; --line:#D8CFBF;
@@ -58,6 +61,7 @@ button,input,select{font:inherit;color:inherit}
 .world svg.poster{position:absolute;left:66%;bottom:14%;height:72vh;width:auto;transform:translateX(-50%);opacity:.85}
 .world svg.poster.ref{bottom:auto;top:86%;transform:translateX(-50%) scaleY(-1);opacity:.25;filter:blur(1.5px)}
 @media (max-width:899px){.world svg.poster{left:50%;bottom:36%;height:28vh}.world svg.poster.ref{top:64%}}
+.world::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(130% 95% at 55% 42%,rgba(11,30,66,0) 58%,rgba(11,30,66,.22) 100%)}
 #gl{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s var(--ease);touch-action:pan-y;cursor:grab;outline:none}
 #gl.on{opacity:1}
 #gl.dragging{cursor:grabbing}
@@ -122,7 +126,16 @@ button,input,select{font:inherit;color:inherit}
 .eyebrow b{font-weight:500;background:var(--ink);color:var(--paper);padding:3px 8px;border-radius:4px}
 .h1{font-family:var(--f-display);font-weight:400;font-size:clamp(44px,6.2vw,96px);line-height:.92;letter-spacing:-.02em;margin:0 0 22px}
 .h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
-.h1 .w{display:inline-block;will-change:transform}
+.h1 .w{display:inline-block}
+/* hero intro: CSS keyframes run on the compositor, so they stay smooth while WebGL boots */
+@keyframes rise{from{transform:translateY(112%) rotate(4deg)}to{transform:none}}
+@keyframes lift{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+.h1 .w{animation:rise 1.1s cubic-bezier(.2,1.25,.35,1) both;animation-delay:calc(250ms + var(--i,0) * 70ms)}
+.eyebrow{animation:lift .7s cubic-bezier(.2,.7,.2,1) .1s both}
+.hero-low .hero-sub,.hero-sub{animation:lift .9s cubic-bezier(.2,.7,.2,1) .95s both}
+.hero-ctas .btn{animation:lift .8s cubic-bezier(.2,1.3,.4,1) 1.15s both}
+.hero-ctas .btn+.btn{animation-delay:1.24s}
+.hero-foot>*{animation:lift 1s ease 1.6s both}
 .h1 em{font-style:italic;color:var(--teal)}
 .hero-sub{font-size:clamp(16px,1.35vw,19px);max-width:46ch;margin:0 0 26px}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
@@ -326,7 +339,7 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
   <div class="in">
     <a class="logo" href="#top" aria-label="GTFinServ, Global Travel and Visa Services, back to top">
       <!-- client logo, as supplied (WhatsApp 23 Nov 2026), white background removed -->
-      <img src="assets/logo-gtfinserv-notag.webp" width="1000" height="302" alt="">
+      <img src="assets/logo-gtfinserv-notag-480.webp" srcset="assets/logo-gtfinserv-notag-480.webp 480w, assets/logo-gtfinserv-notag.webp 1000w" sizes="200px" width="1000" height="302" alt="" fetchpriority="high">
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#quote">Visa</a>
@@ -344,13 +357,13 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
 <!-- K0: sunrise at Charminar -->
 <section class="hero" id="top" aria-labelledby="h1">
   <div class="hero-copy">
-    <p class="eyebrow"><b>HYD</b><span>17.4290 N &nbsp;78.4519 E</span></p>
+    <p class="eyebrow"><b>HYD</b><span>Punjagutta, Hyderabad</span></p>
     <h1 class="h1" id="h1" aria-label="The visa is the gate. We help you through it.">
-      <span class="ln" aria-hidden="true"><span class="w">The</span> <span class="w">visa</span> <span class="w">is</span> <span class="w">the</span> <span class="w">gate.</span></span>
-      <span class="ln" aria-hidden="true"><span class="w">We</span> <span class="w">help</span> <span class="w">you</span> <span class="brk"><span class="w"><em>through</em></span> <span class="w"><em>it.</em></span></span></span>
+      <span class="ln" aria-hidden="true"><span class="w" style="--i:0">The</span> <span class="w" style="--i:1">visa</span> <span class="w" style="--i:2">is</span> <span class="w" style="--i:3">the</span> <span class="w" style="--i:4">gate.</span></span>
+      <span class="ln" aria-hidden="true"><span class="w" style="--i:5">We</span> <span class="w" style="--i:6">help</span> <span class="w" style="--i:7">you</span> <span class="brk"><span class="w" style="--i:8"><em>through</em></span> <span class="w" style="--i:9"><em>it.</em></span></span></span>
     </h1>
     <div class="hero-low">
-    <p class="hero-sub">Tell us where you want to go. We help with the visa, the papers and the trip, from our office at Topaz Plaza, Punjagutta.</p>
+    <p class="hero-sub">Visas, documents and bookings, from our office in Punjagutta.</p>
     <div class="hero-ctas">
       <a class="btn" href="#quote">Get a visa quote</a>
       <a class="btn btn--ghost" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2a8.5 8.5 0 1 1 3.1 3z"/><path d="M9 9.2c.3 2.2 2.3 4.2 4.5 4.6"/></svg>WhatsApp us</a>
@@ -358,8 +371,8 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
     </div>
   </div>
   <div class="hero-foot">
-    <button class="hint" type="button" id="hintBtn"><i aria-hidden="true"></i>Drag to walk around Charminar. Click to send the pigeons up.</button>
-    <p class="clockcap" aria-live="off"><b id="istTime">--:--</b>Hyderabad time, on Charminar's clocks</p>
+    <button class="hint" type="button" id="hintBtn"><i aria-hidden="true"></i>Drag to look around</button>
+    <p class="clockcap" aria-live="off"><b id="istTime">--:--</b>in Hyderabad</p>
   </div>
 </section>
 
@@ -369,7 +382,7 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
     <div class="pass-head">
       <div>
         <h2 id="quoteTitle">Visa quote</h2>
-        <p>Fill in your trip. We reply on WhatsApp.</p>
+        <p>We reply on WhatsApp.</p>
       </div>
       <p class="pass-route" aria-hidden="true"><img class="pass-mark" src="assets/gt-mark-192.png" width="44" height="44" alt=""><b>HYD <span id="passTo">&#8594; ?</span></b>Gate pass</p>
     </div>
@@ -425,31 +438,30 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
 <!-- K3: three gates on the water -->
 <section class="sec routes" id="routes" aria-labelledby="routesTitle">
   <div class="head panel">
-    <p class="kicker">Through the arch, out to the world</p>
-    <h2 class="title" id="routesTitle">Three gates from <em>HYD</em></h2>
-    <p class="lede">Each gate on the water is a route we help with often. Point at one, or pick a card.</p>
+    <h2 class="title" id="routesTitle">Where to <em>next?</em></h2>
+    <p class="lede">Pick a gate to start a quote.</p>
   </div>
   <ul class="cards">
     <li class="card panel" data-code="DXB">
       <p class="card-route"><span>HYD</span><i></i><span>DXB</span></p>
       <h3>Dubai</h3>
-      <p class="card-meta"><span data-dist="DXB">2,570 km</span> from Hyderabad &nbsp;&#183;&nbsp; 25.25 N 55.36 E</p>
-      <p class="copy">Tourist and business visits to the UAE. Tell us your dates and we list what the application needs.</p>
-      <a class="card-link" data-wa="a UAE visa" data-code="DXB" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a UAE visa</a>
+      <p class="card-meta"><span data-dist="DXB">2,570 km</span> from Hyderabad</p>
+      <p class="copy">Tourist and business visas.</p>
+      <a class="card-link" data-wa="a UAE visa" data-code="DXB" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
     </li>
     <li class="card panel" data-code="LHR">
       <p class="card-route"><span>HYD</span><i></i><span>LHR</span></p>
       <h3>London</h3>
-      <p class="card-meta"><span data-dist="LHR">7,700 km</span> from Hyderabad &nbsp;&#183;&nbsp; 51.47 N 0.45 W</p>
-      <p class="copy">UK visitor, student and work visas. We help you put the documents in order before you apply.</p>
-      <a class="card-link" data-wa="a UK visa" data-code="LHR" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a UK visa</a>
+      <p class="card-meta"><span data-dist="LHR">7,700 km</span> from Hyderabad</p>
+      <p class="copy">Visitor, student and work visas.</p>
+      <a class="card-link" data-wa="a UK visa" data-code="LHR" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
     </li>
     <li class="card panel" data-code="YYZ">
       <p class="card-route"><span>HYD</span><i></i><span>YYZ</span></p>
       <h3>Toronto</h3>
-      <p class="card-meta"><span data-dist="YYZ">12,000 km</span> from Hyderabad &nbsp;&#183;&nbsp; 43.68 N 79.62 W</p>
-      <p class="copy">Canada visitor visas and study permits ask for a lot of paperwork. We help you prepare it, one step at a time.</p>
-      <a class="card-link" data-wa="a Canada visa" data-code="YYZ" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a Canada visa</a>
+      <p class="card-meta"><span data-dist="YYZ">12,000 km</span> from Hyderabad</p>
+      <p class="copy">Visitor visas and study permits.</p>
+      <a class="card-link" data-wa="a Canada visa" data-code="YYZ" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
     </li>
   </ul>
 </section>
@@ -459,10 +471,9 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
   <div class="wrap panel">
     <div class="head">
       <div>
-        <p class="kicker">Seven ways through</p>
-        <h2 class="title" id="servicesTitle">What we help with</h2>
+        <h2 class="title" id="servicesTitle">What we do</h2>
       </div>
-      <p class="lede">Start with the visa, or ask us to handle the whole trip. Every card opens a WhatsApp chat with us.</p>
+      <p class="lede">Each card opens a WhatsApp chat.</p>
     </div>
     <!-- PLACEHOLDER: services not confirmed by client -->
     <ul class="tiles">
@@ -470,44 +481,44 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
         <span class="no">01</span>
         <h3>Visa assistance</h3>
         <ul class="chips" aria-label="Visa types"><li>Tourist</li><li>Business</li><li>Student</li><li>Work</li></ul>
-        <p>We tell you what the embassy asks for, help you fill the forms and check the file before it goes in.</p>
-        <a class="ask" data-wa="Visa assistance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+        <p>We list what the embassy needs, fill the forms with you and check the file before it goes in.</p>
+        <a class="ask" data-wa="Visa assistance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </li>
       <li class="tile">
         <span class="no">02</span>
         <h3>Passport services</h3>
-        <p>Help with new passport and renewal applications, forms and paperwork.</p>
-        <a class="ask" data-wa="Passport services" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+        <p>New passports and renewals.</p>
+        <a class="ask" data-wa="Passport services" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </li>
       <li class="tile">
         <span class="no">03</span>
         <h3>Flight tickets</h3>
-        <p>Domestic and international tickets, booked around your visa dates.</p>
-        <a class="ask" data-wa="Flight tickets" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+        <p>Booked around your visa dates.</p>
+        <a class="ask" data-wa="Flight tickets" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </li>
       <li class="tile">
         <span class="no">04</span>
         <h3>Hotel bookings</h3>
-        <p>Stays that match your plan, and the booking proof a visa file often needs.</p>
-        <a class="ask" data-wa="Hotel bookings" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+        <p>Stays, plus the booking proof many visas ask for.</p>
+        <a class="ask" data-wa="Hotel bookings" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </li>
       <li class="tile">
         <span class="no">05</span>
         <h3>Holiday packages</h3>
-        <p>Trips planned end to end: flights, stays and the days in between.</p>
-        <a class="ask" data-wa="Holiday packages" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+        <p>Flights and stays, planned together.</p>
+        <a class="ask" data-wa="Holiday packages" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </li>
       <li class="tile">
         <span class="no">06</span>
         <h3>Travel insurance</h3>
-        <p>Cover for your trip, including the policy many visas ask for.</p>
-        <a class="ask" data-wa="Travel insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+        <p>Trip cover, including the policy many visas ask for.</p>
+        <a class="ask" data-wa="Travel insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </li>
       <li class="tile">
         <span class="no">07</span>
         <h3>Foreign exchange</h3>
-        <p>Currency for the trip, arranged before you leave.</p>
-        <a class="ask" data-wa="Foreign exchange" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+        <p>Currency, ready before you leave.</p>
+        <a class="ask" data-wa="Foreign exchange" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </li>
     </ul>
   </div>
@@ -518,14 +529,12 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
   <div class="how-pin">
     <div>
       <div class="head panel">
-        <p class="kicker">Three gates to the airport</p>
         <h2 class="title" id="howTitle">How it works</h2>
-        <p class="lede">From your first message to the day you fly.</p>
       </div>
       <ol class="steps">
-        <li class="step panel on" data-n="1"><p class="gate-n">Gate 1</p><h3>Tell us your trip</h3><p>Where you are going, why, and roughly when. A WhatsApp message or a call is enough to start.</p></li>
-        <li class="step panel" data-n="2"><p class="gate-n">Gate 2</p><h3>We prepare and check your documents</h3><p>We tell you which papers your visa needs, help with the forms and check everything before it goes in.</p></li>
-        <li class="step panel" data-n="3"><p class="gate-n">Gate 3</p><h3>Apply and track until you fly</h3><p>We file the application with you and follow it until a decision comes. Then we can sort the tickets too.</p></li>
+        <li class="step panel on" data-n="1"><h3>Tell us your trip</h3><p>Where, why and roughly when. A WhatsApp message is enough.</p></li>
+        <li class="step panel" data-n="2"><h3>We check your documents</h3><p>You get a list of papers. We help with the forms.</p></li>
+        <li class="step panel" data-n="3"><h3>Apply and track</h3><p>We file it with you and follow it to a decision.</p></li>
       </ol>
     </div>
   </div>
@@ -535,8 +544,7 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
 <section class="sec contact" id="contact" aria-labelledby="contactTitle">
   <div class="cgrid">
     <div class="addr panel">
-      <p class="coord">17.4290 N &nbsp;/&nbsp; 78.4519 E</p>
-      <h2 class="title" id="contactTitle">Come by, <em>or call us.</em></h2>
+            <h2 class="title" id="contactTitle">Come by, <em>or call us.</em></h2>
       <address>Flat no 210, Topaz Plaza,<br>Officers Colony, Punjagutta,<br>Hyderabad, Telangana - 500082</address>
       <div class="row">
         <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Topaz+Plaza+Officers+Colony+Punjagutta+Hyderabad+500082" target="_blank" rel="noopener">Open in Google Maps</a>
@@ -549,7 +557,7 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
     </div>
     <form class="cb panel" id="cbForm" novalidate aria-labelledby="cbTitle">
       <h3 id="cbTitle">Request a callback</h3>
-      <p>Leave a number and a good time. The request goes to us on WhatsApp.</p>
+      <p>Sent to us on WhatsApp.</p>
       <div class="field">
         <label for="cName">Your name <span class="err" id="cNameErr" hidden>Add your name</span></label>
         <input class="inp" id="cName" name="name" type="text" autocomplete="name" required aria-describedby="cNameErr">
@@ -614,15 +622,15 @@ address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
 </div>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="menu-top">
-    <img class="menu-logo" src="assets/logo-gtfinserv-notag-light.webp" width="1000" height="302" alt="GTFinServ">
+    <img class="menu-logo" loading="lazy" src="assets/logo-gtfinserv-notag-light-480.webp" width="1000" height="302" alt="GTFinServ">
     <button class="menu-close" type="button" id="menuClose">Close</button>
   </div>
   <ol>
-    <li><a href="#quote"><span class="g">GATE 1</span><span class="l">Visa</span></a></li>
-    <li><a href="#routes"><span class="g">GATE 2</span><span class="l">Travel</span></a></li>
-    <li><a href="#services"><span class="g">GATE 3</span><span class="l">Services</span></a></li>
-    <li><a href="#how"><span class="g">GATE 4</span><span class="l">How it works</span></a></li>
-    <li><a href="#contact"><span class="g">GATE 5</span><span class="l">Contact</span></a></li>
+    <li><a href="#quote"><span class="l">Visa</span></a></li>
+    <li><a href="#routes"><span class="l">Travel</span></a></li>
+    <li><a href="#services"><span class="l">Services</span></a></li>
+    <li><a href="#how"><span class="l">How it works</span></a></li>
+    <li><a href="#contact"><span class="l">Contact</span></a></li>
   </ol>
   <div class="menu-foot">
     <a class="btn" href="#quote">Get a visa quote</a>
@@ -797,12 +805,7 @@ function initGSAP() {
   mm.add({ motion: '(prefers-reduced-motion: no-preference)', desk: '(min-width: 900px)' }, (ctx) => {
     const { motion, desk } = ctx.conditions;
     if (motion && !reduce) {
-      // headline: words rise out of their line, staggered, a tiny overshoot, never all at once
-      gsap.from('.h1 .w', { yPercent: 112, rotate: 4, duration: 1.1, ease: 'back.out(1.25)', stagger: 0.07, delay: 0.25 });
-      gsap.from('.eyebrow', { y: 12, opacity: 0, duration: 0.7, delay: 0.1, ease: 'power3.out' });
-      gsap.from('.hero-sub', { y: 18, opacity: 0, duration: 0.9, delay: 0.95, ease: 'power3.out' });
-      gsap.from('.hero-ctas .btn', { y: 22, opacity: 0, duration: 0.8, delay: 1.15, stagger: 0.09, ease: 'back.out(1.4)' });
-      gsap.from('.hero-foot > *', { opacity: 0, duration: 1, delay: 1.6, stagger: 0.2 });
+      // (the hero intro is pure CSS keyframes so it stays smooth while the 3D world loads)
     }
     if (desk) {
       howST = ScrollTrigger.create({
@@ -859,30 +862,51 @@ function waitGSAP() {
 }
 await waitGSAP();
 initGSAP();
-let THREE, Reflector;
+let THREE, Reflector, mergeGeometries, GPU = '';
 try {
-  THREE = await import('three');
-  ({ Reflector } = await import('three/addons/objects/Reflector.js'));
-  const t = document.createElement('canvas');
-  if (!(t.getContext('webgl2'))) throw new Error('no webgl2');
+  const t = document.createElement('canvas'), gl = t.getContext('webgl2');
+  if (!gl) throw new Error('no webgl2');
+  const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+  GPU = String(dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+  const lose = gl.getExtension('WEBGL_lose_context'); if (lose) lose.loseContext();
+  [THREE, { Reflector }, { mergeGeometries }] = await Promise.all([
+    import('three'), import('three/addons/objects/Reflector.js'), import('three/addons/utils/BufferGeometryUtils.js')
+  ]);
 } catch (e) {
   console.warn('3D world unavailable, showing the poster.', e);
   THREE = null;
 }
 if (THREE) buildWorld();
 
+/* Quality tier. Low-end phones and laptops get fewer pixels, a half-rate reflection and a lighter sky,
+   never a different world. ?q=low|mid|high forces one for testing. */
+function pickTier() {
+  const forced = (location.search.match(/[?&]q=(low|mid|high)/) || [])[1];
+  if (forced) return forced;
+  const mem = navigator.deviceMemory || 8, cores = navigator.hardwareConcurrency || 8;
+  if (/SwiftShader|llvmpipe|Basic Render|Mali-(4|T)|Mali-G(31|51|52|57|68)|Adreno \(TM\) ([1-5]\d\d|6[0-1]\d)|PowerVR|Apple A(9|10)\b/i.test(GPU) || mem <= 2 || cores <= 2) return 'low';
+  if (/Intel.*(HD|UHD) Graphics|Mali|Adreno/i.test(GPU) || mem <= 4 || cores <= 4 || coarse) return 'mid';
+  return 'high';
+}
+
 function buildWorld() {
 const V3 = THREE.Vector3, C = (h) => new THREE.Color(h);
-const DPR_CAP = coarse ? 1.5 : 2;
-let dpr = Math.min(devicePixelRatio || 1, DPR_CAP);
+const TIER = pickTier();
+const Q = {
+  high: { dpr: coarse ? 1.5 : 2, refl: coarse ? 0.4 : 0.5, every: 1, shadow: 2048, aa: true, ms: 4, birds: coarse ? 46 : 80, kites: 7, oct: 5 },
+  mid:  { dpr: 1.5, refl: 0.35, every: 1, shadow: 1024, aa: true, ms: 0, birds: 44, kites: 5, oct: 4 },
+  low:  { dpr: 1, refl: 0.25, every: 2, shadow: 1024, aa: false, ms: 0, birds: 26, kites: 4, oct: 3 }
+}[TIER];
+let dpr = Math.min(devicePixelRatio || 1, Q.dpr);
 
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: Q.aa, alpha: false, powerPreference: 'high-performance' });
 renderer.setPixelRatio(dpr);
 renderer.setSize(innerWidth, innerHeight, false);
 renderer.toneMapping = THREE.NeutralToneMapping;
-renderer.toneMappingExposure = 1.0;
+renderer.toneMappingExposure = 1.06;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFShadowMap;
+renderer.shadowMap.autoUpdate = false; // the world is static: shadows re-render only when the sun moves
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0xeed8c2, 0.004);
@@ -890,12 +914,13 @@ const camera = new THREE.PerspectiveCamera(40, innerWidth / innerHeight, 0.5, 50
 
 /* ===== palette + time of day keyframes (one day, one journey) ===== */
 const SKY = {
-  sunrise: { top: '#7E9FC4', mid: '#E6BFA6', hor: '#F8DCBF', sun: '#FFC583', az: 118, el: 7, sunI: 2.6, hemi: 0.55, fog: '#EFD8C2', den: 0.0042, deep: '#45707A', lamps: 0.0, stars: 0, cloud: 0.85, env: 0.75 },
-  morning: { top: '#4C83C3', mid: '#9DC1DF', hor: '#E4ECEF', sun: '#FFF0D6', az: 150, el: 26, sunI: 3.2, hemi: 0.6, fog: '#DCE5EA', den: 0.0030, deep: '#2E6170', lamps: 0.0, stars: 0, cloud: 0.6, env: 0.9 },
-  noon:    { top: '#3B74BC', mid: '#86B3DE', hor: '#D8E6EF', sun: '#FFF6E8', az: 200, el: 52, sunI: 3.4, hemi: 0.7, fog: '#D3E1EA', den: 0.0019, deep: '#225A6C', lamps: 0.0, stars: 0, cloud: 0.45, env: 1.0 },
-  golden:  { top: '#53709F', mid: '#DE9E78', hor: '#F7C489', sun: '#FFAE5C', az: 222, el: 5, sunI: 2.4, hemi: 0.45, fog: '#EBC39C', den: 0.0040, deep: '#3B5B66', lamps: 0.55, stars: 0, cloud: 0.9, env: 0.7 },
-  dusk:    { top: '#101C36', mid: '#2A3E66', hor: '#B9808A', sun: '#F09A7A', az: 250, el: -3, sunI: 0.35, hemi: 0.28, fog: '#47506E', den: 0.0036, deep: '#142534', lamps: 1.0, stars: 1, cloud: 0.55, env: 0.35 }
+  sunrise: { top: '#5C83C0', mid: '#E8AA94', hor: '#FFD2A6', sun: '#FFB066', az: 118, el: 7, sunI: 3.2, hemi: 0.42, fog: '#F1C9AC', den: 0.0040, deep: '#2C5F6C', lamps: 0.0, stars: 0, cloud: 0.9, env: 0.28, rim: 0.55 },
+  morning: { top: '#3874C6', mid: '#89B7E4', hor: '#DFECF3', sun: '#FFE6C2', az: 150, el: 26, sunI: 3.4, hemi: 0.5, fog: '#D6E4EC', den: 0.0029, deep: '#1E5A6D', lamps: 0.0, stars: 0, cloud: 0.65, env: 0.4, rim: 0.25 },
+  noon:    { top: '#2A66BD', mid: '#76ABE2', hor: '#CFE3F0', sun: '#FFF3E0', az: 200, el: 52, sunI: 3.6, hemi: 0.55, fog: '#CBDDEA', den: 0.0018, deep: '#175267', lamps: 0.0, stars: 0, cloud: 0.5, env: 0.45, rim: 0.15 },
+  golden:  { top: '#3B5B9B', mid: '#E2896A', hor: '#FFBC74', sun: '#FF9A45', az: 222, el: 5, sunI: 3.0, hemi: 0.36, fog: '#EDB289', den: 0.0038, deep: '#2D4C5C', lamps: 0.55, stars: 0, cloud: 0.95, env: 0.26, rim: 0.7 },
+  dusk:    { top: '#0A1430', mid: '#24366A', hor: '#CC7A84', sun: '#FF8A66', az: 250, el: -3, sunI: 0.4, hemi: 0.26, fog: '#3E4768', den: 0.0034, deep: '#0E1E2E', lamps: 1.0, stars: 1, cloud: 0.6, env: 0.18, rim: 0.35 }
 };
+for (const k in SKY) for (const f in SKY[k]) if (typeof SKY[k][f] === 'string') SKY[k][f] = C(SKY[k][f]);
 // camera keyframes: desktop + mobile composition for each chapter
 const K = [
   { sky: 'sunrise', d: { p: [-34, 6, 110], t: [-20, 26, 0],   f: 38 }, m: { p: [0, 10, 230], t: [0, 36, 0], f: 50 } },   // hero
@@ -964,6 +989,19 @@ const portland = new THREE.MeshStandardMaterial({ color: 0xf1ede4, map: stoneTex
 const gold = new THREE.MeshStandardMaterial({ color: 0xd8ad55, metalness: 1, roughness: 0.26 });
 const concrete = new THREE.MeshStandardMaterial({ color: 0xbfbab2, map: stoneTex, roughness: 0.85 });
 const lacquer = new THREE.MeshStandardMaterial({ color: 0x1d5a63, roughness: 0.55, metalness: 0.05 });
+const RIM = { value: new THREE.Color() };
+function withRim(m) {
+  m.onBeforeCompile = (sh) => {
+    sh.uniforms.uRim = RIM;
+    sh.fragmentShader = 'uniform vec3 uRim;\n' + sh.fragmentShader.replace('#include <opaque_fragment>',
+      'outgoingLight += uRim * pow(1.0 - clamp(dot(normal, normalize(vViewPosition)), 0.0, 1.0), 3.0) * (0.35 + 0.65 * vColor.r);\n#include <opaque_fragment>');
+  };
+  m.customProgramCacheKey = () => 'gt-rim';
+  m.vertexColors = true;
+  return m;
+}
+[stone, stoneRound, stoneDark, portland, concrete, lacquer].forEach(withRim);
+gold.envMapIntensity = 1.7;
 const castShadow = (o) => { o.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } }); return o; };
 
 /* ===== geometry helpers ===== */
@@ -1002,7 +1040,7 @@ const skyUniforms = {
   uSunDir: { value: new V3(0, 1, 0) }, uStars: { value: 0 }, uTime: { value: 0 }, uCloud: { value: 0.5 }
 };
 const skyMat = new THREE.ShaderMaterial({
-  uniforms: skyUniforms, side: THREE.BackSide, depthWrite: false, fog: false,
+  defines: { OCT: Q.oct }, uniforms: skyUniforms, side: THREE.BackSide, depthWrite: false, fog: false,
   vertexShader: `varying vec3 vDir;
     void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
   fragmentShader: `uniform vec3 uTop, uMid, uHor, uSunCol, uSunDir; uniform float uStars, uTime, uCloud;
@@ -1010,7 +1048,7 @@ const skyMat = new THREE.ShaderMaterial({
     float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
     float noise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);
       return mix(mix(hash(i), hash(i+vec2(1,0)), f.x), mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), f.x), f.y); }
-    float fbm(vec2 p){ float a = 0.5, s = 0.0; for (int i = 0; i < 5; i++){ s += a * noise(p); p = p * 2.03 + 11.7; a *= 0.5; } return s; }
+    float fbm(vec2 p){ float a = 0.5, s = 0.0; for (int i = 0; i < OCT; i++){ s += a * noise(p); p = p * 2.03 + 11.7; a *= 0.5; } return s; }
     void main(){
       vec3 d = normalize(vDir); float h = d.y;
       vec3 col = mix(uHor, uMid, smoothstep(0.0, 0.2, h));
@@ -1046,14 +1084,18 @@ scene.add(sky);
 const pmrem = new THREE.PMREMGenerator(renderer);
 const envScene = new THREE.Scene();
 const envSky = new THREE.Mesh(skyGeo, skyMat); envSky.scale.setScalar(50); envScene.add(envSky);
-let envRT = null, envAt = -99;
-function bakeEnv() { const rt = pmrem.fromScene(envScene, 0.035); if (envRT) envRT.dispose(); envRT = rt; scene.environment = rt.texture; }
+const ENV = {};
+function bakeAllEnv() { // once at boot, one per time of day
+  Object.keys(SKY).forEach((name) => { applyChapter(K.findIndex((k) => k.sky === name)); ENV[name] = pmrem.fromScene(envScene, 0.035); });
+  pmrem.dispose();
+}
+function pickEnv(p) { const e = ENV[K[Math.round(clamp(p, 0, K.length - 1))].sky]; if (e && scene.environment !== e.texture) { scene.environment = e.texture; gold.envMap = e.texture; } }
 
 /* ===== lights ===== */
 const hemi = new THREE.HemisphereLight(0xdfe8f5, 0x3e6873, 0.5); scene.add(hemi);
 const sun = new THREE.DirectionalLight(0xffc583, 2.5);
 sun.castShadow = true;
-sun.shadow.mapSize.set(coarse ? 1024 : 2048, coarse ? 1024 : 2048);
+sun.shadow.mapSize.set(Q.shadow, Q.shadow);
 Object.assign(sun.shadow.camera, { left: -42, right: 42, top: 62, bottom: -20, near: 20, far: 340 });
 sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.04;
 scene.add(sun, sun.target);
@@ -1090,18 +1132,23 @@ const WaterShader = {
       float sp = pow(max(dot(R, normalize(uSunDir)), 0.0), 220.0);
       col += uSunCol * sp * 3.0 * smoothstep(-0.05, 0.05, uSunDir.y);
       float f = 1.0 - exp(-uFogDen * uFogDen * dist * dist);
-      col = mix(col, uFogCol, f);
+      vec3 haze = uFogCol + uSunCol * 0.32 * pow(max(dot(-V, normalize(uSunDir)), 0.0), 6.0);
+      col = mix(col, haze, f);
       gl_FragColor = vec4(col, 1.0);
       #include <tonemapping_fragment>
       #include <colorspace_fragment>
     }`
 };
-let reflScale = coarse ? 0.4 : 0.5;
+let reflScale = Q.refl, reflEvery = Q.every, reflTick = 0;
 const water = new Reflector(new THREE.PlaneGeometry(6000, 6000), {
-  shader: WaterShader, textureWidth: Math.round(innerWidth * dpr * reflScale), textureHeight: Math.round(innerHeight * dpr * reflScale), clipBias: 0.003, multisample: coarse ? 0 : 4
+  shader: WaterShader, textureWidth: Math.round(innerWidth * dpr * reflScale), textureHeight: Math.round(innerHeight * dpr * reflScale), clipBias: 0.003, multisample: Q.ms
 });
 water.rotation.x = -Math.PI / 2;
 scene.add(water);
+{ // on slow GPUs the mirror re-renders every other frame; the ripples still move every frame
+  const mirror = water.onBeforeRender;
+  water.onBeforeRender = function (r, sc, cam) { if (reflEvery > 1 && (reflTick++ % reflEvery) !== 0) return; mirror.call(this, r, sc, cam); };
+}
 const wu = water.material.uniforms;
 
 /* ===== CHARMINAR (1591): built from arches, minarets, balconies and domes ===== */
@@ -1136,6 +1183,7 @@ for (let f = 0; f < 4; f++) {
   const ring = new THREE.Mesh(new THREE.TorusGeometry(1.13, 0.11, 8, 40), stone); ring.position.copy(dial.position); g.add(ring);
   const hand = (len, wid) => { const geo = new THREE.PlaneGeometry(wid, len); geo.translate(0, len / 2 - 0.12, 0); const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: 0x1b1a19 })); m.position.set(0, 22.9, HALF + 0.27); return m; };
   const hh = hand(0.62, 0.1), mh = hand(0.92, 0.065); g.add(hh, mh);
+  hh.userData.keep = mh.userData.keep = dial.userData.keep = true;
   clocks.push({ hh, mh, dial });
   charminar.add(g);
 }
@@ -1270,10 +1318,51 @@ const leaves = new THREE.InstancedMesh(leafGeo, new THREE.MeshStandardMaterial({
 leafPos.forEach(([x, y, z, r], i) => { dummy.position.set(x, y, z); dummy.rotation.set(0, 0, r); dummy.scale.setScalar(1); dummy.updateMatrix(); leaves.setMatrixAt(i, dummy.matrix); });
 scene.add(leaves);
 
+/* ===== merge static architecture: hundreds of meshes become a few draw calls per landmark ===== */
+function bakeShade(geo, isCharminar) {
+  const P = geo.attributes.position, N = geo.attributes.normal, col = new Float32Array(P.count * 3);
+  geo.computeBoundingBox(); const H = Math.max(10, geo.boundingBox.max.y);
+  for (let i = 0; i < P.count; i++) {
+    const x = P.getX(i), y = P.getY(i), z = P.getZ(i), ny = N.getY(i);
+    const hn = Math.min(1, y / (H * 0.55));
+    let ao = 0.66 + 0.34 * hn * hn * (3 - 2 * hn);          // grime collects low, stone pales as it rises
+    if (ny < -0.35) ao *= 0.62;                              // undersides of cornices and lintels
+    if (y < 2.4) ao *= 0.78 + 0.22 * (y / 2.4);              // wet band at the waterline
+    if (isCharminar && Math.abs(x) < 7.5 && Math.abs(z) < 7.5 && y < 23) ao *= 0.6; // shaded cloister under the vaults
+    const warm = 1 - hn;
+    col[i * 3] = ao; col[i * 3 + 1] = ao * (1 - 0.035 * warm); col[i * 3 + 2] = ao * (1 - 0.09 * warm);
+  }
+  geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+}
+function mergeStatic(root) {
+  root.updateMatrixWorld(true);
+  const buckets = new Map(), done = [];
+  root.traverse((o) => {
+    if (!o.isMesh || o.isInstancedMesh || o.userData.keep || !o.visible || Array.isArray(o.material)) return;
+    let g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
+    for (const k of Object.keys(g.attributes)) if (k !== 'position' && k !== 'normal' && k !== 'uv') g.deleteAttribute(k);
+    if (!g.attributes.uv || !g.attributes.normal) return;
+    g.clearGroups(); g.applyMatrix4(o.matrixWorld);
+    const key = o.material.uuid + (o.castShadow ? '|c' : '') + (o.receiveShadow ? '|r' : '');
+    if (!buckets.has(key)) buckets.set(key, { mat: o.material, cast: o.castShadow, recv: o.receiveShadow, list: [] });
+    buckets.get(key).list.push(g); done.push(o);
+  });
+  done.forEach((o) => o.parent.remove(o));
+  for (const b of buckets.values()) {
+    const geo = mergeGeometries(b.list, false);
+    bakeShade(geo, root === charminar);
+    b.mat.vertexColors = true;
+    const m = new THREE.Mesh(geo, b.mat);
+    m.castShadow = b.cast; m.receiveShadow = b.recv; m.matrixAutoUpdate = false; scene.add(m);
+    b.list.forEach((g) => g.dispose());
+  }
+}
+[charminar, ...Object.values(gates).map((G) => G.g), ...torans.map((T) => T.g)].forEach(mergeStatic);
+
 /* ===== kites over the old city ===== */
 const kites = [];
 const kiteCols = ['#F29F05', '#C2456A', '#0F5C63', '#F7F3EC', '#E86A0C', '#2F6B3A'];
-for (let i = 0; i < 7; i++) {
+for (let i = 0; i < Q.kites; i++) {
   const g = new THREE.Group();
   const sh = new THREE.Shape(); sh.moveTo(0, 2.2); sh.lineTo(1.5, 0.3); sh.lineTo(0, -1.9); sh.lineTo(-1.5, 0.3); sh.closePath();
   const kite = new THREE.Mesh(new THREE.ShapeGeometry(sh), new THREE.MeshStandardMaterial({ color: kiteCols[i % kiteCols.length], side: THREE.DoubleSide, roughness: 0.7 }));
@@ -1286,7 +1375,7 @@ for (let i = 0; i < 7; i++) {
 }
 
 /* ===== pigeons of Charminar ===== */
-const N_BIRDS = coarse ? 46 : 80;
+const N_BIRDS = Q.birds;
 const bGeo = new THREE.BufferGeometry();
 bGeo.setAttribute('position', new THREE.Float32BufferAttribute([
   0, 0, 0.7, 0.14, 0, -0.45, -0.14, 0, -0.45,            // body
@@ -1320,7 +1409,7 @@ const birdMat = new THREE.ShaderMaterial({
 const birds = new THREE.InstancedMesh(bGeo, birdMat, N_BIRDS); birds.frustumCulled = false; scene.add(birds);
 const B = Array.from({ length: N_BIRDS }, () => ({ r: 17 + rnd() * 16, h: 36 + rnd() * 22, a: rnd() * 6.28, s: (0.18 + rnd() * 0.16) * (rnd() > 0.15 ? 1 : -1), bob: rnd() * 6.28, out: rnd() }));
 let scatter = 0;
-const bPrev = new V3(), bNow = new V3();
+const bPrev = new V3(), bNow = new V3(), bAhead = new V3();
 function birdPos(b, t, sc, out) {
   const a = b.a + t * b.s * (1 + sc * 1.6);
   const r = b.r + sc * (40 + b.out * 90);
@@ -1331,7 +1420,7 @@ function updateBirds(t) {
   for (let i = 0; i < N_BIRDS; i++) {
     const b = B[i];
     birdPos(b, t - 0.05, scatter, bPrev); birdPos(b, t, scatter, bNow);
-    dummy.position.copy(bNow); dummy.lookAt(bNow.clone().multiplyScalar(2).sub(bPrev));
+    dummy.position.copy(bNow); dummy.lookAt(bAhead.copy(bNow).multiplyScalar(2).sub(bPrev));
     dummy.rotateZ(-Math.sign(b.s) * 0.35); dummy.scale.setScalar(1.3); dummy.updateMatrix();
     birds.setMatrixAt(i, dummy.matrix);
   }
@@ -1341,8 +1430,9 @@ function updateBirds(t) {
 /* ===== per-frame state ===== */
 const state = { p: 0, ps: 0, yaw: 0, yawT: 0, pitch: 0, pitchT: 0, px: 0, py: 0, pxs: 0, pys: 0, hot: null, focusCode: null, dragging: false };
 const tmpP = new V3(), tmpT = new V3(), off = new V3();
-const cA = C('#000'), cB = C('#000');
-function mixHex(a, b, t, out) { cA.set(a); cB.set(b); return out.copy(cA).lerp(cB, t); }
+const BIRD_DAY = C('#2a3340'), BIRD_NIGHT = C('#11161f'), UP = new V3(0, 1, 0), lightDir = new V3(), lastShadow = new V3(9, 9, 9);
+const fwd = new V3(), look = new V3(), aim = new V3(); let aimOn = false;
+function mixHex(a, b, t, out) { return out.copy(a).lerp(b, t); }
 function applyChapter(p) {
   const n = K.length - 1, pc = clamp(p, 0, n);
   const i = Math.min(n - 1, Math.floor(pc)), t = pc - i;
@@ -1354,19 +1444,21 @@ function applyChapter(p) {
   skyUniforms.uStars.value = lerp(A.stars, Bk.stars, t);
   skyUniforms.uCloud.value = lerp(A.cloud, Bk.cloud, t);
   // light follows the sun, but never from below the water
-  const lightDir = sd.clone(); lightDir.y = Math.max(lightDir.y, 0.12); lightDir.normalize();
+  lightDir.copy(sd); lightDir.y = Math.max(lightDir.y, 0.12); lightDir.normalize();
   sun.position.copy(lightDir).multiplyScalar(160); sun.target.position.set(0, 0, 0);
+  if (lightDir.distanceToSquared(lastShadow) > 0.00025) { lastShadow.copy(lightDir); renderer.shadowMap.needsUpdate = true; }
   sun.color.copy(skyUniforms.uSunCol.value); sun.intensity = lerp(A.sunI, Bk.sunI, t);
   hemi.intensity = lerp(A.hemi, Bk.hemi, t); hemi.color.copy(skyUniforms.uMid.value); mixHex(A.deep, Bk.deep, t, hemi.groundColor);
   mixHex(A.fog, Bk.fog, t, scene.fog.color); scene.fog.density = lerp(A.den, Bk.den, t) * (isDesk() ? 1 : 0.62);
   scene.environmentIntensity = lerp(A.env, Bk.env, t);
+  RIM.value.copy(skyUniforms.uSunCol.value).multiplyScalar(lerp(A.rim, Bk.rim, t));
   wu.uFogCol.value.copy(scene.fog.color); wu.uFogDen.value = scene.fog.density;
   mixHex(A.deep, Bk.deep, t, wu.uDeep.value); wu.uSunDir.value.copy(sd); wu.uSunCol.value.copy(skyUniforms.uSunCol.value);
   const lampsOn = lerp(A.lamps, Bk.lamps, t);
   lampMat.opacity = clamp((lampsOn - 0.5) * 2, 0, 1);
   inner.intensity = lampMat.opacity * 900;
   clocks.forEach((c) => (c.dial.material.emissiveIntensity = lampMat.opacity * 0.8));
-  birdMat.uniforms.uColor.value.set(lampsOn > 0.8 ? '#11161f' : '#2a3340');
+  birdMat.uniforms.uColor.value.copy(lampsOn > 0.8 ? BIRD_NIGHT : BIRD_DAY);
   return { i, t, lampsOn };
 }
 function placeCamera(p, yaw, pitch, px, py) {
@@ -1376,7 +1468,7 @@ function placeCamera(p, yaw, pitch, px, py) {
   camera.fov = lerp(K[i][key].f, K[i + 1][key].f, t);
   // drag: walk around the target on a circle; pointer: a breath of parallax
   off.subVectors(tmpP, tmpT);
-  off.applyAxisAngle(new V3(0, 1, 0), yaw);
+  off.applyAxisAngle(UP, yaw);
   const r = off.length(); const h = Math.atan2(off.y, Math.hypot(off.x, off.z)) + pitch;
   const flat = Math.hypot(off.x, off.z) || 1;
   off.x *= Math.cos(h) * r / flat; off.z *= Math.cos(h) * r / flat; off.y = Math.sin(h) * r;
@@ -1484,10 +1576,30 @@ GT.onDest = (code) => { if (gates[code]) { gates[code].heat = 1; requestRender()
 
 /* ===== loop ===== */
 const timer = new THREE.Timer(); timer.connect(document);
-let running = false, needRender = true, firstFrame = true, footHidden = false;
-let frameAcc = 0, frameN = 0;
+let running = false, needRender = true, firstFrame = true, footHidden = false, ready = false;
+// quality governor: if frames run slow, give up pixels first, then mirror rate, then birds, then hold a steady 30fps
+let gAcc = 0, gN = 0, gWait = 120, fpsCap = 0, lastDraw = 0;
+const DPR_FLOOR = Math.min(1, dpr);
+function setRes() {
+  renderer.setPixelRatio(dpr);
+  water.getRenderTarget().setSize(Math.round(innerWidth * dpr * reflScale), Math.round(innerHeight * dpr * reflScale));
+}
+function govern(d) {
+  if (gWait > 0) { gWait--; return; }
+  gAcc += d; gN++;
+  if (gN < 45) return;
+  const avg = gAcc / gN; gAcc = 0; gN = 0;
+  if (avg < 1 / 48) return;
+  gWait = 60;
+  if (dpr > DPR_FLOOR + 0.01) { dpr = Math.max(DPR_FLOOR, dpr * 0.8); setRes(); }
+  else if (reflEvery < 2 || reflScale > 0.25) { reflEvery = 2; reflScale = 0.25; setRes(); }
+  else if (birds.count > 20) { birds.count = 20; kites.forEach((k, i) => (k.visible = i < 3)); }
+  else if (dpr > 0.75) { dpr = Math.max(0.75, dpr * 0.85); setRes(); }
+  else fpsCap = 30;
+  GT.quality = { tier: TIER, dpr, reflScale, reflEvery, fpsCap };
+}
 const camAim = new V3();
-function requestRender() { needRender = true; if (reduce && !raf) raf = requestAnimationFrame(() => { raf = 0; frame(); }); }
+function requestRender() { needRender = true; if (reduce && ready && !raf) raf = requestAnimationFrame(() => { raf = 0; frame(); }); }
 let raf = 0;
 function frame() {
   timer.update();
@@ -1512,12 +1624,12 @@ function frame() {
   const w3 = clamp(1 - Math.abs(state.ps - 3) / 0.6, 0, 1);
   if (fc && gates[fc] && w3 > 0) {
     camAim.copy(gates[fc].top); camAim.y *= 0.45;
-    const fwd = new V3(); camera.getWorldDirection(fwd);
-    const look = camera.position.clone().add(fwd.multiplyScalar(200));
-    state.aim = state.aim || look.clone();
-    state.aim.lerp(look.lerp(camAim, (isDesk() ? 0.25 : 0.85) * w3), reduce ? 1 : 1 - Math.exp(-3 * dt));
-    camera.lookAt(state.aim);
-  } else state.aim = null;
+    camera.getWorldDirection(fwd);
+    look.copy(camera.position).addScaledVector(fwd, 200);
+    if (!aimOn) { aim.copy(look); aimOn = true; }
+    aim.lerp(look.lerp(camAim, (isDesk() ? 0.25 : 0.85) * w3), reduce ? 1 : 1 - Math.exp(-3 * dt));
+    camera.lookAt(aim);
+  } else aimOn = false;
   // gates glow when hovered, chosen, or while the morning is on them
   for (const k in gates) {
     const G = gates[k], want = (state.hot === k || state.focusCode === k) ? 1 : 0;
@@ -1545,30 +1657,21 @@ function frame() {
   updateBirds(tt);
   kites.forEach((k, i) => {
     const u = k.userData;
-    k.position.copy(u.base).add(new V3(Math.sin(tt * 0.5 + u.ph) * 3, Math.sin(tt * 0.8 + u.ph) * 2, Math.cos(tt * 0.4 + u.ph) * 2));
+    k.position.set(u.base.x + Math.sin(tt * 0.5 + u.ph) * 3, u.base.y + Math.sin(tt * 0.8 + u.ph) * 2, u.base.z + Math.cos(tt * 0.4 + u.ph) * 2);
     k.lookAt(camera.position.x, k.position.y - 10, camera.position.z);
     k.rotateZ(Math.sin(tt * 1.3 + u.ph) * 0.35);
     const pos = u.tail.geometry.attributes.position;
     for (let j = 0; j < 12; j++) pos.setXYZ(j, Math.sin(tt * 3 + j * 0.6 + u.ph) * 0.25 * j * 0.3, -1.9 - j * 0.55, Math.cos(tt * 2 + j * 0.5) * 0.1 * j);
     pos.needsUpdate = true;
   });
-  // the gold of the Dubai frame needs a sky to reflect: re-bake it as the day moves
-  if (Math.abs(state.ps - envAt) > 0.4) { bakeEnv(); envAt = state.ps; }
+  pickEnv(state.ps);
   renderer.render(scene, camera);
   if (firstFrame) { firstFrame = false; canvas.classList.add('on'); world.classList.add('has-gl'); setTimeout(() => world.classList.add('gl-ready'), 1500); }
-  // quality governor: lower resolution before losing anything authored
-  if (!reduce) {
-    frameAcc += timer.getDelta() || dt; frameN++;
-    if (frameN >= 90) {
-      const avg = frameAcc / frameN; frameAcc = 0; frameN = 0;
-      if (avg > 0.026 && dpr > 1) { dpr = Math.max(1, dpr - 0.25); resize(); }
-      else if (avg > 0.026 && reflScale > 0.3) { reflScale = 0.3; resize(); }
-    }
-  }
+  if (!reduce) govern(timer.getDelta());
   needRender = false;
 }
-function loop() { if (!running) return; frame(); }
-function start() { if (running || reduce) return; running = true; renderer.setAnimationLoop(loop); }
+function loop(ts) { if (!running) return; if (fpsCap && ts - lastDraw < 1000 / fpsCap - 3) return; lastDraw = ts; frame(); }
+function start() { if (running || reduce || !ready) return; running = true; gWait = Math.max(gWait, 30); renderer.setAnimationLoop(loop); }
 function stop() { running = false; renderer.setAnimationLoop(null); }
 function resize() {
   renderer.setPixelRatio(dpr);
@@ -1576,7 +1679,7 @@ function resize() {
   camera.aspect = innerWidth / innerHeight;
   water.getRenderTarget().setSize(Math.round(innerWidth * dpr * reflScale), Math.round(innerHeight * dpr * reflScale));
   buildCurves(); measureDirty = true; requestRender();
-  if (reduce) frame();
+  if (reduce && ready) frame();
 }
 let lastW = innerWidth;
 addEventListener('resize', () => { const wChanged = innerWidth !== lastW; lastW = innerWidth; if (wChanged || !coarse) resize(); else { renderer.setSize(innerWidth, innerHeight, false); camera.aspect = innerWidth / innerHeight; measureDirty = true; } });
@@ -1594,10 +1697,17 @@ canvas.addEventListener('webglcontextrestored', () => location.reload());
 
 measure();
 state.ps = chapterAt(scrollY);
-bakeEnv(); envAt = state.ps;
-if (reduce) { frame(); } else start();
+bakeAllEnv();
+applyChapter(state.ps); placeCamera(state.ps, 0, 0, 0, 0); pickEnv(state.ps);
+renderer.shadowMap.needsUpdate = true;
+// compile all programs up front (in parallel where the GPU driver allows) so no gate stutters on first sight
+(renderer.compileAsync ? renderer.compileAsync(scene, camera) : Promise.resolve()).catch(() => {}).then(() => {
+  ready = true;
+  if (reduce) frame(); else if (!document.hidden) start();
+});
 setTimeout(() => { measureDirty = true; if (window.ScrollTrigger) ScrollTrigger.refresh(); }, 1200);
 document.fonts && document.fonts.ready.then(() => { measureDirty = true; if (window.ScrollTrigger) ScrollTrigger.refresh(); });
+GT.quality = { tier: TIER, dpr, reflScale, reflEvery, fpsCap, gpu: GPU };
 GT.world = { state, scene, camera, renderer, anchors: () => anchors, frame, curve: () => camCurveP, torans, gates, THREE };
 }
 </script>
