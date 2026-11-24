@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="assets/gt-mark-64.png">
+<link rel="apple-touch-icon" href="assets/gt-mark-192.png">
 <title>Global Travel and Visa Services | Visa and travel help in Hyderabad</title>
 <meta name="description" content="Visa and travel help from our office at Topaz Plaza, Punjagutta, Hyderabad. Tell us your trip on WhatsApp or call +91 91823 39188.">
 <link rel="canonical" href="https://www.gtfinserv.com/">
@@ -77,10 +79,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:150;op
 /* ===== nav ===== */
 .nav{position:sticky;top:0;z-index:80;background:var(--paper);border-bottom:2px solid var(--ink)}
 .nav .in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:var(--nav-h);padding:0 var(--gut)}
-.wordmark{display:inline-flex;flex-direction:column;text-decoration:none;line-height:1}
-.wm-a{font:800 24px/0.95 var(--f-display);letter-spacing:-.035em;font-variation-settings:"opsz" 48}
-.wm-a i{font-style:normal;color:var(--ultra)}
-.wm-b{font:500 10.5px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;margin-top:5px;color:var(--ink-2)}
+.logo{display:block;line-height:0}
+.logo img{height:50px;width:auto;display:block}
+.menu-logo{height:42px;width:auto}
+.foot-logo{height:clamp(70px,8vw,112px);width:auto;margin:0 0 28px}
+@media (max-width:899px){.logo img{height:42px}}
 .nav-links{display:flex;align-items:center;gap:clamp(14px,2.2vw,34px)}
 .nav-links a:not(.btn){position:relative;font:500 15.5px/1 var(--f-body);text-decoration:none;padding:8px 0}
 .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--spring)}
@@ -94,7 +97,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:150;op
 .menu{position:fixed;inset:0;z-index:120;background:var(--ultra);color:var(--paper);display:none;flex-direction:column;--focus:var(--sand);clip-path:circle(0% at calc(100% - 52px) 36px);transition:clip-path .62s var(--out)}
 .menu.is-open{clip-path:circle(150% at calc(100% - 52px) 36px)}
 .menu-top{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);padding:0 var(--gut);border-bottom:2px solid rgba(242,244,247,.35)}
-.menu .wm-b{color:var(--sand)}
 .menu-close{height:44px;padding:0 14px;border:2px solid var(--paper);border-radius:var(--r);background:transparent;color:var(--paper);font:500 13px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
 .menu ol{padding:18px var(--gut) 0;flex:1;overflow:auto}
 .menu li{border-bottom:1px solid rgba(242,244,247,.25)}
@@ -374,10 +376,9 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
 
 <header class="nav" id="nav">
   <div class="in">
-    <a class="wordmark" href="#top" aria-label="Global Travel and Visa Services, back to top">
-      <!-- LOGO: no client logo yet. Swap this text wordmark for <img src="logo.svg" alt="Global Travel and Visa Services"> when it arrives. -->
-      <span class="wm-a" aria-hidden="true">Global Travel<i>.</i></span>
-      <span class="wm-b" aria-hidden="true">and Visa Services</span>
+    <a class="logo" href="#top" aria-label="GTFinServ, Global Travel and Visa Services, back to top">
+      <!-- client logo, as supplied (WhatsApp 23 Nov 2026), white background removed -->
+      <img src="assets/logo-gtfinserv.webp" width="1000" height="302" alt="">
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#quote" data-go="quote">Visa</a>
@@ -393,7 +394,7 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
 
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="menu-top">
-    <span class="wordmark" aria-hidden="true"><span class="wm-a">Global Travel<i style="color:var(--orange)">.</i></span><span class="wm-b">and Visa Services</span></span>
+    <img class="menu-logo" src="assets/logo-gtfinserv-light.webp" width="1000" height="302" alt="GTFinServ">
     <button class="menu-close" type="button" id="menuClose">Close</button>
   </div>
   <ol>
@@ -647,6 +648,7 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
 </main>
 
 <footer class="foot">
+  <img class="foot-logo" src="assets/logo-gtfinserv-light.webp" width="1000" height="302" alt="GTFinServ" loading="lazy">
   <p class="foot-wm">Global Travel <span>and Visa Services</span></p>
   <div class="fgrid">
     <div>
