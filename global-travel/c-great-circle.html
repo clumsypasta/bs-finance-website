@@ -194,7 +194,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:150;op
 .stub-meta b{font-weight:500;display:block}
 .tbody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px;padding:13px 16px 15px}
 .field{display:flex;flex-direction:column;gap:5px;min-width:0}
-.field label,.lab{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 8px;font:500 11px/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.field label,.lab{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 8px;font:600 14px/1.25 var(--f-body);color:var(--ink-2)}
 .err{color:var(--ink);text-transform:none;letter-spacing:0;font:500 11.5px/1.2 var(--f-mono);display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
 .err::before{content:"";width:7px;height:7px;background:var(--orange);flex:none}
 .err[hidden]{display:none}
@@ -268,7 +268,11 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
 .tile:hover .ico{transform:translate(4px,-4px) rotate(-4deg)}
 .tile h3{font:800 clamp(26px,2.3vw,34px)/.98 var(--f-display);letter-spacing:-.035em;margin-top:auto}
 .tile p{font-size:15.5px;line-height:1.5}
-.tile .no{position:absolute;top:22px;right:20px;font:500 12px/1 var(--f-mono);letter-spacing:.1em;opacity:.8}
+.tile-go{color:inherit;text-decoration:none}
+.tile-go::after{content:"";position:absolute;inset:0}
+.tile:hover .tile-go,.tile-go:focus-visible{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px}
+.tile-go:focus-visible{outline:none}
+.tile:focus-within{outline:3px solid var(--focus,var(--ink));outline-offset:3px}
 .ask{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-weight:600;font-size:15.5px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;width:max-content}
 .ask svg{transition:transform .4s var(--spring)}
 .ask:hover svg{transform:translateX(4px)}
@@ -398,11 +402,11 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
     <button class="menu-close" type="button" id="menuClose">Close</button>
   </div>
   <ol>
-    <li><a href="#quote" data-go="quote"><span class="gate">GATE 01</span><span class="lbl">Visa</span></a></li>
-    <li><a href="#routes" data-go="routes"><span class="gate">GATE 02</span><span class="lbl">Travel</span></a></li>
-    <li><a href="#services"><span class="gate">GATE 03</span><span class="lbl">Services</span></a></li>
-    <li><a href="#how"><span class="gate">GATE 04</span><span class="lbl">How it works</span></a></li>
-    <li><a href="#contact"><span class="gate">GATE 05</span><span class="lbl">Contact</span></a></li>
+    <li><a href="#quote" data-go="quote"><span class="lbl">Visa</span></a></li>
+    <li><a href="#routes" data-go="routes"><span class="lbl">Travel</span></a></li>
+    <li><a href="#services"><span class="lbl">Services</span></a></li>
+    <li><a href="#how"><span class="lbl">How it works</span></a></li>
+    <li><a href="#contact"><span class="lbl">Contact</span></a></li>
   </ol>
   <div class="menu-foot">
     <a class="btn btn--paper" href="#quote" data-go="quote">Get a visa quote</a>
@@ -417,7 +421,7 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
     <div class="panel" id="panel" aria-hidden="true"></div>
     <canvas id="globe" tabindex="0" role="img" aria-label="A turning globe of dots with flight routes from Hyderabad to Dubai, London, Frankfurt, New York, Toronto, Singapore, Bangkok, Tokyo and Sydney. Drag, or use the arrow keys, to turn it."></canvas>
     <div class="globe-room" aria-hidden="true"></div>
-    <p class="hero-cap"><b>HYD</b><span>17.4290 N</span><span>78.4519 E</span></p>
+    <p class="hero-cap"><b>HYD</b></p>
     <h1 class="hero-h1" id="h1"><span class="l1">The world,</span> <span class="l2">one visa <em>away.</em></span></h1>
     <div class="hero-copy" id="heroCopy">
       <p class="hero-sub">Visas, documents and bookings, from our office in Punjagutta.</p>
@@ -428,7 +432,7 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
     </div>
     <p class="globe-hint" id="hint" aria-hidden="true">Drag to turn</p>
     <div class="poster-foot" id="posterFoot">
-      <p class="pc-cap">Every route on this globe starts at<strong>Topaz Plaza, Punjagutta</strong>17.4290 N &nbsp;78.4519 E</p>
+      <p class="pc-cap">Every route on this globe starts at<strong>Topaz Plaza, Punjagutta</strong></p>
       <p class="pc-h">Departures from HYD</p>
       <ol class="pc-list" id="routeList">
         <li data-code="DXB"><b>DXB</b><span>Dubai</span><i data-dist="DXB"></i></li>
@@ -502,23 +506,20 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
   <h2 class="story-h" id="routesTitle">Three routes from HYD</h2>
   <div class="cards">
     <article class="card card--dxb" data-code="DXB">
-      <p class="card-route"><span>HYD</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12c0-.6-.7-.9-1.6-.9h-4.2L10.6 4H8.9l2.3 7.1H6.9L5.3 8.8H4l.8 3.2-.8 3.2h1.3l1.6-2.3h4.3l-2.3 7.1h1.7l4.6-7.1h4.2c.9 0 1.6-.3 1.6-.9z"/></svg><span>DXB</span></p>
       <h3 class="card-city">Dubai</h3>
-      <p class="card-meta"><span data-dist="DXB">2,570 km</span> from Hyderabad, great circle<br>25.25 N &nbsp;55.37 E</p>
+      <p class="card-meta"><span data-dist="DXB">2,570 km</span> from Hyderabad</p>
       <p class="card-copy">Tourist and business visas.</p>
       <a class="card-link" data-wa="a UAE visa" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a UAE visa <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </article>
     <article class="card card--lhr" data-code="LHR">
-      <p class="card-route"><span>HYD</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12c0-.6-.7-.9-1.6-.9h-4.2L10.6 4H8.9l2.3 7.1H6.9L5.3 8.8H4l.8 3.2-.8 3.2h1.3l1.6-2.3h4.3l-2.3 7.1h1.7l4.6-7.1h4.2c.9 0 1.6-.3 1.6-.9z"/></svg><span>LHR</span></p>
       <h3 class="card-city">London</h3>
-      <p class="card-meta"><span data-dist="LHR">7,700 km</span> from Hyderabad, great circle<br>51.47 N &nbsp;0.45 W</p>
+      <p class="card-meta"><span data-dist="LHR">7,700 km</span> from Hyderabad</p>
       <p class="card-copy">Visitor, student and work visas.</p>
       <a class="card-link" data-wa="a UK visa" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a UK visa <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </article>
     <article class="card card--yyz" data-code="YYZ">
-      <p class="card-route"><span>HYD</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12c0-.6-.7-.9-1.6-.9h-4.2L10.6 4H8.9l2.3 7.1H6.9L5.3 8.8H4l.8 3.2-.8 3.2h1.3l1.6-2.3h4.3l-2.3 7.1h1.7l4.6-7.1h4.2c.9 0 1.6-.3 1.6-.9z"/></svg><span>YYZ</span></p>
       <h3 class="card-city">Toronto</h3>
-      <p class="card-meta"><span data-dist="YYZ">12,000 km</span> from Hyderabad, great circle<br>43.68 N &nbsp;79.62 W</p>
+      <p class="card-meta"><span data-dist="YYZ">12,000 km</span> from Hyderabad</p>
       <p class="card-copy">Visitor visas and study permits.</p>
       <a class="card-link" data-wa="a Canada visa" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a Canada visa <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </article>
@@ -533,54 +534,39 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
   <!-- PLACEHOLDER: services not confirmed by client -->
   <ul class="tiles">
     <li class="tile tile--visa">
-      <span class="no">01</span>
       <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><rect x="9" y="5" width="22" height="30" rx="2"/><path d="M14 12h12M14 17h7"/><circle cx="24.5" cy="26" r="5.5"/><path d="M21.5 26l2 2 3.5-4"/></svg>
-      <h3>Visa assistance</h3>
-      <ul class="chips" aria-label="Visa types"><li>Tourist</li><li>Business</li><li>Student</li><li>Work</li></ul>
-      <p>We list what the embassy needs, fill the forms with you and check the file before it goes in.</p>
-      <a class="ask" data-wa="Visa assistance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
+      <h3><a class="tile-go" data-wa="Visa assistance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Visa assistance</a></h3>
+      <p>Tourist, business, student and work visas. We list what the embassy needs, fill the forms with you and check the file before it goes in.</p>
     </li>
     <li class="tile">
-      <span class="no">02</span>
       <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><rect x="10" y="5" width="20" height="30" rx="2"/><circle cx="20" cy="17" r="5"/><path d="M15 17h10M20 12c-2 3-2 7 0 10M20 12c2 3 2 7 0 10M15 28h10"/></svg>
-      <h3>Passport services</h3>
+      <h3><a class="tile-go" data-wa="Passport services" href="https://wa.me/919182339188" target="_blank" rel="noopener">Passport services</a></h3>
       <p>New passports and renewals.</p>
-      <a class="ask" data-wa="Passport services" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </li>
     <li class="tile tile--orange">
-      <span class="no">03</span>
       <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 12h30v5a3 3 0 0 0 0 6v5H5v-5a3 3 0 0 0 0-6z"/><path d="M27 13v2M27 19v2M27 25v2"/><path d="M10 20h10M17 16.5l3.5 3.5-3.5 3.5"/></svg>
-      <h3>Flight tickets</h3>
+      <h3><a class="tile-go" data-wa="Flight tickets" href="https://wa.me/919182339188" target="_blank" rel="noopener">Flight tickets</a></h3>
       <p>Booked around your visa dates.</p>
-      <a class="ask" data-wa="Flight tickets" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </li>
     <li class="tile tile--teal">
-      <span class="no">04</span>
       <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 31V11M5 25h30v6M35 25v-4a3 3 0 0 0-3-3H17v7"/><circle cx="11" cy="20" r="2.5"/></svg>
-      <h3>Hotel bookings</h3>
+      <h3><a class="tile-go" data-wa="Hotel bookings" href="https://wa.me/919182339188" target="_blank" rel="noopener">Hotel bookings</a></h3>
       <p>Stays, plus the booking proof many visas ask for.</p>
-      <a class="ask" data-wa="Hotel bookings" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </li>
     <li class="tile tile--paper">
-      <span class="no">05</span>
       <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="13" width="28" height="20" rx="2"/><path d="M15 13v-3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3M13 13v20M27 13v20"/></svg>
-      <h3>Holiday packages</h3>
+      <h3><a class="tile-go" data-wa="Holiday packages" href="https://wa.me/919182339188" target="_blank" rel="noopener">Holiday packages</a></h3>
       <p>Flights and stays, planned together.</p>
-      <a class="ask" data-wa="Holiday packages" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </li>
     <li class="tile">
-      <span class="no">06</span>
       <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5l12 4v9c0 8-5.5 13.5-12 16-6.5-2.5-12-8-12-16V9z"/><path d="M15 19.5l3.5 3.5 6.5-7"/></svg>
-      <h3>Travel insurance</h3>
+      <h3><a class="tile-go" data-wa="Travel insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Travel insurance</a></h3>
       <p>Trip cover, including the policy many visas ask for.</p>
-      <a class="ask" data-wa="Travel insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </li>
     <li class="tile tile--ink">
-      <span class="no">07</span>
       <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="8"/><path d="M14 10v8M11.5 12h5"/><rect x="16" y="21" width="19" height="12" rx="2"/><circle cx="25.5" cy="27" r="2.5"/></svg>
-      <h3>Foreign exchange</h3>
+      <h3><a class="tile-go" data-wa="Foreign exchange" href="https://wa.me/919182339188" target="_blank" rel="noopener">Foreign exchange</a></h3>
       <p>Currency, ready before you leave.</p>
-      <a class="ask" data-wa="Foreign exchange" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this <svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
     </li>
   </ul>
 </section>
@@ -595,9 +581,9 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
       <svg class="plane" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12c0-.6-.7-.9-1.6-.9h-4.2L10.6 4H8.9l2.3 7.1H6.9L5.3 8.8H4l.8 3.2-.8 3.2h1.3l1.6-2.3h4.3l-2.3 7.1h1.7l4.6-7.1h4.2c.9 0 1.6-.3 1.6-.9z"/></svg>
     </div>
     <ol class="stops">
-      <li class="stop on"><span class="code" aria-hidden="true">HYD</span><p class="stop-n">Stop 1</p><h3>Tell us your trip</h3><p>Where, why and roughly when. A WhatsApp message is enough.</p></li>
-      <li class="stop on"><span class="code" aria-hidden="true">DOCS</span><p class="stop-n">Stop 2</p><h3>We check your documents</h3><p>You get a list of papers. We help with the forms.</p></li>
-      <li class="stop on"><span class="code" aria-hidden="true">GATE</span><p class="stop-n">Stop 3</p><h3>Apply and track</h3><p>We file it with you and follow it to a decision.</p></li>
+      <li class="stop on"><span class="code" aria-hidden="true">HYD</span><h3>Tell us your trip</h3><p>Where, why and roughly when. A WhatsApp message is enough.</p></li>
+      <li class="stop on"><span class="code" aria-hidden="true">DOCS</span><h3>We check your documents</h3><p>You get a list of papers. We help with the forms.</p></li>
+      <li class="stop on"><span class="code" aria-hidden="true">GATE</span><h3>Apply and track</h3><p>We file it with you and follow it to a decision.</p></li>
     </ol>
   </div>
 </section>
@@ -610,7 +596,6 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:poi
     <div>
       <div class="plate">
         <p class="plate-code" aria-hidden="true">HYD</p>
-        <p class="plate-coord">17.4290 N &nbsp;/&nbsp; 78.4519 E</p>
         <address>Flat no 210, Topaz Plaza,<br>Officers Colony, Punjagutta,<br>Hyderabad, Telangana - 500082</address>
         <div class="row">
           <a class="btn btn--paper" href="https://www.google.com/maps/search/?api=1&amp;query=Topaz+Plaza+Officers+Colony+Punjagutta+Hyderabad+500082" target="_blank" rel="noopener"><svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-6.2 6.5-11.2a6.5 6.5 0 0 0-13 0C5.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg>Open in Google Maps</a>
