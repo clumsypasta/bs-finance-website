@@ -1,0 +1,1598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Global Travel and Visa Services | Visa and travel help in Hyderabad</title>
+<meta name="description" content="Visa and travel help from our office at Topaz Plaza, Punjagutta, Hyderabad. Tell us your trip on WhatsApp or call +91 91823 39188.">
+<link rel="canonical" href="https://www.gtfinserv.com/">
+<meta name="theme-color" content="#F7D9BC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Global Travel and Visa Services, Hyderabad">
+<meta property="og:description" content="The visa is the gate. We help you through it, from Punjagutta, Hyderabad.">
+<meta property="og:url" content="https://www.gtfinserv.com/">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Global Travel and Visa Services","url":"https://www.gtfinserv.com/","telephone":["+919182339188","+914040274570"],"address":{"@type":"PostalAddress","streetAddress":"Flat no 210, Topaz Plaza, Officers Colony, Punjagutta","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500082","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":17.4290,"longitude":78.4519}}
+</script>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"}}
+</script>
+<style>
+:root{
+  --ink:#13222E; --ink-2:#2C3E4B; --paper:#F7F3EC; --paper-2:#EFE8DC; --line:#D8CFBF;
+  --marigold:#F29F05; --marigold-d:#B86E00; --teal:#0F5C63; --leaf:#2F6B3A; --rose:#C2456A;
+  --sky:#F7D9BC;
+  --f-display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-text:"Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"Martian Mono", ui-monospace, "Cascadia Mono", monospace;
+  --spring:cubic-bezier(.22,1.25,.36,1);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --r:14px;
+  --pad:clamp(18px, 4vw, 56px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{margin:0;color:var(--ink);background:var(--sky);font-family:var(--f-text);font-size:16px;line-height:1.55;overflow-x:hidden}
+img,svg{display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;text-decoration:none;transition:top .2s}
+.skip:focus{top:12px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- the world (fixed behind everything) ---------- */
+.world{position:fixed;inset:0;z-index:0;overflow:hidden;
+  /* designed poster: shows before WebGL starts, and stays if it cannot */
+  background:
+    radial-gradient(120% 60% at 72% 52%, #FFE2B8 0%, rgba(255,226,184,0) 55%),
+    linear-gradient(180deg, #8FAACB 0%, #D9BFB0 34%, #F7D9BC 52%, #C9B9A6 53%, #6F8C93 70%, #3E6873 100%);
+}
+.world svg.poster{position:absolute;left:66%;bottom:14%;height:72vh;width:auto;transform:translateX(-50%);opacity:.85}
+.world svg.poster.ref{bottom:auto;top:86%;transform:translateX(-50%) scaleY(-1);opacity:.25;filter:blur(1.5px)}
+@media (max-width:899px){.world svg.poster{left:50%;bottom:36%;height:28vh}.world svg.poster.ref{top:64%}}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s var(--ease);touch-action:pan-y;cursor:grab;outline:none}
+#gl.on{opacity:1}
+#gl.dragging{cursor:grabbing}
+#gl.hot{cursor:pointer}
+#gl:focus-visible{box-shadow:inset 0 0 0 3px var(--ink)}
+.world.gl-ready svg.poster{display:none}
+
+/* everything readable sits above the world; empty space lets the pointer reach it */
+.layer{position:relative;z-index:2;pointer-events:none}
+.layer a,.layer button,.layer input,.layer select,.layer label,.layer form,.panel,.card,.tile,.step,.nav,.topbar,.cb,.pass{pointer-events:auto}
+
+/* ---------- top bar + nav ---------- */
+.topbar{position:relative;z-index:30;background:var(--ink);color:var(--paper);font-size:13px}
+.topbar .in{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px var(--pad);flex-wrap:wrap}
+.topbar ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;flex-wrap:wrap}
+.topbar a{text-decoration:none;display:inline-flex;align-items:center;gap:7px;padding:4px 0}
+.topbar a:hover{text-decoration:underline;text-underline-offset:3px}
+.topbar .loc{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;opacity:.9}
+.topbar svg{width:15px;height:15px}
+.topbar :focus-visible{outline-color:var(--marigold)}
+
+.nav{position:sticky;top:0;z-index:25;transition:background .35s var(--ease), box-shadow .35s}
+.nav .in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px var(--pad)}
+.nav.solid{background:rgba(247,243,236,.96);box-shadow:0 1px 0 var(--line)}
+.wordmark{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}
+.wm-a{font-family:var(--f-display);font-size:30px;letter-spacing:-.01em}
+.wm-a i{color:var(--marigold-d);font-style:normal}
+.wm-b{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{text-decoration:none;font-weight:500;font-size:15px;padding:9px 12px;border-radius:999px;transition:background .2s}
+.nav-links a:not(.btn):hover{background:rgba(19,34,46,.08)}
+.menu-btn{display:none;align-items:center;gap:10px;background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer}
+.menu-btn .bars{width:16px;height:10px;border-top:2px solid currentColor;border-bottom:2px solid currentColor}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 22px;border-radius:999px;border:2px solid var(--ink);background:var(--marigold);color:var(--ink);font-weight:700;text-decoration:none;cursor:pointer;
+  box-shadow:0 3px 0 var(--ink);transition:transform .35s var(--spring), box-shadow .35s var(--spring), background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--ink)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.btn--sm{min-height:42px;padding:8px 18px;font-size:14px}
+.btn--ghost{background:transparent;box-shadow:none}
+.btn--ghost:hover{background:rgba(19,34,46,.08);box-shadow:none}
+.btn--ink{background:var(--ink);color:var(--paper);box-shadow:0 3px 0 var(--marigold-d)}
+.btn--ink:hover{box-shadow:0 5px 0 var(--marigold-d)}
+.btn svg{width:18px;height:18px}
+
+.menu{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;padding:18px var(--pad) 28px;visibility:hidden;opacity:0;transition:opacity .3s, visibility 0s .3s}
+.menu.is-open{visibility:visible;opacity:1;transition:opacity .3s}
+.menu-top{display:flex;justify-content:space-between;align-items:center}
+.menu .wordmark{color:var(--paper)}
+.menu-close{background:var(--paper);color:var(--ink);border:0;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer}
+.menu ol{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:4px}
+.menu ol a{display:flex;align-items:baseline;gap:16px;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(247,243,236,.18)}
+.menu ol .g{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--marigold)}
+.menu ol .l{font-family:var(--f-display);font-size:40px;line-height:1.05}
+.menu-foot{margin-top:auto;display:grid;gap:12px}
+.menu-foot p{margin:4px 0 0;font-size:14px;opacity:.85}
+.menu :focus-visible{outline-color:var(--marigold)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:calc(100svh - 118px);display:grid;align-content:end;padding:0 var(--pad) clamp(28px,6vh,72px)}
+.hero-copy{max-width:820px}
+.eyebrow{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;display:flex;gap:12px;flex-wrap:wrap}
+.eyebrow b{font-weight:500;background:var(--ink);color:var(--paper);padding:3px 8px;border-radius:4px}
+.h1{font-family:var(--f-display);font-weight:400;font-size:clamp(44px,6.2vw,96px);line-height:.92;letter-spacing:-.02em;margin:0 0 22px}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .w{display:inline-block;will-change:transform}
+.h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:clamp(16px,1.35vw,19px);max-width:46ch;margin:0 0 26px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-foot{padding-right:84px;display:flex;justify-content:space-between;align-items:end;gap:20px;margin-top:clamp(28px,6vh,64px);flex-wrap:wrap}
+.hint{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:flex;gap:10px;align-items:center;margin:0;background:none;border:0;padding:6px 0;cursor:pointer;text-align:left}
+.hint i{display:inline-block;width:26px;height:26px;border:1.5px solid var(--ink);border-radius:50%;position:relative}
+.hint i::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;background:var(--ink);animation:nudge 2.4s var(--ease) infinite}
+@keyframes nudge{0%,100%{transform:translateX(-5px)}50%{transform:translateX(5px)}}
+.clockcap{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;margin:0;text-align:right}
+.clockcap b{display:block;font-family:var(--f-display);font-size:34px;font-weight:400;letter-spacing:0;line-height:1}
+
+/* ---------- shared section bits ---------- */
+.sec{position:relative;padding:clamp(64px,12vh,140px) var(--pad)}
+.panel{background:var(--paper);border-radius:var(--r);box-shadow:0 30px 60px -36px rgba(19,34,46,.55)}
+.kicker{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;color:var(--teal)}
+.title{font-family:var(--f-display);font-weight:400;font-size:clamp(38px,5.4vw,76px);line-height:.98;letter-spacing:-.015em;margin:0 0 14px}
+.title em{font-style:italic;color:var(--teal)}
+.lede{font-size:17px;max-width:50ch;margin:0}
+
+/* ---------- quote (gate pass) ---------- */
+.quote{min-height:100svh;display:grid;align-items:center}
+.pass{max-width:560px;padding:0;overflow:hidden}
+.pass-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:24px 26px 18px;border-bottom:2px dashed var(--line)}
+.pass-head h2{font-family:var(--f-display);font-weight:400;font-size:40px;line-height:1;margin:0}
+.pass-head p{margin:6px 0 0;font-size:14px;color:var(--ink-2)}
+.pass-route{font-family:var(--f-mono);font-size:13px;text-align:right;white-space:nowrap;margin:0}
+.pass-route b{display:block;font-family:var(--f-display);font-weight:400;font-size:34px;line-height:1;letter-spacing:.02em}
+.pass-body{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;padding:20px 26px 26px}
+.field{display:grid;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;gap:8px}
+.err{color:#A3122F;letter-spacing:.02em;text-transform:none;font-family:var(--f-text);font-size:12.5px;font-weight:600}
+.inp{width:100%;min-height:48px;padding:11px 14px;border:2px solid var(--ink);border-radius:10px;background:#fff;font-size:16px;appearance:none;-webkit-appearance:none}
+select.inp{background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
+.inp:focus-visible{outline:3px solid var(--marigold-d);outline-offset:1px}
+.inp[aria-invalid="true"]{border-color:#A3122F;background:#FFF5F6}
+.pass-foot{grid-column:1/-1;display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.status{font-size:14px;margin:0;min-height:1.4em}
+.status a{font-weight:600}
+
+/* ---------- routes ---------- */
+.routes{min-height:100svh;display:grid;align-content:space-between;gap:40px;padding-top:clamp(90px,12vh,130px);padding-bottom:clamp(28px,5vh,56px)}
+.routes .head{max-width:520px;padding:22px 26px}
+.routes .title{font-size:clamp(36px,4.4vw,62px)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;margin:0;padding:0}
+.card{padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px;border:2px solid transparent;transition:transform .45s var(--spring), border-color .25s}
+.card.hot{transform:translateY(-6px);border-color:var(--ink)}
+.card-route{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;margin:0;display:flex;align-items:center;gap:8px}
+.card-route i{flex:1;height:0;border-top:2px dotted var(--ink-2);max-width:60px}
+.card h3{font-family:var(--f-display);font-weight:400;font-size:44px;line-height:1;margin:2px 0 0}
+.card-meta{font-family:var(--f-mono);font-size:11.5px;margin:0;color:var(--ink-2)}
+.card p.copy{margin:4px 0 6px}
+.card-link{margin-top:auto;font-weight:700;color:var(--teal);text-underline-offset:4px}
+.gate-ico{width:44px;height:44px}
+
+/* ---------- services ---------- */
+.services{min-height:120svh;display:grid;align-content:end}
+.services .wrap{padding:28px}
+.services .head{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:end;margin-bottom:24px}
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tile{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:8px;transition:transform .45s var(--spring), border-color .2s, box-shadow .3s}
+.tile:hover,.tile:focus-within{transform:translateY(-4px);border-color:var(--ink);box-shadow:0 16px 30px -22px rgba(19,34,46,.6)}
+.tile.big{grid-column:span 2;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tile .no{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--teal)}
+.tile.big .no{color:var(--marigold)}
+.tile h3{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1.02;margin:0}
+.tile p{margin:0;font-size:15px}
+.chips{list-style:none;margin:2px 0;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+.chips li{font-family:var(--f-mono);font-size:11px;padding:4px 9px;border-radius:999px;border:1.5px solid currentColor}
+.ask{margin-top:auto;padding-top:8px;font-weight:700;font-size:14.5px;color:var(--teal);text-underline-offset:4px}
+.tile.big .ask{color:var(--marigold)}
+.tile.big :focus-visible{outline-color:var(--marigold)}
+.placeholder-note{font-family:var(--f-mono);font-size:11px;margin:16px 0 0;color:var(--ink-2)}
+
+/* ---------- how ---------- */
+.how{padding:0}
+.how-pin{min-height:100svh;padding:clamp(80px,12vh,120px) var(--pad) clamp(32px,6vh,60px);display:grid;grid-template-columns:minmax(0,520px) 1fr;align-content:center;gap:24px}
+.how .head{padding:24px 26px;margin-bottom:14px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+.step{padding:18px 22px 18px 74px;position:relative;border:2px solid transparent;transition:transform .5s var(--spring), border-color .3s, background .3s}
+.step::before{content:attr(data-n);position:absolute;left:20px;top:18px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-size:13px;border:2px solid var(--ink);transition:background .3s}
+.step h3{font-family:var(--f-display);font-weight:400;font-size:28px;line-height:1.05;margin:0 0 6px}
+.step p{margin:0;font-size:15.5px}
+.step .gate-n{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:0 0 4px}
+.step.on{border-color:var(--ink);transform:translateX(8px)}
+.step.on::before{background:var(--marigold)}
+
+/* ---------- contact ---------- */
+.contact{min-height:130svh;display:grid;align-content:center}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;max-width:920px}
+.addr{padding:28px;background:var(--ink);color:var(--paper)}
+.addr .title{color:var(--paper);font-size:clamp(36px,4vw,58px)}
+.addr .title em{color:var(--marigold)}
+.coord{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;margin:0 0 14px;color:var(--marigold)}
+address{font-style:normal;font-size:18px;line-height:1.5;margin:0 0 22px}
+.addr .row{display:flex;gap:12px;flex-wrap:wrap}
+.addr .btn--ghost{color:var(--paper);border-color:var(--paper)}
+.addr .btn--ghost:hover{background:rgba(247,243,236,.12)}
+.addr :focus-visible{outline-color:var(--marigold)}
+.phones{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(247,243,236,.25)}
+.phones a{text-decoration:none;display:grid;gap:2px}
+.phones .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.phones .v{font-size:20px;font-weight:600}
+.phones a:hover .v{text-decoration:underline;text-underline-offset:4px}
+.cb{padding:28px;display:grid;gap:14px;align-content:start}
+.cb h3{font-family:var(--f-display);font-weight:400;font-size:38px;line-height:1;margin:0}
+.cb>p{margin:0}
+
+/* ---------- footer ---------- */
+.foot{position:relative;z-index:3;pointer-events:auto;background:var(--ink);color:var(--paper);padding:64px var(--pad) 28px}
+.foot-wm{font-family:var(--f-display);font-size:clamp(44px,8vw,120px);line-height:.9;margin:0 0 40px;letter-spacing:-.02em}
+.foot-wm span{font-style:italic;color:var(--marigold)}
+.fgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.fgrid h2{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin:0 0 12px;color:var(--marigold)}
+.fgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fgrid a{text-underline-offset:4px}
+.foot address{font-size:16px}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:18px;border-top:1px solid rgba(247,243,236,.2);font-family:var(--f-mono);font-size:11px;opacity:.85}
+.foot :focus-visible{outline-color:var(--marigold)}
+
+/* ---------- floating WhatsApp ---------- */
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:64px;height:64px;border-radius:50%;background:var(--marigold);border:2px solid var(--ink);box-shadow:0 4px 0 var(--ink);display:grid;place-items:center;text-decoration:none;transition:transform .4s var(--spring), box-shadow .4s var(--spring)}
+.wa:hover{transform:translateY(-3px) rotate(-6deg);box-shadow:0 7px 0 var(--ink)}
+.wa svg{width:30px;height:30px}
+.wa-tag{position:absolute;right:76px;white-space:nowrap;background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:6px;opacity:0;transform:translateX(8px);transition:opacity .25s, transform .4s var(--spring);pointer-events:none}
+.wa:hover .wa-tag,.wa:focus-visible .wa-tag{opacity:1;transform:none}
+
+/* gate label that follows a hovered 3D gate */
+.gate-tip{position:fixed;left:0;top:0;z-index:20;pointer-events:none;background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;padding:8px 11px;border-radius:8px;opacity:0;transform:translate(-50%,-130%);transition:opacity .2s;white-space:nowrap}
+.gate-tip.on{opacity:1}
+.gate-tip b{color:var(--marigold);font-weight:500}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .services .head{grid-template-columns:1fr}
+}
+@media (max-width:899px){
+  .nav-links{display:none}
+  .menu-btn{display:inline-flex}
+  .nav{background:rgba(247,243,236,.96);box-shadow:0 1px 0 var(--line)}
+  .topbar .loc{display:none}
+  .hero{min-height:calc(100svh - 112px);padding-bottom:22px}
+  .hero{align-content:stretch;padding-top:18px}
+  .hero-copy{display:flex;flex-direction:column;min-height:calc(100svh - 150px)}
+  .hero-low{margin-top:auto;background:rgba(247,243,236,.94);padding:18px 18px 20px;border-radius:var(--r);margin-left:-6px;margin-right:-6px}
+  .hero-sub{font-size:15.5px;margin-bottom:16px}
+  .hero-foot{display:none}
+  .cards{grid-template-columns:1fr}
+  .routes{min-height:auto;gap:46vh}
+  .how-pin{grid-template-columns:1fr;min-height:auto;padding-top:64px}
+  .step.on{transform:none}
+  .steps{gap:42vh;padding-bottom:20vh}
+  .cgrid{grid-template-columns:1fr}
+  .contact{min-height:auto;padding-top:60vh}
+  .services{min-height:auto;padding-top:50vh}
+  .fgrid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .pass-body{grid-template-columns:1fr}
+  .tiles{grid-template-columns:1fr}
+  .tile.big{grid-column:auto}
+  .pass-head{flex-direction:column}
+  .pass-route{text-align:left}
+  .phones{grid-template-columns:1fr}
+  .topbar ul{gap:12px}
+  .wa{width:58px;height:58px;right:14px;bottom:14px}
+  .tb-land{display:none}
+  .h1 .brk{display:block}
+  .h1{font-size:clamp(42px,12.5vw,64px)}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
+  #gl{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="gate-tip" id="gateTip" aria-hidden="true"></div>
+
+<div class="layer">
+<div class="topbar">
+  <div class="in">
+    <ul>
+      <li><a href="tel:+919182339188"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>+91 91823 39188</a></li>
+      <li class="tb-land"><a href="tel:+914040274570">+91 40 4027 4570</a></li>
+      <li><a href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2a8.5 8.5 0 1 1 3.1 3z"/><path d="M9 9.2c.3 2.2 2.3 4.2 4.5 4.6"/></svg>WhatsApp</a></li>
+    </ul>
+    <span class="loc">Topaz Plaza, Punjagutta, Hyderabad</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="in">
+    <a class="wordmark" href="#top" aria-label="Global Travel and Visa Services, back to top">
+      <!-- LOGO: no client logo yet. Swap this text wordmark for <img src="logo.svg" alt="Global Travel and Visa Services"> when it arrives. -->
+      <span class="wm-a" aria-hidden="true">Global Travel<i>.</i></span>
+      <span class="wm-b" aria-hidden="true">and Visa Services</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#quote">Visa</a>
+      <a href="#routes">Travel</a>
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn--sm" href="#quote">Get a visa quote</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" id="menuBtn"><span class="bars" aria-hidden="true"></span>Menu</button>
+  </div>
+</header>
+
+<main id="main">
+<!-- K0: sunrise at Charminar -->
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="hero-copy">
+    <p class="eyebrow"><b>HYD</b><span>17.4290 N &nbsp;78.4519 E</span></p>
+    <h1 class="h1" id="h1" aria-label="The visa is the gate. We help you through it.">
+      <span class="ln" aria-hidden="true"><span class="w">The</span> <span class="w">visa</span> <span class="w">is</span> <span class="w">the</span> <span class="w">gate.</span></span>
+      <span class="ln" aria-hidden="true"><span class="w">We</span> <span class="w">help</span> <span class="w">you</span> <span class="brk"><span class="w"><em>through</em></span> <span class="w"><em>it.</em></span></span></span>
+    </h1>
+    <div class="hero-low">
+    <p class="hero-sub">Tell us where you want to go. We help with the visa, the papers and the trip, from our office at Topaz Plaza, Punjagutta.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="#quote">Get a visa quote</a>
+      <a class="btn btn--ghost" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2a8.5 8.5 0 1 1 3.1 3z"/><path d="M9 9.2c.3 2.2 2.3 4.2 4.5 4.6"/></svg>WhatsApp us</a>
+    </div>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <button class="hint" type="button" id="hintBtn"><i aria-hidden="true"></i>Drag to walk around Charminar. Click to send the pigeons up.</button>
+    <p class="clockcap" aria-live="off"><b id="istTime">--:--</b>Hyderabad time, on Charminar's clocks</p>
+  </div>
+</section>
+
+<!-- K1: the gate pass -->
+<section class="sec quote" id="quote" aria-labelledby="quoteTitle">
+  <form class="pass panel" id="quoteForm" novalidate aria-labelledby="quoteTitle">
+    <div class="pass-head">
+      <div>
+        <h2 id="quoteTitle">Visa quote</h2>
+        <p>Fill in your trip. We reply on WhatsApp.</p>
+      </div>
+      <p class="pass-route" aria-hidden="true"><b>HYD <span id="passTo">&#8594; ?</span></b>Gate pass</p>
+    </div>
+    <div class="pass-body">
+      <!-- destinations: common from India; UAE / UK / Canada map to the three gates on the water -->
+      <div class="field full">
+        <label for="qDest">Destination <span class="err" id="qDestErr" hidden>Choose one</span></label>
+        <select class="inp" id="qDest" name="destination" required aria-describedby="qDestErr">
+          <option value="">Choose</option>
+          <option value="UAE" data-code="DXB">UAE</option>
+          <option value="USA" data-code="JFK">USA</option>
+          <option value="UK" data-code="LHR">UK</option>
+          <option value="Canada" data-code="YYZ">Canada</option>
+          <option value="Schengen" data-code="FRA">Schengen (Europe)</option>
+          <option value="Singapore" data-code="SIN">Singapore</option>
+          <option value="Thailand" data-code="BKK">Thailand</option>
+          <option value="Australia" data-code="SYD">Australia</option>
+          <option value="Japan" data-code="NRT">Japan</option>
+          <option value="Malaysia" data-code="KUL">Malaysia</option>
+          <option value="New Zealand" data-code="AKL">New Zealand</option>
+          <option value="Other" data-code="">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qType">Visa type <span class="err" id="qTypeErr" hidden>Choose one</span></label>
+        <select class="inp" id="qType" name="visa_type" required aria-describedby="qTypeErr">
+          <option value="">Choose</option>
+          <option>Tourist</option><option>Business</option><option>Student</option><option>Work</option><option>Transit</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qMonth">Month of travel <span class="err" id="qMonthErr" hidden>Choose one</span></label>
+        <select class="inp" id="qMonth" name="travel_month" required aria-describedby="qMonthErr">
+          <option value="">Choose</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qName">Your name <span class="err" id="qNameErr" hidden>Add your name</span></label>
+        <input class="inp" id="qName" name="name" type="text" autocomplete="name" required aria-describedby="qNameErr">
+      </div>
+      <div class="field">
+        <label for="qPhone">Phone <span class="err" id="qPhoneErr" hidden>Check the number</span></label>
+        <input class="inp" id="qPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="qPhoneErr" placeholder="98xxx xxxxx">
+      </div>
+      <div class="pass-foot">
+        <button class="btn" type="submit">Send on WhatsApp</button>
+        <p class="status" id="qStatus" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!-- K3: three gates on the water -->
+<section class="sec routes" id="routes" aria-labelledby="routesTitle">
+  <div class="head panel">
+    <p class="kicker">Through the arch, out to the world</p>
+    <h2 class="title" id="routesTitle">Three gates from <em>HYD</em></h2>
+    <p class="lede">Each gate on the water is a route we help with often. Point at one, or pick a card.</p>
+  </div>
+  <ul class="cards">
+    <li class="card panel" data-code="DXB">
+      <p class="card-route"><span>HYD</span><i></i><span>DXB</span></p>
+      <h3>Dubai</h3>
+      <p class="card-meta"><span data-dist="DXB">2,570 km</span> from Hyderabad &nbsp;&#183;&nbsp; 25.25 N 55.36 E</p>
+      <p class="copy">Tourist and business visits to the UAE. Tell us your dates and we list what the application needs.</p>
+      <a class="card-link" data-wa="a UAE visa" data-code="DXB" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a UAE visa</a>
+    </li>
+    <li class="card panel" data-code="LHR">
+      <p class="card-route"><span>HYD</span><i></i><span>LHR</span></p>
+      <h3>London</h3>
+      <p class="card-meta"><span data-dist="LHR">7,700 km</span> from Hyderabad &nbsp;&#183;&nbsp; 51.47 N 0.45 W</p>
+      <p class="copy">UK visitor, student and work visas. We help you put the documents in order before you apply.</p>
+      <a class="card-link" data-wa="a UK visa" data-code="LHR" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a UK visa</a>
+    </li>
+    <li class="card panel" data-code="YYZ">
+      <p class="card-route"><span>HYD</span><i></i><span>YYZ</span></p>
+      <h3>Toronto</h3>
+      <p class="card-meta"><span data-dist="YYZ">12,000 km</span> from Hyderabad &nbsp;&#183;&nbsp; 43.68 N 79.62 W</p>
+      <p class="copy">Canada visitor visas and study permits ask for a lot of paperwork. We help you prepare it, one step at a time.</p>
+      <a class="card-link" data-wa="a Canada visa" data-code="YYZ" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about a Canada visa</a>
+    </li>
+  </ul>
+</section>
+
+<!-- K4: from above -->
+<section class="sec services" id="services" aria-labelledby="servicesTitle">
+  <div class="wrap panel">
+    <div class="head">
+      <div>
+        <p class="kicker">Seven ways through</p>
+        <h2 class="title" id="servicesTitle">What we help with</h2>
+      </div>
+      <p class="lede">Start with the visa, or ask us to handle the whole trip. Every card opens a WhatsApp chat with us.</p>
+    </div>
+    <!-- PLACEHOLDER: services not confirmed by client -->
+    <ul class="tiles">
+      <li class="tile big">
+        <span class="no">01</span>
+        <h3>Visa assistance</h3>
+        <ul class="chips" aria-label="Visa types"><li>Tourist</li><li>Business</li><li>Student</li><li>Work</li></ul>
+        <p>We tell you what the embassy asks for, help you fill the forms and check the file before it goes in.</p>
+        <a class="ask" data-wa="Visa assistance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+      </li>
+      <li class="tile">
+        <span class="no">02</span>
+        <h3>Passport services</h3>
+        <p>Help with new passport and renewal applications, forms and paperwork.</p>
+        <a class="ask" data-wa="Passport services" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+      </li>
+      <li class="tile">
+        <span class="no">03</span>
+        <h3>Flight tickets</h3>
+        <p>Domestic and international tickets, booked around your visa dates.</p>
+        <a class="ask" data-wa="Flight tickets" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+      </li>
+      <li class="tile">
+        <span class="no">04</span>
+        <h3>Hotel bookings</h3>
+        <p>Stays that match your plan, and the booking proof a visa file often needs.</p>
+        <a class="ask" data-wa="Hotel bookings" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+      </li>
+      <li class="tile">
+        <span class="no">05</span>
+        <h3>Holiday packages</h3>
+        <p>Trips planned end to end: flights, stays and the days in between.</p>
+        <a class="ask" data-wa="Holiday packages" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+      </li>
+      <li class="tile">
+        <span class="no">06</span>
+        <h3>Travel insurance</h3>
+        <p>Cover for your trip, including the policy many visas ask for.</p>
+        <a class="ask" data-wa="Travel insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+      </li>
+      <li class="tile">
+        <span class="no">07</span>
+        <h3>Foreign exchange</h3>
+        <p>Currency for the trip, arranged before you leave.</p>
+        <a class="ask" data-wa="Foreign exchange" href="https://wa.me/919182339188" target="_blank" rel="noopener">Ask about this</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- K5-K7: three toran gates -->
+<section class="how" id="how" aria-labelledby="howTitle">
+  <div class="how-pin">
+    <div>
+      <div class="head panel">
+        <p class="kicker">Three gates to the airport</p>
+        <h2 class="title" id="howTitle">How it works</h2>
+        <p class="lede">From your first message to the day you fly.</p>
+      </div>
+      <ol class="steps">
+        <li class="step panel on" data-n="1"><p class="gate-n">Gate 1</p><h3>Tell us your trip</h3><p>Where you are going, why, and roughly when. A WhatsApp message or a call is enough to start.</p></li>
+        <li class="step panel" data-n="2"><p class="gate-n">Gate 2</p><h3>We prepare and check your documents</h3><p>We tell you which papers your visa needs, help with the forms and check everything before it goes in.</p></li>
+        <li class="step panel" data-n="3"><p class="gate-n">Gate 3</p><h3>Apply and track until you fly</h3><p>We file the application with you and follow it until a decision comes. Then we can sort the tickets too.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- K8: blue hour, back home -->
+<section class="sec contact" id="contact" aria-labelledby="contactTitle">
+  <div class="cgrid">
+    <div class="addr panel">
+      <p class="coord">17.4290 N &nbsp;/&nbsp; 78.4519 E</p>
+      <h2 class="title" id="contactTitle">Come by, <em>or call us.</em></h2>
+      <address>Flat no 210, Topaz Plaza,<br>Officers Colony, Punjagutta,<br>Hyderabad, Telangana - 500082</address>
+      <div class="row">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Topaz+Plaza+Officers+Colony+Punjagutta+Hyderabad+500082" target="_blank" rel="noopener">Open in Google Maps</a>
+        <a class="btn btn--ghost" href="https://wa.me/919182339188" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="phones">
+        <a href="tel:+919182339188"><span class="k">Mobile and WhatsApp</span><span class="v">+91 91823 39188</span></a>
+        <a href="tel:+914040274570"><span class="k">Landline</span><span class="v">+91 40 4027 4570</span></a>
+      </div>
+    </div>
+    <form class="cb panel" id="cbForm" novalidate aria-labelledby="cbTitle">
+      <h3 id="cbTitle">Request a callback</h3>
+      <p>Leave a number and a good time. The request goes to us on WhatsApp.</p>
+      <div class="field">
+        <label for="cName">Your name <span class="err" id="cNameErr" hidden>Add your name</span></label>
+        <input class="inp" id="cName" name="name" type="text" autocomplete="name" required aria-describedby="cNameErr">
+      </div>
+      <div class="field">
+        <label for="cPhone">Phone <span class="err" id="cPhoneErr" hidden>Check the number</span></label>
+        <input class="inp" id="cPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="cPhoneErr" placeholder="98xxx xxxxx">
+      </div>
+      <div class="field">
+        <label for="cTime">Best time to call <span class="err" id="cTimeErr" hidden>Choose one</span></label>
+        <select class="inp" id="cTime" name="best_time" required aria-describedby="cTimeErr">
+          <option value="">Choose</option>
+          <option>Morning</option><option>Afternoon</option><option>Evening</option><option>Any time</option>
+        </select>
+      </div>
+      <button class="btn btn--ink" type="submit">Request a callback</button>
+      <p class="status" id="cbStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot" id="foot">
+  <p class="foot-wm">Global Travel <span>and Visa Services</span></p>
+  <div class="fgrid">
+    <div>
+      <h2>Office</h2>
+      <address>Flat no 210, Topaz Plaza,<br>Officers Colony, Punjagutta,<br>Hyderabad, Telangana - 500082</address>
+    </div>
+    <div>
+      <h2>Call</h2>
+      <ul>
+        <li><a href="tel:+919182339188">+91 91823 39188</a> (mobile, WhatsApp)</li>
+        <li><a href="tel:+914040274570">+91 40 4027 4570</a> (landline)</li>
+        <li><a href="https://wa.me/919182339188" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+      </ul>
+    </div>
+    <nav aria-label="Footer">
+      <h2>Pages</h2>
+      <ul>
+        <li><a href="#quote">Visa</a></li>
+        <li><a href="#routes">Travel</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="legal"><span>&copy; 2026 Global Travel and Visa Services</span><span>www.gtfinserv.com</span></div>
+</footer>
+</div>
+
+<!-- THE WORLD: one persistent three.js scene, everything generated in code -->
+<div class="world" id="world" aria-hidden="false">
+  <!-- poster shown before WebGL starts (and if it cannot) -->
+  <svg class="poster" viewBox="0 0 200 220" aria-hidden="true"><g fill="#3E5560"><path d="M18 220V70h8V40l4-12 4 12v30h8V58c0-6 4-10 8-14l-4-6h6l4-10 4 10h6l-4 6c4 4 8 8 8 14v12h36V58c0-6 4-10 8-14l-4-6h6l4-10 4 10h6l-4 6c4 4 8 8 8 14v12h8V40l4-12 4 12v30h8v150h-62v-60c0-16-10-30-24-36-14 6-24 20-24 36v60z"/></g></svg>
+  <svg class="poster ref" viewBox="0 0 200 220" aria-hidden="true"><g fill="#3E5560"><path d="M18 220V70h8V40l4-12 4 12v30h8V58c0-6 4-10 8-14l-4-6h6l4-10 4 10h6l-4 6c4 4 8 8 8 14v12h36V58c0-6 4-10 8-14l-4-6h6l4-10 4 10h6l-4 6c4 4 8 8 8 14v12h8V40l4-12 4 12v30h8v150h-62v-60c0-16-10-30-24-36-14 6-24 20-24 36v60z"/></g></svg>
+  <canvas id="gl" tabindex="0" role="img" aria-label="Charminar, Hyderabad's four-arched gate, standing on still water at sunrise, with pigeons circling and kites overhead. Its four clocks show the time in Hyderabad now. Drag or use the arrow keys to walk around it; press Enter to send the pigeons flying."></canvas>
+</div>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <span class="wordmark" aria-hidden="true"><span class="wm-a">Global Travel<i>.</i></span><span class="wm-b">and Visa Services</span></span>
+    <button class="menu-close" type="button" id="menuClose">Close</button>
+  </div>
+  <ol>
+    <li><a href="#quote"><span class="g">GATE 1</span><span class="l">Visa</span></a></li>
+    <li><a href="#routes"><span class="g">GATE 2</span><span class="l">Travel</span></a></li>
+    <li><a href="#services"><span class="g">GATE 3</span><span class="l">Services</span></a></li>
+    <li><a href="#how"><span class="g">GATE 4</span><span class="l">How it works</span></a></li>
+    <li><a href="#contact"><span class="g">GATE 5</span><span class="l">Contact</span></a></li>
+  </ol>
+  <div class="menu-foot">
+    <a class="btn" href="#quote">Get a visa quote</a>
+    <a class="btn btn--ghost" style="color:var(--paper);border-color:var(--paper)" href="https://wa.me/919182339188" target="_blank" rel="noopener">WhatsApp +91 91823 39188</a>
+    <p>Flat no 210, Topaz Plaza, Punjagutta, Hyderabad</p>
+  </div>
+</div>
+
+
+<a class="wa" href="https://wa.me/919182339188" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <span class="wa-tag" aria-hidden="true">WhatsApp us</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="#13222E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2a8.5 8.5 0 1 1 3.1 3z"/><path d="M9 9.2c.3 2.2 2.3 4.2 4.5 4.6"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js" defer></script>
+
+<!-- Page logic that never depends on WebGL: forms, menu, clock text, distances -->
+<script>
+(function () {
+'use strict';
+var WA = '919182339188';
+function waURL(t) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t); }
+function $(s, r) { return (r || document).querySelector(s); }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+window.GT = window.GT || {};
+
+/* months */
+var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+(function () {
+  var sel = $('#qMonth'), d = new Date();
+  for (var i = 0; i < 12; i++) {
+    var m = (d.getMonth() + i) % 12, y = d.getFullYear() + Math.floor((d.getMonth() + i) / 12);
+    var o = document.createElement('option'); o.value = o.textContent = MONTHS[m] + ' ' + y; sel.appendChild(o);
+  }
+  var ns = document.createElement('option'); ns.value = ns.textContent = 'Not sure yet'; sel.appendChild(ns);
+})();
+
+/* great-circle distances from the office, computed rather than typed */
+var HYD = [17.4290, 78.4519], CITY = { DXB: [25.2528, 55.3644], LHR: [51.4700, -0.4543], YYZ: [43.6777, -79.6248] };
+function gc(a, b) {
+  var R = 6371, r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLon = (b[1] - a[1]) * r;
+  var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+$$('[data-dist]').forEach(function (el) {
+  var c = CITY[el.getAttribute('data-dist')]; if (!c) return;
+  el.textContent = (Math.round(gc(HYD, c) / 10) * 10).toLocaleString('en-IN') + ' km';
+});
+
+/* Hyderabad time (IST, UTC+5:30) */
+function ist() { var n = new Date(); return new Date(n.getTime() + (n.getTimezoneOffset() + 330) * 60000); }
+GT.ist = ist;
+function tick() {
+  var t = ist(), h = t.getHours(), m = t.getMinutes();
+  $('#istTime').textContent = ((h % 12) || 12) + ':' + (m < 10 ? '0' : '') + m + (h < 12 ? ' am' : ' pm');
+}
+tick(); setInterval(tick, 15000);
+
+/* forms */
+function phoneOk(v) { var d = v.replace(/[\s\-().]/g, ''); return /^\+?\d{10,13}$/.test(d); }
+function setErr(input, bad) {
+  var err = document.getElementById(input.id + 'Err');
+  input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  if (err) err.hidden = !bad;
+}
+function check(rules) {
+  var first = null, bad = 0;
+  rules.forEach(function (r) {
+    var ok = r[1](r[0].value.trim());
+    setErr(r[0], !ok);
+    if (!ok) { bad++; if (!first) first = r[0]; }
+  });
+  if (first) first.focus();
+  return bad;
+}
+function live(list) {
+  list.forEach(function (el) {
+    el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', function () {
+      if (el.getAttribute('aria-invalid') === 'true') setErr(el, false);
+    });
+  });
+}
+function openWA(text) { var url = waURL(text); window.open(url, '_blank', 'noopener'); return url; }
+function has(v) { return v.length > 0; }
+function named(v) { return v.length > 1; }
+
+var qDest = $('#qDest'), qType = $('#qType'), qMonth = $('#qMonth'), qName = $('#qName'), qPhone = $('#qPhone'), qStatus = $('#qStatus');
+live([qDest, qType, qMonth, qName, qPhone]);
+function passTo() {
+  var o = qDest.options[qDest.selectedIndex], code = o && o.getAttribute('data-code');
+  $('#passTo').textContent = qDest.value ? '→ ' + (code || qDest.value.slice(0, 3).toUpperCase()) : '→ ?';
+  if (GT.onDest) GT.onDest(code || '');
+}
+qDest.addEventListener('change', passTo);
+GT.chooseDest = function (code) {
+  var o = $('#qDest option[data-code="' + code + '"]'); if (!o) return;
+  qDest.value = o.value; setErr(qDest, false); passTo();
+};
+$('#quoteForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var bad = check([[qDest, has], [qType, has], [qMonth, has], [qName, named], [qPhone, phoneOk]]);
+  if (bad) { qStatus.textContent = bad + (bad > 1 ? ' fields need' : ' field needs') + ' a look.'; return; }
+  var url = openWA(['Hello Global Travel and Visa Services,', 'I would like a visa quote.', '',
+    'Destination: ' + qDest.value, 'Visa type: ' + qType.value, 'Month of travel: ' + qMonth.value,
+    'Name: ' + qName.value.trim(), 'Phone: ' + qPhone.value.trim()].join('\n'));
+  qStatus.innerHTML = 'Opening WhatsApp. <a href="' + url + '" target="_blank" rel="noopener">Not opened? Tap here.</a>';
+});
+var cName = $('#cName'), cPhone = $('#cPhone'), cTime = $('#cTime'), cbStatus = $('#cbStatus');
+live([cName, cPhone, cTime]);
+$('#cbForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var bad = check([[cName, named], [cPhone, phoneOk], [cTime, has]]);
+  if (bad) { cbStatus.textContent = bad + (bad > 1 ? ' fields need' : ' field needs') + ' a look.'; return; }
+  var url = openWA(['Hello Global Travel and Visa Services,', 'Please call me back.', '', 'Name: ' + cName.value.trim(), 'Phone: ' + cPhone.value.trim(), 'Best time: ' + cTime.value].join('\n'));
+  cbStatus.innerHTML = 'Opening WhatsApp. <a href="' + url + '" target="_blank" rel="noopener">Not opened? Tap here.</a>';
+});
+$$('[data-wa]').forEach(function (a) {
+  a.href = waURL('Hello Global Travel and Visa Services, I would like to know more about ' + a.getAttribute('data-wa') + '.');
+});
+
+/* menu */
+var menu = $('#menu'), menuBtn = $('#menuBtn'), menuClose = $('#menuClose');
+function setMenu(open, keepFocus) {
+  menu.classList.toggle('is-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if (open) setTimeout(function () { menuClose.focus(); }, 60);
+  else if (!keepFocus) menuBtn.focus({ preventScroll: true });
+}
+menuBtn.addEventListener('click', function () { setMenu(true); });
+menuClose.addEventListener('click', function () { setMenu(false); });
+menu.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') { setMenu(false); return; }
+  if (e.key !== 'Tab') return;
+  var f = $$('a,button', menu), a = f[0], z = f[f.length - 1];
+  if (e.shiftKey && document.activeElement === a) { z.focus(); e.preventDefault(); }
+  else if (!e.shiftKey && document.activeElement === z) { a.focus(); e.preventDefault(); }
+});
+$$('a', menu).forEach(function (a) { a.addEventListener('click', function () { if (a.hash) setMenu(false, true); }); });
+
+/* nav turns solid once the hero has gone */
+var nav = $('#nav');
+function navState() { nav.classList.toggle('solid', window.scrollY > window.innerHeight * 0.6); }
+window.addEventListener('scroll', navState, { passive: true }); navState();
+})();
+</script>
+
+<!-- The world: three.js, procedural everything. Dynamic import so the page works if it fails. -->
+<script type="module">
+const GT = window.GT;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]still(&|$)/.test(location.search);
+const coarse = matchMedia('(pointer: coarse)').matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (t) => t * t * (3 - 2 * t);
+const damp = (a, b, l, dt) => a + (b - a) * (1 - Math.exp(-l * dt));
+const isDesk = () => innerWidth >= 900;
+
+/* ---------- DOM choreography (GSAP) ---------- */
+let howST = null;
+function setStep(i) {
+  $$('.step').forEach((s, k) => s.classList.toggle('on', k === i));
+}
+function initGSAP() {
+  const { gsap, ScrollTrigger } = window;
+  if (!gsap || !ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mm = gsap.matchMedia();
+  mm.add({ motion: '(prefers-reduced-motion: no-preference)', desk: '(min-width: 900px)' }, (ctx) => {
+    const { motion, desk } = ctx.conditions;
+    if (motion && !reduce) {
+      // headline: words rise out of their line, staggered, a tiny overshoot, never all at once
+      gsap.from('.h1 .w', { yPercent: 112, rotate: 4, duration: 1.1, ease: 'back.out(1.25)', stagger: 0.07, delay: 0.25 });
+      gsap.from('.eyebrow', { y: 12, opacity: 0, duration: 0.7, delay: 0.1, ease: 'power3.out' });
+      gsap.from('.hero-sub', { y: 18, opacity: 0, duration: 0.9, delay: 0.95, ease: 'power3.out' });
+      gsap.from('.hero-ctas .btn', { y: 22, opacity: 0, duration: 0.8, delay: 1.15, stagger: 0.09, ease: 'back.out(1.4)' });
+      gsap.from('.hero-foot > *', { opacity: 0, duration: 1, delay: 1.6, stagger: 0.2 });
+    }
+    if (desk) {
+      howST = ScrollTrigger.create({
+        trigger: '#how', start: 'top top', end: '+=200%', pin: '.how-pin', anticipatePin: 1,
+        onUpdate: (self) => setStep(Math.min(2, Math.floor(self.progress * 2.999 + 0.0001)))
+      });
+    } else {
+      $$('.step').forEach((el, i) => ScrollTrigger.create({ trigger: el, start: 'top 62%', end: 'bottom 38%', onToggle: (s) => s.isActive && setStep(i) }));
+    }
+    return () => { howST = null; };
+  });
+  ScrollTrigger.addEventListener('refresh', () => (measureDirty = true));
+}
+
+/* ---------- scroll conductor: native scroll -> chapter value ---------- */
+let anchors = [], measureDirty = true;
+const absTop = (el) => el.getBoundingClientRect().top + scrollY;
+function measure() {
+  const vh = innerHeight, max = Math.max(1, document.documentElement.scrollHeight - vh);
+  const q = $('#quote'), r = $('#routes'), s = $('#services'), h = $('#how'), c = $('#contact');
+  const steps = $$('.step');
+  const a = [];
+  a[0] = 0;
+  a[1] = absTop(q) + (isDesk() ? 0 : q.offsetHeight - vh);
+  a[3] = isDesk() ? absTop(r) + Math.max(0, r.offsetHeight - vh) : absTop(r);
+  a[2] = lerp(a[1], a[3], 0.5);
+  a[4] = absTop(s) + Math.max(0, s.offsetHeight - vh) * 0.5;
+  if (howST) { a[5] = howST.start; a[6] = lerp(howST.start, howST.end, 0.5); a[7] = howST.end; }
+  else steps.forEach((el, i) => (a[5 + i] = absTop(el) - vh * 0.45));
+  a[8] = Math.min(max, absTop(c) + Math.max(0, c.offsetHeight - vh) * 0.5);
+  for (let i = 0; i < a.length; i++) a[i] = clamp(a[i], 0, max);
+  for (let i = 1; i < a.length; i++) a[i] = Math.max(a[i], a[i - 1] + 1);
+  anchors = a; measureDirty = false;
+}
+function chapterAt(y) {
+  const a = anchors;
+  if (y <= a[0]) return 0;
+  for (let i = 0; i < a.length - 1; i++) {
+    if (y < a[i + 1]) {
+      const t = (y - a[i]) / (a[i + 1] - a[i]);
+      return i + smooth(clamp(t, 0, 1));
+    }
+  }
+  return a.length - 1;
+}
+
+/* ---------- boot ---------- */
+const world = $('#world'), canvas = $('#gl');
+function waitGSAP() {
+  return new Promise((res) => {
+    if (window.gsap && window.ScrollTrigger) return res();
+    let n = 0; const iv = setInterval(() => { if ((window.gsap && window.ScrollTrigger) || ++n > 60) { clearInterval(iv); res(); } }, 50);
+  });
+}
+await waitGSAP();
+initGSAP();
+let THREE, Reflector;
+try {
+  THREE = await import('three');
+  ({ Reflector } = await import('three/addons/objects/Reflector.js'));
+  const t = document.createElement('canvas');
+  if (!(t.getContext('webgl2'))) throw new Error('no webgl2');
+} catch (e) {
+  console.warn('3D world unavailable, showing the poster.', e);
+  THREE = null;
+}
+if (THREE) buildWorld();
+
+function buildWorld() {
+const V3 = THREE.Vector3, C = (h) => new THREE.Color(h);
+const DPR_CAP = coarse ? 1.5 : 2;
+let dpr = Math.min(devicePixelRatio || 1, DPR_CAP);
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
+renderer.setPixelRatio(dpr);
+renderer.setSize(innerWidth, innerHeight, false);
+renderer.toneMapping = THREE.NeutralToneMapping;
+renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFShadowMap;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0xeed8c2, 0.004);
+const camera = new THREE.PerspectiveCamera(40, innerWidth / innerHeight, 0.5, 5000);
+
+/* ===== palette + time of day keyframes (one day, one journey) ===== */
+const SKY = {
+  sunrise: { top: '#7E9FC4', mid: '#E6BFA6', hor: '#F8DCBF', sun: '#FFC583', az: 118, el: 7, sunI: 2.6, hemi: 0.55, fog: '#EFD8C2', den: 0.0042, deep: '#45707A', lamps: 0.0, stars: 0, cloud: 0.85, env: 0.75 },
+  morning: { top: '#4C83C3', mid: '#9DC1DF', hor: '#E4ECEF', sun: '#FFF0D6', az: 150, el: 26, sunI: 3.2, hemi: 0.6, fog: '#DCE5EA', den: 0.0030, deep: '#2E6170', lamps: 0.0, stars: 0, cloud: 0.6, env: 0.9 },
+  noon:    { top: '#3B74BC', mid: '#86B3DE', hor: '#D8E6EF', sun: '#FFF6E8', az: 200, el: 52, sunI: 3.4, hemi: 0.7, fog: '#D3E1EA', den: 0.0019, deep: '#225A6C', lamps: 0.0, stars: 0, cloud: 0.45, env: 1.0 },
+  golden:  { top: '#53709F', mid: '#DE9E78', hor: '#F7C489', sun: '#FFAE5C', az: 222, el: 5, sunI: 2.4, hemi: 0.45, fog: '#EBC39C', den: 0.0040, deep: '#3B5B66', lamps: 0.55, stars: 0, cloud: 0.9, env: 0.7 },
+  dusk:    { top: '#101C36', mid: '#2A3E66', hor: '#B9808A', sun: '#F09A7A', az: 250, el: -3, sunI: 0.35, hemi: 0.28, fog: '#47506E', den: 0.0036, deep: '#142534', lamps: 1.0, stars: 1, cloud: 0.55, env: 0.35 }
+};
+// camera keyframes: desktop + mobile composition for each chapter
+const K = [
+  { sky: 'sunrise', d: { p: [-34, 6, 110], t: [-20, 26, 0],   f: 38 }, m: { p: [0, 10, 230], t: [0, 36, 0], f: 50 } },   // hero
+  { sky: 'sunrise', d: { p: [2.5, 6, 36],   t: [-7, 15, 0],    f: 40 }, m: { p: [0, 8, 70],   t: [0, 12, 0], f: 52 } },   // quote, close to the arch
+  { sky: 'sunrise', d: { p: [0, 7.5, 0],    t: [0, 9, -60],    f: 52 }, m: { p: [0, 7.5, 0],  t: [0, 9, -60], f: 64 } },  // inside the arches
+  { sky: 'morning', d: { p: [0, 12, -20],   t: [0, 20, -220],  f: 40 }, m: { p: [0, 12, -24], t: [0, 24, -220], f: 64 } }, // three gates
+  { sky: 'noon',    d: { p: [110, 120, 110], t: [6, 0, -70],   f: 42 }, m: { p: [80, 150, 120], t: [10, 0, -60], f: 58 } }, // from above
+  { sky: 'golden',  d: { p: [62, 6.5, -20],  t: [80, 10, -170], f: 42 }, m: { p: [66, 7, -14],  t: [67, 11, -170], f: 60 } }, // toran 1
+  { sky: 'golden',  d: { p: [65, 6.5, -60],  t: [83, 10, -210], f: 42 }, m: { p: [69, 7, -54],  t: [70, 11, -210], f: 60 } }, // toran 2
+  { sky: 'golden',  d: { p: [68, 6.5, -100], t: [86, 10, -250], f: 42 }, m: { p: [72, 7, -94],  t: [73, 11, -250], f: 60 } }, // toran 3
+  { sky: 'dusk',    d: { p: [120, 40, -70], t: [20, 18, 35],   f: 40 }, m: { p: [116, 42, -84], t: [0, 21, 0], f: 50 } }  // back home, above the torans
+];
+let camCurveP, camCurveT;
+function buildCurves() {
+  const key = isDesk() ? 'd' : 'm';
+  camCurveP = new THREE.CatmullRomCurve3(K.map((k) => new V3(...k[key].p)), false, 'centripetal');
+  camCurveT = new THREE.CatmullRomCurve3(K.map((k) => new V3(...k[key].t)), false, 'centripetal');
+}
+buildCurves();
+
+/* ===== procedural textures ===== */
+function canvasTex(w, h, draw, srgb = true) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c);
+  if (srgb) t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.anisotropy = 4;
+  return t;
+}
+let seed = 1591;
+const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+// lime plaster + granite: grain, course lines, rain streaks
+const stoneTex = canvasTex(512, 512, (g, w, h) => {
+  g.fillStyle = '#d8c8ad'; g.fillRect(0, 0, w, h);
+  for (let i = 0; i < 9000; i++) { const v = rnd(); g.fillStyle = v > 0.5 ? `rgba(255,248,232,${0.05 + rnd() * 0.08})` : `rgba(90,72,52,${0.04 + rnd() * 0.07})`; g.fillRect(rnd() * w, rnd() * h, 1 + rnd() * 3, 1 + rnd() * 3); }
+  g.strokeStyle = 'rgba(110,90,66,.16)'; g.lineWidth = 1.2;
+  for (let y = 0; y < h; y += 32) { g.beginPath(); g.moveTo(0, y + rnd() * 2); g.lineTo(w, y + rnd() * 2); g.stroke(); }
+  for (let i = 0; i < 70; i++) { const x = rnd() * w, len = 40 + rnd() * 200; const gr = g.createLinearGradient(0, 0, 0, len); gr.addColorStop(0, 'rgba(80,64,48,.14)'); gr.addColorStop(1, 'rgba(80,64,48,0)'); g.fillStyle = gr; g.save(); g.translate(x, rnd() * h); g.fillRect(0, 0, 2 + rnd() * 5, len); g.restore(); }
+});
+stoneTex.repeat.set(0.09, 0.09);
+const stoneTex2 = stoneTex.clone(); stoneTex2.repeat.set(3, 2); stoneTex2.needsUpdate = true;
+const jaliTex = canvasTex(128, 64, (g, w, h) => {
+  g.clearRect(0, 0, w, h); g.fillStyle = '#ddcdb2'; g.fillRect(0, 0, w, 8); g.fillRect(0, h - 8, w, 8);
+  for (let x = 0; x < w; x += 16) { g.fillRect(x, 0, 4, h); g.beginPath(); g.arc(x + 10, h / 2, 5, 0, Math.PI * 2); g.lineWidth = 3; g.strokeStyle = '#ddcdb2'; g.stroke(); }
+});
+jaliTex.repeat.set(10, 1);
+const glowTex = canvasTex(64, 64, (g, w) => {
+  const r = g.createRadialGradient(w / 2, w / 2, 0, w / 2, w / 2, w / 2);
+  r.addColorStop(0, 'rgba(255,255,255,1)'); r.addColorStop(0.22, 'rgba(255,236,190,.85)'); r.addColorStop(0.5, 'rgba(255,190,110,.22)'); r.addColorStop(1, 'rgba(255,170,80,0)');
+  g.fillStyle = r; g.fillRect(0, 0, w, w);
+});
+const dialTex = canvasTex(256, 256, (g, w) => {
+  const c = w / 2;
+  g.fillStyle = '#f6f0e2'; g.beginPath(); g.arc(c, c, c - 4, 0, 7); g.fill();
+  g.lineWidth = 8; g.strokeStyle = '#2b2a28'; g.stroke();
+  for (let i = 0; i < 60; i++) { const a = i / 60 * Math.PI * 2, r1 = c - 14, r0 = i % 5 ? c - 22 : c - 38; g.lineWidth = i % 5 ? 2 : 6; g.beginPath(); g.moveTo(c + Math.sin(a) * r0, c - Math.cos(a) * r0); g.lineTo(c + Math.sin(a) * r1, c - Math.cos(a) * r1); g.stroke(); }
+});
+
+/* ===== materials ===== */
+const stone = new THREE.MeshStandardMaterial({ color: 0xffffff, map: stoneTex, roughness: 0.9, metalness: 0 });
+const stoneRound = new THREE.MeshStandardMaterial({ color: 0xffffff, map: stoneTex2, roughness: 0.88 });
+const stoneDark = new THREE.MeshStandardMaterial({ color: 0xa69a88, map: stoneTex, roughness: 0.95 });
+const jali = new THREE.MeshStandardMaterial({ map: jaliTex, alphaTest: 0.5, side: THREE.DoubleSide, roughness: 0.9 });
+const portland = new THREE.MeshStandardMaterial({ color: 0xf1ede4, map: stoneTex, roughness: 0.8 });
+const gold = new THREE.MeshStandardMaterial({ color: 0xd8ad55, metalness: 1, roughness: 0.26 });
+const concrete = new THREE.MeshStandardMaterial({ color: 0xbfbab2, map: stoneTex, roughness: 0.85 });
+const lacquer = new THREE.MeshStandardMaterial({ color: 0x1d5a63, roughness: 0.55, metalness: 0.05 });
+const castShadow = (o) => { o.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } }); return o; };
+
+/* ===== geometry helpers ===== */
+function pointedArch(w, spring, rise, n = 14) {
+  // two-centred (Indo-Islamic) arch from (-w, spring) over the apex to (w, spring)
+  const c = (rise * rise - w * w) / (2 * w), r = w + c, ta = Math.acos(-c / r), pts = [];
+  for (let i = 0; i <= n; i++) { const a = Math.PI + (ta - Math.PI) * (i / n); pts.push([c + r * Math.cos(a), spring + r * Math.sin(a)]); }
+  const right = pts.slice(0, -1).reverse().map(([x, y]) => [-x, y]);
+  return pts.concat(right);
+}
+function roundArch(w, spring, n = 18) {
+  const pts = []; for (let i = 0; i <= n; i++) { const a = Math.PI - Math.PI * (i / n); pts.push([Math.cos(a) * w, spring + Math.sin(a) * w]); }
+  return pts;
+}
+function archWall(W, y0, y1, w, spring, archPts, holes = []) {
+  const s = new THREE.Shape();
+  s.moveTo(-W, y0);
+  if (archPts.length) { s.lineTo(-w, y0); archPts.forEach(([x, y]) => s.lineTo(x, y)); s.lineTo(w, y0); }
+  s.lineTo(W, y0); s.lineTo(W, y1); s.lineTo(-W, y1); s.closePath();
+  holes.forEach((h) => s.holes.push(h));
+  return s;
+}
+function archHole(cx, y0, w, spring, rise, pointed = true) {
+  const p = new THREE.Path(), pts = pointed ? pointedArch(w, spring, rise, 8) : roundArch(w, spring, 10);
+  p.moveTo(cx + w, y0); p.lineTo(cx - w, y0);
+  pts.forEach(([x, y]) => p.lineTo(cx + x, y));
+  p.closePath();
+  return p;
+}
+const extrude = (shape, depth, bevel = 0.1) => new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: bevel > 0, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 1, curveSegments: 6 });
+const box = (w, h, d, mat, x = 0, y = 0, z = 0) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat); m.position.set(x, y, z); return m; };
+
+/* ===== sky ===== */
+const skyUniforms = {
+  uTop: { value: C('#000') }, uMid: { value: C('#000') }, uHor: { value: C('#000') }, uSunCol: { value: C('#000') },
+  uSunDir: { value: new V3(0, 1, 0) }, uStars: { value: 0 }, uTime: { value: 0 }, uCloud: { value: 0.5 }
+};
+const skyMat = new THREE.ShaderMaterial({
+  uniforms: skyUniforms, side: THREE.BackSide, depthWrite: false, fog: false,
+  vertexShader: `varying vec3 vDir;
+    void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+  fragmentShader: `uniform vec3 uTop, uMid, uHor, uSunCol, uSunDir; uniform float uStars, uTime, uCloud;
+    varying vec3 vDir;
+    float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+    float noise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);
+      return mix(mix(hash(i), hash(i+vec2(1,0)), f.x), mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), f.x), f.y); }
+    float fbm(vec2 p){ float a = 0.5, s = 0.0; for (int i = 0; i < 5; i++){ s += a * noise(p); p = p * 2.03 + 11.7; a *= 0.5; } return s; }
+    void main(){
+      vec3 d = normalize(vDir); float h = d.y;
+      vec3 col = mix(uHor, uMid, smoothstep(0.0, 0.2, h));
+      col = mix(col, uTop, smoothstep(0.16, 0.8, h));
+      col = mix(col, uHor * 0.92, smoothstep(0.0, -0.1, h));
+      vec3 sd3 = normalize(uSunDir); float sd = max(dot(d, sd3), 0.0);
+      col += uSunCol * (pow(sd, 6.0) * 0.22 + pow(sd, 48.0) * 0.5);
+      col += uSunCol * smoothstep(0.99935, 0.99965, sd) * 2.4;
+      if (h > -0.02) {
+        vec2 cp = d.xz / (max(h, 0.0) + 0.1) * 1.4 + vec2(uTime * 0.006, uTime * 0.002);
+        float c = fbm(cp * vec2(0.55, 2.4));
+        c = smoothstep(0.5, 0.86, c) * smoothstep(-0.01, 0.06, h) * (1.0 - smoothstep(0.3, 0.62, h));
+        vec3 cc = mix(mix(uHor, uMid, 0.35) * 1.06, uSunCol, 0.45 * pow(sd, 3.0));
+        col = mix(col, cc, c * uCloud);
+      }
+      if (uStars > 0.001 && h > 0.0) {
+        vec3 sp = d * 180.0; vec3 id = floor(sp);
+        float r = hash(id.xy + id.z * 7.13);
+        float star = step(0.9972, r) * smoothstep(0.45, 0.05, length(fract(sp) - 0.5));
+        float tw = 0.75 + 0.25 * sin(uTime * 2.0 + r * 80.0);
+        col += vec3(0.95, 0.97, 1.0) * star * tw * uStars * smoothstep(0.03, 0.3, h) * 1.6;
+      }
+      gl_FragColor = vec4(col, 1.0);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`
+});
+const skyGeo = new THREE.SphereGeometry(1, 48, 24);
+const sky = new THREE.Mesh(skyGeo, skyMat);
+sky.scale.setScalar(1800); sky.frustumCulled = false; sky.renderOrder = -1;
+scene.add(sky);
+// environment from the same sky, re-baked as the day moves
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envScene = new THREE.Scene();
+const envSky = new THREE.Mesh(skyGeo, skyMat); envSky.scale.setScalar(50); envScene.add(envSky);
+let envRT = null, envAt = -99;
+function bakeEnv() { const rt = pmrem.fromScene(envScene, 0.035); if (envRT) envRT.dispose(); envRT = rt; scene.environment = rt.texture; }
+
+/* ===== lights ===== */
+const hemi = new THREE.HemisphereLight(0xdfe8f5, 0x3e6873, 0.5); scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xffc583, 2.5);
+sun.castShadow = true;
+sun.shadow.mapSize.set(coarse ? 1024 : 2048, coarse ? 1024 : 2048);
+Object.assign(sun.shadow.camera, { left: -42, right: 42, top: 62, bottom: -20, near: 20, far: 340 });
+sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.04;
+scene.add(sun, sun.target);
+const inner = new THREE.PointLight(0xffb45e, 0, 70, 1.6); inner.position.set(0, 11, 0); scene.add(inner);
+
+/* ===== water: planar reflection + procedural ripples ===== */
+const WaterShader = {
+  name: 'GTWater',
+  uniforms: {
+    color: { value: null }, tDiffuse: { value: null }, textureMatrix: { value: null },
+    uTime: { value: 0 }, uDeep: { value: C('#45707A') }, uSunDir: { value: new V3() }, uSunCol: { value: C('#fff') },
+    uFogCol: { value: C('#fff') }, uFogDen: { value: 0.004 }, uRip: { value: 1 }
+  },
+  vertexShader: `uniform mat4 textureMatrix; varying vec4 vUv; varying vec3 vW;
+    void main(){ vUv = textureMatrix * vec4(position, 1.0); vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
+  fragmentShader: `uniform sampler2D tDiffuse; uniform vec3 color; uniform float uTime, uFogDen, uRip;
+    uniform vec3 uDeep, uSunDir, uSunCol, uFogCol;
+    varying vec4 vUv; varying vec3 vW;
+    vec2 wave(vec2 p, vec2 dir, float fr, float sp){ return dir * cos(dot(p, dir) * fr + uTime * sp) * fr; }
+    void main(){
+      vec2 p = vW.xz; vec2 g = vec2(0.0);
+      g += wave(p, normalize(vec2(1.0, 0.3)), 0.21, 0.9) * 0.08;
+      g += wave(p, normalize(vec2(-0.4, 1.0)), 0.47, 1.4) * 0.045;
+      g += wave(p, normalize(vec2(0.8, -0.7)), 1.1, 2.1) * 0.02;
+      g += wave(p, normalize(vec2(-0.9, -0.25)), 2.6, 3.0) * 0.009;
+      g += wave(p, normalize(vec2(0.2, 0.95)), 5.3, 4.1) * 0.004;
+      vec3 n = normalize(vec3(-g.x * uRip, 1.0, -g.y * uRip));
+      vec3 toCam = cameraPosition - vW; float dist = length(toCam); vec3 V = toCam / dist;
+      vec4 uv = vUv; uv.xy += n.xz * 0.9 * vUv.w / (1.0 + dist * 0.01);
+      vec3 refl = texture2DProj(tDiffuse, uv).rgb;
+      float fres = 0.02 + 0.98 * pow(1.0 - clamp(dot(n, V), 0.0, 1.0), 5.0);
+      vec3 col = mix(uDeep, refl, clamp(0.5 + fres * 0.6, 0.0, 0.96));
+      vec3 R = reflect(-V, n);
+      float sp = pow(max(dot(R, normalize(uSunDir)), 0.0), 220.0);
+      col += uSunCol * sp * 3.0 * smoothstep(-0.05, 0.05, uSunDir.y);
+      float f = 1.0 - exp(-uFogDen * uFogDen * dist * dist);
+      col = mix(col, uFogCol, f);
+      gl_FragColor = vec4(col, 1.0);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`
+};
+let reflScale = coarse ? 0.4 : 0.5;
+const water = new Reflector(new THREE.PlaneGeometry(6000, 6000), {
+  shader: WaterShader, textureWidth: Math.round(innerWidth * dpr * reflScale), textureHeight: Math.round(innerHeight * dpr * reflScale), clipBias: 0.003, multisample: coarse ? 0 : 4
+});
+water.rotation.x = -Math.PI / 2;
+scene.add(water);
+const wu = water.material.uniforms;
+
+/* ===== CHARMINAR (1591): built from arches, minarets, balconies and domes ===== */
+const charminar = new THREE.Group(); scene.add(charminar);
+const HALF = 10, FACE_W = 8.0;
+// plinth and steps
+charminar.add(box(32, 0.7, 32, stoneDark, 0, 0.35, 0), box(29, 1.0, 29, stoneDark, 0, 1.2, 0));
+const Y0 = 1.7;
+// four facades, each a wall with one great pointed arch
+const mainArch = pointedArch(5.4, 13.5, 8.2, 16);
+const facadeGeo = extrude(archWall(FACE_W, Y0, 24.2, 5.4, 13.5, mainArch), 2.6, 0.12);
+// upper gallery: a row of seven small arches
+const galHoles = []; for (let i = -3; i <= 3; i++) galHoles.push(archHole(i * 2.25, 25.6, 0.72, 27.4, 1.5));
+const galleryGeo = extrude(archWall(FACE_W, 24.8, 30.6, 0, 24.8, [], galHoles), 2.0, 0.08);
+// parapet with small arched openings
+const parHoles = []; for (let i = -5; i <= 5; i++) parHoles.push(archHole(i * 1.42, 31.6, 0.38, 32.5, 0.6, false));
+const parapetGeo = extrude(archWall(FACE_W + 1.4, 31.2, 33.6, 0, 31.2, [], parHoles), 0.5, 0.04);
+const clocks = [];
+for (let f = 0; f < 4; f++) {
+  const g = new THREE.Group(); g.rotation.y = f * Math.PI / 2;
+  const fac = new THREE.Mesh(facadeGeo, stone); fac.position.z = HALF - 2.6; g.add(fac);
+  // inner arch return, gives the opening depth
+  const fac2 = new THREE.Mesh(facadeGeo, stone); fac2.position.z = HALF - 6.4; fac2.scale.set(0.98, 1, 0.5); g.add(fac2);
+  const gal = new THREE.Mesh(galleryGeo, stone); gal.position.z = HALF - 2.2; g.add(gal);
+  const par = new THREE.Mesh(parapetGeo, stone); par.position.z = HALF - 0.2; g.add(par);
+  g.add(box(2 * FACE_W + 3.6, 0.7, 3.4, stone, 0, 24.5, HALF - 1.0));   // cornice over the arches
+  g.add(box(2 * FACE_W + 3.6, 0.6, 3.0, stone, 0, 30.9, HALF - 0.8));   // cornice over the gallery
+  g.add(box(10.8, 0.35, 0.6, stone, 0, Y0 + 0.2, HALF + 0.1));          // threshold
+  // clock above the arch: a live dial
+  const dial = new THREE.Mesh(new THREE.CircleGeometry(1.08, 40), new THREE.MeshStandardMaterial({ map: dialTex, roughness: 0.6, emissive: 0xffe2a8, emissiveIntensity: 0 }));
+  dial.position.set(0, 22.9, HALF + 0.2); g.add(dial);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(1.13, 0.11, 8, 40), stone); ring.position.copy(dial.position); g.add(ring);
+  const hand = (len, wid) => { const geo = new THREE.PlaneGeometry(wid, len); geo.translate(0, len / 2 - 0.12, 0); const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: 0x1b1a19 })); m.position.set(0, 22.9, HALF + 0.27); return m; };
+  const hh = hand(0.62, 0.1), mh = hand(0.92, 0.065); g.add(hh, mh);
+  clocks.push({ hh, mh, dial });
+  charminar.add(g);
+}
+// floors and the roof
+charminar.add(box(14.6, 2.2, 14.6, stone, 0, 23.1, 0), box(18.5, 0.6, 18.5, stone, 0, 30.6, 0));
+charminar.add(box(12.2, 0.4, 12.2, stoneDark, 0, Y0 + 0.1, 0));
+// the small mosque dome on the roof, west side
+const roofDome = new THREE.Mesh(new THREE.LatheGeometry([[0, 0], [2.4, 0], [2.4, 1.6], [2.7, 2.6], [2.5, 3.6], [1.8, 4.6], [0.8, 5.3], [0.15, 5.8], [0.05, 6.8]].map(([x, y]) => new THREE.Vector2(x, y)), 32), stoneRound);
+roofDome.position.set(-4.5, 30.9, 0); charminar.add(roofDome);
+// four minarets: fluted shafts, three balconies with jali screens, onion domes
+const minProfile = [
+  [2.5, Y0], [2.5, 24.2], [2.9, 24.5], [2.9, 25.2], [2.25, 25.5], [2.25, 33.6], [3.0, 33.9], [3.0, 34.5], [2.0, 34.8],
+  [1.9, 41.2], [2.7, 41.5], [2.7, 42.1], [1.8, 42.4], [1.7, 48.2], [2.45, 48.5], [2.45, 49.1], [1.6, 49.4], [1.6, 50.6],
+  [1.85, 51.2], [2.25, 52.3], [2.2, 53.4], [1.75, 54.4], [1.05, 55.3], [0.45, 56.0], [0.16, 56.6], [0.1, 58.2], [0.0, 58.6]
+].map(([r, y]) => new THREE.Vector2(r, y));
+const minGeo = new THREE.LatheGeometry(minProfile, 64);
+{ // flutes on the shaft, not on the balconies or the dome
+  const pos = minGeo.attributes.position;
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i); const r = Math.hypot(x, z); if (r < 0.01 || y > 50.6) continue;
+    const a = Math.atan2(z, x), k = 1 + 0.05 * Math.cos(a * 16);
+    pos.setX(i, x * k); pos.setZ(i, z * k);
+  }
+  minGeo.computeVertexNormals();
+}
+const jaliGeo = new THREE.CylinderGeometry(2.95, 2.95, 1.0, 48, 1, true);
+const lampPos = [];
+for (const [sx, sz] of [[1, 1], [1, -1], [-1, 1], [-1, -1]]) {
+  const m = new THREE.Mesh(minGeo, stoneRound); m.position.set(sx * HALF, 0, sz * HALF); charminar.add(m);
+  for (const [y, r] of [[35.0, 2.95], [42.6, 2.65], [49.6, 2.4]]) {
+    const j = new THREE.Mesh(jaliGeo, jali); j.scale.set(r / 2.95, 1, r / 2.95); j.position.set(sx * HALF, y, sz * HALF); charminar.add(j);
+    for (let k = 0; k < 10; k++) { const a = k / 10 * Math.PI * 2; lampPos.push(sx * HALF + Math.cos(a) * r, y + 0.6, sz * HALF + Math.sin(a) * r); }
+  }
+  const spike = new THREE.Mesh(new THREE.ConeGeometry(0.08, 1.6, 6), gold); spike.position.set(sx * HALF, 59.2, sz * HALF); charminar.add(spike);
+}
+// lamps along each great arch and the gallery
+for (let f = 0; f < 4; f++) {
+  const rot = f * Math.PI / 2, cs = Math.cos(rot), sn = Math.sin(rot);
+  const put = (x, y, z) => lampPos.push(x * cs + z * sn, y, -x * sn + z * cs);
+  mainArch.forEach(([x, y], i) => { if (i % 2 === 0) put(x * 1.08, y + 0.5, HALF + 0.3); });
+  for (let i = -3; i <= 3; i++) put(i * 2.25, 25.3, HALF + 0.3);
+  for (let i = -6; i <= 6; i++) put(i * 1.42, 33.9, HALF + 0.4);
+}
+castShadow(charminar);
+const lampGeo = new THREE.BufferGeometry(); lampGeo.setAttribute('position', new THREE.Float32BufferAttribute(lampPos, 3));
+const lampMat = new THREE.PointsMaterial({ map: glowTex, color: 0xffc779, size: 2.4, sizeAttenuation: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0 });
+const lamps = new THREE.Points(lampGeo, lampMat); scene.add(lamps);
+
+/* ===== three gates on the water: Dubai, London, Toronto ===== */
+const gates = {};
+function plinth(w, d) { return box(w, 1.4, d, stoneDark, 0, 0.5, 0); }
+function beacon(g, pts) {
+  const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pts.flat(), 3));
+  const mat = new THREE.PointsMaterial({ map: glowTex, color: 0xffd28a, size: 5, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.0 });
+  const p = new THREE.Points(geo, mat); g.add(p); return mat;
+}
+{ // DXB: a gold picture frame, 150 m of gateway
+  const g = new THREE.Group(); g.position.set(-62, 0, -150); g.rotation.y = 0.22;
+  g.add(plinth(40, 12));
+  g.add(box(6, 50, 6, gold, -14, 26, 0), box(6, 50, 6, gold, 14, 26, 0), box(34, 6, 6, gold, 0, 53, 0));
+  g.add(box(22, 1.2, 4.6, new THREE.MeshStandardMaterial({ color: 0x8fb7c4, metalness: 0.6, roughness: 0.15 }), 0, 49.4, 0));
+  for (let y = 4; y < 50; y += 3.2) { g.add(box(6.2, 0.18, 6.2, new THREE.MeshStandardMaterial({ color: 0x7a5a24, metalness: 1, roughness: 0.4 }), -14, y, 0), box(6.2, 0.18, 6.2, new THREE.MeshStandardMaterial({ color: 0x7a5a24, metalness: 1, roughness: 0.4 }), 14, y, 0)); }
+  const lm = beacon(g, [[-14, 52, 3.4], [14, 52, 3.4], [0, 56.6, 0], [-14, 2, 3.4], [14, 2, 3.4]]);
+  gates.DXB = { g, lm, name: 'Dubai', code: 'DXB', dest: 'UAE' }; scene.add(g);
+}
+{ // LHR: a triumphal round arch in pale stone
+  const g = new THREE.Group(); g.position.set(0, 0, -185);
+  g.add(plinth(36, 16));
+  const holes = [archHole(-9.2, 3, 2.1, 9.5, 0, false), archHole(9.2, 3, 2.1, 9.5, 0, false)];
+  const body = new THREE.Mesh(extrude(archWall(13.5, 1.2, 26, 5.6, 14, roundArch(5.6, 14), holes), 9, 0.15), portland); body.position.z = -4.5; g.add(body);
+  g.add(box(29, 1.4, 10.4, portland, 0, 26.5, 0), box(23, 6.5, 8.6, portland, 0, 30.4, 0), box(25, 0.9, 9.6, portland, 0, 34.1, 0));
+  for (const x of [-12.4, -6.6, 6.6, 12.4]) for (const z of [5.4, -5.4]) {
+    const col = new THREE.Mesh(new THREE.CylinderGeometry(0.75, 0.85, 22.5, 20), portland); col.position.set(x, 13.4, z); g.add(col);
+    g.add(box(2.2, 1, 2.2, portland, x, 2.2, z), box(2.2, 0.8, 2.2, portland, x, 25.0, z));
+  }
+  g.add(box(6, 4, 4, stoneDark, 0, 36.6, 0));
+  const lm = beacon(g, [[0, 21, 5.6], [-12.4, 25.6, 6], [12.4, 25.6, 6], [0, 38.8, 0]]);
+  gates.LHR = { g, lm, name: 'London', code: 'LHR', dest: 'UK' }; scene.add(castShadow(g));
+}
+{ // YYZ: a concrete portal and a needle tower
+  const g = new THREE.Group(); g.position.set(66, 0, -160); g.rotation.y = -0.24; g.scale.setScalar(0.86);
+  g.add(plinth(30, 12));
+  g.add(box(3.2, 34, 5, concrete, -11, 17.5, 0), box(3.2, 34, 5, concrete, 11, 17.5, 0), box(26, 3.6, 5, concrete, 0, 34, 0));
+  const tower = new THREE.Mesh(new THREE.LatheGeometry([[0, 0], [4.6, 0], [3.9, 6], [2.3, 30], [1.5, 64], [1.25, 78]].map(([r, y]) => new THREE.Vector2(r, y)), 24), concrete);
+  tower.position.set(0, 0, -18); g.add(tower);
+  const pod = new THREE.Mesh(new THREE.LatheGeometry([[0, 0], [5.6, 0.4], [7.2, 2.6], [7.0, 4.4], [5.2, 6.2], [0, 6.6]].map(([r, y]) => new THREE.Vector2(r, y)), 32), concrete);
+  pod.position.set(0, 60, -18); g.add(pod);
+  const ant = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.8, 24, 8), concrete); ant.position.set(0, 90, -18); g.add(ant);
+  const lm = beacon(g, [[0, 64, -10.8], [0, 102, -18], [-11, 36.2, 2.6], [11, 36.2, 2.6]]);
+  gates.YYZ = { g, lm, name: 'Toronto', code: 'YYZ', dest: 'Canada' }; scene.add(g);
+}
+// raycast proxies (simple boxes, never drawn)
+const proxies = [];
+for (const k of Object.keys(gates)) {
+  const bb = new THREE.Box3().setFromObject(gates[k].g), size = bb.getSize(new V3()), ctr = bb.getCenter(new V3());
+  const p = new THREE.Mesh(new THREE.BoxGeometry(size.x * 1.1, size.y, Math.max(size.z, 10)), new THREE.MeshBasicMaterial());
+  p.position.copy(ctr); p.visible = false; p.userData.code = k; scene.add(p); proxies.push(p);
+  gates[k].top = new V3(ctr.x, bb.max.y, ctr.z);
+  gates[k].heat = 0;
+}
+
+/* ===== three toran gates (How it works): lacquered posts hung with marigold and mango leaves ===== */
+const TORAN_X = 66, TORAN_Z = [-50, -90, -130];
+const torans = [];
+const beadPos = [], beadCol = [], leafPos = [];
+const mari = [C('#F29F05'), C('#F7B500'), C('#E86A0C'), C('#FFC94A')];
+TORAN_Z.forEach((z, i) => {
+  const g = new THREE.Group(); g.position.set(TORAN_X + i * 3, 0, z);
+  g.add(box(16, 1.2, 4, stoneDark, 0, 0.4, 0));
+  g.add(box(1.5, 15, 1.5, lacquer, -7, 7.9, 0), box(1.5, 15, 1.5, lacquer, 7, 7.9, 0));
+  g.add(box(19, 1.4, 2.0, lacquer, 0, 15.6, 0), box(17, 0.6, 1.6, lacquer, 0, 13.4, 0));
+  g.add(box(2.4, 0.6, 2.4, lacquer, -7, 0.9, 0), box(2.4, 0.6, 2.4, lacquer, 7, 0.9, 0));
+  const diyas = [[-7, 16.9, 0], [7, 16.9, 0], [0, 16.9, 0], [-7, 1.6, 1.2], [7, 1.6, 1.2]];
+  const lm = beacon(g, diyas); lm.size = 3.2;
+  // swags along the lintel
+  for (let s = 0; s < 4; s++) {
+    const x0 = -8 + s * 4, x1 = x0 + 4;
+    for (let k = 0; k <= 16; k++) { const t = k / 16, x = lerp(x0, x1, t), y = 13.0 - Math.sin(t * Math.PI) * 1.4; beadPos.push([g.position.x + x, y, z + 1.0]); beadCol.push(mari[(k + s) % 4]); }
+  }
+  // strands down the posts
+  for (const sx of [-7, 7]) for (let k = 0; k < 24; k++) { beadPos.push([g.position.x + sx, 13 - k * 0.48, z + 0.95]); beadCol.push(mari[k % 4]); }
+  for (let k = 0; k < 15; k++) leafPos.push([g.position.x - 7 + k * 1.0, 12.4 + (k % 2) * 0.2, z + 1.05, (k % 2 ? 0.4 : -0.4)]);
+  torans.push({ g, lm, lit: 0 });
+  scene.add(castShadow(g));
+});
+const beads = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(0.3, 1), new THREE.MeshStandardMaterial({ roughness: 0.75, emissive: 0x7a3300, emissiveIntensity: 0 }), beadPos.length);
+const dummy = new THREE.Object3D();
+beadPos.forEach((p, i) => { dummy.position.set(...p); dummy.scale.setScalar(0.85 + (i % 3) * 0.12); dummy.updateMatrix(); beads.setMatrixAt(i, dummy.matrix); beads.setColorAt(i, beadCol[i]); });
+scene.add(beads);
+const leafGeo = new THREE.BufferGeometry(); leafGeo.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, 0, 0.32, -0.6, 0, 0, -1.3, 0, 0, 0, 0, 0, -1.3, 0, -0.32, -0.6, 0], 3)); leafGeo.computeVertexNormals();
+const leaves = new THREE.InstancedMesh(leafGeo, new THREE.MeshStandardMaterial({ color: 0x2f6b3a, side: THREE.DoubleSide, roughness: 0.6 }), leafPos.length);
+leafPos.forEach(([x, y, z, r], i) => { dummy.position.set(x, y, z); dummy.rotation.set(0, 0, r); dummy.scale.setScalar(1); dummy.updateMatrix(); leaves.setMatrixAt(i, dummy.matrix); });
+scene.add(leaves);
+
+/* ===== kites over the old city ===== */
+const kites = [];
+const kiteCols = ['#F29F05', '#C2456A', '#0F5C63', '#F7F3EC', '#E86A0C', '#2F6B3A'];
+for (let i = 0; i < 7; i++) {
+  const g = new THREE.Group();
+  const sh = new THREE.Shape(); sh.moveTo(0, 2.2); sh.lineTo(1.5, 0.3); sh.lineTo(0, -1.9); sh.lineTo(-1.5, 0.3); sh.closePath();
+  const kite = new THREE.Mesh(new THREE.ShapeGeometry(sh), new THREE.MeshStandardMaterial({ color: kiteCols[i % kiteCols.length], side: THREE.DoubleSide, roughness: 0.7 }));
+  g.add(kite);
+  const tailGeo = new THREE.BufferGeometry(); tailGeo.setAttribute('position', new THREE.Float32BufferAttribute(new Array(12 * 3).fill(0), 3));
+  const tail = new THREE.Line(tailGeo, new THREE.LineBasicMaterial({ color: 0x3a2a20 })); g.add(tail);
+  const a = (i / 7) * Math.PI * 2 + 0.4;
+  g.userData = { base: new V3(18 + i * 9 + Math.cos(a) * 8, 36 + (i % 3) * 8 + (i % 2) * 5, -24 - i * 11), ph: i * 1.7, tail };
+  scene.add(g); kites.push(g);
+}
+
+/* ===== pigeons of Charminar ===== */
+const N_BIRDS = coarse ? 46 : 80;
+const bGeo = new THREE.BufferGeometry();
+bGeo.setAttribute('position', new THREE.Float32BufferAttribute([
+  0, 0, 0.7, 0.14, 0, -0.45, -0.14, 0, -0.45,            // body
+  0, 0, 0.25, 0, 0, -0.25, -1.1, 0.05, -0.05,            // left wing
+  0, 0, -0.25, 0, 0, 0.25, 1.1, 0.05, -0.05              // right wing
+], 3));
+bGeo.setAttribute('aWing', new THREE.Float32BufferAttribute([0, 0, 0, 0, 0, -1, 0, 0, 1], 1));
+const bPh = new Float32Array(N_BIRDS); for (let i = 0; i < N_BIRDS; i++) bPh[i] = rnd() * 6.28;
+bGeo.setAttribute('aPhase', new THREE.InstancedBufferAttribute(bPh, 1));
+const birdMat = new THREE.ShaderMaterial({
+  side: THREE.DoubleSide, fog: true,
+  uniforms: THREE.UniformsUtils.merge([THREE.UniformsLib.fog, { uTime: { value: 0 }, uFlap: { value: 0 }, uColor: { value: C('#2a3340') } }]),
+  vertexShader: `attribute float aWing; attribute float aPhase; uniform float uTime, uFlap;
+    #include <fog_pars_vertex>
+    void main(){
+      vec3 p = position; float ph = uTime * (10.0 + uFlap * 10.0) + aPhase;
+      p.y += sin(ph) * abs(aWing) * 0.6;
+      vec4 mvPosition = modelViewMatrix * instanceMatrix * vec4(p, 1.0);
+      gl_Position = projectionMatrix * mvPosition;
+      #include <fog_vertex>
+    }`,
+  fragmentShader: `uniform vec3 uColor;
+    #include <fog_pars_fragment>
+    void main(){
+      gl_FragColor = vec4(uColor, 1.0);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+      #include <fog_fragment>
+    }`
+});
+const birds = new THREE.InstancedMesh(bGeo, birdMat, N_BIRDS); birds.frustumCulled = false; scene.add(birds);
+const B = Array.from({ length: N_BIRDS }, () => ({ r: 17 + rnd() * 16, h: 36 + rnd() * 22, a: rnd() * 6.28, s: (0.18 + rnd() * 0.16) * (rnd() > 0.15 ? 1 : -1), bob: rnd() * 6.28, out: rnd() }));
+let scatter = 0;
+const bPrev = new V3(), bNow = new V3();
+function birdPos(b, t, sc, out) {
+  const a = b.a + t * b.s * (1 + sc * 1.6);
+  const r = b.r + sc * (40 + b.out * 90);
+  out.set(Math.cos(a) * r, b.h + Math.sin(t * 0.9 + b.bob) * 2.2 + sc * (25 + b.out * 40), Math.sin(a) * r);
+  return out;
+}
+function updateBirds(t) {
+  for (let i = 0; i < N_BIRDS; i++) {
+    const b = B[i];
+    birdPos(b, t - 0.05, scatter, bPrev); birdPos(b, t, scatter, bNow);
+    dummy.position.copy(bNow); dummy.lookAt(bNow.clone().multiplyScalar(2).sub(bPrev));
+    dummy.rotateZ(-Math.sign(b.s) * 0.35); dummy.scale.setScalar(1.3); dummy.updateMatrix();
+    birds.setMatrixAt(i, dummy.matrix);
+  }
+  birds.instanceMatrix.needsUpdate = true;
+}
+
+/* ===== per-frame state ===== */
+const state = { p: 0, ps: 0, yaw: 0, yawT: 0, pitch: 0, pitchT: 0, px: 0, py: 0, pxs: 0, pys: 0, hot: null, focusCode: null, dragging: false };
+const tmpP = new V3(), tmpT = new V3(), off = new V3();
+const cA = C('#000'), cB = C('#000');
+function mixHex(a, b, t, out) { cA.set(a); cB.set(b); return out.copy(cA).lerp(cB, t); }
+function applyChapter(p) {
+  const n = K.length - 1, pc = clamp(p, 0, n);
+  const i = Math.min(n - 1, Math.floor(pc)), t = pc - i;
+  const A = SKY[K[i].sky], Bk = SKY[K[i + 1].sky];
+  mixHex(A.top, Bk.top, t, skyUniforms.uTop.value); mixHex(A.mid, Bk.mid, t, skyUniforms.uMid.value);
+  mixHex(A.hor, Bk.hor, t, skyUniforms.uHor.value); mixHex(A.sun, Bk.sun, t, skyUniforms.uSunCol.value);
+  const az = lerp(A.az, Bk.az, t) * Math.PI / 180, el = lerp(A.el, Bk.el, t) * Math.PI / 180;
+  const sd = skyUniforms.uSunDir.value.set(Math.cos(el) * Math.sin(az), Math.sin(el), Math.cos(el) * Math.cos(az));
+  skyUniforms.uStars.value = lerp(A.stars, Bk.stars, t);
+  skyUniforms.uCloud.value = lerp(A.cloud, Bk.cloud, t);
+  // light follows the sun, but never from below the water
+  const lightDir = sd.clone(); lightDir.y = Math.max(lightDir.y, 0.12); lightDir.normalize();
+  sun.position.copy(lightDir).multiplyScalar(160); sun.target.position.set(0, 0, 0);
+  sun.color.copy(skyUniforms.uSunCol.value); sun.intensity = lerp(A.sunI, Bk.sunI, t);
+  hemi.intensity = lerp(A.hemi, Bk.hemi, t); hemi.color.copy(skyUniforms.uMid.value); mixHex(A.deep, Bk.deep, t, hemi.groundColor);
+  mixHex(A.fog, Bk.fog, t, scene.fog.color); scene.fog.density = lerp(A.den, Bk.den, t) * (isDesk() ? 1 : 0.62);
+  scene.environmentIntensity = lerp(A.env, Bk.env, t);
+  wu.uFogCol.value.copy(scene.fog.color); wu.uFogDen.value = scene.fog.density;
+  mixHex(A.deep, Bk.deep, t, wu.uDeep.value); wu.uSunDir.value.copy(sd); wu.uSunCol.value.copy(skyUniforms.uSunCol.value);
+  const lampsOn = lerp(A.lamps, Bk.lamps, t);
+  lampMat.opacity = clamp((lampsOn - 0.5) * 2, 0, 1);
+  inner.intensity = lampMat.opacity * 900;
+  clocks.forEach((c) => (c.dial.material.emissiveIntensity = lampMat.opacity * 0.8));
+  birdMat.uniforms.uColor.value.set(lampsOn > 0.8 ? '#11161f' : '#2a3340');
+  return { i, t, lampsOn };
+}
+function placeCamera(p, yaw, pitch, px, py) {
+  const n = K.length - 1, u = clamp(p, 0, n) / n;
+  camCurveP.getPoint(u, tmpP); camCurveT.getPoint(u, tmpT);
+  const key = isDesk() ? 'd' : 'm', i = Math.min(n - 1, Math.floor(clamp(p, 0, n))), t = clamp(p, 0, n) - i;
+  camera.fov = lerp(K[i][key].f, K[i + 1][key].f, t);
+  // drag: walk around the target on a circle; pointer: a breath of parallax
+  off.subVectors(tmpP, tmpT);
+  off.applyAxisAngle(new V3(0, 1, 0), yaw);
+  const r = off.length(); const h = Math.atan2(off.y, Math.hypot(off.x, off.z)) + pitch;
+  const flat = Math.hypot(off.x, off.z) || 1;
+  off.x *= Math.cos(h) * r / flat; off.z *= Math.cos(h) * r / flat; off.y = Math.sin(h) * r;
+  camera.position.copy(tmpT).add(off);
+  camera.position.y = Math.max(camera.position.y, 1.6);
+  camera.position.x += px; camera.position.y += py;
+  camera.lookAt(tmpT);
+  camera.updateProjectionMatrix();
+  sky.position.copy(camera.position);
+}
+function updateClocks() {
+  const t = GT.ist ? GT.ist() : new Date();
+  const m = t.getMinutes() + t.getSeconds() / 60, h = (t.getHours() % 12) + m / 60;
+  clocks.forEach((c) => { c.mh.rotation.z = -m / 60 * Math.PI * 2; c.hh.rotation.z = -h / 12 * Math.PI * 2; });
+}
+updateClocks(); setInterval(() => { updateClocks(); if (reduce) requestRender(); }, 10000);
+
+/* ===== interaction ===== */
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+const tip = $('#gateTip');
+let down = null;
+function routesLive() { return Math.abs(state.p - 3) < 0.55; }
+function heroLive() { return state.p < 1.2 || state.p > 7.4; }
+// how far the visitor may walk around: wide at Charminar, none inside the arches or the torans
+function yawLim(p) { return p < 1.2 ? 1.25 : p < 2.8 ? 0 : p < 4.5 ? 0.35 : p < 7.35 ? 0.1 : 1.0; }
+function pick(e) {
+  if (!routesLive()) return null;
+  const r = canvas.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  const hit = ray.intersectObjects(proxies, false)[0];
+  return hit ? hit.object.userData.code : null;
+}
+function setHot(code, fromCard) {
+  if (state.hot === code) return;
+  state.hot = code;
+  $$('.card').forEach((c) => c.classList.toggle('hot', c.dataset.code === code));
+  canvas.classList.toggle('hot', !!code && !fromCard);
+  if (!code || fromCard) tip.classList.remove('on');
+  requestRender();
+}
+canvas.addEventListener('pointerdown', (e) => {
+  down = { x: e.clientX, y: e.clientY, yaw: state.yawT, pitch: state.pitchT, id: e.pointerId, moved: false };
+});
+addEventListener('pointermove', (e) => {
+  if (!coarse) { state.px = (e.clientX / innerWidth - 0.5); state.py = (e.clientY / innerHeight - 0.5); }
+  if (down && e.pointerId === down.id) {
+    const dx = e.clientX - down.x, dy = e.clientY - down.y;
+    if (!down.moved && Math.hypot(dx, dy) > 6) { down.moved = true; state.dragging = true; canvas.classList.add('dragging'); try { canvas.setPointerCapture(e.pointerId); } catch (_) {} }
+    if (down.moved) {
+      const lim = yawLim(state.p);
+      state.yawT = clamp(down.yaw - dx * 0.006, -lim, lim);
+      if (!coarse) state.pitchT = clamp(down.pitch + dy * 0.002, -0.12, 0.3);
+      requestRender();
+    }
+    return;
+  }
+  if (e.target === canvas) {
+    const code = pick(e); setHot(code, false);
+    if (code) { tip.innerHTML = `<b>HYD &#8594; ${code}</b> ${gates[code].name}. Click to start a ${gates[code].dest} quote`; tip.style.left = e.clientX + 'px'; tip.style.top = e.clientY + 'px'; tip.classList.add('on'); }
+  } else if (state.hot && !state.cardHot) setHot(null, false);
+}, { passive: true });
+function endDrag(e) {
+  if (!down || (e && e.pointerId !== down.id)) return;
+  const wasDrag = down.moved; down = null; state.dragging = false; canvas.classList.remove('dragging');
+  if (!wasDrag && e && e.type === 'pointerup') {
+    const code = pick(e);
+    if (code) goQuote(code);
+    else { scatter = Math.max(scatter, 0.001); scatterGo = true; requestRender(); }
+  }
+}
+addEventListener('pointerup', endDrag); addEventListener('pointercancel', endDrag);
+canvas.addEventListener('keydown', (e) => {
+  const step = 0.18;
+  const yl = yawLim(state.p);
+  if (e.key === 'ArrowLeft') state.yawT = clamp(state.yawT + step, -yl, yl);
+  else if (e.key === 'ArrowRight') state.yawT = clamp(state.yawT - step, -yl, yl);
+  else if (e.key === 'ArrowUp') state.pitchT = clamp(state.pitchT + 0.05, -0.12, 0.3);
+  else if (e.key === 'ArrowDown') state.pitchT = clamp(state.pitchT - 0.05, -0.12, 0.3);
+  else if (e.key === 'Home') { state.yawT = 0; state.pitchT = 0; }
+  else if (e.key === 'Enter' || e.key === ' ') { scatterGo = true; }
+  else return;
+  e.preventDefault(); state.kbd = performance.now(); requestRender();
+});
+let scatterGo = false;
+function goQuote(code) {
+  GT.chooseDest && GT.chooseDest(code);
+  const q = $('#quote');
+  scrollTo({ top: absTop(q) - 20, behavior: reduce ? 'auto' : 'smooth' });
+  setTimeout(() => $('#qType').focus({ preventScroll: true }), reduce ? 0 : 900);
+}
+$$('.card').forEach((c) => {
+  const on = () => { state.cardHot = true; state.focusCode = c.dataset.code; setHot(c.dataset.code, true); };
+  const off = () => { state.cardHot = false; state.focusCode = null; setHot(null, true); };
+  c.addEventListener('pointerenter', on); c.addEventListener('pointerleave', off);
+  c.addEventListener('focusin', on); c.addEventListener('focusout', off);
+});
+// on phones the gates do not all fit: aim at the card you are reading
+if (!isDesk() && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting) state.focusCode = en.target.dataset.code; }), { threshold: 0.6 });
+  $$('.card').forEach((c) => io.observe(c));
+}
+$('#hintBtn').addEventListener('click', () => { canvas.focus({ preventScroll: true }); scatterGo = true; requestRender(); });
+GT.onDest = (code) => { if (gates[code]) { gates[code].heat = 1; requestRender(); } };
+
+/* ===== loop ===== */
+const timer = new THREE.Timer(); timer.connect(document);
+let running = false, needRender = true, firstFrame = true, footHidden = false;
+let frameAcc = 0, frameN = 0;
+const camAim = new V3();
+function requestRender() { needRender = true; if (reduce && !raf) raf = requestAnimationFrame(() => { raf = 0; frame(); }); }
+let raf = 0;
+function frame() {
+  timer.update();
+  const dt = Math.min(timer.getDelta(), 1 / 30), t = timer.getElapsed();
+  if (measureDirty) measure();
+  const exact = chapterAt(scrollY);
+  state.p = exact;
+  if (reduce) state.ps = Math.round(exact); // a composed still per chapter
+  else if (GT.snap) state.ps = exact;
+  else state.ps = damp(state.ps, exact, 4.2, dt);
+  if (!state.dragging && performance.now() - (state.kbd || 0) > 2500) { state.yawT = damp(state.yawT, 0, 0.35, dt); state.pitchT = damp(state.pitchT, 0, 0.35, dt); }
+  const yl = yawLim(state.ps); state.yawT = clamp(state.yawT, -yl, yl);
+  const pf = Math.min(1, yl / 0.35); state.pitchT = clamp(state.pitchT, -0.12 * pf, 0.3 * pf);
+  state.yaw = reduce ? state.yawT : damp(state.yaw, state.yawT, 6, dt);
+  state.pitch = reduce ? state.pitchT : damp(state.pitch, state.pitchT, 6, dt);
+  state.pxs = damp(state.pxs, state.px, 2.5, dt); state.pys = damp(state.pys, state.py, 2.5, dt);
+  const par = reduce ? 0 : 1;
+  applyChapter(state.ps);
+  placeCamera(state.ps, state.yaw, state.pitch, state.pxs * 2.2 * par, -state.pys * 1.2 * par);
+  // routes: lean toward a gate the visitor is pointing at or reading about
+  const fc = state.focusCode || state.hot;
+  const w3 = clamp(1 - Math.abs(state.ps - 3) / 0.6, 0, 1);
+  if (fc && gates[fc] && w3 > 0) {
+    camAim.copy(gates[fc].top); camAim.y *= 0.45;
+    const fwd = new V3(); camera.getWorldDirection(fwd);
+    const look = camera.position.clone().add(fwd.multiplyScalar(200));
+    state.aim = state.aim || look.clone();
+    state.aim.lerp(look.lerp(camAim, (isDesk() ? 0.25 : 0.85) * w3), reduce ? 1 : 1 - Math.exp(-3 * dt));
+    camera.lookAt(state.aim);
+  } else state.aim = null;
+  // gates glow when hovered, chosen, or while the morning is on them
+  for (const k in gates) {
+    const G = gates[k], want = (state.hot === k || state.focusCode === k) ? 1 : 0;
+    G.heat = reduce ? Math.max(want, G.heat * 0.0) : damp(G.heat, want, 4, dt);
+    G.lm.opacity = clamp(0.25 * w3 + G.heat * 0.9 + lampMat.opacity * 0.6, 0, 1);
+  }
+  // torans light up as you pass them
+  const pHow = state.ps;
+  torans.forEach((T, i) => {
+    const target = pHow >= 5 + i - 0.35 && pHow < 8.6 ? 1 : 0.15 * clamp(1 - Math.abs(pHow - 5 - i), 0, 1);
+    T.lit = reduce ? target : damp(T.lit, target, 3, dt);
+    T.lm.opacity = clamp(T.lit + lampMat.opacity * 0.5, 0, 1);
+  });
+  beads.material.emissiveIntensity = torans.reduce((a, T) => a + T.lit, 0) / 3 * 0.35;
+  // ambient life
+  const tt = reduce ? 0 : t;
+  skyUniforms.uTime.value = tt; wu.uTime.value = tt; wu.uRip.value = reduce ? 0.6 : 1;
+  if (scatterGo) { scatterGo = false; state.scatterT = tt || 0.001; }
+  if (!reduce) {
+    const since = state.scatterT ? t - state.scatterT : 99;
+    const target = since < 3.2 ? 1 : 0;
+    scatter = damp(scatter, target, target ? 2.2 : 0.35, dt);
+  } else scatter = 0;
+  birdMat.uniforms.uTime.value = tt; birdMat.uniforms.uFlap.value = scatter;
+  updateBirds(tt);
+  kites.forEach((k, i) => {
+    const u = k.userData;
+    k.position.copy(u.base).add(new V3(Math.sin(tt * 0.5 + u.ph) * 3, Math.sin(tt * 0.8 + u.ph) * 2, Math.cos(tt * 0.4 + u.ph) * 2));
+    k.lookAt(camera.position.x, k.position.y - 10, camera.position.z);
+    k.rotateZ(Math.sin(tt * 1.3 + u.ph) * 0.35);
+    const pos = u.tail.geometry.attributes.position;
+    for (let j = 0; j < 12; j++) pos.setXYZ(j, Math.sin(tt * 3 + j * 0.6 + u.ph) * 0.25 * j * 0.3, -1.9 - j * 0.55, Math.cos(tt * 2 + j * 0.5) * 0.1 * j);
+    pos.needsUpdate = true;
+  });
+  // the gold of the Dubai frame needs a sky to reflect: re-bake it as the day moves
+  if (Math.abs(state.ps - envAt) > 0.4) { bakeEnv(); envAt = state.ps; }
+  renderer.render(scene, camera);
+  if (firstFrame) { firstFrame = false; canvas.classList.add('on'); world.classList.add('has-gl'); setTimeout(() => world.classList.add('gl-ready'), 1500); }
+  // quality governor: lower resolution before losing anything authored
+  if (!reduce) {
+    frameAcc += timer.getDelta() || dt; frameN++;
+    if (frameN >= 90) {
+      const avg = frameAcc / frameN; frameAcc = 0; frameN = 0;
+      if (avg > 0.026 && dpr > 1) { dpr = Math.max(1, dpr - 0.25); resize(); }
+      else if (avg > 0.026 && reflScale > 0.3) { reflScale = 0.3; resize(); }
+    }
+  }
+  needRender = false;
+}
+function loop() { if (!running) return; frame(); }
+function start() { if (running || reduce) return; running = true; renderer.setAnimationLoop(loop); }
+function stop() { running = false; renderer.setAnimationLoop(null); }
+function resize() {
+  renderer.setPixelRatio(dpr);
+  renderer.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / innerHeight;
+  water.getRenderTarget().setSize(Math.round(innerWidth * dpr * reflScale), Math.round(innerHeight * dpr * reflScale));
+  buildCurves(); measureDirty = true; requestRender();
+  if (reduce) frame();
+}
+let lastW = innerWidth;
+addEventListener('resize', () => { const wChanged = innerWidth !== lastW; lastW = innerWidth; if (wChanged || !coarse) resize(); else { renderer.setSize(innerWidth, innerHeight, false); camera.aspect = innerWidth / innerHeight; measureDirty = true; } });
+// pause when hidden, or when the opaque footer covers the whole view
+document.addEventListener('visibilitychange', () => (document.hidden ? stop() : visible()));
+function visible() { if (!document.hidden && !footHidden) start(); }
+const foot = $('#foot');
+addEventListener('scroll', () => {
+  const covered = foot.getBoundingClientRect().top <= 0;
+  if (covered !== footHidden) { footHidden = covered; covered ? stop() : visible(); }
+  if (reduce) requestRender();
+}, { passive: true });
+canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); stop(); world.classList.remove('has-gl'); canvas.classList.remove('on'); });
+canvas.addEventListener('webglcontextrestored', () => location.reload());
+
+measure();
+state.ps = chapterAt(scrollY);
+bakeEnv(); envAt = state.ps;
+if (reduce) { frame(); } else start();
+setTimeout(() => { measureDirty = true; if (window.ScrollTrigger) ScrollTrigger.refresh(); }, 1200);
+document.fonts && document.fonts.ready.then(() => { measureDirty = true; if (window.ScrollTrigger) ScrollTrigger.refresh(); });
+GT.world = { state, scene, camera, renderer, anchors: () => anchors, frame, curve: () => camCurveP, torans, gates, THREE };
+}
+</script>
+</body>
+</html>
