@@ -125,10 +125,10 @@ button,input,select{font:inherit;color:inherit}
 .eyebrow{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;display:flex;gap:12px;flex-wrap:wrap}
 .eyebrow b{font-weight:500;background:var(--ink);color:var(--paper);padding:3px 8px;border-radius:4px}
 .h1{font-family:var(--f-display);font-weight:400;font-size:clamp(44px,6.2vw,96px);line-height:.92;letter-spacing:-.02em;margin:0 0 22px}
-.h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .ln{display:block;clip-path:inset(-.6em -.6em -.26em -.6em)} /* hides words rising from below, keeps descenders */
 .h1 .w{display:inline-block}
 /* hero intro: CSS keyframes run on the compositor, so they stay smooth while WebGL boots */
-@keyframes rise{from{transform:translateY(112%) rotate(4deg)}to{transform:none}}
+@keyframes rise{from{transform:translateY(145%) rotate(4deg)}to{transform:none}}
 @keyframes lift{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
 .h1 .w{animation:rise 1.1s cubic-bezier(.2,1.25,.35,1) both;animation-delay:calc(250ms + var(--i,0) * 70ms)}
 .eyebrow{animation:lift .7s cubic-bezier(.2,.7,.2,1) .1s both}
