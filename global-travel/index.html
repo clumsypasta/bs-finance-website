@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Global Travel and Visa Services - three directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#16181d; --paper:#f3f2ee; --line:#d9d6cc; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:"IBM Plex Mono", ui-monospace, monospace; }
+  header { padding:48px 6vw 24px; }
+  h1 { font-family:"Fraunces", Georgia, serif; font-weight:700; font-size:clamp(32px,5vw,64px); line-height:1; margin:0 0 12px; letter-spacing:-0.02em; }
+  header p { margin:0; max-width:60ch; font-size:14px; line-height:1.6; }
+  ol { list-style:none; margin:0; padding:24px 6vw 64px; display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+  a.card { display:block; height:100%; padding:28px; border:1px solid var(--line); border-radius:14px; text-decoration:none; color:inherit; background:#fff;
+           transition:transform .35s cubic-bezier(.2,1.3,.4,1), box-shadow .35s; }
+  a.card:hover, a.card:focus-visible { transform:translateY(-4px); box-shadow:0 18px 40px -20px rgba(0,0,0,.35); outline:none; }
+  a.card:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+  .swatch { display:flex; gap:6px; margin:0 0 20px; }
+  .swatch i { width:28px; height:28px; border-radius:50%; display:block; border:1px solid rgba(0,0,0,.08); }
+  .tag { font-size:12px; letter-spacing:.12em; text-transform:uppercase; opacity:.65; }
+  h2 { font-family:"Fraunces", Georgia, serif; font-size:30px; margin:6px 0 10px; }
+  .card p { margin:0; font-size:13px; line-height:1.6; }
+  footer { padding:0 6vw 40px; font-size:12px; opacity:.7; }
+  @media (prefers-reduced-motion: reduce) { a.card { transition:none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Three directions</h1>
+  <p>Global Travel and Visa Services - www.gtfinserv.com. Same content in each, three different looks. Pick one and the full site gets built on it. Services and logo are placeholders until the client's files arrive.</p>
+</header>
+<ol>
+  <li><a class="card" href="a-departures.html">
+    <div class="swatch"><i style="background:#10233F"></i><i style="background:#FFB020"></i><i style="background:#F5F3EE"></i><i style="background:#E63B2E"></i></div>
+    <span class="tag">Direction A</span><h2>Departures</h2>
+    <p>The hero is a live split-flap airport board. The headline flips in letter by letter; destinations cycle below.</p>
+  </a></li>
+  <li><a class="card" href="b-stamped.html">
+    <div class="swatch"><i style="background:#5E1A2B"></i><i style="background:#EEF0E6"></i><i style="background:#4B3B8F"></i><i style="background:#2C6E73"></i></div>
+    <span class="tag">Direction B</span><h2>Stamped</h2>
+    <p>The hero is an open passport page. Visa stamps slam down in ink, and the cursor is a UV torch that reveals a hidden watermark.</p>
+  </a></li>
+  <li><a class="card" aria-disabled="true" style="opacity:.55;pointer-events:none">
+    <div class="swatch"><i style="background:#1E3A9E"></i><i style="background:#FF6B2C"></i><i style="background:#F2F4F7"></i><i style="background:#0F4C5C"></i></div>
+    <span class="tag">Direction C - coming shortly</span><h2>Great Circle</h2>
+    <p>A mid-century travel poster come alive: a dotted globe centred on Hyderabad, flight arcs to nine cities, drag to spin.</p>
+  </a></li>
+</ol>
+<footer>Drafts for internal review - not published.</footer>
+</body>
+</html>
