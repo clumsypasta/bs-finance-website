@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>GTFinServ | Health, motor and travel insurance in Hyderabad</title>
+<meta name="description" content="Health, motor and travel insurance from GTFinServ at Topaz Plaza, Punjagutta, Hyderabad. Get a quote on WhatsApp or call +91 91823 39188.">
+<link rel="canonical" href="https://www.gtfinserv.com/">
+<meta name="theme-color" content="#0B1E42">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GTFinServ insurance, Hyderabad">
+<meta property="og:description" content="Health, motor and travel insurance. Help choosing, buying and claiming, from Punjagutta.">
+<link rel="icon" type="image/png" href="assets/gt-mark-64.png">
+<link rel="apple-touch-icon" href="assets/gt-mark-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"InsuranceAgency","name":"GTFinServ","parentOrganization":{"@type":"Organization","name":"Global Travel and Visa Services"},"url":"https://www.gtfinserv.com/","telephone":["+919182339188","+914040274570"],"address":{"@type":"PostalAddress","streetAddress":"Flat no 210, Topaz Plaza, Officers Colony, Punjagutta","addressLocality":"Hyderabad","addressRegion":"Telangana","postalCode":"500082","addressCountry":"IN"}}
+</script>
+<!--
+  CLIENT TO CONFIRM before launch:
+  - product list beyond health, motor and travel (life & term, home, business are placeholders)
+  - IRDAI registration / licence details and the standard disclaimer for the footer
+  - insurer partners (logo strip left out until confirmed)
+  - email address and office hours
+-->
+<style>
+:root{
+  --navy:#0B1E42; --navy-2:#13306B; --ink:#14213A; --ink-2:#44506A; --line:#DCE1EA; --wash:#F3F5F9; --white:#fff;
+  --gold:#E2A21E; --gold-d:#9A6A00; --blue:#1C4A96; --ok:#1E7A4C; --err:#B3261E;
+  --serif:"Literata", Georgia, serif; --sans:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --pad:clamp(20px,5vw,72px); --max:1240px; --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+body{margin:0;font:400 16px/1.6 var(--sans);color:var(--ink);background:var(--white)}
+a{color:inherit}
+img,svg{display:block}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:fixed;left:12px;top:-60px;z-index:99;background:var(--navy);color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none}
+.skip:focus{top:12px}
+.ico{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* top bar + nav */
+.top{background:var(--navy);color:#E6EBF5;font-size:13.5px}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px;flex-wrap:wrap}
+.top a{text-decoration:none}
+.top a:hover{text-decoration:underline;text-underline-offset:3px}
+.top ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;flex-wrap:wrap}
+.nav{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:72px}
+.logo img{height:46px;width:auto}
+.links{display:flex;align-items:center;gap:4px}
+.links>a:not(.btn),.dd>button{font-weight:600;font-size:15px;text-decoration:none;padding:10px 12px;border-radius:8px;background:none;border:0;cursor:pointer;display:flex;align-items:center;gap:6px}
+.links>a:not(.btn):hover,.dd>button:hover{background:var(--wash)}
+.dd{position:relative}
+.dd>button svg{width:14px;height:14px;transition:transform .2s}
+.dd>button[aria-expanded="true"] svg{transform:rotate(180deg)}
+.dd-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:260px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 18px 40px -22px rgba(11,30,66,.45);padding:8px;display:none}
+.dd-menu.open{display:block}
+.dd-menu a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:500}
+.dd-menu a:hover{background:var(--wash)}
+.dd-menu .ico{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:8px;border:2px solid transparent;font-weight:700;font-size:15.5px;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:#F0B53C}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-line:hover{background:rgba(255,255,255,.08)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-2)}
+.btn .ico{width:20px;height:20px}
+.menu-btn{display:none;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center;padding-top:72px;padding-bottom:80px}
+.hero h1{font:600 clamp(40px,5vw,66px)/1.06 var(--serif);letter-spacing:-.015em;margin:0 0 22px}
+.hero h1 span{color:var(--gold)}
+.hero p.sub{font-size:clamp(17px,1.4vw,19px);color:#D5DDEC;max-width:34em;margin:0 0 30px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-line{color:#fff}
+.hero .note{margin:26px 0 0;font-size:14.5px;color:#C2CCE0}
+.hero .note a{color:#fff;font-weight:600}
+
+/* quote box */
+.quote{background:#fff;color:var(--ink);border-radius:14px;padding:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.55)}
+.quote h2{font:600 26px/1.2 var(--serif);margin:0 0 4px}
+.quote>p{margin:0 0 18px;color:var(--ink-2);font-size:15px}
+.types{border:0;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.types legend{font-weight:600;font-size:14px;margin-bottom:8px;padding:0}
+.types label{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 6px 12px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;text-align:center;transition:border-color .15s,background .15s}
+.types label .ico{width:28px;height:28px;color:var(--blue)}
+.types input{position:absolute;opacity:0;pointer-events:none}
+.types label:hover{border-color:#9FB0CC}
+.types input:checked+span{color:var(--navy)}
+.types label.on{border-color:var(--navy);background:#EEF2FA;box-shadow:inset 0 0 0 1px var(--navy)}
+.types label:has(input:focus-visible){outline:3px solid var(--gold);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-weight:600;font-size:14px;display:flex;justify-content:space-between;gap:8px}
+.err{color:var(--err);font-weight:600;font-size:13px}
+.inp{width:100%;min-height:48px;padding:11px 14px;border:1.5px solid #B9C2D3;border-radius:8px;background:#fff;font-size:16px}
+.inp:focus-visible{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--navy)}
+.inp[aria-invalid="true"]{border-color:var(--err);background:#FFF6F5}
+select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:38px}
+.quote .btn{width:100%}
+.status{margin:10px 0 0;font-size:14px;min-height:1.4em}
+.status a{font-weight:700}
+
+/* sections */
+section{padding:88px 0}
+.h2{font:600 clamp(30px,3.2vw,42px)/1.15 var(--serif);letter-spacing:-.01em;margin:0 0 14px;color:var(--navy)}
+.lede{font-size:17.5px;color:var(--ink-2);max-width:40em;margin:0}
+.head-row{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.more{font-weight:700;color:var(--blue);text-underline-offset:4px}
+
+/* what we do */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.about .lede{margin-bottom:0}
+.promises{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.promises li{display:grid;grid-template-columns:128px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.promises li:last-child{border-bottom:1px solid var(--line)}
+.promises b{font-weight:700;color:var(--navy)}
+.promises p{margin:0;color:var(--ink-2)}
+
+/* choose your insurance */
+.choose{background:var(--wash)}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.grid li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.grid a{display:flex;align-items:center;gap:16px;padding:22px 24px;text-decoration:none;min-height:84px;transition:background .15s}
+.grid a:hover{background:#FBFCFE}
+.grid .ico{width:30px;height:30px;color:var(--blue)}
+.grid b{display:block;font-weight:700;font-size:16.5px;color:var(--navy)}
+.grid small{display:block;color:var(--ink-2);font-size:14px}
+.grid .arr{margin-left:auto;color:var(--ink-2);transition:transform .2s}
+.grid a:hover .arr{transform:translateX(3px);color:var(--navy)}
+
+/* products */
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.prod{display:flex;flex-direction:column;border-top:3px solid var(--navy);padding-top:22px}
+.prod .ico{width:34px;height:34px;color:var(--blue);margin-bottom:14px}
+.prod h3{font:600 24px/1.2 var(--serif);margin:0 0 10px;color:var(--navy)}
+.prod p{margin:0 0 14px;color:var(--ink-2)}
+.prod ul{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:8px}
+.prod li{position:relative;padding-left:26px;font-size:15.5px}
+.prod li::before{content:"";position:absolute;left:2px;top:.55em;width:12px;height:7px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(-45deg)}
+.prod .btn{margin-top:auto;align-self:flex-start}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:20px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:16px}
+.steps h3{font-size:18px;margin:0 0 6px;color:var(--navy)}
+.steps p{margin:0;color:var(--ink-2)}
+
+/* existing customers */
+.existing{background:var(--wash)}
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.acts a{display:block;padding:26px 28px 26px 0;text-decoration:none;border-bottom:1px solid var(--line)}
+.acts a+a{padding-left:28px;border-left:1px solid var(--line)}
+.acts b{display:flex;align-items:center;gap:10px;font-size:19px;color:var(--navy);margin-bottom:6px}
+.acts span{color:var(--ink-2)}
+.acts a:hover b{text-decoration:underline;text-underline-offset:4px}
+
+/* callback band */
+.band{background:var(--navy);color:#fff}
+.band .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.band .h2{color:#fff}
+.band p{color:#D5DDEC;margin:0}
+.cb{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+.cb .field label{color:#E6EBF5}
+.cb .inp{border-color:transparent}
+.band .status{grid-column:1/-1;color:#E6EBF5}
+.band .status a{color:#fff}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+address{font-style:normal;font-size:18px;line-height:1.55;margin:0 0 22px}
+.phones{display:grid;gap:14px;margin:0 0 26px}
+.phones a{text-decoration:none;font-size:20px;font-weight:700;color:var(--navy)}
+.phones small{display:block;font-size:13.5px;font-weight:500;color:var(--ink-2)}
+.map{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--wash);height:clamp(300px,34vw,460px)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* footer */
+.foot{background:#07142E;color:#C9D2E4;padding:64px 0 28px;font-size:15px}
+.foot .grid4{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+.foot img{height:54px;width:auto;margin-bottom:16px}
+.foot h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin:0 0 14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline;text-underline-offset:3px;color:#fff}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:13.5px}
+
+.wa{position:fixed;right:18px;bottom:18px;z-index:50;display:flex;align-items:center;gap:8px;background:#1E7A4C;color:#fff;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.wa:hover{background:#18653E}
+.wa .ico{width:22px;height:22px}
+
+.mobile-menu{position:fixed;inset:0;z-index:60;background:#fff;padding:18px var(--pad) 28px;display:none;flex-direction:column;overflow:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mobile-menu nav a{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600;font-size:17px}
+.mobile-menu nav .ico{color:var(--blue)}
+.mobile-menu h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:22px 0 4px}
+
+@media (max-width:1060px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .prods{grid-template-columns:1fr 1fr}
+  .foot .grid4{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .links{display:none}
+  .menu-btn{display:block}
+  .about .wrap,.contact .wrap,.band .wrap{grid-template-columns:1fr;gap:32px}
+  .grid{grid-template-columns:1fr 1fr}
+  .steps,.acts{grid-template-columns:1fr}
+  .acts a+a{padding-left:0;border-left:0}
+  .top .loc{display:none}
+}
+@media (max-width:600px){
+  section{padding:64px 0}
+  .hero .wrap{padding-top:44px;padding-bottom:56px}
+  .types{grid-template-columns:repeat(3,1fr)}
+  .row2,.cb{grid-template-columns:1fr}
+  .grid,.prods{grid-template-columns:1fr}
+  .promises li{grid-template-columns:1fr;gap:4px}
+  .foot .grid4{grid-template-columns:1fr}
+  .quote{padding:22px 18px}
+  .logo img{height:40px}
+  .top .land{display:none}
+  .wa span{display:none}
+  .wa{padding:14px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-health" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M12 9v5M9.5 11.5h5"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-3.5l1.8-4.3A2 2 0 0 1 7.6 7h8.8a2 2 0 0 1 1.8 1.2L20 12.5V16"/><path d="M3 16h18v2H3z"/><circle cx="7.5" cy="16" r="1.6"/><circle cx="16.5" cy="16" r="1.6"/><path d="M5.5 12.5h13"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="16" r="3.2"/><circle cx="18.5" cy="16" r="3.2"/><path d="M5.5 16l4-6h5l4 6M9.5 10l-1.5-3H5.5M14.5 10l1.5-3h2.5"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6h11v10h-11zM13.5 9.5h4l3 3.5V16h-7"/><circle cx="6.5" cy="17.5" r="1.7"/><circle cx="17" cy="17.5" r="1.7"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 12.5c0-.8-.7-1.3-1.5-1.3h-4.3L10.6 4H8.8l2.3 7.2H6.6L5 9H3.6l1 3.5-1 3.5H5l1.6-2.2h4.5L8.8 21h1.8l4.6-7.2h4.3c.8 0 1.5-.5 1.5-1.3z"/></symbol>
+  <symbol id="i-life" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><circle cx="12" cy="10" r="2.2"/><path d="M8.5 16c.8-1.6 2-2.4 3.5-2.4s2.7.8 3.5 2.4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+  <symbol id="i-business" viewBox="0 0 24 24"><path d="M4 20V5.5L12 3v17M12 8.5l8 2.5v9"/><path d="M2.5 20h19M7 8h2M7 11.5h2M7 15h2M15 13.5h2M15 17h2"/></symbol>
+  <symbol id="i-accident" viewBox="0 0 24 24"><rect x="3.2" y="8.3" width="17.6" height="7.4" rx="3.7" transform="rotate(-45 12 12)"/><path d="M10.5 10.5l3 3M12.5 9.5l.01 0M9.5 12.5l.01 0M14.5 11.5l.01 0M11.5 14.5l.01 0"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.2a8.5 8.5 0 1 1 3.1 3z"/><path d="M9 9.2c.3 2.2 2.3 4.2 4.5 4.6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-renew" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4"/></symbol>
+  <symbol id="i-claim" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20.5H7z"/><path d="M14 3.5v4h4M9.5 12.5h6M9.5 16h4"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="top">
+  <div class="wrap">
+    <ul>
+      <li><a href="tel:+919182339188">+91 91823 39188</a></li>
+      <li class="land"><a href="tel:+914040274570">+91 40 4027 4570</a></li>
+      <li><a href="https://wa.me/919182339188" target="_blank" rel="noopener">WhatsApp</a></li>
+    </ul>
+    <span class="loc">Topaz Plaza, Punjagutta, Hyderabad</span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="GTFinServ, home">
+      <img src="assets/logo-gtfinserv-notag-480.webp" srcset="assets/logo-gtfinserv-notag-480.webp 480w, assets/logo-gtfinserv-notag.webp 1000w" sizes="160px" width="1000" height="302" alt="" fetchpriority="high">
+    </a>
+    <nav class="links" aria-label="Main">
+      <div class="dd">
+        <button type="button" aria-expanded="false" aria-controls="ddInsurance" id="ddBtn">Insurance <svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></button>
+        <div class="dd-menu" id="ddInsurance">
+          <a href="#health"><svg class="ico" aria-hidden="true"><use href="#i-health"/></svg>Health insurance</a>
+          <a href="#motor"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>Motor insurance</a>
+          <a href="#travel"><svg class="ico" aria-hidden="true"><use href="#i-plane"/></svg>Travel insurance</a>
+          <a href="#choose"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>All insurance</a>
+        </div>
+      </div>
+      <a href="#claims">Claims</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-navy" href="#quote" style="margin-left:10px">Get a quote</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" id="menuBtn">Menu</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top-row">
+    <img src="assets/logo-gtfinserv-notag-480.webp" width="1000" height="302" alt="GTFinServ" style="height:40px;width:auto" loading="lazy">
+    <button class="menu-btn" type="button" id="menuClose" style="display:block">Close</button>
+  </div>
+  <nav aria-label="Mobile">
+    <h2>Insurance</h2>
+    <a href="#health"><svg class="ico" aria-hidden="true"><use href="#i-health"/></svg>Health insurance</a>
+    <a href="#motor"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>Motor insurance</a>
+    <a href="#travel"><svg class="ico" aria-hidden="true"><use href="#i-plane"/></svg>Travel insurance</a>
+    <a href="#choose"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>All insurance</a>
+    <h2>Help</h2>
+    <a href="#claims">Claims and renewals</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn-gold" href="#quote" style="margin-top:24px">Get a quote</a>
+</div>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h1 id="h1">Insurance for your health, your vehicle and <span>your trips.</span></h1>
+      <p class="sub">GTFinServ helps you choose a plan, buy it and claim on it, with a team you can call or visit at Topaz Plaza, Punjagutta.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#quote">Get a quote</a>
+        <a class="btn btn-line" href="#callback">Request a callback</a>
+        <a class="btn btn-line" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+      </div>
+      <p class="note">Already have a policy with us? <a href="#claims">Renew or claim</a></p>
+    </div>
+
+    <form class="quote" id="quote" novalidate aria-labelledby="quoteTitle">
+      <h2 id="quoteTitle">Get a quote</h2>
+      <p>Pick a cover and leave your number. We reply on WhatsApp.</p>
+      <fieldset class="types">
+        <legend>What do you want to cover?</legend>
+        <label><input type="radio" name="type" value="Health insurance" checked><svg class="ico" aria-hidden="true"><use href="#i-health"/></svg><span>Health</span></label>
+        <label><input type="radio" name="type" value="Motor insurance"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span>Motor</span></label>
+        <label><input type="radio" name="type" value="Travel insurance"><svg class="ico" aria-hidden="true"><use href="#i-plane"/></svg><span>Travel</span></label>
+        <label><input type="radio" name="type" value="Life and term insurance"><svg class="ico" aria-hidden="true"><use href="#i-life"/></svg><span>Life &amp; term</span></label>
+        <label><input type="radio" name="type" value="Home insurance"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></label>
+        <label><input type="radio" name="type" value="Business insurance"><svg class="ico" aria-hidden="true"><use href="#i-business"/></svg><span>Business</span></label>
+      </fieldset>
+      <div class="row2">
+        <div class="field">
+          <label for="qName">Your name <span class="err" id="qNameErr" hidden>Add your name</span></label>
+          <input class="inp" id="qName" name="name" type="text" autocomplete="name" required aria-describedby="qNameErr">
+        </div>
+        <div class="field">
+          <label for="qPhone">Phone <span class="err" id="qPhoneErr" hidden>Check the number</span></label>
+          <input class="inp" id="qPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="qPhoneErr" placeholder="98xxx xxxxx">
+        </div>
+      </div>
+      <button class="btn btn-gold" type="submit">Get my quote on WhatsApp</button>
+      <p class="status" id="qStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="about" id="about" aria-labelledby="aboutTitle">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="aboutTitle">From picking a plan to settling a claim</h2>
+      <p class="lede">Global Travel and Visa Services now offers insurance as GTFinServ. We help individuals, families and businesses find cover that fits, and we stay on hand after you buy.</p>
+    </div>
+    <!-- PLACEHOLDER copy: confirm these three service points with the client -->
+    <ul class="promises">
+      <li><b>Before you buy</b><p>We show you what a plan covers and what it leaves out.</p></li>
+      <li><b>At renewal</b><p>We remind you before the due date, so cover does not lapse.</p></li>
+      <li><b>At claim time</b><p>Call us first. We help with the papers and follow up with the insurer.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="choose" id="choose" aria-labelledby="chooseTitle">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <h2 class="h2" id="chooseTitle">Choose your insurance</h2>
+        <p class="lede">Each one opens a WhatsApp chat with the cover already named.</p>
+      </div>
+    </div>
+    <!-- PLACEHOLDER list: health, motor and travel confirmed; the rest to confirm with the client -->
+    <ul class="grid">
+      <li><a data-wa="Health insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-health"/></svg><span><b>Health</b><small>You, your family, your parents</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Car insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span><b>Car</b><small>Third-party and own damage</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Two-wheeler insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-bike"/></svg><span><b>Two-wheeler</b><small>Bikes and scooters</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Commercial vehicle insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg><span><b>Commercial vehicle</b><small>Goods and passenger vehicles</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Travel insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-plane"/></svg><span><b>Travel</b><small>Single trips and frequent travel</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Life and term insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-life"/></svg><span><b>Life &amp; term</b><small>Cover for the people who depend on you</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Personal accident insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-accident"/></svg><span><b>Personal accident</b><small>Injury and disability cover</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Home insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg><span><b>Home</b><small>The building and what is inside</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a data-wa="Business insurance" href="https://wa.me/919182339188" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-business"/></svg><span><b>Business</b><small>Premises, stock and staff</small></span><svg class="ico arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="products" id="products" aria-labelledby="prodTitle">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <h2 class="h2" id="prodTitle">Health, motor and travel</h2>
+        <p class="lede">The covers most people ask us about first.</p>
+      </div>
+      <a class="more" href="#choose">All insurance</a>
+    </div>
+    <div class="prods">
+      <article class="prod" id="health">
+        <svg class="ico" aria-hidden="true"><use href="#i-health"/></svg>
+        <h3>Health insurance</h3>
+        <p>Hospital cover for one person or the whole family, matched to your age, city and budget.</p>
+        <ul>
+          <li>Individual and family floater plans</li>
+          <li>Help comparing sum insured and room-rent limits</li>
+          <li>Renewal reminders before the due date</li>
+        </ul>
+        <a class="btn btn-navy" href="#quote" data-type="Health insurance">Get a health quote</a>
+      </article>
+      <article class="prod" id="motor">
+        <svg class="ico" aria-hidden="true"><use href="#i-car"/></svg>
+        <h3>Motor insurance</h3>
+        <p>Cover for cars, two-wheelers and commercial vehicles, renewed before the policy runs out.</p>
+        <ul>
+          <li>Third-party cover, as the law requires</li>
+          <li>Own-damage cover for your vehicle</li>
+          <li>Add-ons explained before you pay for them</li>
+        </ul>
+        <a class="btn btn-navy" href="#quote" data-type="Motor insurance">Get a motor quote</a>
+      </article>
+      <article class="prod" id="travel">
+        <svg class="ico" aria-hidden="true"><use href="#i-plane"/></svg>
+        <h3>Travel insurance</h3>
+        <p>Medical cover, delays and lost baggage, for one trip or for frequent travel. Many visas ask for it.</p>
+        <ul>
+          <li>Medical emergencies abroad</li>
+          <li>Trip delay and cancellation</li>
+          <li>Lost baggage and passport help</li>
+        </ul>
+        <a class="btn btn-navy" href="#quote" data-type="Travel insurance">Get a travel quote</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="how" aria-labelledby="howTitle" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2" id="howTitle" style="margin-bottom:36px">How buying works</h2>
+    <ol class="steps">
+      <li><h3>Tell us what to cover</h3><p>Use the quote form, WhatsApp us or call. A few details are enough to start.</p></li>
+      <li><h3>Choose a plan with us</h3><p>We go through the options, the price and what each plan leaves out.</p></li>
+      <li><h3>Buy, then stay covered</h3><p>We help you complete the purchase and remind you before renewal.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="existing" id="claims" aria-labelledby="claimsTitle">
+  <div class="wrap">
+    <h2 class="h2" id="claimsTitle" style="margin-bottom:28px">Already have a policy?</h2>
+    <div class="acts">
+      <a data-wa="renewing my policy" href="https://wa.me/919182339188" target="_blank" rel="noopener"><b><svg class="ico" aria-hidden="true"><use href="#i-renew"/></svg>Renew a policy</b><span>Send the policy number and we check the renewal for you.</span></a>
+      <a data-wa="raising a claim" href="https://wa.me/919182339188" target="_blank" rel="noopener"><b><svg class="ico" aria-hidden="true"><use href="#i-claim"/></svg>Raise a claim</b><span>Tell us what happened. We take it up with the insurer.</span></a>
+      <a href="tel:+919182339188"><b><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Call us</b><span>+91 91823 39188, for any question about a policy.</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="callback" aria-labelledby="cbTitle">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="cbTitle">Not sure which cover you need?</h2>
+      <p>Leave your number and we call you back.</p>
+    </div>
+    <form class="cb" id="cbForm" novalidate aria-labelledby="cbTitle">
+      <div class="field">
+        <label for="cName">Your name <span class="err" id="cNameErr" hidden>Add your name</span></label>
+        <input class="inp" id="cName" name="name" type="text" autocomplete="name" required aria-describedby="cNameErr">
+      </div>
+      <div class="field">
+        <label for="cPhone">Phone <span class="err" id="cPhoneErr" hidden>Check the number</span></label>
+        <input class="inp" id="cPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="cPhoneErr" placeholder="98xxx xxxxx">
+      </div>
+      <button class="btn btn-gold" type="submit">Call me back</button>
+      <p class="status" id="cbStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contactTitle">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="contactTitle">Visit or call</h2>
+      <address>Flat no 210, Topaz Plaza,<br>Officers Colony, Punjagutta,<br>Hyderabad, Telangana - 500082</address>
+      <div class="phones">
+        <a href="tel:+919182339188"><small>Mobile and WhatsApp</small>+91 91823 39188</a>
+        <a href="tel:+914040274570"><small>Landline</small>+91 40 4027 4570</a>
+      </div>
+      <a class="btn btn-navy" href="https://www.google.com/maps/search/?api=1&amp;query=Topaz+Plaza+Officers+Colony+Punjagutta+Hyderabad+500082" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+    <div class="map"><iframe title="Map: Topaz Plaza, Punjagutta, Hyderabad" src="https://www.google.com/maps?q=Topaz+Plaza,+Officers+Colony,+Punjagutta,+Hyderabad+500082&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid4">
+      <div>
+        <img src="assets/logo-gtfinserv-notag-light-480.webp" width="1000" height="302" alt="GTFinServ" loading="lazy">
+        <p style="margin:0;max-width:26em">Insurance from Global Travel and Visa Services, Hyderabad.</p>
+      </div>
+      <div>
+        <h2>Insurance</h2>
+        <ul>
+          <li><a href="#health">Health</a></li>
+          <li><a href="#motor">Motor</a></li>
+          <li><a href="#travel">Travel</a></li>
+          <li><a href="#choose">All insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Help</h2>
+        <ul>
+          <li><a href="#claims">Renew or claim</a></li>
+          <li><a href="#callback">Request a callback</a></li>
+          <li><a href="https://wa.me/919182339188" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Office</h2>
+        <address style="font-size:15px;margin:0 0 10px">Flat no 210, Topaz Plaza,<br>Officers Colony, Punjagutta,<br>Hyderabad, Telangana - 500082</address>
+        <a href="tel:+919182339188">+91 91823 39188</a>
+      </div>
+    </div>
+    <!-- PLACEHOLDER: IRDAI registration details and the standard insurance disclaimer go here once the client provides them -->
+    <div class="legal"><span>&copy; 2026 Global Travel and Visa Services</span><span>www.gtfinserv.com</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/919182339188" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+
+<script>
+(function () {
+'use strict';
+var WA = '919182339188';
+function waURL(t) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t); }
+function $(s, r) { return (r || document).querySelector(s); }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+
+/* WhatsApp links that name what the visitor clicked */
+$$('[data-wa]').forEach(function (a) {
+  a.href = waURL('Hello GTFinServ, I would like to know more about ' + a.getAttribute('data-wa') + '.');
+});
+
+/* forms */
+function phoneOk(v) { var d = v.replace(/[\s\-().]/g, ''); return /^\+?\d{10,13}$/.test(d); }
+function setErr(el, bad) {
+  var e = document.getElementById(el.id + 'Err');
+  el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  if (e) e.hidden = !bad;
+}
+function check(rules) {
+  var first = null, bad = 0;
+  rules.forEach(function (r) { var ok = r[1](r[0].value.trim()); setErr(r[0], !ok); if (!ok) { bad++; if (!first) first = r[0]; } });
+  if (first) first.focus();
+  return bad;
+}
+function live(list) { list.forEach(function (el) { el.addEventListener('input', function () { if (el.getAttribute('aria-invalid') === 'true') setErr(el, false); }); }); }
+function named(v) { return v.length > 1; }
+function send(text, status) {
+  var url = waURL(text); window.open(url, '_blank', 'noopener');
+  status.innerHTML = 'Opening WhatsApp. <a href="' + url + '" target="_blank" rel="noopener">Not opened? Tap here.</a>';
+}
+var qName = $('#qName'), qPhone = $('#qPhone'), qStatus = $('#qStatus');
+live([qName, qPhone]);
+$('#quote').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var bad = check([[qName, named], [qPhone, phoneOk]]);
+  if (bad) { qStatus.textContent = bad === 1 ? 'One field needs a look.' : 'Two fields need a look.'; return; }
+  var type = ($('input[name="type"]:checked') || {}).value || 'Insurance';
+  send(['Hello GTFinServ,', 'I would like a quote for ' + type.toLowerCase() + '.', '', 'Name: ' + qName.value.trim(), 'Phone: ' + qPhone.value.trim()].join('\n'), qStatus);
+});
+var cName = $('#cName'), cPhone = $('#cPhone'), cStatus = $('#cbStatus');
+live([cName, cPhone]);
+$('#cbForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var bad = check([[cName, named], [cPhone, phoneOk]]);
+  if (bad) { cStatus.textContent = bad === 1 ? 'One field needs a look.' : 'Two fields need a look.'; return; }
+  send(['Hello GTFinServ,', 'Please call me back about insurance.', '', 'Name: ' + cName.value.trim(), 'Phone: ' + cPhone.value.trim()].join('\n'), cStatus);
+});
+
+/* selected cover highlight (a class, so it updates when a script changes the choice) */
+var typeInputs = $$('.types input');
+function syncTypes() { typeInputs.forEach(function (i) { i.closest('label').classList.toggle('on', i.checked); }); }
+typeInputs.forEach(function (i) { i.addEventListener('change', syncTypes); });
+syncTypes();
+/* product buttons pick the cover in the quote form */
+$$('[data-type]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var r = $('input[name="type"][value="' + b.getAttribute('data-type') + '"]');
+    if (r) { r.checked = true; syncTypes(); }
+    setTimeout(function () { qName.focus({ preventScroll: true }); }, 600);
+  });
+});
+
+/* insurance dropdown */
+var ddBtn = $('#ddBtn'), dd = $('#ddInsurance');
+function setDD(open) { dd.classList.toggle('open', open); ddBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+ddBtn.addEventListener('click', function (e) { e.stopPropagation(); setDD(!dd.classList.contains('open')); });
+document.addEventListener('click', function (e) { if (!dd.contains(e.target)) setDD(false); });
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dd.classList.contains('open')) { setDD(false); ddBtn.focus(); } });
+$$('a', dd).forEach(function (a) { a.addEventListener('click', function () { setDD(false); }); });
+
+/* mobile menu */
+var mm = $('#mobileMenu'), mb = $('#menuBtn'), mc = $('#menuClose');
+function setMM(open, keep) {
+  mm.classList.toggle('open', open); mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.style.overflow = open ? 'hidden' : '';
+  if (open) mc.focus(); else if (!keep) mb.focus();
+}
+mb.addEventListener('click', function () { setMM(true); });
+mc.addEventListener('click', function () { setMM(false); });
+mm.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') { setMM(false); return; }
+  if (e.key !== 'Tab') return;
+  var f = $$('a,button', mm), a = f[0], z = f[f.length - 1];
+  if (e.shiftKey && document.activeElement === a) { z.focus(); e.preventDefault(); }
+  else if (!e.shiftKey && document.activeElement === z) { a.focus(); e.preventDefault(); }
+});
+$$('a', mm).forEach(function (a) { a.addEventListener('click', function () { setMM(false, true); }); });
+})();
+</script>
+</body>
+</html>
